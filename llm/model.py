@@ -25,16 +25,36 @@ model = AutoModelForCausalLM.from_pretrained(
 
 
 
-def generate(prompt):
+# def generate(prompt):
 
+#     inputs = tokenizer(prompt, return_tensors="pt").to(model.device)
+
+#     output = model.generate(
+#         **inputs,
+#         max_new_tokens=200,
+#         temperature=0.7
+#     )
+
+#     response = tokenizer.decode(output[0], skip_special_tokens=True)
+
+#     return response
+
+def generate(prompt: str, max_new_tokens: int = 300, temperature: float = 0.7) -> str:
+    """
+    Generate a response from the LLM.
+    pipeline calls this
+    """
     inputs = tokenizer(prompt, return_tensors="pt").to(model.device)
 
     output = model.generate(
         **inputs,
-        max_new_tokens=200,
-        temperature=0.7
+        max_new_tokens=max_new_tokens,
+        temperature=temperature,
+        do_sample=True,
     )
 
-    response = tokenizer.decode(output[0], skip_special_tokens=True)
+    # Decode only the newly generated tokens (not the prompt)
+    new_tokens = output[0][inputs["input_ids"].shape[1]:]
+    response = tokenizer.decode(new_tokens, skip_special_tokens=True)
 
-    return response
+    return response.strip()

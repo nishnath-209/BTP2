@@ -1,15 +1,27 @@
+"""
+run_experiment.py
+
+Entry point for the therapy chatbot.
+Run: python run_experiment.py
+"""
+
 from pipeline.therapy_pipeline import therapy_chat
 
-print("\n Here\n")
+PATIENT_ID = "patient_001"
+
+print("\n Tobacco Addiction Therapy Assistant")
+print("Type 'exit' to quit\n")
 
 while True:
+    msg = input("Patient: ").strip()
 
-    msg = input("Patient: ")
+    if not msg:
+        continue
 
     if msg.lower() == "exit":
+        print("Session ended.")
         break
 
-    response = therapy_chat(msg)
+    response = therapy_chat(msg, patient_id=PATIENT_ID)
 
-    print("\nTherapist:", response)
-    print()
+    print(f"\nTherapist: {response}\n")
