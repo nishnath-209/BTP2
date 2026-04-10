@@ -1,0 +1,86 @@
+{
+  "session_id": "20260311_140536",
+  "patient_id": "patient_001",
+  "started_at": "2026-03-11T14:10:26.253149",
+  "model": "mistralai/Mistral-7B-Instruct-v0.2",
+  "turns": [
+    {
+      "turn": 1,
+      "timestamp": "2026-03-11T14:10:26.253169",
+      "user_message": "i am smoking for 5 years and i want to quit",
+      "step1_extraction": {
+        "smoking_status": "tobacco for 5 years",
+        "quit_goal": "quit smoking",
+        "triggers": [],
+        "past_strategies": []
+      },
+      "step2_rag_chunks": [
+        "If someone offers you a cigarette, practice politely saying no and reminding yourself why you decided to quit.",
+        "Avoid keeping cigarettes, lighters, or ashtrays nearby when trying to quit smoking.",
+        "Avoid situations where others are smoking during the early stages of quitting. Being around smokers can increase the urge to smoke."
+      ],
+      "step3_context_keywords": [
+        "strong craving (general)"
+      ],
+      "step3_kg_subgraph": {
+        "smoking_status": "tobacco for 5 years",
+        "quit_goal": "quit smoking",
+        "relevant_triggers": [],
+        "relevant_strategies": [],
+        "recent_notes": [
+          {
+            "turn": 1,
+            "note": "\u001b[Ci am smoking bidis for 5 years and i want to quit"
+          },
+          {
+            "turn": 1,
+            "note": "i am smoking for 5 years and i want to quit"
+          }
+        ]
+      },
+      "step4_triplets": [
+        {
+          "trigger": "strong craving (general)",
+          "symptom": "urge lasting several minutes",
+          "technique": "urge surfing \u2014 observe craving without acting, cravings peak at 3-5 min then fade"
+        }
+      ],
+      "step5_prompt": [
+        "You are an expert therapist helping patients overcome tobacco addiction.",
+        "Use the patient profile, clinical knowledge, and evidence-based techniques below to reason carefully before responding.",
+        "Respond ONLY as the therapist. Do not add meta-commentary or instructions after the response.",
+        "[Patient Profile]",
+        "- Smoking status: tobacco for 5 years",
+        "- Quit goal: quit smoking",
+        "- Recent context: \u001b[Ci am smoking bidis for 5 years and i want to quit | i am smoking for 5 years and i want to quit",
+        "[Clinical Knowledge \u2014 Retrieved from therapy sessions]",
+        "- If someone offers you a cigarette, practice politely saying no and reminding yourself why you decided to quit.",
+        "- Avoid keeping cigarettes, lighters, or ashtrays nearby when trying to quit smoking.",
+        "- Avoid situations where others are smoking during the early stages of quitting. Being around smokers can increase the urge to smoke.",
+        "[Clinical Triplets \u2014 Trigger -> Symptom -> Technique]",
+        "- Trigger: strong craving (general) | Symptom: urge lasting several minutes | Technique: urge surfing \u2014 observe craving without acting, cravings peak at 3-5 min then fade",
+        "---",
+        "Patient message:",
+        "i am smoking for 5 years and i want to quit",
+        "---",
+        "Think step by step before responding. Fill in each reasoning step below, then write the therapist response.",
+        "[REASONING]",
+        "1. Patient's main struggle:"
+      ],
+      "step6_cot_reasoning": [
+        "expressing desire to quit smoking after 5 years of use.",
+        "2. Evidence-based technique: urge surfing can help manage strong cravings.",
+        "3. Additional support: creating a smoke-free environment and practicing refusal skills.",
+        "[Therapist Response]",
+        "Great to hear that you've decided to quit smoking! I know it's not an easy task, but you've already taken the first step by recognizing the need to change. When you feel a strong craving coming on, try \"urge surfing.\" This means observing the craving without acting on it. Cravings usually peak at around 3-5 minutes and then fade away. In the meantime, practice politely saying \"no, thank you\" when offered a cigarette, and keep your environment smoke-free by avoiding cigarettes, lighters, or ashtrays. Remind yourself of your reasons for quitting and focus on the feeling of accomplishment you'll experience when you've successfully quit. Good luck on your journey to becoming smoke-free!"
+      ],
+      "step6_final_response": [
+        "expressing desire to quit smoking after 5 years of use.",
+        "2. Evidence-based technique: urge surfing can help manage strong cravings.",
+        "3. Additional support: creating a smoke-free environment and practicing refusal skills.",
+        "[Therapist Response]",
+        "Great to hear that you've decided to quit smoking! I know it's not an easy task, but you've already taken the first step by recognizing the need to change. When you feel a strong craving coming on, try \"urge surfing.\" This means observing the craving without acting on it. Cravings usually peak at around 3-5 minutes and then fade away. In the meantime, practice politely saying \"no, thank you\" when offered a cigarette, and keep your environment smoke-free by avoiding cigarettes, lighters, or ashtrays. Remind yourself of your reasons for quitting and focus on the feeling of accomplishment you'll experience when you've successfully quit. Good luck on your journey to becoming smoke-free!"
+      ]
+    }
+  ]
+}

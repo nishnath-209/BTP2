@@ -1,0 +1,494 @@
+{
+    Patient: I have been smoking bidis from 5 years and i want to quit
+
+    ============================================================
+    STEP 1: EXTRACTING INFO → UPDATING KG
+    Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+    Extracted: {
+    "quit_goal": "quit smoking",
+    "smoking_status": "5 years",
+    "triggers": [
+        "stress",
+        "morning coffee",
+        "after meal"
+    ],
+    "past_strategies": [
+        {
+        "strategy": "nicotine gum",
+        "outcome": "not able to quit completely"
+        }
+    ]
+    }
+
+    STEP 2: RETRIEVING CLINICAL KNOWLEDGE (RAG)
+
+    [RAG] Query: I have been smoking bidis from 5 years and i want to quit
+    [RAG] Retrieved 3 chunks (distances: [0.44923585653305054, 0.45814675092697144, 0.528586745262146])
+    [1] You want to quit, but you're having a little trouble, right? It has reduced a lot from before, but y...
+    [2] Hmm, I understand, so you want to quit for this reason. Is it causing you any difficulty that your a...
+    [3] Hmm, it's understood that your family also wants you to quit, and you also want to quit. How else ar...
+
+    STEP 3: QUERYING KG SUBGRAPH
+    Context keywords: ['stress', 'morning coffee', 'after meal']
+    [Patient Profile]
+    - Smoking status: 5 years
+    - Quit goal: quit smoking
+    - Known triggers: stress, morning coffee, after meal
+    - Tried strategies: nicotine gum → not able to quit completely
+    - Recent context: I have been smoking bidis from 5 years and i want to quit
+
+    STEP 4: MATCHING CLINICAL TRIPLETS
+    [Clinical Triplets — Trigger -> Symptom -> Technique]
+    - Trigger: stress | Symptom: increased craving under pressure or anxiety | Technique: deep breathing (4-7-8 technique), brief walk, call a support person
+    - Trigger: after meals | Symptom: habitual urge after eating | Technique: chew sugar-free gum, brush teeth immediately, change post-meal routine
+    - Trigger: work stress | Symptom: smoking during work breaks or deadlines | Technique: replace smoke break with 5-minute walk, progressive muscle relaxation
+
+    STEP 5: BUILDING PROMPT
+    You are an expert therapist helping patients overcome tobacco addiction.
+    Use the patient profile, clinical knowledge, and evidence-based techniques below to reason carefully before responding.
+
+    [Patient Profile]
+    - Smoking status: 5 years
+    - Quit goal: quit smoking
+    - Known triggers: stress, morning coffee, after meal
+    - Tried strategies: nicotine gum → not able to quit completely
+    - Recent context: I have been smoking bidis from 5 years and i want to quit
+
+    [Clinical Knowledge — Retrieved from therapy sessions]
+    - You want to quit, but you're having a little trouble, right? It has reduced a lot from before, but you can't stop it completely. There is something called nicotine gum, it's like chewing gum. You don't have to chew it that much. You lightly chew it and keep it between your cheek and gums, and the chemical that comes out of it will help a lot to reduce your desire to smoke bidis. You can keep it for half an hour or 45 minutes and then throw it away. You can take another one after 2-3 hours. Since you feel like smoking bidis from the morning, you should try to start from the morning.
+    - Hmm, I understand, so you want to quit for this reason. Is it causing you any difficulty that your addiction is decreasing compared to before? Is there any problem that you used to smoke 20 bidis and now you are smoking 3-4?
+    - Hmm, it's understood that your family also wants you to quit, and you also want to quit. How else are you trying to reduce bidi smoking?
+
+    [Clinical Triplets — Trigger -> Symptom -> Technique]
+    - Trigger: stress | Symptom: increased craving under pressure or anxiety | Technique: deep breathing (4-7-8 technique), brief walk, call a support person
+    - Trigger: after meals | Symptom: habitual urge after eating | Technique: chew sugar-free gum, brush teeth immediately, change post-meal routine
+    - Trigger: work stress | Symptom: smoking during work breaks or deadlines | Technique: replace smoke break with 5-minute walk, progressive muscle relaxation
+
+    ---
+
+    Now reason step by step before giving your response.
+
+    [REASONING]
+    1. What is the patient's main struggle right now?
+    2. Which triggers are active based on their message and profile?
+    3. Which technique(s) from the clinical triplets or knowledge best match this patient's situation?
+    4. What tone is appropriate (empathetic, direct, motivational)?
+
+    [RESPONSE]
+    Write a warm, empathetic, and actionable therapist response based on your reasoning above.
+
+    ---
+
+    Patient message:
+    I have been smoking bidis from 5 years and i want to quit
+
+    Therapist:
+
+
+    STEP 6: GENERATING RESPONSE
+    Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+
+    Therapist: Hi there! It's great that you've recognized the need to quit smoking bidis. I know it's not an easy journey, but every small step you take towards quitting is a significant achievement. From what you've shared, it seems that stress, morning coffee, and after meals are your main triggers. Let's explore some strategies to help you manage those triggers effectively.
+
+    For stress, deep breathing exercises can be a powerful tool to help reduce your cravings. The 4-7-8 technique is a simple breathing exercise that involves breathing in for 4 seconds, holding the breath for 7 seconds, and exhaling for 8 seconds. This technique can help calm your body and mind. Additionally, taking a brief walk or calling a supportive friend when you feel stressed can also be helpful.
+
+    Regarding your morning coffee trigger, since you mentioned that you often smoke bidis after your morning coffee, consider trying to quit smoking first thing in the morning. This can help set the tone for your day and make it easier to resist the urge throughout the day. You may find that, over time, your morning coffee becomes less appealing without the accompanying cigarette.
+}
+
+
+{
+    Patient: i have been drinking bidis for 5 years and i want to quit
+
+    ============================================================
+    STEP 1: EXTRACTING INFO → UPDATING KG
+    Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+    Extracted: {
+    "quit_goal": "quit smoking",
+    "smoking_status": "5 years",
+    "triggers": [],
+    "past_strategies": []
+    }
+
+    STEP 2: RETRIEVING CLINICAL KNOWLEDGE (RAG)
+
+    [RAG] Query: i have been drinking bidis for 5 years and i want to quit
+    [RAG] Retrieved 3 chunks (distances: [0.37633490562438965, 0.4971947968006134, 0.5266030430793762])
+    [1] It's also like you've completely quit alcohol, right? You haven't had any for two years, and you com...
+    [2] It would be better if you could quit bidis, right? Have you tried to quit before?...
+    [3] Hmm, I understand, so you want to quit for this reason. Is it causing you any difficulty that your a...
+
+    STEP 3: QUERYING KG SUBGRAPH
+    Context keywords: ['strong craving (general)']
+    [Patient Profile]
+    - Smoking status: 5 years
+    - Quit goal: quit smoking
+    - Recent context: i have been drinking bidis for 5 years and i want to quit
+
+    STEP 4: MATCHING CLINICAL TRIPLETS
+    [Clinical Triplets — Trigger -> Symptom -> Technique]
+    - Trigger: strong craving (general) | Symptom: urge lasting several minutes | Technique: urge surfing — observe craving without acting, cravings peak at 3-5 min then fade
+
+    STEP 5: BUILDING PROMPT
+    You are an expert therapist helping patients overcome tobacco addiction.
+    Use the patient profile, clinical knowledge, and evidence-based techniques below to reason carefully before responding.
+
+    [Patient Profile]
+    - Smoking status: 5 years
+    - Quit goal: quit smoking
+    - Recent context: i have been drinking bidis for 5 years and i want to quit
+
+    [Clinical Knowledge — Retrieved from therapy sessions]
+    - It's also like you've completely quit alcohol, right? You haven't had any for two years, and you completely quit bidis for two months. So you can quit again this time if you want. But we have to start.
+    - It would be better if you could quit bidis, right? Have you tried to quit before?
+    - Hmm, I understand, so you want to quit for this reason. Is it causing you any difficulty that your addiction is decreasing compared to before? Is there any problem that you used to smoke 20 bidis and now you are smoking 3-4?
+
+    [Clinical Triplets — Trigger -> Symptom -> Technique]
+    - Trigger: strong craving (general) | Symptom: urge lasting several minutes | Technique: urge surfing — observe craving without acting, cravings peak at 3-5 min then fade
+
+    ---
+
+    Patient message:
+    i have been drinking bidis for 5 years and i want to quit
+
+    ---
+
+    Think step by step before responding. Fill in each reasoning step, then write the response.
+
+    [REASONING]
+    1. Patient's main struggle:
+
+    STEP 6: GENERATING RESPONSE (CoT + Response)
+    Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+
+    --- CoT REASONING ---
+    1. Patient's main struggle:desire to quit smoking bidis
+    2. Previous success: quit alcohol and bidis for 2 months
+    3. Current situation: currently smoking fewer bidis but still wants to quit completely
+    4. Technique: urge surfing for cravings
+
+    --- FINAL RESPONSE ---
+
+    Therapist: I understand that you've been smoking bidis for five years and now want to quit. It's great that you've already had some success in quitting, as you've managed to quit both alcohol and bidis for two months. You've also mentioned that you're currently smoking fewer bidis than before.
+
+    However, it's also important to recognize that quitting completely is still a goal worth pursuing. You've shown before that you have the ability to quit when you set your mind to it.
+
+    As for the process, have you tried the urge surfing technique before? This is a method where you observe your cravings without acting on them. Cravings usually last for about 3-5 minutes, and they tend to peak during that time before gradually fading away. By practicing urge surfing, you can learn to ride out the cravings and eventually reduce their intensity over time.
+
+    So, if you feel a strong craving coming on, try observing it without giving in to the urge to smoke a bidis. Allow the craving to pass, knowing that it will eventually fade away. And remember, every moment you spend not smoking is a step closer to reaching your goal of being completely smoke-free.
+
+    Good luck on your quit journey! Let me know if you have any questions or need further support.
+}
+
+{
+    Patient: i have been drinking bidis for 5 years and i want to quit
+
+    ============================================================
+    STEP 1: EXTRACTING INFO → UPDATING KG
+    Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+    Extracted: {
+    "quit_goal": "quit smoking",
+    "smoking_status": null,
+    "triggers": [],
+    "past_strategies": []
+    }
+
+    STEP 2: RETRIEVING CLINICAL KNOWLEDGE (RAG)
+
+    [RAG] Query: i have been drinking bidis for 5 years and i want to quit
+    [RAG] Retrieved 3 chunks (distances: [1.1714940071105957, 1.1878780126571655, 1.2020490169525146])
+    [1] Relapse can happen during the quitting process. Instead of feeling discouraged, treat it as a learni...
+    [2] The 4D technique helps manage cravings: Delay smoking for a few minutes, take Deep breaths slowly, D...
+    [3] Making a daily plan for managing cravings can make the quitting process easier....
+
+    STEP 3: QUERYING KG SUBGRAPH
+    Context keywords: ['strong craving (general)']
+    [Patient Profile]
+    - Quit goal: quit smoking
+    - Recent context: i have been drinking bidis for 5 years and i want to quit
+
+    STEP 4: MATCHING CLINICAL TRIPLETS
+    [Clinical Triplets — Trigger -> Symptom -> Technique]
+    - Trigger: strong craving (general) | Symptom: urge lasting several minutes | Technique: urge surfing — observe craving without acting, cravings peak at 3-5 min then fade
+
+    STEP 5: BUILDING PROMPT
+    You are an expert therapist helping patients overcome tobacco addiction.
+    Use the patient profile, clinical knowledge, and evidence-based techniques below to reason carefully before responding.
+
+    [Patient Profile]
+    - Quit goal: quit smoking
+    - Recent context: i have been drinking bidis for 5 years and i want to quit
+
+    [Clinical Knowledge — Retrieved from therapy sessions]
+    - Relapse can happen during the quitting process. Instead of feeling discouraged, treat it as a learning experience and continue trying to quit.
+    - The 4D technique helps manage cravings: Delay smoking for a few minutes, take Deep breaths slowly, Drink water, and Do something else to distract yourself.
+    - Making a daily plan for managing cravings can make the quitting process easier.
+
+    [Clinical Triplets — Trigger -> Symptom -> Technique]
+    - Trigger: strong craving (general) | Symptom: urge lasting several minutes | Technique: urge surfing — observe craving without acting, cravings peak at 3-5 min then fade
+
+    ---
+
+    Patient message:
+    i have been drinking bidis for 5 years and i want to quit
+
+    ---
+
+    Think step by step before responding. Fill in each reasoning step, then write the response.
+
+    [REASONING]
+    1. Patient's main struggle:
+
+    STEP 6: GENERATING RESPONSE (CoT + Response)
+    Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+
+    --- CoT REASONING ---
+    1. Patient's main struggle:wanting to quit bidis.
+    2. The quitting process can be challenging with occasional relapses.
+    3. Technique for managing relapses: learn from the experience and keep trying.
+
+    --- FINAL RESPONSE ---
+
+    Therapist: I understand that you've been smoking bidis for five years and are now looking to quit. This is a significant step towards better health, and it's important to remember that the quitting process can be challenging. It's common to experience setbacks, and a relapse doesn't mean you have failed. Instead, treat it as a learning experience and continue trying to quit. Let's focus on the strategies that can help you manage cravings and overcome the challenges you may face during the quitting process. Would you like to learn about a technique called the 4D technique for managing cravings? It involves delaying smoking, taking deep breaths, drinking water, and doing something else to distract yourself. Additionally, creating a daily plan to manage cravings can make the quitting process easier. What do you think about these strategies?
+
+    Patient: exit                                                     
+}
+
+{
+    Patient: i have been drinking bidis for 5 years and i want to quit
+
+    ============================================================
+    STEP 1: EXTRACTING INFO → UPDATING KG
+    Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+    Extracted: {
+    "quit_goal": "quit smoking",
+    "smoking_status": "bidis for 5 years",
+    "triggers": [],
+    "past_strategies": []
+    }
+
+    STEP 2: RETRIEVING CLINICAL KNOWLEDGE (RAG)
+
+    [RAG] Query: i have been drinking bidis for 5 years and i want to quit
+    [RAG] Retrieved 3 chunks (distances: [1.1714940071105957, 1.1878780126571655, 1.2020490169525146])
+    [1] Relapse can happen during the quitting process. Instead of feeling discouraged, treat it as a learni...
+    [2] The 4D technique helps manage cravings: Delay smoking for a few minutes, take Deep breaths slowly, D...
+    [3] Making a daily plan for managing cravings can make the quitting process easier....
+
+    STEP 3: QUERYING KG SUBGRAPH
+    Context keywords: ['strong craving (general)']
+    [Patient Profile]
+    - Smoking status: bidis for 5 years
+    - Quit goal: quit smoking
+    - Recent context: i have been drinking bidis for 5 years and i want to quit | i have been drinking bidis for 5 years and i want to quit
+
+    STEP 4: MATCHING CLINICAL TRIPLETS
+    [Clinical Triplets — Trigger -> Symptom -> Technique]
+    - Trigger: strong craving (general) | Symptom: urge lasting several minutes | Technique: urge surfing — observe craving without acting, cravings peak at 3-5 min then fade
+
+    STEP 5: BUILDING PROMPT
+    You are an expert therapist helping patients overcome tobacco addiction.
+    Use the patient profile, clinical knowledge, and evidence-based techniques below to reason carefully before responding.
+
+    [Patient Profile]
+    - Smoking status: bidis for 5 years
+    - Quit goal: quit smoking
+    - Recent context: i have been drinking bidis for 5 years and i want to quit | i have been drinking bidis for 5 years and i want to quit
+
+    [Clinical Knowledge — Retrieved from therapy sessions]
+    - Relapse can happen during the quitting process. Instead of feeling discouraged, treat it as a learning experience and continue trying to quit.
+    - The 4D technique helps manage cravings: Delay smoking for a few minutes, take Deep breaths slowly, Drink water, and Do something else to distract yourself.
+    - Making a daily plan for managing cravings can make the quitting process easier.
+
+    [Clinical Triplets — Trigger -> Symptom -> Technique]
+    - Trigger: strong craving (general) | Symptom: urge lasting several minutes | Technique: urge surfing — observe craving without acting, cravings peak at 3-5 min then fade
+
+    ---
+
+    Patient message:
+    i have been drinking bidis for 5 years and i want to quit
+
+    ---
+
+    Think step by step before responding. Fill in each reasoning step, then write the response.
+
+    [REASONING]
+    1. Patient's main struggle:
+
+    STEP 6: GENERATING RESPONSE (CoT + Response)
+    Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+
+    --- CoT REASONING ---
+    1. Patient's main struggle:strong craving to smoke bidis
+    2. Knowledge: cravings are normal during the quitting process and can be managed effectively
+    3. Technique: urge surfing - observing the craving without acting
+    4. Daily planning: creating a plan to manage cravings
+
+    ---
+
+    --- FINAL RESPONSE ---
+
+    Therapist: Hi there, it's great that you've decided to quit smoking bidis! I know it's not an easy process, but I believe in your ability to make it through. Cravings are a normal part of quitting, and they usually last only a few minutes. Instead of giving in to the urge, try the 4D technique: Delay smoking for a few minutes, take Deep breaths slowly, Drink water, and Do something else to distract yourself. Additionally, making a daily plan to manage cravings can make the process easier. For instance, when you feel a strong craving, remind yourself that cravings usually peak at 3-5 minutes and then fade away. This technique is called urge surfing. You can practice observing the craving without acting on it. Remember, any slip-ups are not failures but learning experiences. Keep trying, and don't give up on your goal to quit smoking bidis. Good luck, and feel free to reach out if you have any questions or need support.
+
+    Patient: sometimes i drink extra cigarettes when i get stressed at work
+
+    ============================================================
+    STEP 1: EXTRACTING INFO → UPDATING KG
+    Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+    Extracted: {
+    "smoking_status": "cigarettes/day",
+    "triggers": [
+        "stressed"
+    ],
+    "past_strategies": []
+    }
+
+    STEP 2: RETRIEVING CLINICAL KNOWLEDGE (RAG)
+
+    [RAG] Query: sometimes i drink extra cigarettes when i get stressed at work
+    [RAG] Retrieved 3 chunks (distances: [0.8058566451072693, 0.9806579947471619, 1.0110327005386353])
+    [1] Stress is a common trigger for smoking. Relaxation techniques such as deep breathing, meditation, or...
+    [2] Keeping your hands busy with activities such as drawing, writing, or using a stress ball can help re...
+    [3] Many people smoke out of habit during specific routines such as after meals, while drinking tea or c...
+
+    STEP 3: QUERYING KG SUBGRAPH
+    Context keywords: ['stressed', 'stress', 'work stress']
+    [Patient Profile]
+    - Smoking status: cigarettes/day
+    - Quit goal: quit smoking
+    - Known triggers: stressed
+    - Recent context: i have been drinking bidis for 5 years and i want to quit | i have been drinking bidis for 5 years and i want to quit | sometimes i drink extra cigarettes when i get stressed at work
+
+    STEP 4: MATCHING CLINICAL TRIPLETS
+    [Clinical Triplets — Trigger -> Symptom -> Technique]
+    - Trigger: stress | Symptom: increased craving under pressure or anxiety | Technique: deep breathing (4-7-8 technique), brief walk, call a support person
+    - Trigger: work stress | Symptom: smoking during work breaks or deadlines | Technique: replace smoke break with 5-minute walk, progressive muscle relaxation
+
+    STEP 5: BUILDING PROMPT
+    You are an expert therapist helping patients overcome tobacco addiction.
+    Use the patient profile, clinical knowledge, and evidence-based techniques below to reason carefully before responding.
+
+    [Patient Profile]
+    - Smoking status: cigarettes/day
+    - Quit goal: quit smoking
+    - Known triggers: stressed
+    - Recent context: i have been drinking bidis for 5 years and i want to quit | i have been drinking bidis for 5 years and i want to quit | sometimes i drink extra cigarettes when i get stressed at work
+
+    [Clinical Knowledge — Retrieved from therapy sessions]
+    - Stress is a common trigger for smoking. Relaxation techniques such as deep breathing, meditation, or short walks can help manage stress without using tobacco.
+    - Keeping your hands busy with activities such as drawing, writing, or using a stress ball can help reduce the urge to smoke.
+    - Many people smoke out of habit during specific routines such as after meals, while drinking tea or coffee, or when talking with friends.
+
+    [Clinical Triplets — Trigger -> Symptom -> Technique]
+    - Trigger: stress | Symptom: increased craving under pressure or anxiety | Technique: deep breathing (4-7-8 technique), brief walk, call a support person
+    - Trigger: work stress | Symptom: smoking during work breaks or deadlines | Technique: replace smoke break with 5-minute walk, progressive muscle relaxation
+
+    ---
+
+    Patient message:
+    sometimes i drink extra cigarettes when i get stressed at work
+
+    ---
+
+    Think step by step before responding. Fill in each reasoning step, then write the response.
+
+    [REASONING]
+    1. Patient's main struggle:
+
+    STEP 6: GENERATING RESPONSE (CoT + Response)
+    Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+
+    --- CoT REASONING ---
+    1. Patient's main struggle:smoking during work stress
+    2. Known trigger: work-related stress
+    3. Technique to manage stress and reduce craving: deep breathing, brief walk, or calling a support person
+
+    --- FINAL RESPONSE ---
+
+    Therapist: Hey [Patient], I understand that work stress can sometimes lead you to smoke more cigarettes. That's a common pattern among many people trying to quit smoking, and it's important to address this trigger effectively. We've discussed before that deep breathing, taking a brief walk, or calling a support person when you feel stressed can help manage the pressure without reaching for a cigarette. I'd encourage you to practice these techniques regularly, especially during work hours when the stress might be more pronounced. Let's make a plan together to help you overcome this challenge and stay on track with your quit goal.
+
+    Feel free to share any additional thoughts or concerns, and let's keep working together towards a smoke-free future!
+
+    ---
+
+    Remember, the key to successful therapy is active listening, empathy, and clear communication. By using a patient-centered approach, you can help your patient feel understood and supported while they work on overcoming tobacco addiction.
+}
+
+{
+    ============================================================
+    STEP 1: EXTRACTING INFO → UPDATING KG
+    Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+    Extracted: {
+    "quit_goal": "quit smoking",
+    "smoking_status": "bidis for 5 years",
+    "triggers": [],
+    "past_strategies": []
+    }
+
+    STEP 2: RETRIEVING CLINICAL KNOWLEDGE (RAG)
+
+    [RAG] Query: i have been drinking bidis for 5 years and i want to quit
+    [RAG] Retrieved 3 chunks (distances: [1.1714940071105957, 1.1878780126571655, 1.2020490169525146])
+    [1] Relapse can happen during the quitting process. Instead of feeling discouraged, treat it as a learni...
+    [2] The 4D technique helps manage cravings: Delay smoking for a few minutes, take Deep breaths slowly, D...
+    [3] Making a daily plan for managing cravings can make the quitting process easier....
+
+    STEP 3: QUERYING KG SUBGRAPH
+    Context keywords: ['strong craving (general)']
+    [Patient Profile]
+    - Smoking status: bidis for 5 years
+    - Quit goal: quit smoking
+    - Recent context: i have been drinking bidis for 5 years and i want to quit
+
+    STEP 4: MATCHING CLINICAL TRIPLETS
+    [Clinical Triplets — Trigger -> Symptom -> Technique]
+    - Trigger: strong craving (general) | Symptom: urge lasting several minutes | Technique: urge surfing — observe craving without acting, cravings peak at 3-5 min then fade
+
+    STEP 5: BUILDING PROMPT
+    You are an expert therapist helping patients overcome tobacco addiction.
+    Use the patient profile, clinical knowledge, and evidence-based techniques below to reason carefully before responding.
+    Respond ONLY as the therapist. Do not add meta-commentary or instructions after the response.
+
+    [Patient Profile]
+    - Smoking status: bidis for 5 years
+    - Quit goal: quit smoking
+    - Recent context: i have been drinking bidis for 5 years and i want to quit
+
+    [Clinical Knowledge — Retrieved from therapy sessions]
+    - Relapse can happen during the quitting process. Instead of feeling discouraged, treat it as a learning experience and continue trying to quit.
+    - The 4D technique helps manage cravings: Delay smoking for a few minutes, take Deep breaths slowly, Drink water, and Do something else to distract yourself.
+    - Making a daily plan for managing cravings can make the quitting process easier.
+
+    [Clinical Triplets — Trigger -> Symptom -> Technique]
+    - Trigger: strong craving (general) | Symptom: urge lasting several minutes | Technique: urge surfing — observe craving without acting, cravings peak at 3-5 min then fade
+
+    ---
+
+    Patient message:
+    i have been drinking bidis for 5 years and i want to quit
+
+    ---
+
+    Think step by step before responding. Fill in each reasoning step below, then write the therapist response.
+
+    [REASONING]
+    1. Patient's main struggle:
+
+    STEP 6: GENERATING RESPONSE (CoT + Response)
+    Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+
+    [Note: No [RESPONSE] tag — showing full output]
+    [Logger] Turn 1 saved → logs/patient_001_20260311_132326.json
+
+    Therapist: wanting to quit smoking (bidis)
+    2. Potential challenge: experiencing strong cravings
+    3. Evidence-based strategy: using the 4D technique to manage cravings
+    4. Additional strategy: making a daily plan for managing cravings
+    5. Possible setback: relapse during the quitting process
+    6. Coping mechanism: regarding relapse as a learning experience and continuing the quitting attempt
+    7. Trigger, symptom, technique alignment: strong craving (trigger) -> urge lasting several minutes (symptom) -> urge surfing (technique)
+
+    ---
+
+    Therapist response:
+    It's great that you've decided to quit smoking bidis. I understand that strong cravings can be a challenge during the quitting process. That's why I'd recommend using the 4D technique to help manage your cravings. This technique involves delaying smoking for a few minutes, taking deep breaths slowly, drinking water, and doing something else to distract yourself. It's also important to make a daily plan for managing cravings, as this can make the quitting process easier. However, it's crucial to remember that relapses can happen during the quitting process. Instead of feeling discouraged, treat it as a learning experience and continue trying to quit using the 4D technique. In case of a strong craving, you can also try the urge surfing technique, which involves observing the craving without acting, as cravings usually peak at 3-5 minutes and then fade away.
+}
