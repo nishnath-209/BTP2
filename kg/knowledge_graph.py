@@ -3,6 +3,15 @@ kg/knowledge_graph.py
 
 JSON-backed Knowledge Graph for patient profiles.
 Interface is storage-agnostic — swap JSON for Neo4j later without touching the pipeline.
+
+KG update strategy:
+- smoking_status: always overwrite with new value, keep history in smoking_status_history
+- triggers: substring-based dedup to avoid near-duplicates like "stress" / "stressed",
+            "after food" / "after eating food". LLM extraction prompt uses standard
+            labels so most collisions are caught before reaching here.
+- past_strategies: exact string dedup (strategy names are usually distinct)
+- session_notes: only logged when meaningful information was extracted (not raw chat)
+- motivation_reason: list, deduped by exact string
 """
 
 import json
@@ -17,7 +26,7 @@ class KnowledgeGraph:
         self.load()
 
     # ------------------------------------------------------------------
-    # Storage 
+    # Storage
     # ------------------------------------------------------------------
 
     def load(self):
@@ -35,13 +44,33 @@ class KnowledgeGraph:
             self.profiles[patient_id] = {
                 "patient_id": patient_id,
                 "smoking_status": None,
+                "smoking_status_history": [],   # previous values before overwrite
                 "quit_goal": None,
-                "motivation_reason": [],      # why they want to quit (health, family, cost, etc.)
-                "triggers": [],              # [{trigger, intensity, context}]
-                "past_strategies": [],       # [{strategy, outcome}]
-                "session_notes": [],         # [{turn, note}]
+                "motivation_reason": [],         # why they want to quit
+                "triggers": [],                  # [{trigger, turn}]
+                "past_strategies": [],           # [{strategy, outcome}]
+                "session_notes": [],             # [{turn, note}] — only meaningful turns
             }
         return self.profiles[patient_id]
+
+    # ------------------------------------------------------------------
+    # Trigger deduplication — substring-based normalization
+    # ------------------------------------------------------------------
+
+    def _is_duplicate_trigger(self, new_trigger: str, existing_triggers_set: set) -> bool:
+        """
+        Returns True if new_trigger is semantically redundant with any existing trigger.
+        Uses substring containment to catch near-duplicates:
+          "stress" vs "stressed" → duplicate
+          "after food" vs "after eating food" → duplicate
+          "work" vs "work stress" → duplicate
+        """
+        new = new_trigger.lower().strip()
+        for existing in existing_triggers_set:
+            e = existing.lower().strip()
+            if new == e or new in e or e in new:
+                return True
+        return False
 
     # ------------------------------------------------------------------
     # Update KG from LLM-extracted JSON
@@ -55,15 +84,18 @@ class KnowledgeGraph:
         {
           "quit_goal": "quit smoking",
           "smoking_status": "10 cigarettes/day",
-          "triggers": ["stress", "morning coffee"],
-          "past_strategies": [{"strategy": "nicotine gum", "outcome": "helped"}]
+          "triggers": ["stress", "after meals"],
+          "past_strategies": [{"strategy": "nicotine gum", "outcome": "helped a little"}],
+          "is_closing": false
         }
         """
         profile = self._get_or_create(patient_id)
 
+        # quit_goal — overwrite if new value present
         if extracted.get("quit_goal"):
             profile["quit_goal"] = extracted["quit_goal"]
 
+        # motivation_reason — accumulate, dedup by exact string
         if extracted.get("motivation_reason"):
             reason = extracted["motivation_reason"]
             if isinstance(reason, list):
@@ -73,25 +105,34 @@ class KnowledgeGraph:
             elif reason and reason not in profile["motivation_reason"]:
                 profile["motivation_reason"].append(reason)
 
+        # smoking_status — always overwrite, keep history
         if extracted.get("smoking_status"):
-            profile["smoking_status"] = extracted["smoking_status"]
+            new_status = extracted["smoking_status"]
+            if profile["smoking_status"] and profile["smoking_status"] != new_status:
+                # Archive previous value before overwriting
+                if profile["smoking_status"] not in profile.get("smoking_status_history", []):
+                    profile.setdefault("smoking_status_history", []).append(
+                        profile["smoking_status"]
+                    )
+            profile["smoking_status"] = new_status
 
-        # Merge triggers (avoid duplicates)
-        existing_triggers = {t["trigger"] for t in profile["triggers"]}
+        # triggers — substring-based dedup
+        existing_trigger_names = {t["trigger"] for t in profile["triggers"]}
         for t in extracted.get("triggers", []):
             trigger_name = t if isinstance(t, str) else t.get("trigger", "")
-            if trigger_name and trigger_name not in existing_triggers:
+            trigger_name = trigger_name.strip()
+            if trigger_name and not self._is_duplicate_trigger(trigger_name, existing_trigger_names):
                 profile["triggers"].append({
                     "trigger": trigger_name,
-                    "intensity": t.get("intensity", "unknown") if isinstance(t, dict) else "unknown",
-                    "context": t.get("context", "") if isinstance(t, dict) else ""
+                    "turn": turn,
                 })
-                existing_triggers.add(trigger_name)
+                existing_trigger_names.add(trigger_name)
 
-        # Merge strategies (avoid duplicates)
+        # past_strategies — exact string dedup
         existing_strategies = {s["strategy"] for s in profile["past_strategies"]}
         for s in extracted.get("past_strategies", []):
             strategy_name = s if isinstance(s, str) else s.get("strategy", "")
+            strategy_name = strategy_name.strip()
             if strategy_name and strategy_name not in existing_strategies:
                 profile["past_strategies"].append({
                     "strategy": strategy_name,
@@ -99,11 +140,19 @@ class KnowledgeGraph:
                 })
                 existing_strategies.add(strategy_name)
 
-        # Always append session note
-        if raw_message.strip():
+        # session_notes — only log turns where meaningful info was extracted
+        # Avoids storing "yes", "i dont know", "ok" as notes
+        has_meaningful_extraction = any([
+            extracted.get("quit_goal"),
+            extracted.get("motivation_reason"),
+            extracted.get("smoking_status"),
+            extracted.get("triggers"),
+            extracted.get("past_strategies"),
+        ])
+        if has_meaningful_extraction and raw_message.strip():
             profile["session_notes"].append({
                 "turn": turn,
-                "note": raw_message.strip()
+                "note": raw_message.strip(),
             })
 
         self.save()
@@ -117,9 +166,10 @@ class KnowledgeGraph:
         Return a relevant subgraph of the patient profile based on context keywords.
 
         Instead of dumping the whole KG into the prompt, we select:
-        - Always: smoking_status, quit_goal
-        - Contextually: triggers and strategies that match the current message context
-        - Recent notes: last 3 session notes only
+        - Always: smoking_status, quit_goal, motivation_reason
+        - Contextually: triggers that match current context keywords
+        - Always: all past strategies (usually few, all relevant)
+        - No session_notes — history block in the prompt already covers recent context
         """
         profile = self._get_or_create(patient_id)
 
@@ -128,34 +178,34 @@ class KnowledgeGraph:
             "quit_goal": profile.get("quit_goal"),
             "motivation_reason": profile.get("motivation_reason"),
             "relevant_triggers": [],
-            "relevant_strategies": [],
-            "recent_notes": profile["session_notes"][-3:] if profile["session_notes"] else []
+            "relevant_strategies": profile["past_strategies"],  # always all strategies
         }
 
         if not context_keywords:
-            # No context. return top triggers and strategies
             subgraph["relevant_triggers"] = profile["triggers"][:3]
-            subgraph["relevant_strategies"] = profile["past_strategies"][:3]
             return subgraph
 
         keywords_lower = [k.lower() for k in context_keywords]
 
-        # Filter triggers by keyword match
+        # Filter triggers by keyword match (substring)
         for t in profile["triggers"]:
             if any(kw in t["trigger"].lower() for kw in keywords_lower):
                 subgraph["relevant_triggers"].append(t)
 
-        # If no match, fallback to all triggers (there may not be many)
+        # Fallback: return all triggers if none matched
         if not subgraph["relevant_triggers"]:
             subgraph["relevant_triggers"] = profile["triggers"]
-
-        # All strategies are usually relevant (patient hasn't tried many)
-        subgraph["relevant_strategies"] = profile["past_strategies"]
+            print("[KG] Trigger keyword match failed — returning all triggers as fallback")
 
         return subgraph
 
+    # ------------------------------------------------------------------
+    # Subgraph → prompt text
+    # ------------------------------------------------------------------
+
     def subgraph_to_text(self, subgraph: dict) -> str:
         """Convert subgraph dict to a concise text block for prompt injection."""
+
         lines = ["[Patient Profile]"]
 
         if subgraph.get("smoking_status"):
@@ -166,18 +216,13 @@ class KnowledgeGraph:
 
         if subgraph.get("motivation_reason"):
             reasons = subgraph["motivation_reason"]
-            if isinstance(reasons, list):
+            if isinstance(reasons, list) and reasons:
                 lines.append(f"- Motivation to quit: {', '.join(reasons)}")
-            else:
+            elif isinstance(reasons, str):
                 lines.append(f"- Motivation to quit: {reasons}")
 
         if subgraph.get("relevant_triggers"):
-            trigger_strs = []
-            for t in subgraph["relevant_triggers"]:
-                s = t["trigger"]
-                if t.get("intensity") and t["intensity"] != "unknown":
-                    s += f" (intensity: {t['intensity']})"
-                trigger_strs.append(s)
+            trigger_strs = [t["trigger"] for t in subgraph["relevant_triggers"]]
             lines.append(f"- Known triggers: {', '.join(trigger_strs)}")
 
         if subgraph.get("relevant_strategies"):
@@ -188,9 +233,5 @@ class KnowledgeGraph:
                     text += f" → {s['outcome']}"
                 strat_strs.append(text)
             lines.append(f"- Tried strategies: {', '.join(strat_strs)}")
-
-        if subgraph.get("recent_notes"):
-            recent = [n["note"] for n in subgraph["recent_notes"]]
-            lines.append(f"- Recent context: {' | '.join(recent)}")
 
         return "\n".join(lines)

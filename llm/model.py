@@ -83,7 +83,7 @@ import os
 MODEL_NAME = "llama-3.1-8b-instant"
 
 client = OpenAI(
-    api_key="",
+    api_key=os.getenv("OPENAI_API_KEY"),
     base_url="https://api.groq.com/openai/v1"
 )
 
