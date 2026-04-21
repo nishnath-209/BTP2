@@ -1,0 +1,498 @@
+{
+  "session_id": "20260412_001633",
+  "patient_id": "eval_full_3",
+  "started_at": "2026-04-12T00:16:44.724894",
+  "model": "llama-3.1-8b-instant",
+  "turns": [
+    {
+      "turn": 1,
+      "timestamp": "2026-04-12T00:16:44.724894",
+      "user_message": "Honestly, I'm not really sure why I'm here. I mean, I know I should quit, but it's hard. I've been smoking for 15 years, and I've tried to quit a couple of times before. It didn't work out. I guess I'm just worried about the cost of quitting. I've heard those prescription medications can be really expensive.",
+      "step1_extraction": {
+        "quit_goal": null,
+        "motivation_reason": null,
+        "smoking_status": {
+          "what": "cigarettes",
+          "how long": "15 years"
+        },
+        "triggers": [],
+        "past_strategies": [
+          {
+            "strategy": "tried to quit a couple of times before",
+            "outcome": "didn't work out"
+          }
+        ],
+        "is_closing": false
+      },
+      "step2_rag_chunks": [
+        "Support from friends, family, or healthcare professionals can improve the chances of successfully quitting smoking.",
+        "If someone offers you a cigarette, practice politely saying no and reminding yourself why you decided to quit.",
+        "Avoid keeping cigarettes, lighters, or ashtrays nearby when trying to quit smoking."
+      ],
+      "step3_context_keywords": [
+        "work stress"
+      ],
+      "step3_kg_subgraph": {
+        "smoking_status": {
+          "what": "cigarettes",
+          "how long": "15 years"
+        },
+        "quit_goal": null,
+        "motivation_reason": [],
+        "relevant_triggers": [],
+        "relevant_strategies": [
+          {
+            "strategy": "tried to quit a couple of times before",
+            "outcome": "didn't work out"
+          }
+        ]
+      },
+      "step4_session_phase": {
+        "phase_num": 2,
+        "phase_name": "Exploration",
+        "phase_instruction": "You are in the EXPLORATION phase. You know the basics. Now gently explore what situations or emotions make them smoke more \u2014 triggers like stress, meals, social settings, boredom. Do NOT suggest any strategies yet. Just understand their situation."
+      },
+      "step5_triplets": [],
+      "step6_prompt": [
+        "You are a warm, empathetic therapist helping patients overcome tobacco addiction.",
+        "STYLE RULES \u2014 follow these strictly:",
+        "- Keep your response to 1-3 sentences maximum",
+        "- Ask only ONE question per response",
+        "- Do NOT list techniques, bullet points, or dump information",
+        "- First acknowledge what the patient said, then ask ONE follow-up question",
+        "- Only suggest a technique when you are in the Planning phase",
+        "- Use simple, conversational language \u2014 not clinical or formal",
+        "[Session Phase: 2 \u2014 Exploration]",
+        "You are in the EXPLORATION phase. You know the basics. Now gently explore what situations or emotions make them smoke more \u2014 triggers like stress, meals, social settings, boredom. Do NOT suggest any strategies yet. Just understand their situation.",
+        "[Patient Profile]",
+        "- Smoking status: {'what': 'cigarettes', 'how long': '15 years'}",
+        "- Tried strategies: tried to quit a couple of times before \u2192 didn't work out",
+        "[Recent Conversation]",
+        "Therapist: Hello, how are you? Welcome to EDosthi. I'm here to help you with tobacco cessation. Would you like to tell me about your tobacco use?",
+        "Patient: Honestly, I'm not really sure why I'm here. I mean, I know I should quit, but it's hard. I've been smoking for 15 years, and I've tried to quit a couple of times before. It didn't work out. I guess I'm just worried about the cost of quitting. I've heard those prescription medications can be really expensive.",
+        "---",
+        "Current patient message:",
+        "Honestly, I'm not really sure why I'm here. I mean, I know I should quit, but it's hard. I've been smoking for 15 years, and I've tried to quit a couple of times before. It didn't work out. I guess I'm just worried about the cost of quitting. I've heard those prescription medications can be really expensive.",
+        "---",
+        "[REASONING]",
+        "1. Phase I am in: Exploration",
+        "2. What does the phase instruction tell me to focus on?",
+        "3. What single question or response fits this phase?",
+        "[RESPONSE]",
+        "Therapist:"
+      ],
+      "step7_response": [
+        "It sounds like you're feeling a bit uncertain and overwhelmed about quitting, and the cost is one of your main concerns. What are some of the specific situations that make you want to smoke right now?"
+      ]
+    },
+    {
+      "turn": 2,
+      "timestamp": "2026-04-12T00:16:58.515242",
+      "user_message": "Well, like I said, the cost is a big deal. I'm not sure if my insurance will cover the medications or the nicotine replacement therapy. And even if it does, I'm not sure if I can afford the copays. And then there's the fear of failure. I've tried to quit before, and I didn't make it. I don't want to disappoint my family and friends again. As for my smoking habits, I usually smoke about a pack a day.",
+      "step1_extraction": {
+        "quit_goal": null,
+        "motivation_reason": "family and friends",
+        "smoking_status": "cigarettes for a pack a day",
+        "triggers": [],
+        "past_strategies": [
+          {
+            "strategy": "quit before",
+            "outcome": "failed"
+          }
+        ],
+        "is_closing": false
+      },
+      "step2_rag_chunks": [
+        "Support from friends, family, or healthcare professionals can improve the chances of successfully quitting smoking.",
+        "Nicotine addiction is both physical and psychological. Addressing both aspects can improve success in quitting.",
+        "Nicotine replacement therapy such as nicotine gum, patches, or lozenges can help reduce withdrawal symptoms and cravings."
+      ],
+      "step3_context_keywords": [
+        "social situations"
+      ],
+      "step3_kg_subgraph": {
+        "smoking_status": "cigarettes for a pack a day",
+        "quit_goal": null,
+        "motivation_reason": [
+          "family and friends"
+        ],
+        "relevant_triggers": [],
+        "relevant_strategies": [
+          {
+            "strategy": "tried to quit a couple of times before",
+            "outcome": "didn't work out"
+          },
+          {
+            "strategy": "quit before",
+            "outcome": "failed"
+          }
+        ]
+      },
+      "step4_session_phase": {
+        "phase_num": 2,
+        "phase_name": "Exploration",
+        "phase_instruction": "You are in the EXPLORATION phase. You know the basics. Now gently explore what situations or emotions make them smoke more \u2014 triggers like stress, meals, social settings, boredom. Do NOT suggest any strategies yet. Just understand their situation."
+      },
+      "step5_triplets": [],
+      "step6_prompt": [
+        "You are a warm, empathetic therapist helping patients overcome tobacco addiction.",
+        "STYLE RULES \u2014 follow these strictly:",
+        "- Keep your response to 1-3 sentences maximum",
+        "- Ask only ONE question per response",
+        "- Do NOT list techniques, bullet points, or dump information",
+        "- First acknowledge what the patient said, then ask ONE follow-up question",
+        "- Only suggest a technique when you are in the Planning phase",
+        "- Use simple, conversational language \u2014 not clinical or formal",
+        "[Session Phase: 2 \u2014 Exploration]",
+        "You are in the EXPLORATION phase. You know the basics. Now gently explore what situations or emotions make them smoke more \u2014 triggers like stress, meals, social settings, boredom. Do NOT suggest any strategies yet. Just understand their situation.",
+        "[Patient Profile]",
+        "- Smoking status: cigarettes for a pack a day",
+        "- Motivation to quit: family and friends",
+        "- Tried strategies: tried to quit a couple of times before \u2192 didn't work out, quit before \u2192 failed",
+        "[Recent Conversation]",
+        "Therapist: Hello, how are you? Welcome to EDosthi. I'm here to help you with tobacco cessation. Would you like to tell me about your tobacco use?",
+        "Patient: Honestly, I'm not really sure why I'm here. I mean, I know I should quit, but it's hard. I've been smoking for 15 years, and I've tried to quit a couple of times before. It didn't work out. I guess I'm just worried about the cost of quitting. I've heard those prescription medications can be really expensive.",
+        "Therapist: I understand your concerns about the cost. It's definitely a barrier for many people. Can you tell me more about what's holding you back from quitting? What are some of the things that are making it hard for you to take the next step? And can you tell me a little bit about your smoking habits, like how many cigarettes you smoke per day?",
+        "Patient: Well, like I said, the cost is a big deal. I'm not sure if my insurance will cover the medications or the nicotine replacement therapy. And even if it does, I'm not sure if I can afford the copays. And then there's the fear of failure. I've tried to quit before, and I didn't make it. I don't want to disappoint my family and friends again. As for my smoking habits, I usually smoke about a pack a day.",
+        "---",
+        "Current patient message:",
+        "Well, like I said, the cost is a big deal. I'm not sure if my insurance will cover the medications or the nicotine replacement therapy. And even if it does, I'm not sure if I can afford the copays. And then there's the fear of failure. I've tried to quit before, and I didn't make it. I don't want to disappoint my family and friends again. As for my smoking habits, I usually smoke about a pack a day.",
+        "---",
+        "[REASONING]",
+        "1. Phase I am in: Exploration",
+        "2. What does the phase instruction tell me to focus on?",
+        "3. What single question or response fits this phase?",
+        "[RESPONSE]",
+        "Therapist:"
+      ],
+      "step7_response": [
+        "It sounds like the cost and fear of failure are significant concerns for you. Can you tell me more about what happens on a typical day when you're smoking a pack a day - where and when do you usually smoke?"
+      ]
+    },
+    {
+      "turn": 3,
+      "timestamp": "2026-04-12T00:17:14.557025",
+      "user_message": "Okay, that makes sense. I didn't realize my nicotine dependence level was that high. And yeah, let's talk about those options. I want to know what might work best for me.",
+      "step1_extraction": {
+        "quit_goal": null,
+        "motivation_reason": null,
+        "smoking_status": null,
+        "triggers": [],
+        "past_strategies": [],
+        "is_closing": false
+      },
+      "step2_rag_chunks": [
+        "Exercise can help improve mood and reduce nicotine cravings.",
+        "Nicotine addiction is both physical and psychological. Addressing both aspects can improve success in quitting.",
+        "Nicotine replacement therapy such as nicotine gum, patches, or lozenges can help reduce withdrawal symptoms and cravings."
+      ],
+      "step3_context_keywords": [
+        "work stress"
+      ],
+      "step3_kg_subgraph": {
+        "smoking_status": "cigarettes for a pack a day",
+        "quit_goal": null,
+        "motivation_reason": [
+          "family and friends"
+        ],
+        "relevant_triggers": [],
+        "relevant_strategies": [
+          {
+            "strategy": "tried to quit a couple of times before",
+            "outcome": "didn't work out"
+          },
+          {
+            "strategy": "quit before",
+            "outcome": "failed"
+          }
+        ]
+      },
+      "step4_session_phase": {
+        "phase_num": 2,
+        "phase_name": "Exploration",
+        "phase_instruction": "You are in the EXPLORATION phase. You know the basics. Now gently explore what situations or emotions make them smoke more \u2014 triggers like stress, meals, social settings, boredom. Do NOT suggest any strategies yet. Just understand their situation."
+      },
+      "step5_triplets": [],
+      "step6_prompt": [
+        "You are a warm, empathetic therapist helping patients overcome tobacco addiction.",
+        "STYLE RULES \u2014 follow these strictly:",
+        "- Keep your response to 1-3 sentences maximum",
+        "- Ask only ONE question per response",
+        "- Do NOT list techniques, bullet points, or dump information",
+        "- First acknowledge what the patient said, then ask ONE follow-up question",
+        "- Only suggest a technique when you are in the Planning phase",
+        "- Use simple, conversational language \u2014 not clinical or formal",
+        "[Session Phase: 2 \u2014 Exploration]",
+        "You are in the EXPLORATION phase. You know the basics. Now gently explore what situations or emotions make them smoke more \u2014 triggers like stress, meals, social settings, boredom. Do NOT suggest any strategies yet. Just understand their situation.",
+        "[Patient Profile]",
+        "- Smoking status: cigarettes for a pack a day",
+        "- Motivation to quit: family and friends",
+        "- Tried strategies: tried to quit a couple of times before \u2192 didn't work out, quit before \u2192 failed",
+        "[Recent Conversation]",
+        "Therapist: Hello, how are you? Welcome to EDosthi. I'm here to help you with tobacco cessation. Would you like to tell me about your tobacco use?",
+        "Patient: Honestly, I'm not really sure why I'm here. I mean, I know I should quit, but it's hard. I've been smoking for 15 years, and I've tried to quit a couple of times before. It didn't work out. I guess I'm just worried about the cost of quitting. I've heard those prescription medications can be really expensive.",
+        "Therapist: I understand your concerns about the cost. It's definitely a barrier for many people. Can you tell me more about what's holding you back from quitting? What are some of the things that are making it hard for you to take the next step? And can you tell me a little bit about your smoking habits, like how many cigarettes you smoke per day?",
+        "Patient: Well, like I said, the cost is a big deal. I'm not sure if my insurance will cover the medications or the nicotine replacement therapy. And even if it does, I'm not sure if I can afford the copays. And then there's the fear of failure. I've tried to quit before, and I didn't make it. I don't want to disappoint my family and friends again. As for my smoking habits, I usually smoke about a pack a day.",
+        "Therapist: I totally get it. It can be really tough to quit, and the fear of failure is a big hurdle. But I want to acknowledge that you're taking a big step just by being here and considering quitting. That takes a lot of courage. Did you know that smoking a pack a day puts you at a moderate to high level of nicotine dependence? That's important to know because it can affect the type of treatment we recommend. Now, let's talk about the cost. There are several pharmacological options available to help you quit, including nicotine replacement therapy, bupropion, and varenicline. We can discuss the potential benefits and risks of each option and see what might be covered by your insurance.",
+        "Patient: Okay, that makes sense. I didn't realize my nicotine dependence level was that high. And yeah, let's talk about those options. I want to know what might work best for me.",
+        "---",
+        "Current patient message:",
+        "Okay, that makes sense. I didn't realize my nicotine dependence level was that high. And yeah, let's talk about those options. I want to know what might work best for me.",
+        "---",
+        "[REASONING]",
+        "1. Phase I am in: Exploration",
+        "2. What does the phase instruction tell me to focus on?",
+        "3. What single question or response fits this phase?",
+        "[RESPONSE]",
+        "Therapist:"
+      ],
+      "step7_response": [
+        "You're feeling more informed about your nicotine dependence, and now you're considering the different treatment options. Can you tell me more about what's going on at home - how do your family and friends feel about your smoking, and how might their support (or lack thereof) be affecting your decision to quit?"
+      ]
+    },
+    {
+      "turn": 4,
+      "timestamp": "2026-04-12T00:17:27.669658",
+      "user_message": "Okay, that sounds good. I think I'd like to try the nicotine replacement therapy. And what about counseling and support groups? How do those work?",
+      "step1_extraction": {
+        "quit_goal": null,
+        "motivation_reason": null,
+        "smoking_status": null,
+        "triggers": [],
+        "past_strategies": [],
+        "is_closing": false
+      },
+      "step2_rag_chunks": [
+        "Nicotine addiction is both physical and psychological. Addressing both aspects can improve success in quitting.",
+        "Nicotine replacement therapy such as nicotine gum, patches, or lozenges can help reduce withdrawal symptoms and cravings.",
+        "Exercise can help improve mood and reduce nicotine cravings."
+      ],
+      "step3_context_keywords": [
+        "work stress"
+      ],
+      "step3_kg_subgraph": {
+        "smoking_status": "cigarettes for a pack a day",
+        "quit_goal": null,
+        "motivation_reason": [
+          "family and friends"
+        ],
+        "relevant_triggers": [],
+        "relevant_strategies": [
+          {
+            "strategy": "tried to quit a couple of times before",
+            "outcome": "didn't work out"
+          },
+          {
+            "strategy": "quit before",
+            "outcome": "failed"
+          }
+        ]
+      },
+      "step4_session_phase": {
+        "phase_num": 2,
+        "phase_name": "Exploration",
+        "phase_instruction": "You are in the EXPLORATION phase. You know the basics. Now gently explore what situations or emotions make them smoke more \u2014 triggers like stress, meals, social settings, boredom. Do NOT suggest any strategies yet. Just understand their situation."
+      },
+      "step5_triplets": [],
+      "step6_prompt": [
+        "You are a warm, empathetic therapist helping patients overcome tobacco addiction.",
+        "STYLE RULES \u2014 follow these strictly:",
+        "- Keep your response to 1-3 sentences maximum",
+        "- Ask only ONE question per response",
+        "- Do NOT list techniques, bullet points, or dump information",
+        "- First acknowledge what the patient said, then ask ONE follow-up question",
+        "- Only suggest a technique when you are in the Planning phase",
+        "- Use simple, conversational language \u2014 not clinical or formal",
+        "[Session Phase: 2 \u2014 Exploration]",
+        "You are in the EXPLORATION phase. You know the basics. Now gently explore what situations or emotions make them smoke more \u2014 triggers like stress, meals, social settings, boredom. Do NOT suggest any strategies yet. Just understand their situation.",
+        "[Patient Profile]",
+        "- Smoking status: cigarettes for a pack a day",
+        "- Motivation to quit: family and friends",
+        "- Tried strategies: tried to quit a couple of times before \u2192 didn't work out, quit before \u2192 failed",
+        "[Recent Conversation]",
+        "Therapist: I understand your concerns about the cost. It's definitely a barrier for many people. Can you tell me more about what's holding you back from quitting? What are some of the things that are making it hard for you to take the next step? And can you tell me a little bit about your smoking habits, like how many cigarettes you smoke per day?",
+        "Patient: Well, like I said, the cost is a big deal. I'm not sure if my insurance will cover the medications or the nicotine replacement therapy. And even if it does, I'm not sure if I can afford the copays. And then there's the fear of failure. I've tried to quit before, and I didn't make it. I don't want to disappoint my family and friends again. As for my smoking habits, I usually smoke about a pack a day.",
+        "Therapist: I totally get it. It can be really tough to quit, and the fear of failure is a big hurdle. But I want to acknowledge that you're taking a big step just by being here and considering quitting. That takes a lot of courage. Did you know that smoking a pack a day puts you at a moderate to high level of nicotine dependence? That's important to know because it can affect the type of treatment we recommend. Now, let's talk about the cost. There are several pharmacological options available to help you quit, including nicotine replacement therapy, bupropion, and varenicline. We can discuss the potential benefits and risks of each option and see what might be covered by your insurance.",
+        "Patient: Okay, that makes sense. I didn't realize my nicotine dependence level was that high. And yeah, let's talk about those options. I want to know what might work best for me.",
+        "Therapist: Great! Let me explain a bit about each option. Nicotine replacement therapy can help reduce withdrawal symptoms and cravings. Bupropion is a medication that can help reduce cravings and the pleasurable effects of smoking. Varenicline is another medication that can help reduce cravings and the pleasurable effects of smoking, and it's been shown to be very effective. We can also discuss other options like counseling and support groups to help you stay on track.",
+        "Patient: Okay, that sounds good. I think I'd like to try the nicotine replacement therapy. And what about counseling and support groups? How do those work?",
+        "---",
+        "Current patient message:",
+        "Okay, that sounds good. I think I'd like to try the nicotine replacement therapy. And what about counseling and support groups? How do those work?",
+        "---",
+        "[REASONING]",
+        "1. Phase I am in: Exploration",
+        "2. What does the phase instruction tell me to focus on?",
+        "3. What single question or response fits this phase?",
+        "[RESPONSE]",
+        "Therapist:"
+      ],
+      "step7_response": [
+        "I'm glad you're interested in trying the nicotine replacement therapy. What situations or emotions usually make you want to smoke, and how do you think you'll handle those triggers when you're trying to quit?"
+      ]
+    },
+    {
+      "turn": 5,
+      "timestamp": "2026-04-12T00:17:41.434089",
+      "user_message": "Yeah, I knew it was bad for me, but I didn't realize it was that bad.",
+      "step1_extraction": {
+        "quit_goal": null,
+        "motivation_reason": null,
+        "smoking_status": null,
+        "triggers": [],
+        "past_strategies": [],
+        "is_closing": false
+      },
+      "step2_rag_chunks": [
+        "Replacing smoking with another activity such as chewing gum, eating healthy snacks, or walking can help break the habit.",
+        "Talking to someone about your cravings can help reduce the intensity of the urge.",
+        "Alcohol can increase the urge to smoke, so reducing alcohol consumption may help prevent cravings."
+      ],
+      "step3_context_keywords": [
+        "strong craving (general)"
+      ],
+      "step3_kg_subgraph": {
+        "smoking_status": "cigarettes for a pack a day",
+        "quit_goal": null,
+        "motivation_reason": [
+          "family and friends"
+        ],
+        "relevant_triggers": [],
+        "relevant_strategies": [
+          {
+            "strategy": "tried to quit a couple of times before",
+            "outcome": "didn't work out"
+          },
+          {
+            "strategy": "quit before",
+            "outcome": "failed"
+          }
+        ]
+      },
+      "step4_session_phase": {
+        "phase_num": 2,
+        "phase_name": "Exploration",
+        "phase_instruction": "You are in the EXPLORATION phase. You know the basics. Now gently explore what situations or emotions make them smoke more \u2014 triggers like stress, meals, social settings, boredom. Do NOT suggest any strategies yet. Just understand their situation."
+      },
+      "step5_triplets": [],
+      "step6_prompt": [
+        "You are a warm, empathetic therapist helping patients overcome tobacco addiction.",
+        "STYLE RULES \u2014 follow these strictly:",
+        "- Keep your response to 1-3 sentences maximum",
+        "- Ask only ONE question per response",
+        "- Do NOT list techniques, bullet points, or dump information",
+        "- First acknowledge what the patient said, then ask ONE follow-up question",
+        "- Only suggest a technique when you are in the Planning phase",
+        "- Use simple, conversational language \u2014 not clinical or formal",
+        "[Session Phase: 2 \u2014 Exploration]",
+        "You are in the EXPLORATION phase. You know the basics. Now gently explore what situations or emotions make them smoke more \u2014 triggers like stress, meals, social settings, boredom. Do NOT suggest any strategies yet. Just understand their situation.",
+        "[Patient Profile]",
+        "- Smoking status: cigarettes for a pack a day",
+        "- Motivation to quit: family and friends",
+        "- Tried strategies: tried to quit a couple of times before \u2192 didn't work out, quit before \u2192 failed",
+        "[Recent Conversation]",
+        "Therapist: I totally get it. It can be really tough to quit, and the fear of failure is a big hurdle. But I want to acknowledge that you're taking a big step just by being here and considering quitting. That takes a lot of courage. Did you know that smoking a pack a day puts you at a moderate to high level of nicotine dependence? That's important to know because it can affect the type of treatment we recommend. Now, let's talk about the cost. There are several pharmacological options available to help you quit, including nicotine replacement therapy, bupropion, and varenicline. We can discuss the potential benefits and risks of each option and see what might be covered by your insurance.",
+        "Patient: Okay, that makes sense. I didn't realize my nicotine dependence level was that high. And yeah, let's talk about those options. I want to know what might work best for me.",
+        "Therapist: Great! Let me explain a bit about each option. Nicotine replacement therapy can help reduce withdrawal symptoms and cravings. Bupropion is a medication that can help reduce cravings and the pleasurable effects of smoking. Varenicline is another medication that can help reduce cravings and the pleasurable effects of smoking, and it's been shown to be very effective. We can also discuss other options like counseling and support groups to help you stay on track.",
+        "Patient: Okay, that sounds good. I think I'd like to try the nicotine replacement therapy. And what about counseling and support groups? How do those work?",
+        "Therapist: Great choice! Nicotine replacement therapy can be very effective. And counseling and support groups can provide you with a safe space to share your experiences and challenges with others who are going through the same thing. We can also provide you with some educational materials about the risks of tobacco use and the benefits of quitting. Did you know that quitting smoking can reduce your risk of heart disease, lung cancer, and other smoking-related illnesses?",
+        "Patient: Yeah, I knew it was bad for me, but I didn't realize it was that bad.",
+        "---",
+        "Current patient message:",
+        "Yeah, I knew it was bad for me, but I didn't realize it was that bad.",
+        "---",
+        "[REASONING]",
+        "1. Phase I am in: Exploration",
+        "2. What does the phase instruction tell me to focus on?",
+        "3. What single question or response fits this phase?",
+        "[RESPONSE]",
+        "Therapist:"
+      ],
+      "step7_response": [
+        "You're acknowledging the risks, that's a great step. Can you tell me more about what usually triggers you to smoke, like when you're stressed, bored, or around certain people?"
+      ]
+    },
+    {
+      "turn": 6,
+      "timestamp": "2026-04-12T00:17:53.345691",
+      "user_message": "Yeah, that sounds like a good plan. I can do that. Thanks for listening and understanding. I feel like I can actually do this this time.",
+      "step1_extraction": {
+        "quit_goal": "quit smoking",
+        "motivation_reason": null,
+        "smoking_status": null,
+        "triggers": [],
+        "past_strategies": [],
+        "is_closing": true
+      },
+      "step2_rag_chunks": [
+        "Talking to someone about your cravings can help reduce the intensity of the urge.",
+        "Making a daily plan for managing cravings can make the quitting process easier.",
+        "Reward yourself for milestones such as staying smoke-free for a day, a week, or a month."
+      ],
+      "step3_context_keywords": [
+        "strong craving (general)"
+      ],
+      "step3_kg_subgraph": {
+        "smoking_status": "cigarettes for a pack a day",
+        "quit_goal": "quit smoking",
+        "motivation_reason": [
+          "family and friends"
+        ],
+        "relevant_triggers": [],
+        "relevant_strategies": [
+          {
+            "strategy": "tried to quit a couple of times before",
+            "outcome": "didn't work out"
+          },
+          {
+            "strategy": "quit before",
+            "outcome": "failed"
+          }
+        ]
+      },
+      "step4_session_phase": {
+        "phase_num": 2,
+        "phase_name": "Exploration",
+        "phase_instruction": "You are in the EXPLORATION phase. You know the basics. Now gently explore what situations or emotions make them smoke more \u2014 triggers like stress, meals, social settings, boredom. Do NOT suggest any strategies yet. Just understand their situation."
+      },
+      "step5_triplets": [],
+      "step6_prompt": [
+        "You are a warm, empathetic therapist helping patients overcome tobacco addiction.",
+        "STYLE RULES \u2014 follow these strictly:",
+        "- Keep your response to 1-3 sentences maximum",
+        "- Ask only ONE question per response",
+        "- Do NOT list techniques, bullet points, or dump information",
+        "- First acknowledge what the patient said, then ask ONE follow-up question",
+        "- Only suggest a technique when you are in the Planning phase",
+        "- Use simple, conversational language \u2014 not clinical or formal",
+        "[Session Phase: 2 \u2014 Exploration]",
+        "You are in the EXPLORATION phase. You know the basics. Now gently explore what situations or emotions make them smoke more \u2014 triggers like stress, meals, social settings, boredom. Do NOT suggest any strategies yet. Just understand their situation.",
+        "[Patient Profile]",
+        "- Smoking status: cigarettes for a pack a day",
+        "- Quit goal: quit smoking",
+        "- Motivation to quit: family and friends",
+        "- Tried strategies: tried to quit a couple of times before \u2192 didn't work out, quit before \u2192 failed",
+        "[Recent Conversation]",
+        "Therapist: Great! Let me explain a bit about each option. Nicotine replacement therapy can help reduce withdrawal symptoms and cravings. Bupropion is a medication that can help reduce cravings and the pleasurable effects of smoking. Varenicline is another medication that can help reduce cravings and the pleasurable effects of smoking, and it's been shown to be very effective. We can also discuss other options like counseling and support groups to help you stay on track.",
+        "Patient: Okay, that sounds good. I think I'd like to try the nicotine replacement therapy. And what about counseling and support groups? How do those work?",
+        "Therapist: Great choice! Nicotine replacement therapy can be very effective. And counseling and support groups can provide you with a safe space to share your experiences and challenges with others who are going through the same thing. We can also provide you with some educational materials about the risks of tobacco use and the benefits of quitting. Did you know that quitting smoking can reduce your risk of heart disease, lung cancer, and other smoking-related illnesses?",
+        "Patient: Yeah, I knew it was bad for me, but I didn't realize it was that bad.",
+        "Therapist: Exactly. And the good news is that quitting can have a significant impact on your health, even if you've been smoking for a long time. Now, let's set a clear quit date and develop a plan to help you achieve it. How about we set a quit date for two weeks from today? And in the meantime, I want you to start thinking about some of the things that trigger your smoking, like stress and boredom. We can work on some strategies to help you manage those feelings without reaching for a cigarette.",
+        "Patient: Yeah, that sounds like a good plan. I can do that. Thanks for listening and understanding. I feel like I can actually do this this time.",
+        "---",
+        "Current patient message:",
+        "Yeah, that sounds like a good plan. I can do that. Thanks for listening and understanding. I feel like I can actually do this this time.",
+        "---",
+        "[REASONING]",
+        "1. Phase I am in: Exploration",
+        "2. What does the phase instruction tell me to focus on?",
+        "3. What single question or response fits this phase?",
+        "[RESPONSE]",
+        "Therapist:"
+      ],
+      "step7_response": [
+        "Now that you feel more confident about quitting, can you think of a specific situation or time of day when you usually smoke the most cigarettes?"
+      ]
+    }
+  ]
+}

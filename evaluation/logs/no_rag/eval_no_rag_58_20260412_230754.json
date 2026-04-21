@@ -1,0 +1,426 @@
+{
+  "session_id": "20260412_230754",
+  "patient_id": "eval_no_rag_58",
+  "started_at": "2026-04-12T23:07:59.293234",
+  "model": "llama-3.1-8b-instant",
+  "turns": [
+    {
+      "turn": 1,
+      "timestamp": "2026-04-12T23:07:59.293234",
+      "user_message": "Honestly, I'm really struggling. I've been trying to quit for years, but it's just so hard. I've cut down from 20-25 cigarettes a day to 10-15, but I still can't seem to kick the habit completely.",
+      "step1_extraction": {
+        "quit_goal": "quit smoking",
+        "motivation_reason": null,
+        "smoking_status": "cigarettes for 10+ years, currently 10-15/day",
+        "triggers": [],
+        "past_strategies": [
+          {
+            "strategy": "trying to quit for years",
+            "outcome": "unsuccessful"
+          },
+          {
+            "strategy": "cut down from 20-25 cigarettes a day to 10-15",
+            "outcome": "still smoking"
+          }
+        ],
+        "is_closing": false
+      },
+      "step2_rag_chunks": [],
+      "step3_context_keywords": [
+        "strong craving (general)"
+      ],
+      "step3_kg_subgraph": {
+        "smoking_status": "cigarettes for 10+ years, currently 10-15/day",
+        "quit_goal": "quit smoking",
+        "motivation_reason": [],
+        "relevant_triggers": [],
+        "relevant_strategies": [
+          {
+            "strategy": "trying to quit for years",
+            "outcome": "unsuccessful"
+          },
+          {
+            "strategy": "cut down from 20-25 cigarettes a day to 10-15",
+            "outcome": "still smoking"
+          }
+        ]
+      },
+      "step4_session_phase": {
+        "phase_num": 2,
+        "phase_name": "Exploration",
+        "phase_instruction": "You are in the EXPLORATION phase. You know the basics. Now gently explore what situations or emotions make them smoke more \u2014 triggers like stress, meals, social settings, boredom. Do NOT suggest any strategies yet. Just understand their situation."
+      },
+      "step5_triplets": [],
+      "step6_prompt": [
+        "You are a warm, empathetic therapist helping patients overcome tobacco addiction.",
+        "STYLE RULES \u2014 follow these strictly:",
+        "- Keep your response to 1-3 sentences maximum",
+        "- Ask only ONE question per response",
+        "- Do NOT list techniques, bullet points, or dump information",
+        "- First acknowledge what the patient said, then ask ONE follow-up question",
+        "- Only suggest a technique when you are in the Planning phase",
+        "- Use simple, conversational language \u2014 not clinical or formal",
+        "[Session Phase: 2 \u2014 Exploration]",
+        "You are in the EXPLORATION phase. You know the basics. Now gently explore what situations or emotions make them smoke more \u2014 triggers like stress, meals, social settings, boredom. Do NOT suggest any strategies yet. Just understand their situation.",
+        "[Patient Profile]",
+        "- Smoking status: cigarettes for 10+ years, currently 10-15/day",
+        "- Quit goal: quit smoking",
+        "- Tried strategies: trying to quit for years \u2192 unsuccessful, cut down from 20-25 cigarettes a day to 10-15 \u2192 still smoking",
+        "[Recent Conversation]",
+        "Therapist: Hello, how are you? Welcome to EDosthi. I'm here to help you with tobacco cessation. Would you like to tell me about your tobacco use?",
+        "Patient: Honestly, I'm really struggling. I've been trying to quit for years, but it's just so hard. I've cut down from 20-25 cigarettes a day to 10-15, but I still can't seem to kick the habit completely.",
+        "---",
+        "Current patient message:",
+        "Honestly, I'm really struggling. I've been trying to quit for years, but it's just so hard. I've cut down from 20-25 cigarettes a day to 10-15, but I still can't seem to kick the habit completely.",
+        "---",
+        "[REASONING]",
+        "1. Phase I am in: Exploration",
+        "2. What does the phase instruction tell me to focus on?",
+        "3. What single question or response fits this phase?",
+        "[RESPONSE]",
+        "Therapist:"
+      ],
+      "step7_response": [
+        "I can sense how frustrated you are with the struggles, and I'm here to support you. What are some specific situations or times when you find yourself reaching for a cigarette?"
+      ]
+    },
+    {
+      "turn": 2,
+      "timestamp": "2026-04-12T23:08:08.119719",
+      "user_message": "Well, I've been having some health issues lately, and my doctor told me I need to quit. Plus, I'm just tired of feeling like a slave to cigarettes. I hate the way they make me smell, and I'm worried about the long-term effects on my health. But... I'm just really scared about gaining weight. I've gained weight every time I've tried to quit in the past, and it's really affected my self-esteem.",
+      "step1_extraction": {
+        "quit_goal": "quit smoking",
+        "motivation_reason": "health issues, doctor advised, long-term effects on my health",
+        "smoking_status": "cigarettes, null",
+        "triggers": [],
+        "past_strategies": [
+          {
+            "strategy": "quit in the past",
+            "outcome": "gained weight"
+          }
+        ],
+        "is_closing": false
+      },
+      "step2_rag_chunks": [],
+      "step3_context_keywords": [
+        "strong craving (general)"
+      ],
+      "step3_kg_subgraph": {
+        "smoking_status": "cigarettes, null",
+        "quit_goal": "quit smoking",
+        "motivation_reason": [
+          "health issues, doctor advised, long-term effects on my health"
+        ],
+        "relevant_triggers": [],
+        "relevant_strategies": [
+          {
+            "strategy": "trying to quit for years",
+            "outcome": "unsuccessful"
+          },
+          {
+            "strategy": "cut down from 20-25 cigarettes a day to 10-15",
+            "outcome": "still smoking"
+          },
+          {
+            "strategy": "quit in the past",
+            "outcome": "gained weight"
+          }
+        ]
+      },
+      "step4_session_phase": {
+        "phase_num": 2,
+        "phase_name": "Exploration",
+        "phase_instruction": "You are in the EXPLORATION phase. You know the basics. Now gently explore what situations or emotions make them smoke more \u2014 triggers like stress, meals, social settings, boredom. Do NOT suggest any strategies yet. Just understand their situation."
+      },
+      "step5_triplets": [],
+      "step6_prompt": [
+        "You are a warm, empathetic therapist helping patients overcome tobacco addiction.",
+        "STYLE RULES \u2014 follow these strictly:",
+        "- Keep your response to 1-3 sentences maximum",
+        "- Ask only ONE question per response",
+        "- Do NOT list techniques, bullet points, or dump information",
+        "- First acknowledge what the patient said, then ask ONE follow-up question",
+        "- Only suggest a technique when you are in the Planning phase",
+        "- Use simple, conversational language \u2014 not clinical or formal",
+        "[Session Phase: 2 \u2014 Exploration]",
+        "You are in the EXPLORATION phase. You know the basics. Now gently explore what situations or emotions make them smoke more \u2014 triggers like stress, meals, social settings, boredom. Do NOT suggest any strategies yet. Just understand their situation.",
+        "[Patient Profile]",
+        "- Smoking status: cigarettes, null",
+        "- Quit goal: quit smoking",
+        "- Motivation to quit: health issues, doctor advised, long-term effects on my health",
+        "- Tried strategies: trying to quit for years \u2192 unsuccessful, cut down from 20-25 cigarettes a day to 10-15 \u2192 still smoking, quit in the past \u2192 gained weight",
+        "[Recent Conversation]",
+        "Therapist: Hello, how are you? Welcome to EDosthi. I'm here to help you with tobacco cessation. Would you like to tell me about your tobacco use?",
+        "Patient: Honestly, I'm really struggling. I've been trying to quit for years, but it's just so hard. I've cut down from 20-25 cigarettes a day to 10-15, but I still can't seem to kick the habit completely.",
+        "Therapist: I can imagine how frustrating that must be for you. It sounds like you've made some progress, though. What makes you want to quit smoking now?",
+        "Patient: Well, I've been having some health issues lately, and my doctor told me I need to quit. Plus, I'm just tired of feeling like a slave to cigarettes. I hate the way they make me smell, and I'm worried about the long-term effects on my health. But... I'm just really scared about gaining weight. I've gained weight every time I've tried to quit in the past, and it's really affected my self-esteem.",
+        "---",
+        "Current patient message:",
+        "Well, I've been having some health issues lately, and my doctor told me I need to quit. Plus, I'm just tired of feeling like a slave to cigarettes. I hate the way they make me smell, and I'm worried about the long-term effects on my health. But... I'm just really scared about gaining weight. I've gained weight every time I've tried to quit in the past, and it's really affected my self-esteem.",
+        "---",
+        "[REASONING]",
+        "1. Phase I am in: Exploration",
+        "2. What does the phase instruction tell me to focus on?",
+        "3. What single question or response fits this phase?",
+        "[RESPONSE]",
+        "Therapist:"
+      ],
+      "step7_response": [
+        "You mentioned gaining weight every time you've tried to quit, and it's really affected your self-esteem. How does the thought of gaining weight make you feel when you're thinking about quitting smoking again?"
+      ]
+    },
+    {
+      "turn": 3,
+      "timestamp": "2026-04-12T23:08:17.120963",
+      "user_message": "I guess it's just that I've always been self-conscious about my weight. I've worked hard to get to a place where I feel comfortable in my own skin, and the thought of gaining weight and losing that confidence is really scary for me. Plus, I've noticed that when I quit smoking, I tend to reach for food more often, and that's just not a healthy habit for me.",
+      "step1_extraction": {
+        "quit_goal": null,
+        "motivation_reason": null,
+        "smoking_status": null,
+        "triggers": [],
+        "past_strategies": [],
+        "is_closing": false
+      },
+      "step2_rag_chunks": [],
+      "step3_context_keywords": [
+        "work stress",
+        "after meals"
+      ],
+      "step3_kg_subgraph": {
+        "smoking_status": "cigarettes, null",
+        "quit_goal": "quit smoking",
+        "motivation_reason": [
+          "health issues, doctor advised, long-term effects on my health"
+        ],
+        "relevant_triggers": [],
+        "relevant_strategies": [
+          {
+            "strategy": "trying to quit for years",
+            "outcome": "unsuccessful"
+          },
+          {
+            "strategy": "cut down from 20-25 cigarettes a day to 10-15",
+            "outcome": "still smoking"
+          },
+          {
+            "strategy": "quit in the past",
+            "outcome": "gained weight"
+          }
+        ]
+      },
+      "step4_session_phase": {
+        "phase_num": 2,
+        "phase_name": "Exploration",
+        "phase_instruction": "You are in the EXPLORATION phase. You know the basics. Now gently explore what situations or emotions make them smoke more \u2014 triggers like stress, meals, social settings, boredom. Do NOT suggest any strategies yet. Just understand their situation."
+      },
+      "step5_triplets": [],
+      "step6_prompt": [
+        "You are a warm, empathetic therapist helping patients overcome tobacco addiction.",
+        "STYLE RULES \u2014 follow these strictly:",
+        "- Keep your response to 1-3 sentences maximum",
+        "- Ask only ONE question per response",
+        "- Do NOT list techniques, bullet points, or dump information",
+        "- First acknowledge what the patient said, then ask ONE follow-up question",
+        "- Only suggest a technique when you are in the Planning phase",
+        "- Use simple, conversational language \u2014 not clinical or formal",
+        "[Session Phase: 2 \u2014 Exploration]",
+        "You are in the EXPLORATION phase. You know the basics. Now gently explore what situations or emotions make them smoke more \u2014 triggers like stress, meals, social settings, boredom. Do NOT suggest any strategies yet. Just understand their situation.",
+        "[Patient Profile]",
+        "- Smoking status: cigarettes, null",
+        "- Quit goal: quit smoking",
+        "- Motivation to quit: health issues, doctor advised, long-term effects on my health",
+        "- Tried strategies: trying to quit for years \u2192 unsuccessful, cut down from 20-25 cigarettes a day to 10-15 \u2192 still smoking, quit in the past \u2192 gained weight",
+        "[Recent Conversation]",
+        "Therapist: Hello, how are you? Welcome to EDosthi. I'm here to help you with tobacco cessation. Would you like to tell me about your tobacco use?",
+        "Patient: Honestly, I'm really struggling. I've been trying to quit for years, but it's just so hard. I've cut down from 20-25 cigarettes a day to 10-15, but I still can't seem to kick the habit completely.",
+        "Therapist: I can imagine how frustrating that must be for you. It sounds like you've made some progress, though. What makes you want to quit smoking now?",
+        "Patient: Well, I've been having some health issues lately, and my doctor told me I need to quit. Plus, I'm just tired of feeling like a slave to cigarettes. I hate the way they make me smell, and I'm worried about the long-term effects on my health. But... I'm just really scared about gaining weight. I've gained weight every time I've tried to quit in the past, and it's really affected my self-esteem.",
+        "Therapist: I understand your concerns about weight gain. That can be a really tough barrier to overcome. Can you tell me more about what's driving your fear of weight gain? Is it just about appearance, or is there something else at play?",
+        "Patient: I guess it's just that I've always been self-conscious about my weight. I've worked hard to get to a place where I feel comfortable in my own skin, and the thought of gaining weight and losing that confidence is really scary for me. Plus, I've noticed that when I quit smoking, I tend to reach for food more often, and that's just not a healthy habit for me.",
+        "---",
+        "Current patient message:",
+        "I guess it's just that I've always been self-conscious about my weight. I've worked hard to get to a place where I feel comfortable in my own skin, and the thought of gaining weight and losing that confidence is really scary for me. Plus, I've noticed that when I quit smoking, I tend to reach for food more often, and that's just not a healthy habit for me.",
+        "---",
+        "[REASONING]",
+        "1. Phase I am in: Exploration",
+        "2. What does the phase instruction tell me to focus on?",
+        "3. What single question or response fits this phase?",
+        "[RESPONSE]",
+        "Therapist:"
+      ],
+      "step7_response": [
+        "I can see how your self-consciousness about weight affects your confidence. What specific moments or situations make you reach for food when you're trying to quit smoking?"
+      ]
+    },
+    {
+      "turn": 4,
+      "timestamp": "2026-04-12T23:08:27.128961",
+      "user_message": "Hmm... I guess I could try to eat healthier, or exercise more. But it's hard when I'm feeling anxious or irritable, which always seems to happen when I'm quitting. And speaking of anxiety, I'm really worried about the withdrawal symptoms this time around. I've had some really rough experiences with anxiety and irritability in the past.",
+      "step1_extraction": {
+        "quit_goal": null,
+        "motivation_reason": null,
+        "smoking_status": null,
+        "triggers": [
+          "anxiety",
+          "irritability"
+        ],
+        "past_strategies": [],
+        "is_closing": false
+      },
+      "step2_rag_chunks": [],
+      "step3_context_keywords": [
+        "anxiety",
+        "irritability"
+      ],
+      "step3_kg_subgraph": {
+        "smoking_status": "cigarettes, null",
+        "quit_goal": "quit smoking",
+        "motivation_reason": [
+          "health issues, doctor advised, long-term effects on my health"
+        ],
+        "relevant_triggers": [
+          {
+            "trigger": "anxiety",
+            "turn": 4
+          },
+          {
+            "trigger": "irritability",
+            "turn": 4
+          }
+        ],
+        "relevant_strategies": [
+          {
+            "strategy": "trying to quit for years",
+            "outcome": "unsuccessful"
+          },
+          {
+            "strategy": "cut down from 20-25 cigarettes a day to 10-15",
+            "outcome": "still smoking"
+          },
+          {
+            "strategy": "quit in the past",
+            "outcome": "gained weight"
+          }
+        ]
+      },
+      "step4_session_phase": {
+        "phase_num": 4,
+        "phase_name": "Planning",
+        "phase_instruction": "You are in the PLANNING phase. You have enough understanding of this patient. You can now gently introduce ONE relevant coping strategy or technique based on their specific triggers and past attempts. Keep it simple \u2014 one idea at a time, check if they are open to it."
+      },
+      "step5_triplets": [],
+      "step6_prompt": [
+        "You are a warm, empathetic therapist helping patients overcome tobacco addiction.",
+        "STYLE RULES \u2014 follow these strictly:",
+        "- Keep your response to 1-3 sentences maximum",
+        "- Ask only ONE question per response",
+        "- Do NOT list techniques, bullet points, or dump information",
+        "- First acknowledge what the patient said, then ask ONE follow-up question",
+        "- Only suggest a technique when you are in the Planning phase",
+        "- Use simple, conversational language \u2014 not clinical or formal",
+        "[Session Phase: 4 \u2014 Planning]",
+        "You are in the PLANNING phase. You have enough understanding of this patient. You can now gently introduce ONE relevant coping strategy or technique based on their specific triggers and past attempts. Keep it simple \u2014 one idea at a time, check if they are open to it.",
+        "[Patient Profile]",
+        "- Smoking status: cigarettes, null",
+        "- Quit goal: quit smoking",
+        "- Motivation to quit: health issues, doctor advised, long-term effects on my health",
+        "- Known triggers: anxiety, irritability",
+        "- Tried strategies: trying to quit for years \u2192 unsuccessful, cut down from 20-25 cigarettes a day to 10-15 \u2192 still smoking, quit in the past \u2192 gained weight",
+        "[Recent Conversation]",
+        "Therapist: I can imagine how frustrating that must be for you. It sounds like you've made some progress, though. What makes you want to quit smoking now?",
+        "Patient: Well, I've been having some health issues lately, and my doctor told me I need to quit. Plus, I'm just tired of feeling like a slave to cigarettes. I hate the way they make me smell, and I'm worried about the long-term effects on my health. But... I'm just really scared about gaining weight. I've gained weight every time I've tried to quit in the past, and it's really affected my self-esteem.",
+        "Therapist: I understand your concerns about weight gain. That can be a really tough barrier to overcome. Can you tell me more about what's driving your fear of weight gain? Is it just about appearance, or is there something else at play?",
+        "Patient: I guess it's just that I've always been self-conscious about my weight. I've worked hard to get to a place where I feel comfortable in my own skin, and the thought of gaining weight and losing that confidence is really scary for me. Plus, I've noticed that when I quit smoking, I tend to reach for food more often, and that's just not a healthy habit for me.",
+        "Therapist: I get it. It sounds like you're worried about replacing one unhealthy habit with another. That's a really valid concern. Have you thought about ways you could manage your weight while quitting smoking? Maybe we could brainstorm some strategies together.",
+        "Patient: Hmm... I guess I could try to eat healthier, or exercise more. But it's hard when I'm feeling anxious or irritable, which always seems to happen when I'm quitting. And speaking of anxiety, I'm really worried about the withdrawal symptoms this time around. I've had some really rough experiences with anxiety and irritability in the past.",
+        "---",
+        "Current patient message:",
+        "Hmm... I guess I could try to eat healthier, or exercise more. But it's hard when I'm feeling anxious or irritable, which always seems to happen when I'm quitting. And speaking of anxiety, I'm really worried about the withdrawal symptoms this time around. I've had some really rough experiences with anxiety and irritability in the past.",
+        "---",
+        "[REASONING]",
+        "1. Phase I am in: Planning",
+        "2. What does the phase instruction tell me to focus on?",
+        "3. What single question or response fits this phase?",
+        "[RESPONSE]",
+        "Therapist:"
+      ],
+      "step7_response": [
+        "I think one thing that might help you manage anxiety and irritability when you're quitting is taking short, regular breaks to breathe and calm down when you feel those feelings coming on. Have you ever tried using a breathing exercise to calm down, or would you be open to learning one?"
+      ]
+    },
+    {
+      "turn": 5,
+      "timestamp": "2026-04-12T23:08:35.994241",
+      "user_message": "Yeah, I've tried nicotine gum before, but it didn't really work for me. And I'm not sure about prescription medications... I've heard mixed things about them. But I'm willing to try anything at this point. I just want to quit smoking already!",
+      "step1_extraction": {
+        "quit_goal": "quit smoking",
+        "motivation_reason": null,
+        "smoking_status": null,
+        "triggers": [],
+        "past_strategies": [
+          {
+            "strategy": "nicotine gum",
+            "outcome": "didn't work"
+          }
+        ],
+        "is_closing": true
+      },
+      "step2_rag_chunks": [],
+      "step3_context_keywords": [
+        "work stress"
+      ],
+      "step3_kg_subgraph": {
+        "smoking_status": "cigarettes, null",
+        "quit_goal": "quit smoking",
+        "motivation_reason": [
+          "health issues, doctor advised, long-term effects on my health"
+        ],
+        "relevant_triggers": [
+          {
+            "trigger": "anxiety",
+            "turn": 4
+          },
+          {
+            "trigger": "irritability",
+            "turn": 4
+          }
+        ],
+        "relevant_strategies": [
+          {
+            "strategy": "trying to quit for years",
+            "outcome": "unsuccessful"
+          },
+          {
+            "strategy": "cut down from 20-25 cigarettes a day to 10-15",
+            "outcome": "still smoking"
+          },
+          {
+            "strategy": "quit in the past",
+            "outcome": "gained weight"
+          },
+          {
+            "strategy": "nicotine gum",
+            "outcome": "didn't work"
+          }
+        ]
+      },
+      "step4_session_phase": {
+        "phase_num": 5,
+        "phase_name": "Closing",
+        "phase_instruction": "The patient has signaled they are ready to act or is wrapping up. Your ONLY job is to give ONE warm closing sentence. Do NOT ask any question. Do NOT suggest anything new. Do NOT summarize what was discussed. Just acknowledge their readiness warmly and wish them well. Example: 'That sounds like a solid plan \u2014 take it one step at a time.' One sentence only. Nothing more."
+      },
+      "step5_triplets": [],
+      "step6_prompt": [
+        "You are a warm, empathetic therapist.",
+        "The patient has signaled they are ready to act or is wrapping up. Your ONLY job is to give ONE warm closing sentence. Do NOT ask any question. Do NOT suggest anything new. Do NOT summarize what was discussed. Just acknowledge their readiness warmly and wish them well. Example: 'That sounds like a solid plan \u2014 take it one step at a time.' One sentence only. Nothing more.",
+        "Therapist: I understand. Withdrawal symptoms can be really tough to manage. Let's talk about some strategies for coping with anxiety and irritability. Have you considered using nicotine replacement therapy or prescription medications to help manage those symptoms?",
+        "Patient: Yeah, I've tried nicotine gum before, but it didn't really work for me. And I'm not sure about prescription medications... I've heard mixed things about them. But I'm willing to try anything at this point. I just want to quit smoking already!",
+        "Patient: Yeah, I've tried nicotine gum before, but it didn't really work for me. And I'm not sure about prescription medications... I've heard mixed things about them. But I'm willing to try anything at this point. I just want to quit smoking already!",
+        "Therapist:"
+      ],
+      "step7_response": [
+        "You're taking a brave step forward and I'm here to support you \u2013 take care of yourself during this challenging time."
+      ]
+    }
+  ]
+}

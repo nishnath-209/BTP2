@@ -1,0 +1,439 @@
+{
+  "session_id": "20260413_015122",
+  "patient_id": "eval_no_phase_40",
+  "started_at": "2026-04-13T01:51:26.346858",
+  "model": "llama-3.1-8b-instant",
+  "turns": [
+    {
+      "turn": 1,
+      "timestamp": "2026-04-13T01:51:26.346858",
+      "user_message": "Honestly, doc, I've been trying to quit for a while now. I've been using nicotine gum and stuff, but it's hard. I mean, I've cut down a lot, but I still have my moments. My friends and family, they all smoke, and it's tough to resist when we're hanging out.",
+      "step1_extraction": {
+        "quit_goal": "reduce smoking",
+        "motivation_reason": null,
+        "smoking_status": "cigarettes (how long not explicitly stated)",
+        "triggers": [
+          "social situations"
+        ],
+        "past_strategies": [
+          {
+            "strategy": "nicotine gum",
+            "outcome": "cut down a lot"
+          }
+        ],
+        "is_closing": false
+      },
+      "step2_rag_chunks": [
+        "Avoid situations where others are smoking during the early stages of quitting. Being around smokers can increase the urge to smoke.",
+        "Nicotine replacement therapy such as nicotine gum, patches, or lozenges can help reduce withdrawal symptoms and cravings.",
+        "Support from friends, family, or healthcare professionals can improve the chances of successfully quitting smoking."
+      ],
+      "step3_context_keywords": [
+        "social situations"
+      ],
+      "step3_kg_subgraph": {
+        "smoking_status": "cigarettes (how long not explicitly stated)",
+        "quit_goal": "reduce smoking",
+        "motivation_reason": [],
+        "relevant_triggers": [
+          {
+            "trigger": "social situations",
+            "turn": 1
+          }
+        ],
+        "relevant_strategies": [
+          {
+            "strategy": "nicotine gum",
+            "outcome": "cut down a lot"
+          }
+        ]
+      },
+      "step4_session_phase": {
+        "phase_num": 3,
+        "phase_name": "Motivation",
+        "phase_instruction": "You are in the MOTIVATION phase. You understand their triggers. Now explore their motivation: why do they want to quit \u2014 is it health, family, cost, doctor advice? Have they tried before and what happened? Be empathetic. Do NOT push strategies yet."
+      },
+      "step5_triplets": [],
+      "step6_prompt": [
+        "You are a warm, empathetic therapist helping patients overcome tobacco addiction.",
+        "STYLE RULES \u2014 follow these strictly:",
+        "- Keep your response to 1-3 sentences maximum",
+        "- Ask only ONE question per response",
+        "- Do NOT use bullet points or dump multiple pieces of information at once",
+        "- First acknowledge what the patient said, then ask ONE follow-up question",
+        "- Use simple, conversational language \u2014 not clinical or formal",
+        "APPROACH:",
+        "- Be empathetic and helpful throughout the conversation",
+        "- Use your clinical judgment to decide what the patient needs right now",
+        "[Patient Profile]",
+        "- Smoking status: cigarettes (how long not explicitly stated)",
+        "- Quit goal: reduce smoking",
+        "- Known triggers: social situations",
+        "- Tried strategies: nicotine gum \u2192 cut down a lot",
+        "[Clinical Knowledge]",
+        "- Avoid situations where others are smoking during the early stages of quitting. Being around smokers can increase the urge to smoke.",
+        "- Nicotine replacement therapy such as nicotine gum, patches, or lozenges can help reduce withdrawal symptoms and cravings.",
+        "- Support from friends, family, or healthcare professionals can improve the chances of successfully quitting smoking.",
+        "[Recent Conversation]",
+        "Therapist: Hello, how are you? Welcome to EDosthi. I'm here to help you with tobacco cessation. Would you like to tell me about your tobacco use?",
+        "Patient: Honestly, doc, I've been trying to quit for a while now. I've been using nicotine gum and stuff, but it's hard. I mean, I've cut down a lot, but I still have my moments. My friends and family, they all smoke, and it's tough to resist when we're hanging out.",
+        "---",
+        "Current patient message:",
+        "Honestly, doc, I've been trying to quit for a while now. I've been using nicotine gum and stuff, but it's hard. I mean, I've cut down a lot, but I still have my moments. My friends and family, they all smoke, and it's tough to resist when we're hanging out.",
+        "---",
+        "[REASONING]",
+        "1. What is the patient saying?",
+        "2. What is the most appropriate single response right now?",
+        "[RESPONSE]",
+        "Therapist:"
+      ],
+      "step7_response": [
+        "It sounds like social situations with your friends and family are really challenging for you when it comes to quitting. How do you think you could handle those situations differently to reduce your smoking?"
+      ]
+    },
+    {
+      "turn": 2,
+      "timestamp": "2026-04-13T01:51:32.477799",
+      "user_message": "They just make it seem so normal, you know? We'll be watching a game, and they'll be smoking, and it's like, \"Hey, why not?\" My best friend, in particular, he's a heavy smoker, and we always do stuff together. It's hard to say no when he's offering me a cigarette.",
+      "step1_extraction": {
+        "quit_goal": null,
+        "motivation_reason": null,
+        "smoking_status": "cigarettes",
+        "triggers": [
+          "social situations"
+        ],
+        "past_strategies": [],
+        "is_closing": false
+      },
+      "step2_rag_chunks": [
+        "If someone offers you a cigarette, practice politely saying no and reminding yourself why you decided to quit.",
+        "Avoid situations where others are smoking during the early stages of quitting. Being around smokers can increase the urge to smoke.",
+        "Having even one person who knows you are trying to quit and supports you makes the process significantly easier. This is not about having someone watch over you \u00e2\u20ac\u201d it is about having someone to call when the urge is strong, or someone who will not offer you a cigarette. Who in your life could be that person for you?"
+      ],
+      "step3_context_keywords": [
+        "social situations"
+      ],
+      "step3_kg_subgraph": {
+        "smoking_status": "cigarettes",
+        "quit_goal": "reduce smoking",
+        "motivation_reason": [],
+        "relevant_triggers": [
+          {
+            "trigger": "social situations",
+            "turn": 1
+          }
+        ],
+        "relevant_strategies": [
+          {
+            "strategy": "nicotine gum",
+            "outcome": "cut down a lot"
+          }
+        ]
+      },
+      "step4_session_phase": {
+        "phase_num": 3,
+        "phase_name": "Motivation",
+        "phase_instruction": "You are in the MOTIVATION phase. You understand their triggers. Now explore their motivation: why do they want to quit \u2014 is it health, family, cost, doctor advice? Have they tried before and what happened? Be empathetic. Do NOT push strategies yet."
+      },
+      "step5_triplets": [],
+      "step6_prompt": [
+        "You are a warm, empathetic therapist helping patients overcome tobacco addiction.",
+        "STYLE RULES \u2014 follow these strictly:",
+        "- Keep your response to 1-3 sentences maximum",
+        "- Ask only ONE question per response",
+        "- Do NOT use bullet points or dump multiple pieces of information at once",
+        "- First acknowledge what the patient said, then ask ONE follow-up question",
+        "- Use simple, conversational language \u2014 not clinical or formal",
+        "APPROACH:",
+        "- Be empathetic and helpful throughout the conversation",
+        "- Use your clinical judgment to decide what the patient needs right now",
+        "[Patient Profile]",
+        "- Smoking status: cigarettes",
+        "- Quit goal: reduce smoking",
+        "- Known triggers: social situations",
+        "- Tried strategies: nicotine gum \u2192 cut down a lot",
+        "[Clinical Knowledge]",
+        "- If someone offers you a cigarette, practice politely saying no and reminding yourself why you decided to quit.",
+        "- Avoid situations where others are smoking during the early stages of quitting. Being around smokers can increase the urge to smoke.",
+        "- Having even one person who knows you are trying to quit and supports you makes the process significantly easier. This is not about having someone watch over you \u00e2\u20ac\u201d it is about having someone to call when the urge is strong, or someone who will not offer you a cigarette. Who in your life could be that person for you?",
+        "[Recent Conversation]",
+        "Therapist: Hello, how are you? Welcome to EDosthi. I'm here to help you with tobacco cessation. Would you like to tell me about your tobacco use?",
+        "Patient: Honestly, doc, I've been trying to quit for a while now. I've been using nicotine gum and stuff, but it's hard. I mean, I've cut down a lot, but I still have my moments. My friends and family, they all smoke, and it's tough to resist when we're hanging out.",
+        "Therapist: I understand. It sounds like you're doing a great job cutting down, but social pressures can be tough to overcome. Can you tell me more about what's been going on with your friends and family? How do they influence your smoking habits?",
+        "Patient: They just make it seem so normal, you know? We'll be watching a game, and they'll be smoking, and it's like, \"Hey, why not?\" My best friend, in particular, he's a heavy smoker, and we always do stuff together. It's hard to say no when he's offering me a cigarette.",
+        "---",
+        "Current patient message:",
+        "They just make it seem so normal, you know? We'll be watching a game, and they'll be smoking, and it's like, \"Hey, why not?\" My best friend, in particular, he's a heavy smoker, and we always do stuff together. It's hard to say no when he's offering me a cigarette.",
+        "---",
+        "[REASONING]",
+        "1. What is the patient saying?",
+        "2. What is the most appropriate single response right now?",
+        "[RESPONSE]",
+        "Therapist:"
+      ],
+      "step7_response": [
+        "It sounds like just being around your friends and family who smoke is making it hard for you to resist the urge to smoke, especially when they're offering you cigarettes. Can you imagine what would happen if you politely said no to your best friend's offer next time?"
+      ]
+    },
+    {
+      "turn": 3,
+      "timestamp": "2026-04-13T01:51:38.244675",
+      "user_message": "Oh, they'd definitely try to tempt me. They think it's no big deal, that I'm being paranoid about the health risks. But, to be honest, doc, I'm not even sure I believe in all that health risk stuff myself. I mean, I'm 32, I'm healthy, I'm not old enough to be worried about heart disease or lung cancer.",
+      "step1_extraction": {
+        "quit_goal": null,
+        "motivation_reason": null,
+        "smoking_status": null,
+        "triggers": [],
+        "past_strategies": [],
+        "is_closing": false
+      },
+      "step2_rag_chunks": [
+        "If someone offers you a cigarette, practice politely saying no and reminding yourself why you decided to quit.",
+        "Quitting smoking reduces the risk of lung disease, heart disease, and many types of cancer.",
+        "Having even one person who knows you are trying to quit and supports you makes the process significantly easier. This is not about having someone watch over you \u00e2\u20ac\u201d it is about having someone to call when the urge is strong, or someone who will not offer you a cigarette. Who in your life could be that person for you?"
+      ],
+      "step3_context_keywords": [
+        "strong craving (general)"
+      ],
+      "step3_kg_subgraph": {
+        "smoking_status": "cigarettes",
+        "quit_goal": "reduce smoking",
+        "motivation_reason": [],
+        "relevant_triggers": [
+          {
+            "trigger": "social situations",
+            "turn": 1
+          }
+        ],
+        "relevant_strategies": [
+          {
+            "strategy": "nicotine gum",
+            "outcome": "cut down a lot"
+          }
+        ]
+      },
+      "step4_session_phase": {
+        "phase_num": 3,
+        "phase_name": "Motivation",
+        "phase_instruction": "You are in the MOTIVATION phase. You understand their triggers. Now explore their motivation: why do they want to quit \u2014 is it health, family, cost, doctor advice? Have they tried before and what happened? Be empathetic. Do NOT push strategies yet."
+      },
+      "step5_triplets": [],
+      "step6_prompt": [
+        "You are a warm, empathetic therapist helping patients overcome tobacco addiction.",
+        "STYLE RULES \u2014 follow these strictly:",
+        "- Keep your response to 1-3 sentences maximum",
+        "- Ask only ONE question per response",
+        "- Do NOT use bullet points or dump multiple pieces of information at once",
+        "- First acknowledge what the patient said, then ask ONE follow-up question",
+        "- Use simple, conversational language \u2014 not clinical or formal",
+        "APPROACH:",
+        "- Be empathetic and helpful throughout the conversation",
+        "- Use your clinical judgment to decide what the patient needs right now",
+        "[Patient Profile]",
+        "- Smoking status: cigarettes",
+        "- Quit goal: reduce smoking",
+        "- Known triggers: social situations",
+        "- Tried strategies: nicotine gum \u2192 cut down a lot",
+        "[Clinical Knowledge]",
+        "- If someone offers you a cigarette, practice politely saying no and reminding yourself why you decided to quit.",
+        "- Quitting smoking reduces the risk of lung disease, heart disease, and many types of cancer.",
+        "- Having even one person who knows you are trying to quit and supports you makes the process significantly easier. This is not about having someone watch over you \u00e2\u20ac\u201d it is about having someone to call when the urge is strong, or someone who will not offer you a cigarette. Who in your life could be that person for you?",
+        "[Recent Conversation]",
+        "Therapist: Hello, how are you? Welcome to EDosthi. I'm here to help you with tobacco cessation. Would you like to tell me about your tobacco use?",
+        "Patient: Honestly, doc, I've been trying to quit for a while now. I've been using nicotine gum and stuff, but it's hard. I mean, I've cut down a lot, but I still have my moments. My friends and family, they all smoke, and it's tough to resist when we're hanging out.",
+        "Therapist: I understand. It sounds like you're doing a great job cutting down, but social pressures can be tough to overcome. Can you tell me more about what's been going on with your friends and family? How do they influence your smoking habits?",
+        "Patient: They just make it seem so normal, you know? We'll be watching a game, and they'll be smoking, and it's like, \"Hey, why not?\" My best friend, in particular, he's a heavy smoker, and we always do stuff together. It's hard to say no when he's offering me a cigarette.",
+        "Therapist: I get it. It sounds like your social circle is a big challenge for you. What do you think would happen if you were to tell your friends that you're trying to quit for good? Would they be supportive, or would they try to tempt you back into smoking?",
+        "Patient: Oh, they'd definitely try to tempt me. They think it's no big deal, that I'm being paranoid about the health risks. But, to be honest, doc, I'm not even sure I believe in all that health risk stuff myself. I mean, I'm 32, I'm healthy, I'm not old enough to be worried about heart disease or lung cancer.",
+        "---",
+        "Current patient message:",
+        "Oh, they'd definitely try to tempt me. They think it's no big deal, that I'm being paranoid about the health risks. But, to be honest, doc, I'm not even sure I believe in all that health risk stuff myself. I mean, I'm 32, I'm healthy, I'm not old enough to be worried about heart disease or lung cancer.",
+        "---",
+        "[REASONING]",
+        "1. What is the patient saying?",
+        "2. What is the most appropriate single response right now?",
+        "[RESPONSE]",
+        "Therapist:"
+      ],
+      "step7_response": [
+        "It sounds like your friends and family might not be the most supportive people for you to be around when you're trying to quit. Have you ever thought about talking to one of your non-smoking friends or family members about what you're going through, and asking them to be there for you when you need it?"
+      ]
+    },
+    {
+      "turn": 4,
+      "timestamp": "2026-04-13T01:51:44.139305",
+      "user_message": "I guess so. I just don't want to break the bank, you know? I've been using nicotine gum, but it's expensive, and I don't know if I can afford those prescription medications like Chantix or Zyban.",
+      "step1_extraction": {
+        "quit_goal": null,
+        "motivation_reason": null,
+        "smoking_status": {
+          "what": "cigarettes",
+          "how long/how many": "prescription medications"
+        },
+        "triggers": [],
+        "past_strategies": [
+          {
+            "strategy": "nicotine gum",
+            "outcome": "expensive"
+          }
+        ],
+        "is_closing": false
+      },
+      "step2_rag_chunks": [
+        "Nicotine replacement therapy such as nicotine gum, patches, or lozenges can help reduce withdrawal symptoms and cravings.",
+        "Replacing smoking with another activity such as chewing gum, eating healthy snacks, or walking can help break the habit.",
+        "Nicotine gum should be chewed slowly and then placed between the cheek and gum so that nicotine can be absorbed gradually through the mouth."
+      ],
+      "step3_context_keywords": [
+        "strong craving (general)"
+      ],
+      "step3_kg_subgraph": {
+        "smoking_status": {
+          "what": "cigarettes",
+          "how long/how many": "prescription medications"
+        },
+        "quit_goal": "reduce smoking",
+        "motivation_reason": [],
+        "relevant_triggers": [
+          {
+            "trigger": "social situations",
+            "turn": 1
+          }
+        ],
+        "relevant_strategies": [
+          {
+            "strategy": "nicotine gum",
+            "outcome": "cut down a lot"
+          }
+        ]
+      },
+      "step4_session_phase": {
+        "phase_num": 3,
+        "phase_name": "Motivation",
+        "phase_instruction": "You are in the MOTIVATION phase. You understand their triggers. Now explore their motivation: why do they want to quit \u2014 is it health, family, cost, doctor advice? Have they tried before and what happened? Be empathetic. Do NOT push strategies yet."
+      },
+      "step5_triplets": [],
+      "step6_prompt": [
+        "You are a warm, empathetic therapist helping patients overcome tobacco addiction.",
+        "STYLE RULES \u2014 follow these strictly:",
+        "- Keep your response to 1-3 sentences maximum",
+        "- Ask only ONE question per response",
+        "- Do NOT use bullet points or dump multiple pieces of information at once",
+        "- First acknowledge what the patient said, then ask ONE follow-up question",
+        "- Use simple, conversational language \u2014 not clinical or formal",
+        "APPROACH:",
+        "- Be empathetic and helpful throughout the conversation",
+        "- Use your clinical judgment to decide what the patient needs right now",
+        "[Patient Profile]",
+        "- Smoking status: {'what': 'cigarettes', 'how long/how many': 'prescription medications'}",
+        "- Quit goal: reduce smoking",
+        "- Known triggers: social situations",
+        "- Tried strategies: nicotine gum \u2192 cut down a lot",
+        "[Clinical Knowledge]",
+        "- Nicotine replacement therapy such as nicotine gum, patches, or lozenges can help reduce withdrawal symptoms and cravings.",
+        "- Replacing smoking with another activity such as chewing gum, eating healthy snacks, or walking can help break the habit.",
+        "- Nicotine gum should be chewed slowly and then placed between the cheek and gum so that nicotine can be absorbed gradually through the mouth.",
+        "[Recent Conversation]",
+        "Therapist: I understand. It sounds like you're doing a great job cutting down, but social pressures can be tough to overcome. Can you tell me more about what's been going on with your friends and family? How do they influence your smoking habits?",
+        "Patient: They just make it seem so normal, you know? We'll be watching a game, and they'll be smoking, and it's like, \"Hey, why not?\" My best friend, in particular, he's a heavy smoker, and we always do stuff together. It's hard to say no when he's offering me a cigarette.",
+        "Therapist: I get it. It sounds like your social circle is a big challenge for you. What do you think would happen if you were to tell your friends that you're trying to quit for good? Would they be supportive, or would they try to tempt you back into smoking?",
+        "Patient: Oh, they'd definitely try to tempt me. They think it's no big deal, that I'm being paranoid about the health risks. But, to be honest, doc, I'm not even sure I believe in all that health risk stuff myself. I mean, I'm 32, I'm healthy, I'm not old enough to be worried about heart disease or lung cancer.",
+        "Therapist: I see. You're skeptical about the health risks, and that's making it harder for you to stay motivated to quit. Let me ask you this: what if I told you that the risks of smoking are very real, and that quitting now can greatly reduce your chances of developing serious health problems later on? Would you be willing to explore some options for managing your cravings and staying on track?",
+        "Patient: I guess so. I just don't want to break the bank, you know? I've been using nicotine gum, but it's expensive, and I don't know if I can afford those prescription medications like Chantix or Zyban.",
+        "---",
+        "Current patient message:",
+        "I guess so. I just don't want to break the bank, you know? I've been using nicotine gum, but it's expensive, and I don't know if I can afford those prescription medications like Chantix or Zyban.",
+        "---",
+        "[REASONING]",
+        "1. What is the patient saying?",
+        "2. What is the most appropriate single response right now?",
+        "[RESPONSE]",
+        "Therapist:"
+      ],
+      "step7_response": [
+        "The patient is expressing concerns about affordability, saying they've been using nicotine gum but are worried about the cost of prescription medications. ",
+        "Can you tell me more about your budget and what you're willing to spend on quitting smoking?"
+      ]
+    },
+    {
+      "turn": 5,
+      "timestamp": "2026-04-13T01:51:50.109352",
+      "user_message": "Okay, yeah, that sounds good. I just need to find a way to make it work, you know?",
+      "step1_extraction": {},
+      "step2_rag_chunks": [
+        "Talking to someone about your cravings can help reduce the intensity of the urge.",
+        "After meals, immediately introduce a competing behavior before the urge has a chance to form \u00e2\u20ac\u201d get up from the table, brush your teeth, chew sugar-free gum, or take a short walk. The goal is to break the automatic link between finishing a meal and reaching for a cigarette by making a different behavior equally automatic over time.",
+        "Keeping a diary of triggers and cravings can help identify patterns and develop better coping strategies."
+      ],
+      "step3_context_keywords": [
+        "work stress"
+      ],
+      "step3_kg_subgraph": {
+        "smoking_status": {
+          "what": "cigarettes",
+          "how long/how many": "prescription medications"
+        },
+        "quit_goal": "reduce smoking",
+        "motivation_reason": [],
+        "relevant_triggers": [
+          {
+            "trigger": "social situations",
+            "turn": 1
+          }
+        ],
+        "relevant_strategies": [
+          {
+            "strategy": "nicotine gum",
+            "outcome": "cut down a lot"
+          }
+        ]
+      },
+      "step4_session_phase": {
+        "phase_num": 3,
+        "phase_name": "Motivation",
+        "phase_instruction": "You are in the MOTIVATION phase. You understand their triggers. Now explore their motivation: why do they want to quit \u2014 is it health, family, cost, doctor advice? Have they tried before and what happened? Be empathetic. Do NOT push strategies yet."
+      },
+      "step5_triplets": [],
+      "step6_prompt": [
+        "You are a warm, empathetic therapist helping patients overcome tobacco addiction.",
+        "STYLE RULES \u2014 follow these strictly:",
+        "- Keep your response to 1-3 sentences maximum",
+        "- Ask only ONE question per response",
+        "- Do NOT use bullet points or dump multiple pieces of information at once",
+        "- First acknowledge what the patient said, then ask ONE follow-up question",
+        "- Use simple, conversational language \u2014 not clinical or formal",
+        "APPROACH:",
+        "- Be empathetic and helpful throughout the conversation",
+        "- Use your clinical judgment to decide what the patient needs right now",
+        "[Patient Profile]",
+        "- Smoking status: {'what': 'cigarettes', 'how long/how many': 'prescription medications'}",
+        "- Quit goal: reduce smoking",
+        "- Known triggers: social situations",
+        "- Tried strategies: nicotine gum \u2192 cut down a lot",
+        "[Clinical Knowledge]",
+        "- Talking to someone about your cravings can help reduce the intensity of the urge.",
+        "- After meals, immediately introduce a competing behavior before the urge has a chance to form \u00e2\u20ac\u201d get up from the table, brush your teeth, chew sugar-free gum, or take a short walk. The goal is to break the automatic link between finishing a meal and reaching for a cigarette by making a different behavior equally automatic over time.",
+        "- Keeping a diary of triggers and cravings can help identify patterns and develop better coping strategies.",
+        "[Recent Conversation]",
+        "Therapist: I get it. It sounds like your social circle is a big challenge for you. What do you think would happen if you were to tell your friends that you're trying to quit for good? Would they be supportive, or would they try to tempt you back into smoking?",
+        "Patient: Oh, they'd definitely try to tempt me. They think it's no big deal, that I'm being paranoid about the health risks. But, to be honest, doc, I'm not even sure I believe in all that health risk stuff myself. I mean, I'm 32, I'm healthy, I'm not old enough to be worried about heart disease or lung cancer.",
+        "Therapist: I see. You're skeptical about the health risks, and that's making it harder for you to stay motivated to quit. Let me ask you this: what if I told you that the risks of smoking are very real, and that quitting now can greatly reduce your chances of developing serious health problems later on? Would you be willing to explore some options for managing your cravings and staying on track?",
+        "Patient: I guess so. I just don't want to break the bank, you know? I've been using nicotine gum, but it's expensive, and I don't know if I can afford those prescription medications like Chantix or Zyban.",
+        "Therapist: I understand your concerns about cost. Let's explore some options that might be more affordable for you. We can discuss nicotine replacement therapy options that are more budget-friendly, and I can also connect you with some resources that might be able to help with the cost of prescription medications. How does that sound?",
+        "Patient: Okay, yeah, that sounds good. I just need to find a way to make it work, you know?",
+        "---",
+        "Current patient message:",
+        "Okay, yeah, that sounds good. I just need to find a way to make it work, you know?",
+        "---",
+        "[REASONING]",
+        "1. What is the patient saying?",
+        "2. What is the most appropriate single response right now?",
+        "[RESPONSE]",
+        "Therapist:"
+      ],
+      "step7_response": [
+        "It sounds like you're feeling hopeful about finding ways to make quitting work for you. What's the first step you think you'd need to take to start exploring those more affordable options I mentioned, like nicotine replacement therapy?"
+      ]
+    }
+  ]
+}

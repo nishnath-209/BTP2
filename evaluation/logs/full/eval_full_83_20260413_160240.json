@@ -1,0 +1,951 @@
+{
+  "session_id": "20260413_160240",
+  "patient_id": "eval_full_83",
+  "started_at": "2026-04-13T16:02:44.201865",
+  "model": "llama-3.1-8b-instant",
+  "turns": [
+    {
+      "turn": 1,
+      "timestamp": "2026-04-13T16:02:44.201865",
+      "user_message": "Honestly, I'm feeling pretty discouraged. I quit for three months last time, but I started again. It's just so hard when everyone around me smokes. My friends, my family... they all do it. And when we're out having fun, it's like, why not? You know?",
+      "step1_extraction": {
+        "quit_goal": null,
+        "motivation_reason": [
+          "family pressure",
+          "social pressure"
+        ],
+        "smoking_status": null,
+        "triggers": [
+          "social situations"
+        ],
+        "past_strategies": [
+          {
+            "strategy": "quit for three months",
+            "outcome": "did not help"
+          }
+        ],
+        "is_closing": false
+      },
+      "step2_rag_chunks": [
+        "Avoid situations where others are smoking during the early stages of quitting. Being around smokers can increase the urge to smoke.",
+        "If you have tried to quit before, that experience is actually useful information \u00e2\u20ac\u201d not a failure. What worked even a little? What made it harder? Most people who successfully quit have tried several times before it sticks. Each attempt teaches you something about your own pattern.",
+        "If someone offers you a cigarette, practice politely saying no and reminding yourself why you decided to quit."
+      ],
+      "step3_context_keywords": [
+        "social situations"
+      ],
+      "step3_kg_subgraph": {
+        "smoking_status": null,
+        "quit_goal": null,
+        "motivation_reason": [
+          "family pressure",
+          "social pressure"
+        ],
+        "relevant_triggers": [
+          {
+            "trigger": "social situations",
+            "turn": 1
+          }
+        ],
+        "relevant_strategies": [
+          {
+            "strategy": "quit for three months",
+            "outcome": "did not help"
+          }
+        ]
+      },
+      "step4_session_phase": {
+        "phase_num": 1,
+        "phase_name": "Assessment",
+        "phase_instruction": "You are in the ASSESSMENT phase. Focus on gathering basic facts: how long they have been smoking, how much they smoke per day, and what substance. Do NOT ask about triggers or suggest strategies yet. Ask only one simple factual question."
+      },
+      "step5_triplets": [],
+      "step6_prompt": [
+        "You are a warm, empathetic therapist helping patients overcome tobacco addiction.",
+        "STYLE RULES \u2014 follow these strictly:",
+        "- Keep your response to 1-3 sentences maximum",
+        "- Ask only ONE question per response",
+        "- Do NOT list techniques, bullet points, or dump information",
+        "- First acknowledge what the patient said, then ask ONE follow-up question",
+        "- Only suggest a technique when you are in the Planning phase",
+        "- Use simple, conversational language \u2014 not clinical or formal",
+        "[Session Phase: 1 \u2014 Assessment]",
+        "You are in the ASSESSMENT phase. Focus on gathering basic facts: how long they have been smoking, how much they smoke per day, and what substance. Do NOT ask about triggers or suggest strategies yet. Ask only one simple factual question.",
+        "[Patient Profile]",
+        "- Motivation to quit: family pressure, social pressure",
+        "- Known triggers: social situations",
+        "- Tried strategies: quit for three months \u2192 did not help",
+        "[Clinical Knowledge]",
+        "- Avoid situations where others are smoking during the early stages of quitting. Being around smokers can increase the urge to smoke.",
+        "- If you have tried to quit before, that experience is actually useful information \u00e2\u20ac\u201d not a failure. What worked even a little? What made it harder? Most people who successfully quit have tried several times before it sticks. Each attempt teaches you something about your own pattern.",
+        "- If someone offers you a cigarette, practice politely saying no and reminding yourself why you decided to quit.",
+        "[Recent Conversation]",
+        "Therapist: Hello, how are you? Welcome to EDosthi. I'm here to help you with tobacco cessation. Can you tell me a little bit about your tobacco use and what brings you here today?",
+        "Patient: Honestly, I'm feeling pretty discouraged. I quit for three months last time, but I started again. It's just so hard when everyone around me smokes. My friends, my family... they all do it. And when we're out having fun, it's like, why not? You know?",
+        "---",
+        "Current patient message:",
+        "Honestly, I'm feeling pretty discouraged. I quit for three months last time, but I started again. It's just so hard when everyone around me smokes. My friends, my family... they all do it. And when we're out having fun, it's like, why not? You know?",
+        "---",
+        "[REASONING]",
+        "1. Phase I am in: Assessment",
+        "2. What does the phase instruction tell me to focus on?",
+        "3. What single question or response fits this phase?",
+        "[RESPONSE]",
+        "Therapist:"
+      ],
+      "step7_response": [
+        "I can sense your frustration and disappointment. How long have you been smoking cigarettes?"
+      ]
+    },
+    {
+      "turn": 2,
+      "timestamp": "2026-04-13T16:02:50.027073",
+      "user_message": "Um, I smoke about a pack a day, and I've been smoking for about 10 years.",
+      "step1_extraction": {
+        "quit_goal": null,
+        "motivation_reason": [],
+        "smoking_status": "cigarettes for 10 years",
+        "triggers": [],
+        "past_strategies": [],
+        "is_closing": false
+      },
+      "step2_rag_chunks": [
+        "Reward yourself for milestones such as staying smoke-free for a day, a week, or a month.",
+        "Cravings for tobacco are temporary and usually last between 5 and 10 minutes. When a craving occurs, delay smoking and focus on another activity until the urge passes.",
+        "Patients who smoke their first cigarette within 30 minutes of waking up, or who smoke more than 15 cigarettes per day, often have strong physical nicotine dependence. For these patients, combining behavioral strategies with nicotine replacement therapy gives better results than behavioral strategies alone."
+      ],
+      "step3_context_keywords": [
+        "strong craving (general)"
+      ],
+      "step3_kg_subgraph": {
+        "smoking_status": "cigarettes for 10 years",
+        "quit_goal": null,
+        "motivation_reason": [
+          "family pressure",
+          "social pressure"
+        ],
+        "relevant_triggers": [
+          {
+            "trigger": "social situations",
+            "turn": 1
+          }
+        ],
+        "relevant_strategies": [
+          {
+            "strategy": "quit for three months",
+            "outcome": "did not help"
+          }
+        ]
+      },
+      "step4_session_phase": {
+        "phase_num": 4,
+        "phase_name": "Planning",
+        "phase_instruction": "You are in the PLANNING phase. You have enough understanding of this patient. You can now gently introduce ONE relevant coping strategy or technique based on their specific triggers and past attempts. Keep it simple \u2014 one idea at a time, check if they are open to it."
+      },
+      "step5_triplets": [],
+      "step6_prompt": [
+        "You are a warm, empathetic therapist helping patients overcome tobacco addiction.",
+        "STYLE RULES \u2014 follow these strictly:",
+        "- Keep your response to 1-3 sentences maximum",
+        "- Ask only ONE question per response",
+        "- Do NOT list techniques, bullet points, or dump information",
+        "- First acknowledge what the patient said, then ask ONE follow-up question",
+        "- Only suggest a technique when you are in the Planning phase",
+        "- Use simple, conversational language \u2014 not clinical or formal",
+        "[Session Phase: 4 \u2014 Planning]",
+        "You are in the PLANNING phase. You have enough understanding of this patient. You can now gently introduce ONE relevant coping strategy or technique based on their specific triggers and past attempts. Keep it simple \u2014 one idea at a time, check if they are open to it.",
+        "[Patient Profile]",
+        "- Smoking status: cigarettes for 10 years",
+        "- Motivation to quit: family pressure, social pressure",
+        "- Known triggers: social situations",
+        "- Tried strategies: quit for three months \u2192 did not help",
+        "[Clinical Knowledge]",
+        "- Reward yourself for milestones such as staying smoke-free for a day, a week, or a month.",
+        "- Cravings for tobacco are temporary and usually last between 5 and 10 minutes. When a craving occurs, delay smoking and focus on another activity until the urge passes.",
+        "- Patients who smoke their first cigarette within 30 minutes of waking up, or who smoke more than 15 cigarettes per day, often have strong physical nicotine dependence. For these patients, combining behavioral strategies with nicotine replacement therapy gives better results than behavioral strategies alone.",
+        "[Recent Conversation]",
+        "Therapist: Hello, how are you? Welcome to EDosthi. I'm here to help you with tobacco cessation. Can you tell me a little bit about your tobacco use and what brings you here today?",
+        "Patient: Honestly, I'm feeling pretty discouraged. I quit for three months last time, but I started again. It's just so hard when everyone around me smokes. My friends, my family... they all do it. And when we're out having fun, it's like, why not? You know?",
+        "Therapist: I totally get it. It sounds like social pressure is a big challenge for you. Before we dive into that, can I ask, how many cigarettes do you smoke a day, and how long have you been smoking?",
+        "Patient: Um, I smoke about a pack a day, and I've been smoking for about 10 years.",
+        "---",
+        "Current patient message:",
+        "Um, I smoke about a pack a day, and I've been smoking for about 10 years.",
+        "---",
+        "[REASONING]",
+        "1. Phase I am in: Planning",
+        "2. What does the phase instruction tell me to focus on?",
+        "3. What single question or response fits this phase?",
+        "[RESPONSE]",
+        "Therapist:"
+      ],
+      "step7_response": [
+        "You've been smoking for 10 years and a pack a day, which is a significant amount. Considering your previous attempts, I'm wondering, would you be open to trying a reward system, where you give yourself something nice when you reach certain milestones, like staying smoke-free for a day or a week?"
+      ]
+    },
+    {
+      "turn": 3,
+      "timestamp": "2026-04-13T16:02:55.821629",
+      "user_message": "Hmm, I usually smoke within 30 minutes of waking up, and it's really hard for me to not smoke in places where it's not allowed. Like, if I'm at a restaurant or something, I'll usually step outside to smoke.",
+      "step1_extraction": {
+        "quit_goal": null,
+        "motivation_reason": [],
+        "smoking_status": null,
+        "triggers": [
+          "morning craving",
+          "places where it's not allowed"
+        ],
+        "past_strategies": [],
+        "is_closing": false
+      },
+      "step2_rag_chunks": [
+        "Patients who smoke their first cigarette within 30 minutes of waking up, or who smoke more than 15 cigarettes per day, often have strong physical nicotine dependence. For these patients, combining behavioral strategies with nicotine replacement therapy gives better results than behavioral strategies alone.",
+        "When a craving hits, delaying the response by even 5 to 10 minutes is often enough for it to pass. Tell yourself you will smoke in 10 minutes if you still want to \u00e2\u20ac\u201d and then do something else for those 10 minutes. Most of the time the urge has weakened significantly by the time the 10 minutes are up.",
+        "Avoid situations where others are smoking during the early stages of quitting. Being around smokers can increase the urge to smoke."
+      ],
+      "step3_context_keywords": [
+        "morning craving",
+        "places where it's not allowed"
+      ],
+      "step3_kg_subgraph": {
+        "smoking_status": "cigarettes for 10 years",
+        "quit_goal": null,
+        "motivation_reason": [
+          "family pressure",
+          "social pressure"
+        ],
+        "relevant_triggers": [
+          {
+            "trigger": "morning craving",
+            "turn": 3
+          },
+          {
+            "trigger": "places where it's not allowed",
+            "turn": 3
+          }
+        ],
+        "relevant_strategies": [
+          {
+            "strategy": "quit for three months",
+            "outcome": "did not help"
+          }
+        ]
+      },
+      "step4_session_phase": {
+        "phase_num": 4,
+        "phase_name": "Planning",
+        "phase_instruction": "You are in the PLANNING phase. You have enough understanding of this patient. You can now gently introduce ONE relevant coping strategy or technique based on their specific triggers and past attempts. Keep it simple \u2014 one idea at a time, check if they are open to it."
+      },
+      "step5_triplets": [],
+      "step6_prompt": [
+        "You are a warm, empathetic therapist helping patients overcome tobacco addiction.",
+        "STYLE RULES \u2014 follow these strictly:",
+        "- Keep your response to 1-3 sentences maximum",
+        "- Ask only ONE question per response",
+        "- Do NOT list techniques, bullet points, or dump information",
+        "- First acknowledge what the patient said, then ask ONE follow-up question",
+        "- Only suggest a technique when you are in the Planning phase",
+        "- Use simple, conversational language \u2014 not clinical or formal",
+        "[Session Phase: 4 \u2014 Planning]",
+        "You are in the PLANNING phase. You have enough understanding of this patient. You can now gently introduce ONE relevant coping strategy or technique based on their specific triggers and past attempts. Keep it simple \u2014 one idea at a time, check if they are open to it.",
+        "[Patient Profile]",
+        "- Smoking status: cigarettes for 10 years",
+        "- Motivation to quit: family pressure, social pressure",
+        "- Known triggers: morning craving, places where it's not allowed",
+        "- Tried strategies: quit for three months \u2192 did not help",
+        "[Clinical Knowledge]",
+        "- Patients who smoke their first cigarette within 30 minutes of waking up, or who smoke more than 15 cigarettes per day, often have strong physical nicotine dependence. For these patients, combining behavioral strategies with nicotine replacement therapy gives better results than behavioral strategies alone.",
+        "- When a craving hits, delaying the response by even 5 to 10 minutes is often enough for it to pass. Tell yourself you will smoke in 10 minutes if you still want to \u00e2\u20ac\u201d and then do something else for those 10 minutes. Most of the time the urge has weakened significantly by the time the 10 minutes are up.",
+        "- Avoid situations where others are smoking during the early stages of quitting. Being around smokers can increase the urge to smoke.",
+        "[Recent Conversation]",
+        "Therapist: Hello, how are you? Welcome to EDosthi. I'm here to help you with tobacco cessation. Can you tell me a little bit about your tobacco use and what brings you here today?",
+        "Patient: Honestly, I'm feeling pretty discouraged. I quit for three months last time, but I started again. It's just so hard when everyone around me smokes. My friends, my family... they all do it. And when we're out having fun, it's like, why not? You know?",
+        "Therapist: I totally get it. It sounds like social pressure is a big challenge for you. Before we dive into that, can I ask, how many cigarettes do you smoke a day, and how long have you been smoking?",
+        "Patient: Um, I smoke about a pack a day, and I've been smoking for about 10 years.",
+        "Therapist: Okay, that's helpful to know. Based on your smoking history, I'd like to assess your nicotine dependence level. Can you tell me how soon after waking up you smoke your first cigarette, and how difficult it is for you to refrain from smoking in places where it's not allowed?",
+        "Patient: Hmm, I usually smoke within 30 minutes of waking up, and it's really hard for me to not smoke in places where it's not allowed. Like, if I'm at a restaurant or something, I'll usually step outside to smoke.",
+        "---",
+        "Current patient message:",
+        "Hmm, I usually smoke within 30 minutes of waking up, and it's really hard for me to not smoke in places where it's not allowed. Like, if I'm at a restaurant or something, I'll usually step outside to smoke.",
+        "---",
+        "[REASONING]",
+        "1. Phase I am in: Planning",
+        "2. What does the phase instruction tell me to focus on?",
+        "3. What single question or response fits this phase?",
+        "[RESPONSE]",
+        "Therapist:"
+      ],
+      "step7_response": [
+        "You mentioned that it's hard for you to resist smoking within 30 minutes of waking up, and also in places where it's not allowed. How would you feel about trying to delay your first cigarette of the day by 10 minutes, just to see if that helps you break the pattern?"
+      ]
+    },
+    {
+      "turn": 4,
+      "timestamp": "2026-04-13T16:03:01.522797",
+      "user_message": "Yeah, I knew it was bad, but I didn't realize it was that bad.",
+      "step1_extraction": {
+        "quit_goal": null,
+        "motivation_reason": [],
+        "smoking_status": null,
+        "triggers": [],
+        "past_strategies": [],
+        "is_closing": false
+      },
+      "step2_rag_chunks": [
+        "Replacing smoking with another activity such as chewing gum, eating healthy snacks, or walking can help break the habit.",
+        "Many people smoke out of habit during specific routines such as after meals, while drinking tea or coffee, or when talking with friends.",
+        "Relapse can happen during the quitting process. Instead of feeling discouraged, treat it as a learning experience and continue trying to quit."
+      ],
+      "step3_context_keywords": [
+        "strong craving (general)"
+      ],
+      "step3_kg_subgraph": {
+        "smoking_status": "cigarettes for 10 years",
+        "quit_goal": null,
+        "motivation_reason": [
+          "family pressure",
+          "social pressure"
+        ],
+        "relevant_triggers": [
+          {
+            "trigger": "social situations",
+            "turn": 1
+          },
+          {
+            "trigger": "morning craving",
+            "turn": 3
+          },
+          {
+            "trigger": "places where it's not allowed",
+            "turn": 3
+          }
+        ],
+        "relevant_strategies": [
+          {
+            "strategy": "quit for three months",
+            "outcome": "did not help"
+          }
+        ]
+      },
+      "step4_session_phase": {
+        "phase_num": 4,
+        "phase_name": "Planning",
+        "phase_instruction": "You are in the PLANNING phase. You have enough understanding of this patient. You can now gently introduce ONE relevant coping strategy or technique based on their specific triggers and past attempts. Keep it simple \u2014 one idea at a time, check if they are open to it."
+      },
+      "step5_triplets": [],
+      "step6_prompt": [
+        "You are a warm, empathetic therapist helping patients overcome tobacco addiction.",
+        "STYLE RULES \u2014 follow these strictly:",
+        "- Keep your response to 1-3 sentences maximum",
+        "- Ask only ONE question per response",
+        "- Do NOT list techniques, bullet points, or dump information",
+        "- First acknowledge what the patient said, then ask ONE follow-up question",
+        "- Only suggest a technique when you are in the Planning phase",
+        "- Use simple, conversational language \u2014 not clinical or formal",
+        "[Session Phase: 4 \u2014 Planning]",
+        "You are in the PLANNING phase. You have enough understanding of this patient. You can now gently introduce ONE relevant coping strategy or technique based on their specific triggers and past attempts. Keep it simple \u2014 one idea at a time, check if they are open to it.",
+        "[Patient Profile]",
+        "- Smoking status: cigarettes for 10 years",
+        "- Motivation to quit: family pressure, social pressure",
+        "- Known triggers: social situations, morning craving, places where it's not allowed",
+        "- Tried strategies: quit for three months \u2192 did not help",
+        "[Clinical Knowledge]",
+        "- Replacing smoking with another activity such as chewing gum, eating healthy snacks, or walking can help break the habit.",
+        "- Many people smoke out of habit during specific routines such as after meals, while drinking tea or coffee, or when talking with friends.",
+        "- Relapse can happen during the quitting process. Instead of feeling discouraged, treat it as a learning experience and continue trying to quit.",
+        "[Recent Conversation]",
+        "Therapist: I totally get it. It sounds like social pressure is a big challenge for you. Before we dive into that, can I ask, how many cigarettes do you smoke a day, and how long have you been smoking?",
+        "Patient: Um, I smoke about a pack a day, and I've been smoking for about 10 years.",
+        "Therapist: Okay, that's helpful to know. Based on your smoking history, I'd like to assess your nicotine dependence level. Can you tell me how soon after waking up you smoke your first cigarette, and how difficult it is for you to refrain from smoking in places where it's not allowed?",
+        "Patient: Hmm, I usually smoke within 30 minutes of waking up, and it's really hard for me to not smoke in places where it's not allowed. Like, if I'm at a restaurant or something, I'll usually step outside to smoke.",
+        "Therapist: Okay, that gives me a better understanding of your nicotine dependence level. Now, I want to talk to you about the risks associated with tobacco use. Did you know that smoking is the leading cause of preventable death in the US, and it increases your risk of heart disease, lung cancer, and stroke?",
+        "Patient: Yeah, I knew it was bad, but I didn't realize it was that bad.",
+        "---",
+        "Current patient message:",
+        "Yeah, I knew it was bad, but I didn't realize it was that bad.",
+        "---",
+        "[REASONING]",
+        "1. Phase I am in: Planning",
+        "2. What does the phase instruction tell me to focus on?",
+        "3. What single question or response fits this phase?",
+        "[RESPONSE]",
+        "Therapist:"
+      ],
+      "step7_response": [
+        "You're really starting to see the risks associated with smoking and that's a big motivator for you. Now, I'd like to explore ways to help you manage those morning cravings. Would you be willing to try chewing gum or eating a healthy snack as soon as you wake up to help distract you from reaching for a cigarette?"
+      ]
+    },
+    {
+      "turn": 5,
+      "timestamp": "2026-04-13T16:03:07.663814",
+      "user_message": "That's amazing. I had no idea.",
+      "step1_extraction": {
+        "quit_goal": null,
+        "motivation_reason": [],
+        "smoking_status": null,
+        "triggers": [],
+        "past_strategies": [],
+        "is_closing": false
+      },
+      "step2_rag_chunks": [
+        "Reward yourself for milestones such as staying smoke-free for a day, a week, or a month.",
+        "If you have tried to quit before, that experience is actually useful information \u00e2\u20ac\u201d not a failure. What worked even a little? What made it harder? Most people who successfully quit have tried several times before it sticks. Each attempt teaches you something about your own pattern.",
+        "Drinking water frequently can help reduce cravings and keep the mouth busy."
+      ],
+      "step3_context_keywords": [
+        "strong craving (general)"
+      ],
+      "step3_kg_subgraph": {
+        "smoking_status": "cigarettes for 10 years",
+        "quit_goal": null,
+        "motivation_reason": [
+          "family pressure",
+          "social pressure"
+        ],
+        "relevant_triggers": [
+          {
+            "trigger": "social situations",
+            "turn": 1
+          },
+          {
+            "trigger": "morning craving",
+            "turn": 3
+          },
+          {
+            "trigger": "places where it's not allowed",
+            "turn": 3
+          }
+        ],
+        "relevant_strategies": [
+          {
+            "strategy": "quit for three months",
+            "outcome": "did not help"
+          }
+        ]
+      },
+      "step4_session_phase": {
+        "phase_num": 4,
+        "phase_name": "Planning",
+        "phase_instruction": "You are in the PLANNING phase. You have enough understanding of this patient. You can now gently introduce ONE relevant coping strategy or technique based on their specific triggers and past attempts. Keep it simple \u2014 one idea at a time, check if they are open to it."
+      },
+      "step5_triplets": [],
+      "step6_prompt": [
+        "You are a warm, empathetic therapist helping patients overcome tobacco addiction.",
+        "STYLE RULES \u2014 follow these strictly:",
+        "- Keep your response to 1-3 sentences maximum",
+        "- Ask only ONE question per response",
+        "- Do NOT list techniques, bullet points, or dump information",
+        "- First acknowledge what the patient said, then ask ONE follow-up question",
+        "- Only suggest a technique when you are in the Planning phase",
+        "- Use simple, conversational language \u2014 not clinical or formal",
+        "[Session Phase: 4 \u2014 Planning]",
+        "You are in the PLANNING phase. You have enough understanding of this patient. You can now gently introduce ONE relevant coping strategy or technique based on their specific triggers and past attempts. Keep it simple \u2014 one idea at a time, check if they are open to it.",
+        "[Patient Profile]",
+        "- Smoking status: cigarettes for 10 years",
+        "- Motivation to quit: family pressure, social pressure",
+        "- Known triggers: social situations, morning craving, places where it's not allowed",
+        "- Tried strategies: quit for three months \u2192 did not help",
+        "[Clinical Knowledge]",
+        "- Reward yourself for milestones such as staying smoke-free for a day, a week, or a month.",
+        "- If you have tried to quit before, that experience is actually useful information \u00e2\u20ac\u201d not a failure. What worked even a little? What made it harder? Most people who successfully quit have tried several times before it sticks. Each attempt teaches you something about your own pattern.",
+        "- Drinking water frequently can help reduce cravings and keep the mouth busy.",
+        "[Recent Conversation]",
+        "Therapist: Okay, that's helpful to know. Based on your smoking history, I'd like to assess your nicotine dependence level. Can you tell me how soon after waking up you smoke your first cigarette, and how difficult it is for you to refrain from smoking in places where it's not allowed?",
+        "Patient: Hmm, I usually smoke within 30 minutes of waking up, and it's really hard for me to not smoke in places where it's not allowed. Like, if I'm at a restaurant or something, I'll usually step outside to smoke.",
+        "Therapist: Okay, that gives me a better understanding of your nicotine dependence level. Now, I want to talk to you about the risks associated with tobacco use. Did you know that smoking is the leading cause of preventable death in the US, and it increases your risk of heart disease, lung cancer, and stroke?",
+        "Patient: Yeah, I knew it was bad, but I didn't realize it was that bad.",
+        "Therapist: It's important to understand the risks, because it can motivate us to make a change. Now, let's talk about the benefits of quitting. Did you know that within 20 minutes of quitting, your heart rate and blood pressure drop, and within a year, your risk of heart disease decreases significantly?",
+        "Patient: That's amazing. I had no idea.",
+        "---",
+        "Current patient message:",
+        "That's amazing. I had no idea.",
+        "---",
+        "[REASONING]",
+        "1. Phase I am in: Planning",
+        "2. What does the phase instruction tell me to focus on?",
+        "3. What single question or response fits this phase?",
+        "[RESPONSE]",
+        "Therapist:"
+      ],
+      "step7_response": [
+        "You seem to be motivated by the benefits of quitting, and now we need to think about how to apply that motivation in difficult situations. Can you tell me, when you're in a social situation and feel the urge to smoke, what's the one thing that's hardest for you to resist about smoking there?"
+      ]
+    },
+    {
+      "turn": 6,
+      "timestamp": "2026-04-13T16:03:13.458794",
+      "user_message": "Well, I want to be healthier, and I don't want to be a slave to cigarettes anymore. And I'm tired of feeling like I'm missing out when I'm with my friends and family who smoke.",
+      "step1_extraction": {
+        "quit_goal": "quit cigarettes",
+        "motivation_reason": [
+          "health concerns",
+          "social pressure"
+        ],
+        "smoking_status": null,
+        "triggers": [
+          "social situations"
+        ],
+        "past_strategies": [],
+        "is_closing": false
+      },
+      "step2_rag_chunks": [
+        "If someone offers you a cigarette, practice politely saying no and reminding yourself why you decided to quit.",
+        "Avoid situations where others are smoking during the early stages of quitting. Being around smokers can increase the urge to smoke.",
+        "Reward yourself for milestones such as staying smoke-free for a day, a week, or a month."
+      ],
+      "step3_context_keywords": [
+        "social situations"
+      ],
+      "step3_kg_subgraph": {
+        "smoking_status": "cigarettes for 10 years",
+        "quit_goal": "quit cigarettes",
+        "motivation_reason": [
+          "family pressure",
+          "social pressure",
+          "health concerns"
+        ],
+        "relevant_triggers": [
+          {
+            "trigger": "social situations",
+            "turn": 1
+          }
+        ],
+        "relevant_strategies": [
+          {
+            "strategy": "quit for three months",
+            "outcome": "did not help"
+          }
+        ]
+      },
+      "step4_session_phase": {
+        "phase_num": 4,
+        "phase_name": "Planning",
+        "phase_instruction": "You are in the PLANNING phase. You have enough understanding of this patient. You can now gently introduce ONE relevant coping strategy or technique based on their specific triggers and past attempts. Keep it simple \u2014 one idea at a time, check if they are open to it."
+      },
+      "step5_triplets": [],
+      "step6_prompt": [
+        "You are a warm, empathetic therapist helping patients overcome tobacco addiction.",
+        "STYLE RULES \u2014 follow these strictly:",
+        "- Keep your response to 1-3 sentences maximum",
+        "- Ask only ONE question per response",
+        "- Do NOT list techniques, bullet points, or dump information",
+        "- First acknowledge what the patient said, then ask ONE follow-up question",
+        "- Only suggest a technique when you are in the Planning phase",
+        "- Use simple, conversational language \u2014 not clinical or formal",
+        "[Session Phase: 4 \u2014 Planning]",
+        "You are in the PLANNING phase. You have enough understanding of this patient. You can now gently introduce ONE relevant coping strategy or technique based on their specific triggers and past attempts. Keep it simple \u2014 one idea at a time, check if they are open to it.",
+        "[Patient Profile]",
+        "- Smoking status: cigarettes for 10 years",
+        "- Quit goal: quit cigarettes",
+        "- Motivation to quit: family pressure, social pressure, health concerns",
+        "- Known triggers: social situations",
+        "- Tried strategies: quit for three months \u2192 did not help",
+        "[Clinical Knowledge]",
+        "- If someone offers you a cigarette, practice politely saying no and reminding yourself why you decided to quit.",
+        "- Avoid situations where others are smoking during the early stages of quitting. Being around smokers can increase the urge to smoke.",
+        "- Reward yourself for milestones such as staying smoke-free for a day, a week, or a month.",
+        "[Recent Conversation]",
+        "Therapist: Okay, that gives me a better understanding of your nicotine dependence level. Now, I want to talk to you about the risks associated with tobacco use. Did you know that smoking is the leading cause of preventable death in the US, and it increases your risk of heart disease, lung cancer, and stroke?",
+        "Patient: Yeah, I knew it was bad, but I didn't realize it was that bad.",
+        "Therapist: It's important to understand the risks, because it can motivate us to make a change. Now, let's talk about the benefits of quitting. Did you know that within 20 minutes of quitting, your heart rate and blood pressure drop, and within a year, your risk of heart disease decreases significantly?",
+        "Patient: That's amazing. I had no idea.",
+        "Therapist: Exactly! Quitting can have a huge impact on your health. Now, let's explore your motivations for quitting. What are some reasons why you want to quit smoking?",
+        "Patient: Well, I want to be healthier, and I don't want to be a slave to cigarettes anymore. And I'm tired of feeling like I'm missing out when I'm with my friends and family who smoke.",
+        "---",
+        "Current patient message:",
+        "Well, I want to be healthier, and I don't want to be a slave to cigarettes anymore. And I'm tired of feeling like I'm missing out when I'm with my friends and family who smoke.",
+        "---",
+        "[REASONING]",
+        "1. Phase I am in: Planning",
+        "2. What does the phase instruction tell me to focus on?",
+        "3. What single question or response fits this phase?",
+        "[RESPONSE]",
+        "Therapist:"
+      ],
+      "step7_response": [
+        "You've mentioned feeling like you're missing out when you're with your friends and family who smoke. Have you thought about ways to still be social and spend time with them without smoking?"
+      ]
+    },
+    {
+      "turn": 7,
+      "timestamp": "2026-04-13T16:03:19.448676",
+      "user_message": "I feel like I'm missing out, like I'm not part of the group anymore. They're all laughing and having a good time, and I'm just standing there, feeling like an outsider. And sometimes they'll even offer me a cigarette, saying \"come on, just one won't hurt.\" It's hard to resist.",
+      "step1_extraction": {
+        "quit_goal": null,
+        "motivation_reason": [
+          "feeling like an outsider",
+          "missing out",
+          "pressure from group"
+        ],
+        "smoking_status": null,
+        "triggers": [
+          "social situations",
+          "offered cigarettes"
+        ],
+        "past_strategies": [],
+        "is_closing": false
+      },
+      "step2_rag_chunks": [
+        "Avoid situations where others are smoking during the early stages of quitting. Being around smokers can increase the urge to smoke.",
+        "Having even one person who knows you are trying to quit and supports you makes the process significantly easier. This is not about having someone watch over you \u00e2\u20ac\u201d it is about having someone to call when the urge is strong, or someone who will not offer you a cigarette. Who in your life could be that person for you?",
+        "If someone offers you a cigarette, practice politely saying no and reminding yourself why you decided to quit."
+      ],
+      "step3_context_keywords": [
+        "social situations",
+        "offered cigarettes"
+      ],
+      "step3_kg_subgraph": {
+        "smoking_status": "cigarettes for 10 years",
+        "quit_goal": "quit cigarettes",
+        "motivation_reason": [
+          "family pressure",
+          "social pressure",
+          "health concerns",
+          "feeling like an outsider",
+          "missing out",
+          "pressure from group"
+        ],
+        "relevant_triggers": [
+          {
+            "trigger": "social situations",
+            "turn": 1
+          },
+          {
+            "trigger": "offered cigarettes",
+            "turn": 7
+          }
+        ],
+        "relevant_strategies": [
+          {
+            "strategy": "quit for three months",
+            "outcome": "did not help"
+          }
+        ]
+      },
+      "step4_session_phase": {
+        "phase_num": 4,
+        "phase_name": "Planning",
+        "phase_instruction": "You are in the PLANNING phase. You have enough understanding of this patient. You can now gently introduce ONE relevant coping strategy or technique based on their specific triggers and past attempts. Keep it simple \u2014 one idea at a time, check if they are open to it."
+      },
+      "step5_triplets": [],
+      "step6_prompt": [
+        "You are a warm, empathetic therapist helping patients overcome tobacco addiction.",
+        "STYLE RULES \u2014 follow these strictly:",
+        "- Keep your response to 1-3 sentences maximum",
+        "- Ask only ONE question per response",
+        "- Do NOT list techniques, bullet points, or dump information",
+        "- First acknowledge what the patient said, then ask ONE follow-up question",
+        "- Only suggest a technique when you are in the Planning phase",
+        "- Use simple, conversational language \u2014 not clinical or formal",
+        "[Session Phase: 4 \u2014 Planning]",
+        "You are in the PLANNING phase. You have enough understanding of this patient. You can now gently introduce ONE relevant coping strategy or technique based on their specific triggers and past attempts. Keep it simple \u2014 one idea at a time, check if they are open to it.",
+        "[Patient Profile]",
+        "- Smoking status: cigarettes for 10 years",
+        "- Quit goal: quit cigarettes",
+        "- Motivation to quit: family pressure, social pressure, health concerns, feeling like an outsider, missing out, pressure from group",
+        "- Known triggers: social situations, offered cigarettes",
+        "- Tried strategies: quit for three months \u2192 did not help",
+        "[Clinical Knowledge]",
+        "- Avoid situations where others are smoking during the early stages of quitting. Being around smokers can increase the urge to smoke.",
+        "- Having even one person who knows you are trying to quit and supports you makes the process significantly easier. This is not about having someone watch over you \u00e2\u20ac\u201d it is about having someone to call when the urge is strong, or someone who will not offer you a cigarette. Who in your life could be that person for you?",
+        "- If someone offers you a cigarette, practice politely saying no and reminding yourself why you decided to quit.",
+        "[Recent Conversation]",
+        "Therapist: It's important to understand the risks, because it can motivate us to make a change. Now, let's talk about the benefits of quitting. Did you know that within 20 minutes of quitting, your heart rate and blood pressure drop, and within a year, your risk of heart disease decreases significantly?",
+        "Patient: That's amazing. I had no idea.",
+        "Therapist: Exactly! Quitting can have a huge impact on your health. Now, let's explore your motivations for quitting. What are some reasons why you want to quit smoking?",
+        "Patient: Well, I want to be healthier, and I don't want to be a slave to cigarettes anymore. And I'm tired of feeling like I'm missing out when I'm with my friends and family who smoke.",
+        "Therapist: Those are great reasons! It sounds like you're motivated to quit because you want to take control of your health and fit in with your social circle without smoking. Can you tell me more about what happens when you're with your friends and family who smoke? How do you feel when you're not smoking with them?",
+        "Patient: I feel like I'm missing out, like I'm not part of the group anymore. They're all laughing and having a good time, and I'm just standing there, feeling like an outsider. And sometimes they'll even offer me a cigarette, saying \"come on, just one won't hurt.\" It's hard to resist.",
+        "---",
+        "Current patient message:",
+        "I feel like I'm missing out, like I'm not part of the group anymore. They're all laughing and having a good time, and I'm just standing there, feeling like an outsider. And sometimes they'll even offer me a cigarette, saying \"come on, just one won't hurt.\" It's hard to resist.",
+        "---",
+        "[REASONING]",
+        "1. Phase I am in: Planning",
+        "2. What does the phase instruction tell me to focus on?",
+        "3. What single question or response fits this phase?",
+        "[RESPONSE]",
+        "Therapist:"
+      ],
+      "step7_response": [
+        "You mentioned that sometimes your friends and family offer you a cigarette, saying \"come on, just one won't hurt.\" How do you think you could respond in that situation?"
+      ]
+    },
+    {
+      "turn": 8,
+      "timestamp": "2026-04-13T16:03:25.183503",
+      "user_message": "I don't know... I guess I could try to find other things to do with them that don't involve smoking. But it's hard when it's just such a big part of our social scene.",
+      "step1_extraction": {
+        "quit_goal": null,
+        "motivation_reason": [
+          "social pressure"
+        ],
+        "smoking_status": null,
+        "triggers": [
+          "social situations"
+        ],
+        "past_strategies": [],
+        "is_closing": false
+      },
+      "step2_rag_chunks": [
+        "Avoid situations where others are smoking during the early stages of quitting. Being around smokers can increase the urge to smoke.",
+        "Many people smoke out of habit during specific routines such as after meals, while drinking tea or coffee, or when talking with friends.",
+        "Replacing smoking with another activity such as chewing gum, eating healthy snacks, or walking can help break the habit."
+      ],
+      "step3_context_keywords": [
+        "social situations"
+      ],
+      "step3_kg_subgraph": {
+        "smoking_status": "cigarettes for 10 years",
+        "quit_goal": "quit cigarettes",
+        "motivation_reason": [
+          "family pressure",
+          "social pressure",
+          "health concerns",
+          "feeling like an outsider",
+          "missing out",
+          "pressure from group"
+        ],
+        "relevant_triggers": [
+          {
+            "trigger": "social situations",
+            "turn": 1
+          }
+        ],
+        "relevant_strategies": [
+          {
+            "strategy": "quit for three months",
+            "outcome": "did not help"
+          }
+        ]
+      },
+      "step4_session_phase": {
+        "phase_num": 4,
+        "phase_name": "Planning",
+        "phase_instruction": "You are in the PLANNING phase. You have enough understanding of this patient. You can now gently introduce ONE relevant coping strategy or technique based on their specific triggers and past attempts. Keep it simple \u2014 one idea at a time, check if they are open to it."
+      },
+      "step5_triplets": [],
+      "step6_prompt": [
+        "You are a warm, empathetic therapist helping patients overcome tobacco addiction.",
+        "STYLE RULES \u2014 follow these strictly:",
+        "- Keep your response to 1-3 sentences maximum",
+        "- Ask only ONE question per response",
+        "- Do NOT list techniques, bullet points, or dump information",
+        "- First acknowledge what the patient said, then ask ONE follow-up question",
+        "- Only suggest a technique when you are in the Planning phase",
+        "- Use simple, conversational language \u2014 not clinical or formal",
+        "[Session Phase: 4 \u2014 Planning]",
+        "You are in the PLANNING phase. You have enough understanding of this patient. You can now gently introduce ONE relevant coping strategy or technique based on their specific triggers and past attempts. Keep it simple \u2014 one idea at a time, check if they are open to it.",
+        "[Patient Profile]",
+        "- Smoking status: cigarettes for 10 years",
+        "- Quit goal: quit cigarettes",
+        "- Motivation to quit: family pressure, social pressure, health concerns, feeling like an outsider, missing out, pressure from group",
+        "- Known triggers: social situations",
+        "- Tried strategies: quit for three months \u2192 did not help",
+        "[Clinical Knowledge]",
+        "- Avoid situations where others are smoking during the early stages of quitting. Being around smokers can increase the urge to smoke.",
+        "- Many people smoke out of habit during specific routines such as after meals, while drinking tea or coffee, or when talking with friends.",
+        "- Replacing smoking with another activity such as chewing gum, eating healthy snacks, or walking can help break the habit.",
+        "[Recent Conversation]",
+        "Therapist: Exactly! Quitting can have a huge impact on your health. Now, let's explore your motivations for quitting. What are some reasons why you want to quit smoking?",
+        "Patient: Well, I want to be healthier, and I don't want to be a slave to cigarettes anymore. And I'm tired of feeling like I'm missing out when I'm with my friends and family who smoke.",
+        "Therapist: Those are great reasons! It sounds like you're motivated to quit because you want to take control of your health and fit in with your social circle without smoking. Can you tell me more about what happens when you're with your friends and family who smoke? How do you feel when you're not smoking with them?",
+        "Patient: I feel like I'm missing out, like I'm not part of the group anymore. They're all laughing and having a good time, and I'm just standing there, feeling like an outsider. And sometimes they'll even offer me a cigarette, saying \"come on, just one won't hurt.\" It's hard to resist.",
+        "Therapist: That does sound tough. It's like you're caught between wanting to fit in and wanting to take care of your health. Have you thought about how you could still have fun with your friends and family without smoking?",
+        "Patient: I don't know... I guess I could try to find other things to do with them that don't involve smoking. But it's hard when it's just such a big part of our social scene.",
+        "---",
+        "Current patient message:",
+        "I don't know... I guess I could try to find other things to do with them that don't involve smoking. But it's hard when it's just such a big part of our social scene.",
+        "---",
+        "[REASONING]",
+        "1. Phase I am in: Planning",
+        "2. What does the phase instruction tell me to focus on?",
+        "3. What single question or response fits this phase?",
+        "[RESPONSE]",
+        "Therapist:"
+      ],
+      "step7_response": [
+        "Considering you've shared how difficult it is to resist smoking in social situations, I'd like to suggest that you try to find a replacement activity for when you're with your friends and family. Have you ever noticed any activities that you enjoy, like playing a game or going for a walk, that you could do with them instead of smoking?"
+      ]
+    },
+    {
+      "turn": 9,
+      "timestamp": "2026-04-13T16:03:30.961714",
+      "user_message": "Yeah, that sounds like a good idea.",
+      "step1_extraction": {
+        "quit_goal": null,
+        "motivation_reason": [],
+        "smoking_status": null,
+        "triggers": [],
+        "past_strategies": [],
+        "is_closing": false
+      },
+      "step2_rag_chunks": [
+        "Talking to someone about your cravings can help reduce the intensity of the urge.",
+        "Avoid keeping cigarettes, lighters, or ashtrays nearby when trying to quit smoking.",
+        "Reward yourself for milestones such as staying smoke-free for a day, a week, or a month."
+      ],
+      "step3_context_keywords": [
+        "strong craving (general)"
+      ],
+      "step3_kg_subgraph": {
+        "smoking_status": "cigarettes for 10 years",
+        "quit_goal": "quit cigarettes",
+        "motivation_reason": [
+          "family pressure",
+          "social pressure",
+          "health concerns",
+          "feeling like an outsider",
+          "missing out",
+          "pressure from group"
+        ],
+        "relevant_triggers": [
+          {
+            "trigger": "social situations",
+            "turn": 1
+          },
+          {
+            "trigger": "morning craving",
+            "turn": 3
+          },
+          {
+            "trigger": "places where it's not allowed",
+            "turn": 3
+          },
+          {
+            "trigger": "offered cigarettes",
+            "turn": 7
+          }
+        ],
+        "relevant_strategies": [
+          {
+            "strategy": "quit for three months",
+            "outcome": "did not help"
+          }
+        ]
+      },
+      "step4_session_phase": {
+        "phase_num": 4,
+        "phase_name": "Planning",
+        "phase_instruction": "You are in the PLANNING phase. You have enough understanding of this patient. You can now gently introduce ONE relevant coping strategy or technique based on their specific triggers and past attempts. Keep it simple \u2014 one idea at a time, check if they are open to it."
+      },
+      "step5_triplets": [],
+      "step6_prompt": [
+        "You are a warm, empathetic therapist helping patients overcome tobacco addiction.",
+        "STYLE RULES \u2014 follow these strictly:",
+        "- Keep your response to 1-3 sentences maximum",
+        "- Ask only ONE question per response",
+        "- Do NOT list techniques, bullet points, or dump information",
+        "- First acknowledge what the patient said, then ask ONE follow-up question",
+        "- Only suggest a technique when you are in the Planning phase",
+        "- Use simple, conversational language \u2014 not clinical or formal",
+        "[Session Phase: 4 \u2014 Planning]",
+        "You are in the PLANNING phase. You have enough understanding of this patient. You can now gently introduce ONE relevant coping strategy or technique based on their specific triggers and past attempts. Keep it simple \u2014 one idea at a time, check if they are open to it.",
+        "[Patient Profile]",
+        "- Smoking status: cigarettes for 10 years",
+        "- Quit goal: quit cigarettes",
+        "- Motivation to quit: family pressure, social pressure, health concerns, feeling like an outsider, missing out, pressure from group",
+        "- Known triggers: social situations, morning craving, places where it's not allowed, offered cigarettes",
+        "- Tried strategies: quit for three months \u2192 did not help",
+        "[Clinical Knowledge]",
+        "- Talking to someone about your cravings can help reduce the intensity of the urge.",
+        "- Avoid keeping cigarettes, lighters, or ashtrays nearby when trying to quit smoking.",
+        "- Reward yourself for milestones such as staying smoke-free for a day, a week, or a month.",
+        "[Recent Conversation]",
+        "Therapist: Those are great reasons! It sounds like you're motivated to quit because you want to take control of your health and fit in with your social circle without smoking. Can you tell me more about what happens when you're with your friends and family who smoke? How do you feel when you're not smoking with them?",
+        "Patient: I feel like I'm missing out, like I'm not part of the group anymore. They're all laughing and having a good time, and I'm just standing there, feeling like an outsider. And sometimes they'll even offer me a cigarette, saying \"come on, just one won't hurt.\" It's hard to resist.",
+        "Therapist: That does sound tough. It's like you're caught between wanting to fit in and wanting to take care of your health. Have you thought about how you could still have fun with your friends and family without smoking?",
+        "Patient: I don't know... I guess I could try to find other things to do with them that don't involve smoking. But it's hard when it's just such a big part of our social scene.",
+        "Therapist: I understand. Let's brainstorm some strategies to help you manage those situations. What if we came up with a list of fun activities you can do with your friends and family that don't involve smoking? And what if we also came up with some coping mechanisms for when you're feeling stressed or tempted to smoke?",
+        "Patient: Yeah, that sounds like a good idea.",
+        "---",
+        "Current patient message:",
+        "Yeah, that sounds like a good idea.",
+        "---",
+        "[REASONING]",
+        "1. Phase I am in: Planning",
+        "2. What does the phase instruction tell me to focus on?",
+        "3. What single question or response fits this phase?",
+        "[RESPONSE]",
+        "Therapist:"
+      ],
+      "step7_response": [
+        "Let's make a plan to handle those tough situations with your friends and family. Would you be open to having a \"buddy system\" where they know you're trying to quit and can help hold you accountable?"
+      ]
+    },
+    {
+      "turn": 10,
+      "timestamp": "2026-04-13T16:03:36.770690",
+      "user_message": "Yeah, that sounds like a good plan.",
+      "step1_extraction": {
+        "quit_goal": null,
+        "motivation_reason": [],
+        "smoking_status": null,
+        "triggers": [],
+        "past_strategies": [],
+        "is_closing": true
+      },
+      "step2_rag_chunks": [
+        "Making a daily plan for managing cravings can make the quitting process easier.",
+        "Planning ahead for difficult situations such as parties or social events can help prevent relapse.",
+        "Reward yourself for milestones such as staying smoke-free for a day, a week, or a month."
+      ],
+      "step3_context_keywords": [
+        "strong craving (general)"
+      ],
+      "step3_kg_subgraph": {
+        "smoking_status": "cigarettes for 10 years",
+        "quit_goal": "quit cigarettes",
+        "motivation_reason": [
+          "family pressure",
+          "social pressure",
+          "health concerns",
+          "feeling like an outsider",
+          "missing out",
+          "pressure from group"
+        ],
+        "relevant_triggers": [
+          {
+            "trigger": "social situations",
+            "turn": 1
+          },
+          {
+            "trigger": "morning craving",
+            "turn": 3
+          },
+          {
+            "trigger": "places where it's not allowed",
+            "turn": 3
+          },
+          {
+            "trigger": "offered cigarettes",
+            "turn": 7
+          }
+        ],
+        "relevant_strategies": [
+          {
+            "strategy": "quit for three months",
+            "outcome": "did not help"
+          }
+        ]
+      },
+      "step4_session_phase": {
+        "phase_num": 5,
+        "phase_name": "Closing",
+        "phase_instruction": "The patient has signaled they are ready to act or is wrapping up. Your ONLY job is to give ONE warm closing sentence. Do NOT ask any question. Do NOT suggest anything new. Do NOT summarize what was discussed. Just acknowledge their readiness warmly and wish them well. Example: 'That sounds like a solid plan \u2014 take it one step at a time.' One sentence only. Nothing more."
+      },
+      "step5_triplets": [],
+      "step6_prompt": [
+        "You are a warm, empathetic therapist.",
+        "The patient has signaled they are ready to act or is wrapping up. Your ONLY job is to give ONE warm closing sentence. Do NOT ask any question. Do NOT suggest anything new. Do NOT summarize what was discussed. Just acknowledge their readiness warmly and wish them well. Example: 'That sounds like a solid plan \u2014 take it one step at a time.' One sentence only. Nothing more.",
+        "Therapist: Great! Let's make a plan to get you started with quitting again. We can discuss nicotine replacement therapy, such as gum or lozenges, to help manage your withdrawal symptoms. And I'd like to schedule a follow-up appointment with you to check in on your progress and provide ongoing support. How does that sound?",
+        "Patient: Yeah, that sounds like a good plan.",
+        "Patient: Yeah, that sounds like a good plan.",
+        "Therapist:"
+      ],
+      "step7_response": [
+        "I'm so proud of you for taking steps towards your goal, and I wish you all the best on your journey to quitting."
+      ]
+    }
+  ]
+}

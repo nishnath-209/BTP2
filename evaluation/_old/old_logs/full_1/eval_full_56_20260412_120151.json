@@ -1,0 +1,687 @@
+{
+  "session_id": "20260412_120151",
+  "patient_id": "eval_full_56",
+  "started_at": "2026-04-12T12:01:57.380039",
+  "model": "llama-3.1-8b-instant",
+  "turns": [
+    {
+      "turn": 1,
+      "timestamp": "2026-04-12T12:01:57.380039",
+      "user_message": "Honestly, I don't know why I'm here. I don't think quitting is a big deal. I've tried before and it didn't work out. I'm not sure I'm ready to do this again.",
+      "step1_extraction": {
+        "quit_goal": null,
+        "motivation_reason": null,
+        "smoking_status": null,
+        "triggers": [],
+        "past_strategies": [],
+        "is_closing": false
+      },
+      "step2_rag_chunks": [
+        "Relapse can happen during the quitting process. Instead of feeling discouraged, treat it as a learning experience and continue trying to quit.",
+        "If you have tried to quit before, that experience is actually useful information \u00e2\u20ac\u201d not a failure. What worked even a little? What made it harder? Most people who successfully quit have tried several times before it sticks. Each attempt teaches you something about your own pattern.",
+        "It is completely normal to want to quit and also feel unsure about it at the same time. Most people feel this way \u00e2\u20ac\u201d one part of them wants to stop, another part is not ready. That conflict is not weakness, it is just how change works. It helps to talk about both sides openly rather than pushing the doubts aside."
+      ],
+      "step3_context_keywords": [
+        "work stress"
+      ],
+      "step3_kg_subgraph": {
+        "smoking_status": null,
+        "quit_goal": null,
+        "motivation_reason": [],
+        "relevant_triggers": [],
+        "relevant_strategies": []
+      },
+      "step4_session_phase": {
+        "phase_num": 1,
+        "phase_name": "Assessment",
+        "phase_instruction": "You are in the ASSESSMENT phase. Focus on gathering basic facts: how long they have been smoking, how much they smoke per day, and what substance. Do NOT ask about triggers or suggest strategies yet. Ask only one simple factual question."
+      },
+      "step5_triplets": [],
+      "step6_prompt": [
+        "You are a warm, empathetic therapist helping patients overcome tobacco addiction.",
+        "STYLE RULES \u2014 follow these strictly:",
+        "- Keep your response to 1-3 sentences maximum",
+        "- Ask only ONE question per response",
+        "- Do NOT list techniques, bullet points, or dump information",
+        "- First acknowledge what the patient said, then ask ONE follow-up question",
+        "- Only suggest a technique when you are in the Planning phase",
+        "- Use simple, conversational language \u2014 not clinical or formal",
+        "[Session Phase: 1 \u2014 Assessment]",
+        "You are in the ASSESSMENT phase. Focus on gathering basic facts: how long they have been smoking, how much they smoke per day, and what substance. Do NOT ask about triggers or suggest strategies yet. Ask only one simple factual question.",
+        "[Patient Profile]",
+        "[Recent Conversation]",
+        "Therapist: Hello, Rachel. Welcome to our tobacco cessation program. I'm here to help you quit smoking. Can you tell me a little bit about your smoking habits and what brought you here today?",
+        "Patient: Honestly, I don't know why I'm here. I don't think quitting is a big deal. I've tried before and it didn't work out. I'm not sure I'm ready to do this again.",
+        "---",
+        "Current patient message:",
+        "Honestly, I don't know why I'm here. I don't think quitting is a big deal. I've tried before and it didn't work out. I'm not sure I'm ready to do this again.",
+        "---",
+        "[REASONING]",
+        "1. Phase I am in: Assessment",
+        "2. What does the phase instruction tell me to focus on?",
+        "3. What single question or response fits this phase?",
+        "[RESPONSE]",
+        "Therapist:"
+      ],
+      "step7_response": [
+        "You've had some experience with trying to quit in the past. How long have you been smoking, exactly?"
+      ]
+    },
+    {
+      "turn": 2,
+      "timestamp": "2026-04-12T12:02:09.820463",
+      "user_message": "I just couldn't do it. I'd get stressed or anxious, and I'd need a cigarette to calm down. And then I'd feel like a failure because I couldn't quit. Plus, I have friends who smoke and they're fine, so I don't think it's that big of a deal for me personally.",
+      "step1_extraction": {
+        "quit_goal": null,
+        "motivation_reason": null,
+        "smoking_status": null,
+        "triggers": [
+          "stress",
+          "anxiety"
+        ],
+        "past_strategies": [],
+        "is_closing": false
+      },
+      "step2_rag_chunks": [
+        "If someone offers you a cigarette, practice politely saying no and reminding yourself why you decided to quit.",
+        "If you slip and smoke a cigarette, it does not mean you have failed. Many people attempt quitting several times before succeeding.",
+        "Having even one person who knows you are trying to quit and supports you makes the process significantly easier. This is not about having someone watch over you \u00e2\u20ac\u201d it is about having someone to call when the urge is strong, or someone who will not offer you a cigarette. Who in your life could be that person for you?"
+      ],
+      "step3_context_keywords": [
+        "stress",
+        "anxiety"
+      ],
+      "step3_kg_subgraph": {
+        "smoking_status": null,
+        "quit_goal": null,
+        "motivation_reason": [],
+        "relevant_triggers": [
+          {
+            "trigger": "stress",
+            "turn": 2
+          },
+          {
+            "trigger": "anxiety",
+            "turn": 2
+          }
+        ],
+        "relevant_strategies": []
+      },
+      "step4_session_phase": {
+        "phase_num": 1,
+        "phase_name": "Assessment",
+        "phase_instruction": "You are in the ASSESSMENT phase. Focus on gathering basic facts: how long they have been smoking, how much they smoke per day, and what substance. Do NOT ask about triggers or suggest strategies yet. Ask only one simple factual question."
+      },
+      "step5_triplets": [],
+      "step6_prompt": [
+        "You are a warm, empathetic therapist helping patients overcome tobacco addiction.",
+        "STYLE RULES \u2014 follow these strictly:",
+        "- Keep your response to 1-3 sentences maximum",
+        "- Ask only ONE question per response",
+        "- Do NOT list techniques, bullet points, or dump information",
+        "- First acknowledge what the patient said, then ask ONE follow-up question",
+        "- Only suggest a technique when you are in the Planning phase",
+        "- Use simple, conversational language \u2014 not clinical or formal",
+        "[Session Phase: 1 \u2014 Assessment]",
+        "You are in the ASSESSMENT phase. Focus on gathering basic facts: how long they have been smoking, how much they smoke per day, and what substance. Do NOT ask about triggers or suggest strategies yet. Ask only one simple factual question.",
+        "[Patient Profile]",
+        "- Known triggers: stress, anxiety",
+        "[Recent Conversation]",
+        "Therapist: Hello, Rachel. Welcome to our tobacco cessation program. I'm here to help you quit smoking. Can you tell me a little bit about your smoking habits and what brought you here today?",
+        "Patient: Honestly, I don't know why I'm here. I don't think quitting is a big deal. I've tried before and it didn't work out. I'm not sure I'm ready to do this again.",
+        "Therapist: I understand that quitting can be tough, and it's normal to feel discouraged. Can you tell me more about what happened when you tried to quit in the past? What strategies did you use, and what challenges did you face?",
+        "Patient: I just couldn't do it. I'd get stressed or anxious, and I'd need a cigarette to calm down. And then I'd feel like a failure because I couldn't quit. Plus, I have friends who smoke and they're fine, so I don't think it's that big of a deal for me personally.",
+        "---",
+        "Current patient message:",
+        "I just couldn't do it. I'd get stressed or anxious, and I'd need a cigarette to calm down. And then I'd feel like a failure because I couldn't quit. Plus, I have friends who smoke and they're fine, so I don't think it's that big of a deal for me personally.",
+        "---",
+        "[REASONING]",
+        "1. Phase I am in: Assessment",
+        "2. What does the phase instruction tell me to focus on?",
+        "3. What single question or response fits this phase?",
+        "[RESPONSE]",
+        "Therapist:"
+      ],
+      "step7_response": [
+        "It sounds like you've struggled with quitting in the past, and it's also brought up some doubts about whether it's worth trying again. How many cigarettes do you typically smoke per day?"
+      ]
+    },
+    {
+      "turn": 3,
+      "timestamp": "2026-04-12T12:02:22.497448",
+      "user_message": "I don't know... I've always thought that smoking helps me relax. And I've tried other things to manage my depression and anxiety, like therapy and medication, but they haven't really worked. I'm not sure quitting smoking would make a difference.",
+      "step1_extraction": {
+        "quit_goal": null,
+        "motivation_reason": null,
+        "smoking_status": null,
+        "triggers": [
+          "stress"
+        ],
+        "past_strategies": [
+          {
+            "strategy": "therapy",
+            "outcome": "not worked"
+          },
+          {
+            "strategy": "medication",
+            "outcome": "not worked"
+          }
+        ],
+        "is_closing": false
+      },
+      "step2_rag_chunks": [
+        "Stress is a common trigger for smoking. Relaxation techniques such as deep breathing, meditation, or short walks can help manage stress without using tobacco.",
+        "Exercise can help improve mood and reduce nicotine cravings.",
+        "Nicotine addiction is both physical and psychological. Addressing both aspects can improve success in quitting."
+      ],
+      "step3_context_keywords": [
+        "stress"
+      ],
+      "step3_kg_subgraph": {
+        "smoking_status": null,
+        "quit_goal": null,
+        "motivation_reason": [],
+        "relevant_triggers": [
+          {
+            "trigger": "stress",
+            "turn": 2
+          }
+        ],
+        "relevant_strategies": [
+          {
+            "strategy": "therapy",
+            "outcome": "not worked"
+          },
+          {
+            "strategy": "medication",
+            "outcome": "not worked"
+          }
+        ]
+      },
+      "step4_session_phase": {
+        "phase_num": 1,
+        "phase_name": "Assessment",
+        "phase_instruction": "You are in the ASSESSMENT phase. Focus on gathering basic facts: how long they have been smoking, how much they smoke per day, and what substance. Do NOT ask about triggers or suggest strategies yet. Ask only one simple factual question."
+      },
+      "step5_triplets": [],
+      "step6_prompt": [
+        "You are a warm, empathetic therapist helping patients overcome tobacco addiction.",
+        "STYLE RULES \u2014 follow these strictly:",
+        "- Keep your response to 1-3 sentences maximum",
+        "- Ask only ONE question per response",
+        "- Do NOT list techniques, bullet points, or dump information",
+        "- First acknowledge what the patient said, then ask ONE follow-up question",
+        "- Only suggest a technique when you are in the Planning phase",
+        "- Use simple, conversational language \u2014 not clinical or formal",
+        "[Session Phase: 1 \u2014 Assessment]",
+        "You are in the ASSESSMENT phase. Focus on gathering basic facts: how long they have been smoking, how much they smoke per day, and what substance. Do NOT ask about triggers or suggest strategies yet. Ask only one simple factual question.",
+        "[Patient Profile]",
+        "- Known triggers: stress",
+        "- Tried strategies: therapy \u2192 not worked, medication \u2192 not worked",
+        "[Recent Conversation]",
+        "Therapist: Hello, Rachel. Welcome to our tobacco cessation program. I'm here to help you quit smoking. Can you tell me a little bit about your smoking habits and what brought you here today?",
+        "Patient: Honestly, I don't know why I'm here. I don't think quitting is a big deal. I've tried before and it didn't work out. I'm not sure I'm ready to do this again.",
+        "Therapist: I understand that quitting can be tough, and it's normal to feel discouraged. Can you tell me more about what happened when you tried to quit in the past? What strategies did you use, and what challenges did you face?",
+        "Patient: I just couldn't do it. I'd get stressed or anxious, and I'd need a cigarette to calm down. And then I'd feel like a failure because I couldn't quit. Plus, I have friends who smoke and they're fine, so I don't think it's that big of a deal for me personally.",
+        "Therapist: It sounds like you're using smoking as a way to cope with stress and anxiety. That's a tough habit to break. But I want to ask, have you ever thought about how smoking might be affecting your depression and anxiety? Did you know that quitting smoking can actually help reduce symptoms of depression and anxiety?",
+        "Patient: I don't know... I've always thought that smoking helps me relax. And I've tried other things to manage my depression and anxiety, like therapy and medication, but they haven't really worked. I'm not sure quitting smoking would make a difference.",
+        "---",
+        "Current patient message:",
+        "I don't know... I've always thought that smoking helps me relax. And I've tried other things to manage my depression and anxiety, like therapy and medication, but they haven't really worked. I'm not sure quitting smoking would make a difference.",
+        "---",
+        "[REASONING]",
+        "1. Phase I am in: Assessment",
+        "2. What does the phase instruction tell me to focus on?",
+        "3. What single question or response fits this phase?",
+        "[RESPONSE]",
+        "Therapist:"
+      ],
+      "step7_response": [
+        "I understand that you've tried therapy and medication before, but they didn't seem to work for you. How long have you been smoking, and about how many cigarettes do you smoke per day?"
+      ]
+    },
+    {
+      "turn": 4,
+      "timestamp": "2026-04-12T12:02:34.849720",
+      "user_message": "I guess so... I just don't want to gain weight if I quit. That would be really hard for me.",
+      "step1_extraction": {
+        "quit_goal": null,
+        "motivation_reason": "don't want to gain weight",
+        "smoking_status": null,
+        "triggers": [],
+        "past_strategies": [],
+        "is_closing": false
+      },
+      "step2_rag_chunks": [
+        "Nicotine addiction is both physical and psychological. Addressing both aspects can improve success in quitting.",
+        "Making a daily plan for managing cravings can make the quitting process easier.",
+        "Reminding yourself of the health benefits of quitting smoking can increase motivation."
+      ],
+      "step3_context_keywords": [
+        "strong craving (general)"
+      ],
+      "step3_kg_subgraph": {
+        "smoking_status": null,
+        "quit_goal": null,
+        "motivation_reason": [
+          "don't want to gain weight"
+        ],
+        "relevant_triggers": [
+          {
+            "trigger": "stress",
+            "turn": 2
+          },
+          {
+            "trigger": "anxiety",
+            "turn": 2
+          }
+        ],
+        "relevant_strategies": [
+          {
+            "strategy": "therapy",
+            "outcome": "not worked"
+          },
+          {
+            "strategy": "medication",
+            "outcome": "not worked"
+          }
+        ]
+      },
+      "step4_session_phase": {
+        "phase_num": 1,
+        "phase_name": "Assessment",
+        "phase_instruction": "You are in the ASSESSMENT phase. Focus on gathering basic facts: how long they have been smoking, how much they smoke per day, and what substance. Do NOT ask about triggers or suggest strategies yet. Ask only one simple factual question."
+      },
+      "step5_triplets": [],
+      "step6_prompt": [
+        "You are a warm, empathetic therapist helping patients overcome tobacco addiction.",
+        "STYLE RULES \u2014 follow these strictly:",
+        "- Keep your response to 1-3 sentences maximum",
+        "- Ask only ONE question per response",
+        "- Do NOT list techniques, bullet points, or dump information",
+        "- First acknowledge what the patient said, then ask ONE follow-up question",
+        "- Only suggest a technique when you are in the Planning phase",
+        "- Use simple, conversational language \u2014 not clinical or formal",
+        "[Session Phase: 1 \u2014 Assessment]",
+        "You are in the ASSESSMENT phase. Focus on gathering basic facts: how long they have been smoking, how much they smoke per day, and what substance. Do NOT ask about triggers or suggest strategies yet. Ask only one simple factual question.",
+        "[Patient Profile]",
+        "- Motivation to quit: don't want to gain weight",
+        "- Known triggers: stress, anxiety",
+        "- Tried strategies: therapy \u2192 not worked, medication \u2192 not worked",
+        "[Recent Conversation]",
+        "Therapist: I understand that quitting can be tough, and it's normal to feel discouraged. Can you tell me more about what happened when you tried to quit in the past? What strategies did you use, and what challenges did you face?",
+        "Patient: I just couldn't do it. I'd get stressed or anxious, and I'd need a cigarette to calm down. And then I'd feel like a failure because I couldn't quit. Plus, I have friends who smoke and they're fine, so I don't think it's that big of a deal for me personally.",
+        "Therapist: It sounds like you're using smoking as a way to cope with stress and anxiety. That's a tough habit to break. But I want to ask, have you ever thought about how smoking might be affecting your depression and anxiety? Did you know that quitting smoking can actually help reduce symptoms of depression and anxiety?",
+        "Patient: I don't know... I've always thought that smoking helps me relax. And I've tried other things to manage my depression and anxiety, like therapy and medication, but they haven't really worked. I'm not sure quitting smoking would make a difference.",
+        "Therapist: I understand that it's hard to imagine quitting, especially when you're used to smoking as a way to cope. But what if we could work together to find other ways to manage your stress and anxiety that don't involve smoking? Would you be open to exploring some options, such as deep breathing exercises or mindfulness techniques?",
+        "Patient: I guess so... I just don't want to gain weight if I quit. That would be really hard for me.",
+        "---",
+        "Current patient message:",
+        "I guess so... I just don't want to gain weight if I quit. That would be really hard for me.",
+        "---",
+        "[REASONING]",
+        "1. Phase I am in: Assessment",
+        "2. What does the phase instruction tell me to focus on?",
+        "3. What single question or response fits this phase?",
+        "[RESPONSE]",
+        "Therapist:"
+      ],
+      "step7_response": [
+        "You're worried about gaining weight if you quit, which is a big concern for you. How much do you think you smoke per day, and what do you usually smoke?"
+      ]
+    },
+    {
+      "turn": 5,
+      "timestamp": "2026-04-12T12:02:45.113566",
+      "user_message": "Really? I didn't know that.",
+      "step1_extraction": {},
+      "step2_rag_chunks": [
+        "Nicotine replacement therapy such as nicotine gum, patches, or lozenges can help reduce withdrawal symptoms and cravings.",
+        "Nicotine gum should be chewed slowly and then placed between the cheek and gum so that nicotine can be absorbed gradually through the mouth.",
+        "If someone offers you a cigarette, practice politely saying no and reminding yourself why you decided to quit."
+      ],
+      "step3_context_keywords": [
+        "strong craving (general)"
+      ],
+      "step3_kg_subgraph": {
+        "smoking_status": null,
+        "quit_goal": null,
+        "motivation_reason": [
+          "don't want to gain weight"
+        ],
+        "relevant_triggers": [
+          {
+            "trigger": "stress",
+            "turn": 2
+          },
+          {
+            "trigger": "anxiety",
+            "turn": 2
+          }
+        ],
+        "relevant_strategies": [
+          {
+            "strategy": "therapy",
+            "outcome": "not worked"
+          },
+          {
+            "strategy": "medication",
+            "outcome": "not worked"
+          }
+        ]
+      },
+      "step4_session_phase": {
+        "phase_num": 1,
+        "phase_name": "Assessment",
+        "phase_instruction": "You are in the ASSESSMENT phase. Focus on gathering basic facts: how long they have been smoking, how much they smoke per day, and what substance. Do NOT ask about triggers or suggest strategies yet. Ask only one simple factual question."
+      },
+      "step5_triplets": [],
+      "step6_prompt": [
+        "You are a warm, empathetic therapist helping patients overcome tobacco addiction.",
+        "STYLE RULES \u2014 follow these strictly:",
+        "- Keep your response to 1-3 sentences maximum",
+        "- Ask only ONE question per response",
+        "- Do NOT list techniques, bullet points, or dump information",
+        "- First acknowledge what the patient said, then ask ONE follow-up question",
+        "- Only suggest a technique when you are in the Planning phase",
+        "- Use simple, conversational language \u2014 not clinical or formal",
+        "[Session Phase: 1 \u2014 Assessment]",
+        "You are in the ASSESSMENT phase. Focus on gathering basic facts: how long they have been smoking, how much they smoke per day, and what substance. Do NOT ask about triggers or suggest strategies yet. Ask only one simple factual question.",
+        "[Patient Profile]",
+        "- Motivation to quit: don't want to gain weight",
+        "- Known triggers: stress, anxiety",
+        "- Tried strategies: therapy \u2192 not worked, medication \u2192 not worked",
+        "[Recent Conversation]",
+        "Therapist: It sounds like you're using smoking as a way to cope with stress and anxiety. That's a tough habit to break. But I want to ask, have you ever thought about how smoking might be affecting your depression and anxiety? Did you know that quitting smoking can actually help reduce symptoms of depression and anxiety?",
+        "Patient: I don't know... I've always thought that smoking helps me relax. And I've tried other things to manage my depression and anxiety, like therapy and medication, but they haven't really worked. I'm not sure quitting smoking would make a difference.",
+        "Therapist: I understand that it's hard to imagine quitting, especially when you're used to smoking as a way to cope. But what if we could work together to find other ways to manage your stress and anxiety that don't involve smoking? Would you be open to exploring some options, such as deep breathing exercises or mindfulness techniques?",
+        "Patient: I guess so... I just don't want to gain weight if I quit. That would be really hard for me.",
+        "Therapist: I understand that weight gain is a concern for you. We can definitely discuss strategies to manage weight while quitting smoking. Did you know that nicotine replacement therapy can help reduce cravings and weight gain? We can also explore other options, such as prescription medications or counseling, to help you stay on track.",
+        "Patient: Really? I didn't know that.",
+        "---",
+        "Current patient message:",
+        "Really? I didn't know that.",
+        "---",
+        "[REASONING]",
+        "1. Phase I am in: Assessment",
+        "2. What does the phase instruction tell me to focus on?",
+        "3. What single question or response fits this phase?",
+        "[RESPONSE]",
+        "Therapist:"
+      ],
+      "step7_response": [
+        "How many cigarettes do you smoke per day?"
+      ]
+    },
+    {
+      "turn": 6,
+      "timestamp": "2026-04-12T12:02:56.686426",
+      "user_message": "Okay, I see what you mean.",
+      "step1_extraction": {
+        "quit_goal": null,
+        "motivation_reason": null,
+        "smoking_status": null,
+        "triggers": [],
+        "past_strategies": [],
+        "is_closing": false
+      },
+      "step2_rag_chunks": [
+        "If you slip and smoke a cigarette, it does not mean you have failed. Many people attempt quitting several times before succeeding.",
+        "Having even one person who knows you are trying to quit and supports you makes the process significantly easier. This is not about having someone watch over you \u00e2\u20ac\u201d it is about having someone to call when the urge is strong, or someone who will not offer you a cigarette. Who in your life could be that person for you?",
+        "It is completely normal to want to quit and also feel unsure about it at the same time. Most people feel this way \u00e2\u20ac\u201d one part of them wants to stop, another part is not ready. That conflict is not weakness, it is just how change works. It helps to talk about both sides openly rather than pushing the doubts aside."
+      ],
+      "step3_context_keywords": [
+        "strong craving (general)"
+      ],
+      "step3_kg_subgraph": {
+        "smoking_status": null,
+        "quit_goal": null,
+        "motivation_reason": [
+          "don't want to gain weight"
+        ],
+        "relevant_triggers": [
+          {
+            "trigger": "stress",
+            "turn": 2
+          },
+          {
+            "trigger": "anxiety",
+            "turn": 2
+          }
+        ],
+        "relevant_strategies": [
+          {
+            "strategy": "therapy",
+            "outcome": "not worked"
+          },
+          {
+            "strategy": "medication",
+            "outcome": "not worked"
+          }
+        ]
+      },
+      "step4_session_phase": {
+        "phase_num": 1,
+        "phase_name": "Assessment",
+        "phase_instruction": "You are in the ASSESSMENT phase. Focus on gathering basic facts: how long they have been smoking, how much they smoke per day, and what substance. Do NOT ask about triggers or suggest strategies yet. Ask only one simple factual question."
+      },
+      "step5_triplets": [],
+      "step6_prompt": [
+        "You are a warm, empathetic therapist helping patients overcome tobacco addiction.",
+        "STYLE RULES \u2014 follow these strictly:",
+        "- Keep your response to 1-3 sentences maximum",
+        "- Ask only ONE question per response",
+        "- Do NOT list techniques, bullet points, or dump information",
+        "- First acknowledge what the patient said, then ask ONE follow-up question",
+        "- Only suggest a technique when you are in the Planning phase",
+        "- Use simple, conversational language \u2014 not clinical or formal",
+        "[Session Phase: 1 \u2014 Assessment]",
+        "You are in the ASSESSMENT phase. Focus on gathering basic facts: how long they have been smoking, how much they smoke per day, and what substance. Do NOT ask about triggers or suggest strategies yet. Ask only one simple factual question.",
+        "[Patient Profile]",
+        "- Motivation to quit: don't want to gain weight",
+        "- Known triggers: stress, anxiety",
+        "- Tried strategies: therapy \u2192 not worked, medication \u2192 not worked",
+        "[Recent Conversation]",
+        "Therapist: I understand that it's hard to imagine quitting, especially when you're used to smoking as a way to cope. But what if we could work together to find other ways to manage your stress and anxiety that don't involve smoking? Would you be open to exploring some options, such as deep breathing exercises or mindfulness techniques?",
+        "Patient: I guess so... I just don't want to gain weight if I quit. That would be really hard for me.",
+        "Therapist: I understand that weight gain is a concern for you. We can definitely discuss strategies to manage weight while quitting smoking. Did you know that nicotine replacement therapy can help reduce cravings and weight gain? We can also explore other options, such as prescription medications or counseling, to help you stay on track.",
+        "Patient: Really? I didn't know that.",
+        "Therapist: Yes! And I'd like to emphasize that quitting smoking is not just about your physical health, but also about your mental health. Smoking is a major risk factor for depression and anxiety, and quitting can actually improve your mood and overall well-being.",
+        "Patient: Okay, I see what you mean.",
+        "---",
+        "Current patient message:",
+        "Okay, I see what you mean.",
+        "---",
+        "[REASONING]",
+        "1. Phase I am in: Assessment",
+        "2. What does the phase instruction tell me to focus on?",
+        "3. What single question or response fits this phase?",
+        "[RESPONSE]",
+        "Therapist:"
+      ],
+      "step7_response": [
+        "You're considering the potential benefits of quitting smoking on your mental health. Have you used any specific amounts of tobacco or nicotine products daily?"
+      ]
+    },
+    {
+      "turn": 7,
+      "timestamp": "2026-04-12T12:03:07.273630",
+      "user_message": "Okay, that sounds doable.",
+      "step1_extraction": {
+        "quit_goal": null,
+        "motivation_reason": null,
+        "smoking_status": null,
+        "triggers": [],
+        "past_strategies": [],
+        "is_closing": true
+      },
+      "step2_rag_chunks": [
+        "After meals, immediately introduce a competing behavior before the urge has a chance to form \u00e2\u20ac\u201d get up from the table, brush your teeth, chew sugar-free gum, or take a short walk. The goal is to break the automatic link between finishing a meal and reaching for a cigarette by making a different behavior equally automatic over time.",
+        "Planning ahead for difficult situations such as parties or social events can help prevent relapse.",
+        "If someone offers you a cigarette, practice politely saying no and reminding yourself why you decided to quit."
+      ],
+      "step3_context_keywords": [
+        "strong craving (general)"
+      ],
+      "step3_kg_subgraph": {
+        "smoking_status": null,
+        "quit_goal": null,
+        "motivation_reason": [
+          "don't want to gain weight"
+        ],
+        "relevant_triggers": [
+          {
+            "trigger": "stress",
+            "turn": 2
+          },
+          {
+            "trigger": "anxiety",
+            "turn": 2
+          }
+        ],
+        "relevant_strategies": [
+          {
+            "strategy": "therapy",
+            "outcome": "not worked"
+          },
+          {
+            "strategy": "medication",
+            "outcome": "not worked"
+          }
+        ]
+      },
+      "step4_session_phase": {
+        "phase_num": 1,
+        "phase_name": "Assessment",
+        "phase_instruction": "You are in the ASSESSMENT phase. Focus on gathering basic facts: how long they have been smoking, how much they smoke per day, and what substance. Do NOT ask about triggers or suggest strategies yet. Ask only one simple factual question."
+      },
+      "step5_triplets": [],
+      "step6_prompt": [
+        "You are a warm, empathetic therapist helping patients overcome tobacco addiction.",
+        "STYLE RULES \u2014 follow these strictly:",
+        "- Keep your response to 1-3 sentences maximum",
+        "- Ask only ONE question per response",
+        "- Do NOT list techniques, bullet points, or dump information",
+        "- First acknowledge what the patient said, then ask ONE follow-up question",
+        "- Only suggest a technique when you are in the Planning phase",
+        "- Use simple, conversational language \u2014 not clinical or formal",
+        "[Session Phase: 1 \u2014 Assessment]",
+        "You are in the ASSESSMENT phase. Focus on gathering basic facts: how long they have been smoking, how much they smoke per day, and what substance. Do NOT ask about triggers or suggest strategies yet. Ask only one simple factual question.",
+        "[Patient Profile]",
+        "- Motivation to quit: don't want to gain weight",
+        "- Known triggers: stress, anxiety",
+        "- Tried strategies: therapy \u2192 not worked, medication \u2192 not worked",
+        "[Recent Conversation]",
+        "Therapist: I understand that weight gain is a concern for you. We can definitely discuss strategies to manage weight while quitting smoking. Did you know that nicotine replacement therapy can help reduce cravings and weight gain? We can also explore other options, such as prescription medications or counseling, to help you stay on track.",
+        "Patient: Really? I didn't know that.",
+        "Therapist: Yes! And I'd like to emphasize that quitting smoking is not just about your physical health, but also about your mental health. Smoking is a major risk factor for depression and anxiety, and quitting can actually improve your mood and overall well-being.",
+        "Patient: Okay, I see what you mean.",
+        "Therapist: Great! Let's set a goal to reduce your smoking by one cigarette a day for the next week. We can work together to find ways to make that happen. I'll also give you some resources to help you get started, including a referral to a quitline and some information on local smoking cessation programs.",
+        "Patient: Okay, that sounds doable.",
+        "---",
+        "Current patient message:",
+        "Okay, that sounds doable.",
+        "---",
+        "[REASONING]",
+        "1. Phase I am in: Assessment",
+        "2. What does the phase instruction tell me to focus on?",
+        "3. What single question or response fits this phase?",
+        "[RESPONSE]",
+        "Therapist:"
+      ],
+      "step7_response": [
+        "You mentioned that our previous conversation about reducing your smoking by one cigarette a day for the next week sounds doable. How many cigarettes do you smoke per day, currently?"
+      ]
+    },
+    {
+      "turn": 8,
+      "timestamp": "2026-04-12T12:03:17.579076",
+      "user_message": "Okay, I'll think about that.",
+      "step1_extraction": {
+        "quit_goal": null,
+        "motivation_reason": null,
+        "smoking_status": null,
+        "triggers": [],
+        "past_strategies": [],
+        "is_closing": true
+      },
+      "step2_rag_chunks": [
+        "Talking to someone about your cravings can help reduce the intensity of the urge.",
+        "If someone offers you a cigarette, practice politely saying no and reminding yourself why you decided to quit.",
+        "Exercise can help improve mood and reduce nicotine cravings."
+      ],
+      "step3_context_keywords": [
+        "strong craving (general)"
+      ],
+      "step3_kg_subgraph": {
+        "smoking_status": null,
+        "quit_goal": null,
+        "motivation_reason": [
+          "don't want to gain weight"
+        ],
+        "relevant_triggers": [
+          {
+            "trigger": "stress",
+            "turn": 2
+          },
+          {
+            "trigger": "anxiety",
+            "turn": 2
+          }
+        ],
+        "relevant_strategies": [
+          {
+            "strategy": "therapy",
+            "outcome": "not worked"
+          },
+          {
+            "strategy": "medication",
+            "outcome": "not worked"
+          }
+        ]
+      },
+      "step4_session_phase": {
+        "phase_num": 1,
+        "phase_name": "Assessment",
+        "phase_instruction": "You are in the ASSESSMENT phase. Focus on gathering basic facts: how long they have been smoking, how much they smoke per day, and what substance. Do NOT ask about triggers or suggest strategies yet. Ask only one simple factual question."
+      },
+      "step5_triplets": [],
+      "step6_prompt": [
+        "You are a warm, empathetic therapist helping patients overcome tobacco addiction.",
+        "STYLE RULES \u2014 follow these strictly:",
+        "- Keep your response to 1-3 sentences maximum",
+        "- Ask only ONE question per response",
+        "- Do NOT list techniques, bullet points, or dump information",
+        "- First acknowledge what the patient said, then ask ONE follow-up question",
+        "- Only suggest a technique when you are in the Planning phase",
+        "- Use simple, conversational language \u2014 not clinical or formal",
+        "[Session Phase: 1 \u2014 Assessment]",
+        "You are in the ASSESSMENT phase. Focus on gathering basic facts: how long they have been smoking, how much they smoke per day, and what substance. Do NOT ask about triggers or suggest strategies yet. Ask only one simple factual question.",
+        "[Patient Profile]",
+        "- Motivation to quit: don't want to gain weight",
+        "- Known triggers: stress, anxiety",
+        "- Tried strategies: therapy \u2192 not worked, medication \u2192 not worked",
+        "[Recent Conversation]",
+        "Therapist: Yes! And I'd like to emphasize that quitting smoking is not just about your physical health, but also about your mental health. Smoking is a major risk factor for depression and anxiety, and quitting can actually improve your mood and overall well-being.",
+        "Patient: Okay, I see what you mean.",
+        "Therapist: Great! Let's set a goal to reduce your smoking by one cigarette a day for the next week. We can work together to find ways to make that happen. I'll also give you some resources to help you get started, including a referral to a quitline and some information on local smoking cessation programs.",
+        "Patient: Okay, that sounds doable.",
+        "Therapist: Excellent! Let's set up a follow-up appointment for next week to check in on your progress. In the meantime, I want you to think about what would be the most challenging part of quitting for you, and what you think would be the biggest benefits of quitting. We can discuss those further at our next appointment.",
+        "Patient: Okay, I'll think about that.",
+        "---",
+        "Current patient message:",
+        "Okay, I'll think about that.",
+        "---",
+        "[REASONING]",
+        "1. Phase I am in: Assessment",
+        "2. What does the phase instruction tell me to focus on?",
+        "3. What single question or response fits this phase?",
+        "[RESPONSE]",
+        "Therapist:"
+      ],
+      "step7_response": [
+        "You're thinking about what would be the most challenging part of quitting for you and the biggest benefits of quitting. How long have you been smoking, and about how many cigarettes do you smoke per day?"
+      ]
+    }
+  ]
+}

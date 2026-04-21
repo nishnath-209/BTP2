@@ -7,7 +7,8 @@ Run: python run_experiment.py
 
 from pipeline.therapy_pipeline import therapy_chat
 
-PATIENT_ID = "patient_011"
+PATIENT_ID = "patient_013"
+SESSION_ID = 1  # Keep the same value to resume; change to start a new session
 
 print("Type 'exit' to quit\n")
 
@@ -21,6 +22,6 @@ while True:
         print("Session ended.")
         break
 
-    response = therapy_chat(msg, patient_id=PATIENT_ID)
+    response = therapy_chat(msg, patient_id=PATIENT_ID, session_id=SESSION_ID)
 
     print(f"\nTherapist: {response}\n")

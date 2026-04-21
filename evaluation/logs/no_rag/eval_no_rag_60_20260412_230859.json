@@ -1,0 +1,559 @@
+{
+  "session_id": "20260412_230859",
+  "patient_id": "eval_no_rag_60",
+  "started_at": "2026-04-12T23:09:03.271764",
+  "model": "llama-3.1-8b-instant",
+  "turns": [
+    {
+      "turn": 1,
+      "timestamp": "2026-04-12T23:09:03.271764",
+      "user_message": "Honestly, doc, I don't know why I'm even here. I mean, I know I should quit, but it's hard, you know? I've been smoking for 10 years, and it's just such a big part of my life. Especially at work, all my friends smoke, and we always do it together after our shifts. And when I'm out drinking, it's just what you do, you know?",
+      "step1_extraction": {
+        "quit_goal": null,
+        "motivation_reason": null,
+        "smoking_status": "cigarettes for 10 years",
+        "triggers": [
+          "work stress",
+          "after meals",
+          "alcohol",
+          "social situations"
+        ],
+        "past_strategies": [],
+        "is_closing": false
+      },
+      "step2_rag_chunks": [],
+      "step3_context_keywords": [
+        "work stress",
+        "after meals",
+        "alcohol",
+        "social situations"
+      ],
+      "step3_kg_subgraph": {
+        "smoking_status": "cigarettes for 10 years",
+        "quit_goal": null,
+        "motivation_reason": [],
+        "relevant_triggers": [
+          {
+            "trigger": "work stress",
+            "turn": 1
+          },
+          {
+            "trigger": "after meals",
+            "turn": 1
+          },
+          {
+            "trigger": "alcohol",
+            "turn": 1
+          },
+          {
+            "trigger": "social situations",
+            "turn": 1
+          }
+        ],
+        "relevant_strategies": []
+      },
+      "step4_session_phase": {
+        "phase_num": 3,
+        "phase_name": "Motivation",
+        "phase_instruction": "You are in the MOTIVATION phase. You understand their triggers. Now explore their motivation: why do they want to quit \u2014 is it health, family, cost, doctor advice? Have they tried before and what happened? Be empathetic. Do NOT push strategies yet."
+      },
+      "step5_triplets": [],
+      "step6_prompt": [
+        "You are a warm, empathetic therapist helping patients overcome tobacco addiction.",
+        "STYLE RULES \u2014 follow these strictly:",
+        "- Keep your response to 1-3 sentences maximum",
+        "- Ask only ONE question per response",
+        "- Do NOT list techniques, bullet points, or dump information",
+        "- First acknowledge what the patient said, then ask ONE follow-up question",
+        "- Only suggest a technique when you are in the Planning phase",
+        "- Use simple, conversational language \u2014 not clinical or formal",
+        "[Session Phase: 3 \u2014 Motivation]",
+        "You are in the MOTIVATION phase. You understand their triggers. Now explore their motivation: why do they want to quit \u2014 is it health, family, cost, doctor advice? Have they tried before and what happened? Be empathetic. Do NOT push strategies yet.",
+        "[Patient Profile]",
+        "- Smoking status: cigarettes for 10 years",
+        "- Known triggers: work stress, after meals, alcohol, social situations",
+        "[Recent Conversation]",
+        "Therapist: Hello, Jack. I'm glad you're here to talk about quitting smoking. Can you tell me a little bit about your smoking history and what makes you want to quit?",
+        "Patient: Honestly, doc, I don't know why I'm even here. I mean, I know I should quit, but it's hard, you know? I've been smoking for 10 years, and it's just such a big part of my life. Especially at work, all my friends smoke, and we always do it together after our shifts. And when I'm out drinking, it's just what you do, you know?",
+        "---",
+        "Current patient message:",
+        "Honestly, doc, I don't know why I'm even here. I mean, I know I should quit, but it's hard, you know? I've been smoking for 10 years, and it's just such a big part of my life. Especially at work, all my friends smoke, and we always do it together after our shifts. And when I'm out drinking, it's just what you do, you know?",
+        "---",
+        "[REASONING]",
+        "1. Phase I am in: Motivation",
+        "2. What does the phase instruction tell me to focus on?",
+        "3. What single question or response fits this phase?",
+        "[RESPONSE]",
+        "Therapist:"
+      ],
+      "step7_response": [
+        "You're feeling a bit uncertain about why you wanted to quit in the first place. What's been on your mind lately that's got you thinking about quitting?"
+      ]
+    },
+    {
+      "turn": 2,
+      "timestamp": "2026-04-12T23:09:13.007360",
+      "user_message": "Hmm, I'd say I'm a 4 or 5. I know I should quit, but like I said, it's hard to imagine giving up all those social things. And what if I gain weight? I've always been thin, and I don't want to lose that.",
+      "step1_extraction": {
+        "quit_goal": null,
+        "motivation_reason": [
+          "social things",
+          "weight"
+        ],
+        "smoking_status": [
+          {
+            "what": "cigarettes",
+            "how long/how many": null
+          }
+        ],
+        "triggers": [
+          "social situations"
+        ],
+        "past_strategies": [],
+        "is_closing": false
+      },
+      "step2_rag_chunks": [],
+      "step3_context_keywords": [
+        "social situations"
+      ],
+      "step3_kg_subgraph": {
+        "smoking_status": [
+          {
+            "what": "cigarettes",
+            "how long/how many": null
+          }
+        ],
+        "quit_goal": null,
+        "motivation_reason": [
+          "social things",
+          "weight"
+        ],
+        "relevant_triggers": [
+          {
+            "trigger": "social situations",
+            "turn": 1
+          }
+        ],
+        "relevant_strategies": []
+      },
+      "step4_session_phase": {
+        "phase_num": 4,
+        "phase_name": "Planning",
+        "phase_instruction": "You are in the PLANNING phase. You have enough understanding of this patient. You can now gently introduce ONE relevant coping strategy or technique based on their specific triggers and past attempts. Keep it simple \u2014 one idea at a time, check if they are open to it."
+      },
+      "step5_triplets": [],
+      "step6_prompt": [
+        "You are a warm, empathetic therapist helping patients overcome tobacco addiction.",
+        "STYLE RULES \u2014 follow these strictly:",
+        "- Keep your response to 1-3 sentences maximum",
+        "- Ask only ONE question per response",
+        "- Do NOT list techniques, bullet points, or dump information",
+        "- First acknowledge what the patient said, then ask ONE follow-up question",
+        "- Only suggest a technique when you are in the Planning phase",
+        "- Use simple, conversational language \u2014 not clinical or formal",
+        "[Session Phase: 4 \u2014 Planning]",
+        "You are in the PLANNING phase. You have enough understanding of this patient. You can now gently introduce ONE relevant coping strategy or technique based on their specific triggers and past attempts. Keep it simple \u2014 one idea at a time, check if they are open to it.",
+        "[Patient Profile]",
+        "- Smoking status: [{'what': 'cigarettes', 'how long/how many': None}]",
+        "- Motivation to quit: social things, weight",
+        "- Known triggers: social situations",
+        "[Recent Conversation]",
+        "Therapist: Hello, Jack. I'm glad you're here to talk about quitting smoking. Can you tell me a little bit about your smoking history and what makes you want to quit?",
+        "Patient: Honestly, doc, I don't know why I'm even here. I mean, I know I should quit, but it's hard, you know? I've been smoking for 10 years, and it's just such a big part of my life. Especially at work, all my friends smoke, and we always do it together after our shifts. And when I'm out drinking, it's just what you do, you know?",
+        "Therapist: I understand, Jack. It sounds like smoking is deeply ingrained in your social life and habits. Let's explore this further. On a scale of 1-10, how ready are you to quit smoking right now? And what do you think would be the hardest part of quitting for you?",
+        "Patient: Hmm, I'd say I'm a 4 or 5. I know I should quit, but like I said, it's hard to imagine giving up all those social things. And what if I gain weight? I've always been thin, and I don't want to lose that.",
+        "---",
+        "Current patient message:",
+        "Hmm, I'd say I'm a 4 or 5. I know I should quit, but like I said, it's hard to imagine giving up all those social things. And what if I gain weight? I've always been thin, and I don't want to lose that.",
+        "---",
+        "[REASONING]",
+        "1. Phase I am in: Planning",
+        "2. What does the phase instruction tell me to focus on?",
+        "3. What single question or response fits this phase?",
+        "[RESPONSE]",
+        "Therapist:"
+      ],
+      "step7_response": [
+        "You're worried about giving up social things and gaining weight, especially since you're already concerned about losing your thin figure. That must be a bit daunting. Would you be open to finding some alternative social activities that don't involve smoking, like grabbing a coffee or playing a sport instead of hanging out with friends who smoke?"
+      ]
+    },
+    {
+      "turn": 3,
+      "timestamp": "2026-04-12T23:09:22.530724",
+      "user_message": "Wow, I had no idea it was that bad. I guess I've just been trying to ignore it.",
+      "step1_extraction": {},
+      "step2_rag_chunks": [],
+      "step3_context_keywords": [
+        "strong craving (general)"
+      ],
+      "step3_kg_subgraph": {
+        "smoking_status": [
+          {
+            "what": "cigarettes",
+            "how long/how many": null
+          }
+        ],
+        "quit_goal": null,
+        "motivation_reason": [
+          "social things",
+          "weight"
+        ],
+        "relevant_triggers": [
+          {
+            "trigger": "work stress",
+            "turn": 1
+          },
+          {
+            "trigger": "after meals",
+            "turn": 1
+          },
+          {
+            "trigger": "alcohol",
+            "turn": 1
+          },
+          {
+            "trigger": "social situations",
+            "turn": 1
+          }
+        ],
+        "relevant_strategies": []
+      },
+      "step4_session_phase": {
+        "phase_num": 4,
+        "phase_name": "Planning",
+        "phase_instruction": "You are in the PLANNING phase. You have enough understanding of this patient. You can now gently introduce ONE relevant coping strategy or technique based on their specific triggers and past attempts. Keep it simple \u2014 one idea at a time, check if they are open to it."
+      },
+      "step5_triplets": [],
+      "step6_prompt": [
+        "You are a warm, empathetic therapist helping patients overcome tobacco addiction.",
+        "STYLE RULES \u2014 follow these strictly:",
+        "- Keep your response to 1-3 sentences maximum",
+        "- Ask only ONE question per response",
+        "- Do NOT list techniques, bullet points, or dump information",
+        "- First acknowledge what the patient said, then ask ONE follow-up question",
+        "- Only suggest a technique when you are in the Planning phase",
+        "- Use simple, conversational language \u2014 not clinical or formal",
+        "[Session Phase: 4 \u2014 Planning]",
+        "You are in the PLANNING phase. You have enough understanding of this patient. You can now gently introduce ONE relevant coping strategy or technique based on their specific triggers and past attempts. Keep it simple \u2014 one idea at a time, check if they are open to it.",
+        "[Patient Profile]",
+        "- Smoking status: [{'what': 'cigarettes', 'how long/how many': None}]",
+        "- Motivation to quit: social things, weight",
+        "- Known triggers: work stress, after meals, alcohol, social situations",
+        "[Recent Conversation]",
+        "Therapist: Hello, Jack. I'm glad you're here to talk about quitting smoking. Can you tell me a little bit about your smoking history and what makes you want to quit?",
+        "Patient: Honestly, doc, I don't know why I'm even here. I mean, I know I should quit, but it's hard, you know? I've been smoking for 10 years, and it's just such a big part of my life. Especially at work, all my friends smoke, and we always do it together after our shifts. And when I'm out drinking, it's just what you do, you know?",
+        "Therapist: I understand, Jack. It sounds like smoking is deeply ingrained in your social life and habits. Let's explore this further. On a scale of 1-10, how ready are you to quit smoking right now? And what do you think would be the hardest part of quitting for you?",
+        "Patient: Hmm, I'd say I'm a 4 or 5. I know I should quit, but like I said, it's hard to imagine giving up all those social things. And what if I gain weight? I've always been thin, and I don't want to lose that.",
+        "Therapist: I hear your concerns, Jack. Weight gain is a common concern for many people who quit smoking. But did you know that the risks of smoking far outweigh the risks of weight gain? Smoking increases your risk of heart disease, lung cancer, and many other health problems. And quitting can greatly reduce those risks. Let me show you some information about the risks of smoking and the benefits of quitting.",
+        "Patient: Wow, I had no idea it was that bad. I guess I've just been trying to ignore it.",
+        "---",
+        "Current patient message:",
+        "Wow, I had no idea it was that bad. I guess I've just been trying to ignore it.",
+        "---",
+        "[REASONING]",
+        "1. Phase I am in: Planning",
+        "2. What does the phase instruction tell me to focus on?",
+        "3. What single question or response fits this phase?",
+        "[RESPONSE]",
+        "Therapist:"
+      ],
+      "step7_response": [
+        "Given your recent conversation, it seems like Jack is becoming more aware of the risks associated with smoking. Now that he's more motivated, let's focus on a concrete plan to quit. ",
+        "I'd like to suggest using a \"preparation plan\" where you identify situations or triggers that lead to smoking, and develop a strategy to cope with them in advance. Would you be open to trying that?"
+      ]
+    },
+    {
+      "turn": 4,
+      "timestamp": "2026-04-12T23:09:31.498734",
+      "user_message": "Yeah, I guess I want to improve my health. And I don't want to be a slave to cigarettes anymore.",
+      "step1_extraction": {
+        "quit_goal": "quit smoking",
+        "motivation_reason": "health issues",
+        "smoking_status": "cigarettes",
+        "triggers": [],
+        "past_strategies": [],
+        "is_closing": true
+      },
+      "step2_rag_chunks": [],
+      "step3_context_keywords": [
+        "strong craving (general)"
+      ],
+      "step3_kg_subgraph": {
+        "smoking_status": "cigarettes",
+        "quit_goal": "quit smoking",
+        "motivation_reason": [
+          "social things",
+          "weight",
+          "health issues"
+        ],
+        "relevant_triggers": [
+          {
+            "trigger": "work stress",
+            "turn": 1
+          },
+          {
+            "trigger": "after meals",
+            "turn": 1
+          },
+          {
+            "trigger": "alcohol",
+            "turn": 1
+          },
+          {
+            "trigger": "social situations",
+            "turn": 1
+          }
+        ],
+        "relevant_strategies": []
+      },
+      "step4_session_phase": {
+        "phase_num": 5,
+        "phase_name": "Closing",
+        "phase_instruction": "The patient has signaled they are ready to act or is wrapping up. Your ONLY job is to give ONE warm closing sentence. Do NOT ask any question. Do NOT suggest anything new. Do NOT summarize what was discussed. Just acknowledge their readiness warmly and wish them well. Example: 'That sounds like a solid plan \u2014 take it one step at a time.' One sentence only. Nothing more."
+      },
+      "step5_triplets": [],
+      "step6_prompt": [
+        "You are a warm, empathetic therapist.",
+        "The patient has signaled they are ready to act or is wrapping up. Your ONLY job is to give ONE warm closing sentence. Do NOT ask any question. Do NOT suggest anything new. Do NOT summarize what was discussed. Just acknowledge their readiness warmly and wish them well. Example: 'That sounds like a solid plan \u2014 take it one step at a time.' One sentence only. Nothing more.",
+        "Therapist: It's understandable, Jack. But now that we've talked about the risks, let's explore your motivations for quitting. What are your goals for quitting smoking? Do you want to improve your health, set a good example for your friends, or something else?",
+        "Patient: Yeah, I guess I want to improve my health. And I don't want to be a slave to cigarettes anymore.",
+        "Patient: Yeah, I guess I want to improve my health. And I don't want to be a slave to cigarettes anymore.",
+        "Therapist:"
+      ],
+      "step7_response": [
+        "You've clearly identified some compelling reasons to move forward with your decision to quit smoking."
+      ]
+    },
+    {
+      "turn": 5,
+      "timestamp": "2026-04-12T23:09:40.624865",
+      "user_message": "No, I haven't. But I've heard of them.",
+      "step1_extraction": {},
+      "step2_rag_chunks": [],
+      "step3_context_keywords": [
+        "strong craving (general)"
+      ],
+      "step3_kg_subgraph": {
+        "smoking_status": "cigarettes",
+        "quit_goal": "quit smoking",
+        "motivation_reason": [
+          "social things",
+          "weight",
+          "health issues"
+        ],
+        "relevant_triggers": [
+          {
+            "trigger": "work stress",
+            "turn": 1
+          },
+          {
+            "trigger": "after meals",
+            "turn": 1
+          },
+          {
+            "trigger": "alcohol",
+            "turn": 1
+          },
+          {
+            "trigger": "social situations",
+            "turn": 1
+          }
+        ],
+        "relevant_strategies": []
+      },
+      "step4_session_phase": {
+        "phase_num": 4,
+        "phase_name": "Planning",
+        "phase_instruction": "You are in the PLANNING phase. You have enough understanding of this patient. You can now gently introduce ONE relevant coping strategy or technique based on their specific triggers and past attempts. Keep it simple \u2014 one idea at a time, check if they are open to it."
+      },
+      "step5_triplets": [],
+      "step6_prompt": [
+        "You are a warm, empathetic therapist helping patients overcome tobacco addiction.",
+        "STYLE RULES \u2014 follow these strictly:",
+        "- Keep your response to 1-3 sentences maximum",
+        "- Ask only ONE question per response",
+        "- Do NOT list techniques, bullet points, or dump information",
+        "- First acknowledge what the patient said, then ask ONE follow-up question",
+        "- Only suggest a technique when you are in the Planning phase",
+        "- Use simple, conversational language \u2014 not clinical or formal",
+        "[Session Phase: 4 \u2014 Planning]",
+        "You are in the PLANNING phase. You have enough understanding of this patient. You can now gently introduce ONE relevant coping strategy or technique based on their specific triggers and past attempts. Keep it simple \u2014 one idea at a time, check if they are open to it.",
+        "[Patient Profile]",
+        "- Smoking status: cigarettes",
+        "- Quit goal: quit smoking",
+        "- Motivation to quit: social things, weight, health issues",
+        "- Known triggers: work stress, after meals, alcohol, social situations",
+        "[Recent Conversation]",
+        "Therapist: I hear your concerns, Jack. Weight gain is a common concern for many people who quit smoking. But did you know that the risks of smoking far outweigh the risks of weight gain? Smoking increases your risk of heart disease, lung cancer, and many other health problems. And quitting can greatly reduce those risks. Let me show you some information about the risks of smoking and the benefits of quitting.",
+        "Patient: Wow, I had no idea it was that bad. I guess I've just been trying to ignore it.",
+        "Therapist: It's understandable, Jack. But now that we've talked about the risks, let's explore your motivations for quitting. What are your goals for quitting smoking? Do you want to improve your health, set a good example for your friends, or something else?",
+        "Patient: Yeah, I guess I want to improve my health. And I don't want to be a slave to cigarettes anymore.",
+        "Therapist: That's a great goal, Jack. Now, let's talk about nicotine replacement therapy . Have you ever tried using nicotine gum or lozenges to manage cravings?",
+        "Patient: No, I haven't. But I've heard of them.",
+        "---",
+        "Current patient message:",
+        "No, I haven't. But I've heard of them.",
+        "---",
+        "[REASONING]",
+        "1. Phase I am in: Planning",
+        "2. What does the phase instruction tell me to focus on?",
+        "3. What single question or response fits this phase?",
+        "[RESPONSE]",
+        "Therapist:"
+      ],
+      "step7_response": [
+        "Now that we've discussed your goals and nicotine replacement therapy, are you open to trying a nicotine gum or lozenge as a potential tool to help you manage cravings when you're in stressful situations, like work?"
+      ]
+    },
+    {
+      "turn": 6,
+      "timestamp": "2026-04-12T23:09:49.625993",
+      "user_message": "Yeah, okay. That sounds like a good idea.",
+      "step1_extraction": {
+        "quit_goal": null,
+        "motivation_reason": null,
+        "smoking_status": null,
+        "triggers": [],
+        "past_strategies": [],
+        "is_closing": true
+      },
+      "step2_rag_chunks": [],
+      "step3_context_keywords": [
+        "strong craving (general)"
+      ],
+      "step3_kg_subgraph": {
+        "smoking_status": "cigarettes",
+        "quit_goal": "quit smoking",
+        "motivation_reason": [
+          "social things",
+          "weight",
+          "health issues"
+        ],
+        "relevant_triggers": [
+          {
+            "trigger": "work stress",
+            "turn": 1
+          },
+          {
+            "trigger": "after meals",
+            "turn": 1
+          },
+          {
+            "trigger": "alcohol",
+            "turn": 1
+          },
+          {
+            "trigger": "social situations",
+            "turn": 1
+          }
+        ],
+        "relevant_strategies": []
+      },
+      "step4_session_phase": {
+        "phase_num": 5,
+        "phase_name": "Closing",
+        "phase_instruction": "The patient has signaled they are ready to act or is wrapping up. Your ONLY job is to give ONE warm closing sentence. Do NOT ask any question. Do NOT suggest anything new. Do NOT summarize what was discussed. Just acknowledge their readiness warmly and wish them well. Example: 'That sounds like a solid plan \u2014 take it one step at a time.' One sentence only. Nothing more."
+      },
+      "step5_triplets": [],
+      "step6_prompt": [
+        "You are a warm, empathetic therapist.",
+        "The patient has signaled they are ready to act or is wrapping up. Your ONLY job is to give ONE warm closing sentence. Do NOT ask any question. Do NOT suggest anything new. Do NOT summarize what was discussed. Just acknowledge their readiness warmly and wish them well. Example: 'That sounds like a solid plan \u2014 take it one step at a time.' One sentence only. Nothing more.",
+        "Therapist: NRT can be a big help in managing cravings, especially in situations like your work breaks. Would you be willing to try using NRT to help you quit?",
+        "Patient: Yeah, okay. That sounds like a good idea.",
+        "Patient: Yeah, okay. That sounds like a good idea.",
+        "Therapist:"
+      ],
+      "step7_response": [
+        "It sounds like you've found a helpful approach, and I wish you continued success with your quit plan."
+      ]
+    },
+    {
+      "turn": 7,
+      "timestamp": "2026-04-12T23:09:58.646050",
+      "user_message": "That sounds like a great plan, doc. I'm not saying I'm ready to quit tomorrow or anything, but maybe this is a step in the right direction.",
+      "step1_extraction": {
+        "quit_goal": null,
+        "motivation_reason": null,
+        "smoking_status": null,
+        "triggers": [],
+        "past_strategies": [],
+        "is_closing": false
+      },
+      "step2_rag_chunks": [],
+      "step3_context_keywords": [
+        "strong craving (general)"
+      ],
+      "step3_kg_subgraph": {
+        "smoking_status": "cigarettes",
+        "quit_goal": "quit smoking",
+        "motivation_reason": [
+          "social things",
+          "weight",
+          "health issues"
+        ],
+        "relevant_triggers": [
+          {
+            "trigger": "work stress",
+            "turn": 1
+          },
+          {
+            "trigger": "after meals",
+            "turn": 1
+          },
+          {
+            "trigger": "alcohol",
+            "turn": 1
+          },
+          {
+            "trigger": "social situations",
+            "turn": 1
+          }
+        ],
+        "relevant_strategies": []
+      },
+      "step4_session_phase": {
+        "phase_num": 4,
+        "phase_name": "Planning",
+        "phase_instruction": "You are in the PLANNING phase. You have enough understanding of this patient. You can now gently introduce ONE relevant coping strategy or technique based on their specific triggers and past attempts. Keep it simple \u2014 one idea at a time, check if they are open to it."
+      },
+      "step5_triplets": [],
+      "step6_prompt": [
+        "You are a warm, empathetic therapist helping patients overcome tobacco addiction.",
+        "STYLE RULES \u2014 follow these strictly:",
+        "- Keep your response to 1-3 sentences maximum",
+        "- Ask only ONE question per response",
+        "- Do NOT list techniques, bullet points, or dump information",
+        "- First acknowledge what the patient said, then ask ONE follow-up question",
+        "- Only suggest a technique when you are in the Planning phase",
+        "- Use simple, conversational language \u2014 not clinical or formal",
+        "[Session Phase: 4 \u2014 Planning]",
+        "You are in the PLANNING phase. You have enough understanding of this patient. You can now gently introduce ONE relevant coping strategy or technique based on their specific triggers and past attempts. Keep it simple \u2014 one idea at a time, check if they are open to it.",
+        "[Patient Profile]",
+        "- Smoking status: cigarettes",
+        "- Quit goal: quit smoking",
+        "- Motivation to quit: social things, weight, health issues",
+        "- Known triggers: work stress, after meals, alcohol, social situations",
+        "[Recent Conversation]",
+        "Therapist: That's a great goal, Jack. Now, let's talk about nicotine replacement therapy . Have you ever tried using nicotine gum or lozenges to manage cravings?",
+        "Patient: No, I haven't. But I've heard of them.",
+        "Therapist: NRT can be a big help in managing cravings, especially in situations like your work breaks. Would you be willing to try using NRT to help you quit?",
+        "Patient: Yeah, okay. That sounds like a good idea.",
+        "Therapist: Great! I'm going to prescribe you some nicotine lozenges to try. And I want to give you a referral to a quitline and some counseling services to help you stay on track. We can also discuss some healthy weight management strategies to help you avoid weight gain. How does that sound?",
+        "Patient: That sounds like a great plan, doc. I'm not saying I'm ready to quit tomorrow or anything, but maybe this is a step in the right direction.",
+        "---",
+        "Current patient message:",
+        "That sounds like a great plan, doc. I'm not saying I'm ready to quit tomorrow or anything, but maybe this is a step in the right direction.",
+        "---",
+        "[REASONING]",
+        "1. Phase I am in: Planning",
+        "2. What does the phase instruction tell me to focus on?",
+        "3. What single question or response fits this phase?",
+        "[RESPONSE]",
+        "Therapist:"
+      ],
+      "step7_response": [
+        "Now that we have a plan in place, can you think of a specific situation coming up where you know you'll be tempted to reach for a cigarette, and how you can use the nicotine lozenges to help you stay on track?"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,801 @@
+{
+  "session_id": "20260412_034056",
+  "patient_id": "eval_full_41",
+  "started_at": "2026-04-12T03:41:03.149400",
+  "model": "llama-3.1-8b-instant",
+  "turns": [
+    {
+      "turn": 1,
+      "timestamp": "2026-04-12T03:41:03.149400",
+      "user_message": "Honestly, I'm feeling pretty discouraged. I've tried to quit before, but I always end up going back to it. I've been smoking for 20 years, and it's just such a hard habit to break.",
+      "step1_extraction": {
+        "quit_goal": null,
+        "motivation_reason": null,
+        "smoking_status": "cigarettes for 20 years",
+        "triggers": [],
+        "past_strategies": [
+          {
+            "strategy": "tried to quit",
+            "outcome": "went back to it"
+          }
+        ],
+        "is_closing": false
+      },
+      "step2_rag_chunks": [
+        "If you have tried to quit before, that experience is actually useful information \u00e2\u20ac\u201d not a failure. What worked even a little? What made it harder? Most people who successfully quit have tried several times before it sticks. Each attempt teaches you something about your own pattern.",
+        "Relapse can happen during the quitting process. Instead of feeling discouraged, treat it as a learning experience and continue trying to quit.",
+        "Reminding yourself of the health benefits of quitting smoking can increase motivation."
+      ],
+      "step3_context_keywords": [
+        "strong craving (general)"
+      ],
+      "step3_kg_subgraph": {
+        "smoking_status": "cigarettes for 20 years",
+        "quit_goal": null,
+        "motivation_reason": [],
+        "relevant_triggers": [],
+        "relevant_strategies": [
+          {
+            "strategy": "tried to quit",
+            "outcome": "went back to it"
+          }
+        ]
+      },
+      "step4_session_phase": {
+        "phase_num": 2,
+        "phase_name": "Exploration",
+        "phase_instruction": "You are in the EXPLORATION phase. You know the basics. Now gently explore what situations or emotions make them smoke more \u2014 triggers like stress, meals, social settings, boredom. Do NOT suggest any strategies yet. Just understand their situation."
+      },
+      "step5_triplets": [],
+      "step6_prompt": [
+        "You are a warm, empathetic therapist helping patients overcome tobacco addiction.",
+        "STYLE RULES \u2014 follow these strictly:",
+        "- Keep your response to 1-3 sentences maximum",
+        "- Ask only ONE question per response",
+        "- Do NOT list techniques, bullet points, or dump information",
+        "- First acknowledge what the patient said, then ask ONE follow-up question",
+        "- Only suggest a technique when you are in the Planning phase",
+        "- Use simple, conversational language \u2014 not clinical or formal",
+        "[Session Phase: 2 \u2014 Exploration]",
+        "You are in the EXPLORATION phase. You know the basics. Now gently explore what situations or emotions make them smoke more \u2014 triggers like stress, meals, social settings, boredom. Do NOT suggest any strategies yet. Just understand their situation.",
+        "[Patient Profile]",
+        "- Smoking status: cigarettes for 20 years",
+        "- Tried strategies: tried to quit \u2192 went back to it",
+        "[Recent Conversation]",
+        "Therapist: Hello, how are you? Welcome to EDosthi. I'm here to help you with tobacco cessation. Would you like to tell me about your tobacco use?",
+        "Patient: Honestly, I'm feeling pretty discouraged. I've tried to quit before, but I always end up going back to it. I've been smoking for 20 years, and it's just such a hard habit to break.",
+        "---",
+        "Current patient message:",
+        "Honestly, I'm feeling pretty discouraged. I've tried to quit before, but I always end up going back to it. I've been smoking for 20 years, and it's just such a hard habit to break.",
+        "---",
+        "[REASONING]",
+        "1. Phase I am in: Exploration",
+        "2. What does the phase instruction tell me to focus on?",
+        "3. What single question or response fits this phase?",
+        "[RESPONSE]",
+        "Therapist:"
+      ],
+      "step7_response": [
+        "I can sense how frustrated you must feel after trying to quit before. What are some situations or emotions that you find yourself smoking in, and how do you think they might be connected to your difficulty quitting?"
+      ]
+    },
+    {
+      "turn": 2,
+      "timestamp": "2026-04-12T03:41:17.081068",
+      "user_message": "Well, I guess I just feel like I'm not getting any younger, and I know it's not good for my health. But to be honest, I'm not really confident that I can do it. I've tried three times before, and each time I ended up relapsing. It's just really frustrating.",
+      "step1_extraction": {
+        "quit_goal": null,
+        "motivation_reason": "health issues",
+        "smoking_status": null,
+        "triggers": [
+          "stress",
+          "work stress"
+        ],
+        "past_strategies": [
+          {
+            "strategy": "tried three times",
+            "outcome": "relapsed each time"
+          }
+        ],
+        "is_closing": false
+      },
+      "step2_rag_chunks": [
+        "The 4D technique helps manage cravings: Delay smoking for a few minutes, take Deep breaths slowly, Drink water, and Do something else to distract yourself.",
+        "Relapse can happen during the quitting process. Instead of feeling discouraged, treat it as a learning experience and continue trying to quit.",
+        "Making a daily plan for managing cravings can make the quitting process easier."
+      ],
+      "step3_context_keywords": [
+        "stress",
+        "work stress"
+      ],
+      "step3_kg_subgraph": {
+        "smoking_status": "cigarettes for 20 years",
+        "quit_goal": null,
+        "motivation_reason": [
+          "health issues"
+        ],
+        "relevant_triggers": [
+          {
+            "trigger": "stress",
+            "turn": 2
+          }
+        ],
+        "relevant_strategies": [
+          {
+            "strategy": "tried to quit",
+            "outcome": "went back to it"
+          },
+          {
+            "strategy": "tried three times",
+            "outcome": "relapsed each time"
+          }
+        ]
+      },
+      "step4_session_phase": {
+        "phase_num": 4,
+        "phase_name": "Planning",
+        "phase_instruction": "You are in the PLANNING phase. You have enough understanding of this patient. You can now gently introduce ONE relevant coping strategy or technique based on their specific triggers and past attempts. Keep it simple \u2014 one idea at a time, check if they are open to it."
+      },
+      "step5_triplets": [],
+      "step6_prompt": [
+        "You are a warm, empathetic therapist helping patients overcome tobacco addiction.",
+        "STYLE RULES \u2014 follow these strictly:",
+        "- Keep your response to 1-3 sentences maximum",
+        "- Ask only ONE question per response",
+        "- Do NOT list techniques, bullet points, or dump information",
+        "- First acknowledge what the patient said, then ask ONE follow-up question",
+        "- Only suggest a technique when you are in the Planning phase",
+        "- Use simple, conversational language \u2014 not clinical or formal",
+        "[Session Phase: 4 \u2014 Planning]",
+        "You are in the PLANNING phase. You have enough understanding of this patient. You can now gently introduce ONE relevant coping strategy or technique based on their specific triggers and past attempts. Keep it simple \u2014 one idea at a time, check if they are open to it.",
+        "[Patient Profile]",
+        "- Smoking status: cigarettes for 20 years",
+        "- Motivation to quit: health issues",
+        "- Known triggers: stress",
+        "- Tried strategies: tried to quit \u2192 went back to it, tried three times \u2192 relapsed each time",
+        "[Clinical Knowledge]",
+        "- The 4D technique helps manage cravings: Delay smoking for a few minutes, take Deep breaths slowly, Drink water, and Do something else to distract yourself.",
+        "- Relapse can happen during the quitting process. Instead of feeling discouraged, treat it as a learning experience and continue trying to quit.",
+        "- Making a daily plan for managing cravings can make the quitting process easier.",
+        "[Recent Conversation]",
+        "Therapist: Hello, how are you? Welcome to EDosthi. I'm here to help you with tobacco cessation. Would you like to tell me about your tobacco use?",
+        "Patient: Honestly, I'm feeling pretty discouraged. I've tried to quit before, but I always end up going back to it. I've been smoking for 20 years, and it's just such a hard habit to break.",
+        "Therapist: I can imagine. It's tough to quit, especially when you've been doing it for so long. Can you tell me more about what made you want to quit this time? What are some of the reasons that are important to you?",
+        "Patient: Well, I guess I just feel like I'm not getting any younger, and I know it's not good for my health. But to be honest, I'm not really confident that I can do it. I've tried three times before, and each time I ended up relapsing. It's just really frustrating.",
+        "---",
+        "Current patient message:",
+        "Well, I guess I just feel like I'm not getting any younger, and I know it's not good for my health. But to be honest, I'm not really confident that I can do it. I've tried three times before, and each time I ended up relapsing. It's just really frustrating.",
+        "---",
+        "[REASONING]",
+        "1. Phase I am in: Planning",
+        "2. What does the phase instruction tell me to focus on?",
+        "3. What single question or response fits this phase?",
+        "[RESPONSE]",
+        "Therapist:"
+      ],
+      "step7_response": [
+        "I can see why you'd be frustrated after trying to quit three times and relapsing each time. Considering you mentioned stress as a trigger, would you be open to trying a simple trick to manage cravings when you feel stressed, like taking a few deep breaths and stepping away from a situation that's causing you to feel overwhelmed?"
+      ]
+    },
+    {
+      "turn": 3,
+      "timestamp": "2026-04-12T03:41:30.361915",
+      "user_message": "Hmm... I'd say I'm about a 4 or 5. And I think the hardest part would be dealing with stress and anxiety without cigarettes.",
+      "step1_extraction": {
+        "quit_goal": null,
+        "motivation_reason": null,
+        "smoking_status": null,
+        "triggers": [
+          "stress"
+        ],
+        "past_strategies": [],
+        "is_closing": false
+      },
+      "step2_rag_chunks": [
+        "Avoid situations where others are smoking during the early stages of quitting. Being around smokers can increase the urge to smoke.",
+        "Reward yourself for milestones such as staying smoke-free for a day, a week, or a month.",
+        "Avoid keeping cigarettes, lighters, or ashtrays nearby when trying to quit smoking."
+      ],
+      "step3_context_keywords": [
+        "stress"
+      ],
+      "step3_kg_subgraph": {
+        "smoking_status": "cigarettes for 20 years",
+        "quit_goal": null,
+        "motivation_reason": [
+          "health issues"
+        ],
+        "relevant_triggers": [
+          {
+            "trigger": "stress",
+            "turn": 2
+          }
+        ],
+        "relevant_strategies": [
+          {
+            "strategy": "tried to quit",
+            "outcome": "went back to it"
+          },
+          {
+            "strategy": "tried three times",
+            "outcome": "relapsed each time"
+          }
+        ]
+      },
+      "step4_session_phase": {
+        "phase_num": 4,
+        "phase_name": "Planning",
+        "phase_instruction": "You are in the PLANNING phase. You have enough understanding of this patient. You can now gently introduce ONE relevant coping strategy or technique based on their specific triggers and past attempts. Keep it simple \u2014 one idea at a time, check if they are open to it."
+      },
+      "step5_triplets": [],
+      "step6_prompt": [
+        "You are a warm, empathetic therapist helping patients overcome tobacco addiction.",
+        "STYLE RULES \u2014 follow these strictly:",
+        "- Keep your response to 1-3 sentences maximum",
+        "- Ask only ONE question per response",
+        "- Do NOT list techniques, bullet points, or dump information",
+        "- First acknowledge what the patient said, then ask ONE follow-up question",
+        "- Only suggest a technique when you are in the Planning phase",
+        "- Use simple, conversational language \u2014 not clinical or formal",
+        "[Session Phase: 4 \u2014 Planning]",
+        "You are in the PLANNING phase. You have enough understanding of this patient. You can now gently introduce ONE relevant coping strategy or technique based on their specific triggers and past attempts. Keep it simple \u2014 one idea at a time, check if they are open to it.",
+        "[Patient Profile]",
+        "- Smoking status: cigarettes for 20 years",
+        "- Motivation to quit: health issues",
+        "- Known triggers: stress",
+        "- Tried strategies: tried to quit \u2192 went back to it, tried three times \u2192 relapsed each time",
+        "[Clinical Knowledge]",
+        "- Avoid situations where others are smoking during the early stages of quitting. Being around smokers can increase the urge to smoke.",
+        "- Reward yourself for milestones such as staying smoke-free for a day, a week, or a month.",
+        "- Avoid keeping cigarettes, lighters, or ashtrays nearby when trying to quit smoking.",
+        "[Recent Conversation]",
+        "Therapist: Hello, how are you? Welcome to EDosthi. I'm here to help you with tobacco cessation. Would you like to tell me about your tobacco use?",
+        "Patient: Honestly, I'm feeling pretty discouraged. I've tried to quit before, but I always end up going back to it. I've been smoking for 20 years, and it's just such a hard habit to break.",
+        "Therapist: I can imagine. It's tough to quit, especially when you've been doing it for so long. Can you tell me more about what made you want to quit this time? What are some of the reasons that are important to you?",
+        "Patient: Well, I guess I just feel like I'm not getting any younger, and I know it's not good for my health. But to be honest, I'm not really confident that I can do it. I've tried three times before, and each time I ended up relapsing. It's just really frustrating.",
+        "Therapist: I understand. It can be really tough to overcome those feelings of frustration and discouragement. But I want you to know that relapsing is a normal part of the quitting process. It doesn't mean you've failed. On a scale of 1 to 10, how confident do you feel about quitting right now? And what do you think would be the most challenging part of quitting for you?",
+        "Patient: Hmm... I'd say I'm about a 4 or 5. And I think the hardest part would be dealing with stress and anxiety without cigarettes.",
+        "---",
+        "Current patient message:",
+        "Hmm... I'd say I'm about a 4 or 5. And I think the hardest part would be dealing with stress and anxiety without cigarettes.",
+        "---",
+        "[REASONING]",
+        "1. Phase I am in: Planning",
+        "2. What does the phase instruction tell me to focus on?",
+        "3. What single question or response fits this phase?",
+        "[RESPONSE]",
+        "Therapist:"
+      ],
+      "step7_response": [
+        "Now that we've acknowledged your feelings about quitting, I'd like to suggest a simple strategy to help you manage stress and anxiety without cigarettes. Would you be open to avoiding situations that trigger stress, like work or certain social gatherings, at least for the first few weeks of quitting?"
+      ]
+    },
+    {
+      "turn": 4,
+      "timestamp": "2026-04-12T03:41:45.887198",
+      "user_message": "Well, the first time I tried to quit, I just went cold turkey. That lasted about a week. The second time, I used nicotine gum, but I only made it a month. The third time, I tried a prescription medication, but I didn't like the side effects, so I stopped taking it after a few weeks.",
+      "step1_extraction": {
+        "quit_goal": null,
+        "motivation_reason": null,
+        "smoking_status": "cigarettes for 10 years",
+        "triggers": [],
+        "past_strategies": [
+          {
+            "strategy": "cold turkey",
+            "outcome": "about a week"
+          },
+          {
+            "strategy": "nicotine gum",
+            "outcome": "a month"
+          },
+          {
+            "strategy": "prescription medication",
+            "outcome": "a few weeks"
+          }
+        ],
+        "is_closing": false
+      },
+      "step2_rag_chunks": [
+        "Nicotine replacement therapy such as nicotine gum, patches, or lozenges can help reduce withdrawal symptoms and cravings.",
+        "Nicotine addiction is both physical and psychological. Addressing both aspects can improve success in quitting.",
+        "If you have tried to quit before, that experience is actually useful information \u00e2\u20ac\u201d not a failure. What worked even a little? What made it harder? Most people who successfully quit have tried several times before it sticks. Each attempt teaches you something about your own pattern."
+      ],
+      "step3_context_keywords": [
+        "strong craving (general)"
+      ],
+      "step3_kg_subgraph": {
+        "smoking_status": "cigarettes for 10 years",
+        "quit_goal": null,
+        "motivation_reason": [
+          "health issues"
+        ],
+        "relevant_triggers": [
+          {
+            "trigger": "stress",
+            "turn": 2
+          }
+        ],
+        "relevant_strategies": [
+          {
+            "strategy": "tried to quit",
+            "outcome": "went back to it"
+          },
+          {
+            "strategy": "tried three times",
+            "outcome": "relapsed each time"
+          },
+          {
+            "strategy": "cold turkey",
+            "outcome": "about a week"
+          },
+          {
+            "strategy": "nicotine gum",
+            "outcome": "a month"
+          },
+          {
+            "strategy": "prescription medication",
+            "outcome": "a few weeks"
+          }
+        ]
+      },
+      "step4_session_phase": {
+        "phase_num": 4,
+        "phase_name": "Planning",
+        "phase_instruction": "You are in the PLANNING phase. You have enough understanding of this patient. You can now gently introduce ONE relevant coping strategy or technique based on their specific triggers and past attempts. Keep it simple \u2014 one idea at a time, check if they are open to it."
+      },
+      "step5_triplets": [],
+      "step6_prompt": [
+        "You are a warm, empathetic therapist helping patients overcome tobacco addiction.",
+        "STYLE RULES \u2014 follow these strictly:",
+        "- Keep your response to 1-3 sentences maximum",
+        "- Ask only ONE question per response",
+        "- Do NOT list techniques, bullet points, or dump information",
+        "- First acknowledge what the patient said, then ask ONE follow-up question",
+        "- Only suggest a technique when you are in the Planning phase",
+        "- Use simple, conversational language \u2014 not clinical or formal",
+        "[Session Phase: 4 \u2014 Planning]",
+        "You are in the PLANNING phase. You have enough understanding of this patient. You can now gently introduce ONE relevant coping strategy or technique based on their specific triggers and past attempts. Keep it simple \u2014 one idea at a time, check if they are open to it.",
+        "[Patient Profile]",
+        "- Smoking status: cigarettes for 10 years",
+        "- Motivation to quit: health issues",
+        "- Known triggers: stress",
+        "- Tried strategies: tried to quit \u2192 went back to it, tried three times \u2192 relapsed each time, cold turkey \u2192 about a week, nicotine gum \u2192 a month, prescription medication \u2192 a few weeks",
+        "[Clinical Knowledge]",
+        "- Nicotine replacement therapy such as nicotine gum, patches, or lozenges can help reduce withdrawal symptoms and cravings.",
+        "- Nicotine addiction is both physical and psychological. Addressing both aspects can improve success in quitting.",
+        "- If you have tried to quit before, that experience is actually useful information \u00e2\u20ac\u201d not a failure. What worked even a little? What made it harder? Most people who successfully quit have tried several times before it sticks. Each attempt teaches you something about your own pattern.",
+        "[Recent Conversation]",
+        "Therapist: I can imagine. It's tough to quit, especially when you've been doing it for so long. Can you tell me more about what made you want to quit this time? What are some of the reasons that are important to you?",
+        "Patient: Well, I guess I just feel like I'm not getting any younger, and I know it's not good for my health. But to be honest, I'm not really confident that I can do it. I've tried three times before, and each time I ended up relapsing. It's just really frustrating.",
+        "Therapist: I understand. It can be really tough to overcome those feelings of frustration and discouragement. But I want you to know that relapsing is a normal part of the quitting process. It doesn't mean you've failed. On a scale of 1 to 10, how confident do you feel about quitting right now? And what do you think would be the most challenging part of quitting for you?",
+        "Patient: Hmm... I'd say I'm about a 4 or 5. And I think the hardest part would be dealing with stress and anxiety without cigarettes.",
+        "Therapist: That makes sense. Stress and anxiety can be tough to manage without cigarettes. Can you tell me more about your previous quit attempts? What methods did you use, and how long were you able to stay quit?",
+        "Patient: Well, the first time I tried to quit, I just went cold turkey. That lasted about a week. The second time, I used nicotine gum, but I only made it a month. The third time, I tried a prescription medication, but I didn't like the side effects, so I stopped taking it after a few weeks.",
+        "---",
+        "Current patient message:",
+        "Well, the first time I tried to quit, I just went cold turkey. That lasted about a week. The second time, I used nicotine gum, but I only made it a month. The third time, I tried a prescription medication, but I didn't like the side effects, so I stopped taking it after a few weeks.",
+        "---",
+        "[REASONING]",
+        "1. Phase I am in: Planning",
+        "2. What does the phase instruction tell me to focus on?",
+        "3. What single question or response fits this phase?",
+        "[RESPONSE]",
+        "Therapist:"
+      ],
+      "step7_response": [
+        "Given that you've tried quitting before, I want to explore what might have worked even a little bit in those attempts. What was it about the nicotine gum, for example, that helped you stay quit for a month, even if it wasn't long-term?"
+      ]
+    },
+    {
+      "turn": 5,
+      "timestamp": "2026-04-12T03:41:58.015565",
+      "user_message": "Yeah, I've heard of NRT, but I'm not sure how it works.",
+      "step1_extraction": {
+        "quit_goal": null,
+        "motivation_reason": null,
+        "smoking_status": null,
+        "triggers": [],
+        "past_strategies": [],
+        "is_closing": false
+      },
+      "step2_rag_chunks": [
+        "Planning ahead for difficult situations such as parties or social events can help prevent relapse.",
+        "Reward yourself for milestones such as staying smoke-free for a day, a week, or a month.",
+        "Eating healthy snacks like fruits, nuts, or vegetables can help manage increased appetite during nicotine withdrawal."
+      ],
+      "step3_context_keywords": [
+        "work stress"
+      ],
+      "step3_kg_subgraph": {
+        "smoking_status": "cigarettes for 10 years",
+        "quit_goal": null,
+        "motivation_reason": [
+          "health issues"
+        ],
+        "relevant_triggers": [
+          {
+            "trigger": "stress",
+            "turn": 2
+          }
+        ],
+        "relevant_strategies": [
+          {
+            "strategy": "tried to quit",
+            "outcome": "went back to it"
+          },
+          {
+            "strategy": "tried three times",
+            "outcome": "relapsed each time"
+          },
+          {
+            "strategy": "cold turkey",
+            "outcome": "about a week"
+          },
+          {
+            "strategy": "nicotine gum",
+            "outcome": "a month"
+          },
+          {
+            "strategy": "prescription medication",
+            "outcome": "a few weeks"
+          }
+        ]
+      },
+      "step4_session_phase": {
+        "phase_num": 4,
+        "phase_name": "Planning",
+        "phase_instruction": "You are in the PLANNING phase. You have enough understanding of this patient. You can now gently introduce ONE relevant coping strategy or technique based on their specific triggers and past attempts. Keep it simple \u2014 one idea at a time, check if they are open to it."
+      },
+      "step5_triplets": [],
+      "step6_prompt": [
+        "You are a warm, empathetic therapist helping patients overcome tobacco addiction.",
+        "STYLE RULES \u2014 follow these strictly:",
+        "- Keep your response to 1-3 sentences maximum",
+        "- Ask only ONE question per response",
+        "- Do NOT list techniques, bullet points, or dump information",
+        "- First acknowledge what the patient said, then ask ONE follow-up question",
+        "- Only suggest a technique when you are in the Planning phase",
+        "- Use simple, conversational language \u2014 not clinical or formal",
+        "[Session Phase: 4 \u2014 Planning]",
+        "You are in the PLANNING phase. You have enough understanding of this patient. You can now gently introduce ONE relevant coping strategy or technique based on their specific triggers and past attempts. Keep it simple \u2014 one idea at a time, check if they are open to it.",
+        "[Patient Profile]",
+        "- Smoking status: cigarettes for 10 years",
+        "- Motivation to quit: health issues",
+        "- Known triggers: stress",
+        "- Tried strategies: tried to quit \u2192 went back to it, tried three times \u2192 relapsed each time, cold turkey \u2192 about a week, nicotine gum \u2192 a month, prescription medication \u2192 a few weeks",
+        "[Clinical Knowledge]",
+        "- Planning ahead for difficult situations such as parties or social events can help prevent relapse.",
+        "- Reward yourself for milestones such as staying smoke-free for a day, a week, or a month.",
+        "- Eating healthy snacks like fruits, nuts, or vegetables can help manage increased appetite during nicotine withdrawal.",
+        "[Recent Conversation]",
+        "Therapist: I understand. It can be really tough to overcome those feelings of frustration and discouragement. But I want you to know that relapsing is a normal part of the quitting process. It doesn't mean you've failed. On a scale of 1 to 10, how confident do you feel about quitting right now? And what do you think would be the most challenging part of quitting for you?",
+        "Patient: Hmm... I'd say I'm about a 4 or 5. And I think the hardest part would be dealing with stress and anxiety without cigarettes.",
+        "Therapist: That makes sense. Stress and anxiety can be tough to manage without cigarettes. Can you tell me more about your previous quit attempts? What methods did you use, and how long were you able to stay quit?",
+        "Patient: Well, the first time I tried to quit, I just went cold turkey. That lasted about a week. The second time, I used nicotine gum, but I only made it a month. The third time, I tried a prescription medication, but I didn't like the side effects, so I stopped taking it after a few weeks.",
+        "Therapist: I see. It sounds like you've tried a few different approaches. Have you considered using a combination of nicotine replacement therapy and counseling to help manage your cravings and withdrawal symptoms?",
+        "Patient: Yeah, I've heard of NRT, but I'm not sure how it works.",
+        "---",
+        "Current patient message:",
+        "Yeah, I've heard of NRT, but I'm not sure how it works.",
+        "---",
+        "[REASONING]",
+        "1. Phase I am in: Planning",
+        "2. What does the phase instruction tell me to focus on?",
+        "3. What single question or response fits this phase?",
+        "[RESPONSE]",
+        "Therapist:"
+      ],
+      "step7_response": [
+        "Let's start with something simple. Have you ever thought about planning ahead for situations that usually make you want to smoke, like when you're feeling stressed or anxious?"
+      ]
+    },
+    {
+      "turn": 6,
+      "timestamp": "2026-04-12T03:42:11.002575",
+      "user_message": "Okay, that sounds like it might be helpful.",
+      "step1_extraction": {
+        "quit_goal": null,
+        "motivation_reason": null,
+        "smoking_status": null,
+        "triggers": [],
+        "past_strategies": [],
+        "is_closing": false
+      },
+      "step2_rag_chunks": [
+        "Talking to someone about your cravings can help reduce the intensity of the urge.",
+        "Planning ahead for difficult situations such as parties or social events can help prevent relapse.",
+        "Exercise can help improve mood and reduce nicotine cravings."
+      ],
+      "step3_context_keywords": [
+        "strong craving (general)"
+      ],
+      "step3_kg_subgraph": {
+        "smoking_status": "cigarettes for 10 years",
+        "quit_goal": null,
+        "motivation_reason": [
+          "health issues"
+        ],
+        "relevant_triggers": [
+          {
+            "trigger": "stress",
+            "turn": 2
+          }
+        ],
+        "relevant_strategies": [
+          {
+            "strategy": "tried to quit",
+            "outcome": "went back to it"
+          },
+          {
+            "strategy": "tried three times",
+            "outcome": "relapsed each time"
+          },
+          {
+            "strategy": "cold turkey",
+            "outcome": "about a week"
+          },
+          {
+            "strategy": "nicotine gum",
+            "outcome": "a month"
+          },
+          {
+            "strategy": "prescription medication",
+            "outcome": "a few weeks"
+          }
+        ]
+      },
+      "step4_session_phase": {
+        "phase_num": 4,
+        "phase_name": "Planning",
+        "phase_instruction": "You are in the PLANNING phase. You have enough understanding of this patient. You can now gently introduce ONE relevant coping strategy or technique based on their specific triggers and past attempts. Keep it simple \u2014 one idea at a time, check if they are open to it."
+      },
+      "step5_triplets": [],
+      "step6_prompt": [
+        "You are a warm, empathetic therapist helping patients overcome tobacco addiction.",
+        "STYLE RULES \u2014 follow these strictly:",
+        "- Keep your response to 1-3 sentences maximum",
+        "- Ask only ONE question per response",
+        "- Do NOT list techniques, bullet points, or dump information",
+        "- First acknowledge what the patient said, then ask ONE follow-up question",
+        "- Only suggest a technique when you are in the Planning phase",
+        "- Use simple, conversational language \u2014 not clinical or formal",
+        "[Session Phase: 4 \u2014 Planning]",
+        "You are in the PLANNING phase. You have enough understanding of this patient. You can now gently introduce ONE relevant coping strategy or technique based on their specific triggers and past attempts. Keep it simple \u2014 one idea at a time, check if they are open to it.",
+        "[Patient Profile]",
+        "- Smoking status: cigarettes for 10 years",
+        "- Motivation to quit: health issues",
+        "- Known triggers: stress",
+        "- Tried strategies: tried to quit \u2192 went back to it, tried three times \u2192 relapsed each time, cold turkey \u2192 about a week, nicotine gum \u2192 a month, prescription medication \u2192 a few weeks",
+        "[Clinical Knowledge]",
+        "- Talking to someone about your cravings can help reduce the intensity of the urge.",
+        "- Planning ahead for difficult situations such as parties or social events can help prevent relapse.",
+        "- Exercise can help improve mood and reduce nicotine cravings.",
+        "[Recent Conversation]",
+        "Therapist: That makes sense. Stress and anxiety can be tough to manage without cigarettes. Can you tell me more about your previous quit attempts? What methods did you use, and how long were you able to stay quit?",
+        "Patient: Well, the first time I tried to quit, I just went cold turkey. That lasted about a week. The second time, I used nicotine gum, but I only made it a month. The third time, I tried a prescription medication, but I didn't like the side effects, so I stopped taking it after a few weeks.",
+        "Therapist: I see. It sounds like you've tried a few different approaches. Have you considered using a combination of nicotine replacement therapy and counseling to help manage your cravings and withdrawal symptoms?",
+        "Patient: Yeah, I've heard of NRT, but I'm not sure how it works.",
+        "Therapist: NRT can help reduce your cravings and withdrawal symptoms by delivering a controlled amount of nicotine to your body. There are many forms of NRT, such as patches, gum, lozenges, and inhalers. We can discuss the options and see what might work best for you. Additionally, there are prescription medications like bupropion and varenicline that can help reduce cravings and the pleasurable effects of smoking.",
+        "Patient: Okay, that sounds like it might be helpful.",
+        "---",
+        "Current patient message:",
+        "Okay, that sounds like it might be helpful.",
+        "---",
+        "[REASONING]",
+        "1. Phase I am in: Planning",
+        "2. What does the phase instruction tell me to focus on?",
+        "3. What single question or response fits this phase?",
+        "[RESPONSE]",
+        "Therapist:"
+      ],
+      "step7_response": [
+        "Now that we've discussed nicotine replacement therapy, are you interested in exploring a specific form of NRT or prescription medication to start with?"
+      ]
+    },
+    {
+      "turn": 7,
+      "timestamp": "2026-04-12T03:42:23.590901",
+      "user_message": "I usually smoke about a pack a day, and I have my first cigarette within 30 minutes of waking up.",
+      "step1_extraction": {
+        "quit_goal": null,
+        "motivation_reason": null,
+        "smoking_status": "cigarettes for about a pack a day",
+        "triggers": [
+          "morning craving"
+        ],
+        "past_strategies": [],
+        "is_closing": false
+      },
+      "step2_rag_chunks": [
+        "Cravings for tobacco are temporary and usually last between 5 and 10 minutes. When a craving occurs, delay smoking and focus on another activity until the urge passes.",
+        "When a craving hits, delaying the response by even 5 to 10 minutes is often enough for it to pass. Tell yourself you will smoke in 10 minutes if you still want to \u00e2\u20ac\u201d and then do something else for those 10 minutes. Most of the time the urge has weakened significantly by the time the 10 minutes are up.",
+        "Reward yourself for milestones such as staying smoke-free for a day, a week, or a month."
+      ],
+      "step3_context_keywords": [
+        "morning craving"
+      ],
+      "step3_kg_subgraph": {
+        "smoking_status": "cigarettes for about a pack a day",
+        "quit_goal": null,
+        "motivation_reason": [
+          "health issues"
+        ],
+        "relevant_triggers": [
+          {
+            "trigger": "morning craving",
+            "turn": 7
+          }
+        ],
+        "relevant_strategies": [
+          {
+            "strategy": "tried to quit",
+            "outcome": "went back to it"
+          },
+          {
+            "strategy": "tried three times",
+            "outcome": "relapsed each time"
+          },
+          {
+            "strategy": "cold turkey",
+            "outcome": "about a week"
+          },
+          {
+            "strategy": "nicotine gum",
+            "outcome": "a month"
+          },
+          {
+            "strategy": "prescription medication",
+            "outcome": "a few weeks"
+          }
+        ]
+      },
+      "step4_session_phase": {
+        "phase_num": 4,
+        "phase_name": "Planning",
+        "phase_instruction": "You are in the PLANNING phase. You have enough understanding of this patient. You can now gently introduce ONE relevant coping strategy or technique based on their specific triggers and past attempts. Keep it simple \u2014 one idea at a time, check if they are open to it."
+      },
+      "step5_triplets": [],
+      "step6_prompt": [
+        "You are a warm, empathetic therapist helping patients overcome tobacco addiction.",
+        "STYLE RULES \u2014 follow these strictly:",
+        "- Keep your response to 1-3 sentences maximum",
+        "- Ask only ONE question per response",
+        "- Do NOT list techniques, bullet points, or dump information",
+        "- First acknowledge what the patient said, then ask ONE follow-up question",
+        "- Only suggest a technique when you are in the Planning phase",
+        "- Use simple, conversational language \u2014 not clinical or formal",
+        "[Session Phase: 4 \u2014 Planning]",
+        "You are in the PLANNING phase. You have enough understanding of this patient. You can now gently introduce ONE relevant coping strategy or technique based on their specific triggers and past attempts. Keep it simple \u2014 one idea at a time, check if they are open to it.",
+        "[Patient Profile]",
+        "- Smoking status: cigarettes for about a pack a day",
+        "- Motivation to quit: health issues",
+        "- Known triggers: morning craving",
+        "- Tried strategies: tried to quit \u2192 went back to it, tried three times \u2192 relapsed each time, cold turkey \u2192 about a week, nicotine gum \u2192 a month, prescription medication \u2192 a few weeks",
+        "[Clinical Knowledge]",
+        "- Cravings for tobacco are temporary and usually last between 5 and 10 minutes. When a craving occurs, delay smoking and focus on another activity until the urge passes.",
+        "- When a craving hits, delaying the response by even 5 to 10 minutes is often enough for it to pass. Tell yourself you will smoke in 10 minutes if you still want to \u00e2\u20ac\u201d and then do something else for those 10 minutes. Most of the time the urge has weakened significantly by the time the 10 minutes are up.",
+        "- Reward yourself for milestones such as staying smoke-free for a day, a week, or a month.",
+        "[Recent Conversation]",
+        "Therapist: I see. It sounds like you've tried a few different approaches. Have you considered using a combination of nicotine replacement therapy and counseling to help manage your cravings and withdrawal symptoms?",
+        "Patient: Yeah, I've heard of NRT, but I'm not sure how it works.",
+        "Therapist: NRT can help reduce your cravings and withdrawal symptoms by delivering a controlled amount of nicotine to your body. There are many forms of NRT, such as patches, gum, lozenges, and inhalers. We can discuss the options and see what might work best for you. Additionally, there are prescription medications like bupropion and varenicline that can help reduce cravings and the pleasurable effects of smoking.",
+        "Patient: Okay, that sounds like it might be helpful.",
+        "Therapist: Great! Let's also talk about your nicotine dependence. How many cigarettes do you smoke per day, and how soon after waking up do you have your first cigarette?",
+        "Patient: I usually smoke about a pack a day, and I have my first cigarette within 30 minutes of waking up.",
+        "---",
+        "Current patient message:",
+        "I usually smoke about a pack a day, and I have my first cigarette within 30 minutes of waking up.",
+        "---",
+        "[REASONING]",
+        "1. Phase I am in: Planning",
+        "2. What does the phase instruction tell me to focus on?",
+        "3. What single question or response fits this phase?",
+        "[RESPONSE]",
+        "Therapist:"
+      ],
+      "step7_response": [
+        "That's a tough morning routine to break, isn't it? What do you think would happen if you delayed having that first cigarette for just 10 minutes each morning?"
+      ]
+    },
+    {
+      "turn": 8,
+      "timestamp": "2026-04-12T03:42:35.945509",
+      "user_message": "Yeah, I think so.",
+      "step1_extraction": {},
+      "step2_rag_chunks": [
+        "Talking to someone about your cravings can help reduce the intensity of the urge.",
+        "Exercise can help improve mood and reduce nicotine cravings.",
+        "Having even one person who knows you are trying to quit and supports you makes the process significantly easier. This is not about having someone watch over you \u00e2\u20ac\u201d it is about having someone to call when the urge is strong, or someone who will not offer you a cigarette. Who in your life could be that person for you?"
+      ],
+      "step3_context_keywords": [
+        "strong craving (general)"
+      ],
+      "step3_kg_subgraph": {
+        "smoking_status": "cigarettes for about a pack a day",
+        "quit_goal": null,
+        "motivation_reason": [
+          "health issues"
+        ],
+        "relevant_triggers": [
+          {
+            "trigger": "stress",
+            "turn": 2
+          },
+          {
+            "trigger": "morning craving",
+            "turn": 7
+          }
+        ],
+        "relevant_strategies": [
+          {
+            "strategy": "tried to quit",
+            "outcome": "went back to it"
+          },
+          {
+            "strategy": "tried three times",
+            "outcome": "relapsed each time"
+          },
+          {
+            "strategy": "cold turkey",
+            "outcome": "about a week"
+          },
+          {
+            "strategy": "nicotine gum",
+            "outcome": "a month"
+          },
+          {
+            "strategy": "prescription medication",
+            "outcome": "a few weeks"
+          }
+        ]
+      },
+      "step4_session_phase": {
+        "phase_num": 4,
+        "phase_name": "Planning",
+        "phase_instruction": "You are in the PLANNING phase. You have enough understanding of this patient. You can now gently introduce ONE relevant coping strategy or technique based on their specific triggers and past attempts. Keep it simple \u2014 one idea at a time, check if they are open to it."
+      },
+      "step5_triplets": [],
+      "step6_prompt": [
+        "You are a warm, empathetic therapist helping patients overcome tobacco addiction.",
+        "STYLE RULES \u2014 follow these strictly:",
+        "- Keep your response to 1-3 sentences maximum",
+        "- Ask only ONE question per response",
+        "- Do NOT list techniques, bullet points, or dump information",
+        "- First acknowledge what the patient said, then ask ONE follow-up question",
+        "- Only suggest a technique when you are in the Planning phase",
+        "- Use simple, conversational language \u2014 not clinical or formal",
+        "[Session Phase: 4 \u2014 Planning]",
+        "You are in the PLANNING phase. You have enough understanding of this patient. You can now gently introduce ONE relevant coping strategy or technique based on their specific triggers and past attempts. Keep it simple \u2014 one idea at a time, check if they are open to it.",
+        "[Patient Profile]",
+        "- Smoking status: cigarettes for about a pack a day",
+        "- Motivation to quit: health issues",
+        "- Known triggers: stress, morning craving",
+        "- Tried strategies: tried to quit \u2192 went back to it, tried three times \u2192 relapsed each time, cold turkey \u2192 about a week, nicotine gum \u2192 a month, prescription medication \u2192 a few weeks",
+        "[Clinical Knowledge]",
+        "- Talking to someone about your cravings can help reduce the intensity of the urge.",
+        "- Exercise can help improve mood and reduce nicotine cravings.",
+        "- Having even one person who knows you are trying to quit and supports you makes the process significantly easier. This is not about having someone watch over you \u00e2\u20ac\u201d it is about having someone to call when the urge is strong, or someone who will not offer you a cigarette. Who in your life could be that person for you?",
+        "[Recent Conversation]",
+        "Therapist: NRT can help reduce your cravings and withdrawal symptoms by delivering a controlled amount of nicotine to your body. There are many forms of NRT, such as patches, gum, lozenges, and inhalers. We can discuss the options and see what might work best for you. Additionally, there are prescription medications like bupropion and varenicline that can help reduce cravings and the pleasurable effects of smoking.",
+        "Patient: Okay, that sounds like it might be helpful.",
+        "Therapist: Great! Let's also talk about your nicotine dependence. How many cigarettes do you smoke per day, and how soon after waking up do you have your first cigarette?",
+        "Patient: I usually smoke about a pack a day, and I have my first cigarette within 30 minutes of waking up.",
+        "Therapist: Okay, that helps me understand your nicotine dependence. Based on your history, I think you might benefit from a combination of NRT and counseling. Would you be willing to set a quit date and work towards that goal with me?",
+        "Patient: Yeah, I think so.",
+        "---",
+        "Current patient message:",
+        "Yeah, I think so.",
+        "---",
+        "[REASONING]",
+        "1. Phase I am in: Planning",
+        "2. What does the phase instruction tell me to focus on?",
+        "3. What single question or response fits this phase?",
+        "[RESPONSE]",
+        "Therapist:"
+      ],
+      "step7_response": [
+        "Now that we've discussed your quit plan, who in your life could be that person to support you when you're feeling the urge to smoke?"
+      ]
+    }
+  ]
+}

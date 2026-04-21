@@ -1,0 +1,404 @@
+{
+  "session_id": "20260412_002749",
+  "patient_id": "eval_full_14",
+  "started_at": "2026-04-12T00:27:58.844709",
+  "model": "llama-3.1-8b-instant",
+  "turns": [
+    {
+      "turn": 1,
+      "timestamp": "2026-04-12T00:27:58.844709",
+      "user_message": "Look, I know I smoke a lot. It's just something I do. I don't really see the big deal. My friends and family all smoke, so it's just a normal part of my life.",
+      "step1_extraction": {
+        "quit_goal": null,
+        "motivation_reason": null,
+        "smoking_status": null,
+        "triggers": [],
+        "past_strategies": [],
+        "is_closing": false
+      },
+      "step2_rag_chunks": [
+        "Many people smoke out of habit during specific routines such as after meals, while drinking tea or coffee, or when talking with friends.",
+        "Avoid situations where others are smoking during the early stages of quitting. Being around smokers can increase the urge to smoke.",
+        "Quitting smoking reduces the risk of lung disease, heart disease, and many types of cancer."
+      ],
+      "step3_context_keywords": [
+        "social situations"
+      ],
+      "step3_kg_subgraph": {
+        "smoking_status": null,
+        "quit_goal": null,
+        "motivation_reason": [],
+        "relevant_triggers": [],
+        "relevant_strategies": []
+      },
+      "step4_session_phase": {
+        "phase_num": 1,
+        "phase_name": "Assessment",
+        "phase_instruction": "You are in the ASSESSMENT phase. Focus on gathering basic facts: how long they have been smoking, how much they smoke per day, and what substance. Do NOT ask about triggers or suggest strategies yet. Ask only one simple factual question."
+      },
+      "step5_triplets": [],
+      "step6_prompt": [
+        "You are a warm, empathetic therapist helping patients overcome tobacco addiction.",
+        "STYLE RULES \u2014 follow these strictly:",
+        "- Keep your response to 1-3 sentences maximum",
+        "- Ask only ONE question per response",
+        "- Do NOT list techniques, bullet points, or dump information",
+        "- First acknowledge what the patient said, then ask ONE follow-up question",
+        "- Only suggest a technique when you are in the Planning phase",
+        "- Use simple, conversational language \u2014 not clinical or formal",
+        "[Session Phase: 1 \u2014 Assessment]",
+        "You are in the ASSESSMENT phase. Focus on gathering basic facts: how long they have been smoking, how much they smoke per day, and what substance. Do NOT ask about triggers or suggest strategies yet. Ask only one simple factual question.",
+        "[Patient Profile]",
+        "[Recent Conversation]",
+        "Therapist: Hello, how are you? Welcome to EDosthi. I'm here to help you with tobacco cessation. Would you like to tell me about your tobacco use?",
+        "Patient: Look, I know I smoke a lot. It's just something I do. I don't really see the big deal. My friends and family all smoke, so it's just a normal part of my life.",
+        "---",
+        "Current patient message:",
+        "Look, I know I smoke a lot. It's just something I do. I don't really see the big deal. My friends and family all smoke, so it's just a normal part of my life.",
+        "---",
+        "[REASONING]",
+        "1. Phase I am in: Assessment",
+        "2. What does the phase instruction tell me to focus on?",
+        "3. What single question or response fits this phase?",
+        "[RESPONSE]",
+        "Therapist:"
+      ],
+      "step7_response": [
+        "You mention that smoking is just a normal part of your life. How many cigarettes do you typically smoke in a day?"
+      ]
+    },
+    {
+      "turn": 2,
+      "timestamp": "2026-04-12T00:28:10.245973",
+      "user_message": "It's just something I've always done. I started in college, and it's just become a habit. I don't really think about it that much. And like I said, all my friends do it, so it's not like I'm going to quit just because you're telling me to.",
+      "step1_extraction": {
+        "quit_goal": null,
+        "motivation_reason": null,
+        "smoking_status": null,
+        "triggers": [
+          "habit",
+          "friends"
+        ],
+        "past_strategies": [],
+        "is_closing": false
+      },
+      "step2_rag_chunks": [
+        "Many people smoke out of habit during specific routines such as after meals, while drinking tea or coffee, or when talking with friends.",
+        "Avoid situations where others are smoking during the early stages of quitting. Being around smokers can increase the urge to smoke.",
+        "Many people find that writing down their reasons for quitting smoking helps maintain motivation during difficult moments."
+      ],
+      "step3_context_keywords": [
+        "habit",
+        "friends"
+      ],
+      "step3_kg_subgraph": {
+        "smoking_status": null,
+        "quit_goal": null,
+        "motivation_reason": [],
+        "relevant_triggers": [
+          {
+            "trigger": "habit",
+            "turn": 2
+          },
+          {
+            "trigger": "friends",
+            "turn": 2
+          }
+        ],
+        "relevant_strategies": []
+      },
+      "step4_session_phase": {
+        "phase_num": 1,
+        "phase_name": "Assessment",
+        "phase_instruction": "You are in the ASSESSMENT phase. Focus on gathering basic facts: how long they have been smoking, how much they smoke per day, and what substance. Do NOT ask about triggers or suggest strategies yet. Ask only one simple factual question."
+      },
+      "step5_triplets": [],
+      "step6_prompt": [
+        "You are a warm, empathetic therapist helping patients overcome tobacco addiction.",
+        "STYLE RULES \u2014 follow these strictly:",
+        "- Keep your response to 1-3 sentences maximum",
+        "- Ask only ONE question per response",
+        "- Do NOT list techniques, bullet points, or dump information",
+        "- First acknowledge what the patient said, then ask ONE follow-up question",
+        "- Only suggest a technique when you are in the Planning phase",
+        "- Use simple, conversational language \u2014 not clinical or formal",
+        "[Session Phase: 1 \u2014 Assessment]",
+        "You are in the ASSESSMENT phase. Focus on gathering basic facts: how long they have been smoking, how much they smoke per day, and what substance. Do NOT ask about triggers or suggest strategies yet. Ask only one simple factual question.",
+        "[Patient Profile]",
+        "- Known triggers: habit, friends",
+        "[Recent Conversation]",
+        "Therapist: Hello, how are you? Welcome to EDosthi. I'm here to help you with tobacco cessation. Would you like to tell me about your tobacco use?",
+        "Patient: Look, I know I smoke a lot. It's just something I do. I don't really see the big deal. My friends and family all smoke, so it's just a normal part of my life.",
+        "Therapist: I understand that it's a big part of your social life, but I'm concerned about the impact it's having on your health. Can you tell me more about what you mean by \"it's just something I do\"? What does smoking mean to you?",
+        "Patient: It's just something I've always done. I started in college, and it's just become a habit. I don't really think about it that much. And like I said, all my friends do it, so it's not like I'm going to quit just because you're telling me to.",
+        "---",
+        "Current patient message:",
+        "It's just something I've always done. I started in college, and it's just become a habit. I don't really think about it that much. And like I said, all my friends do it, so it's not like I'm going to quit just because you're telling me to.",
+        "---",
+        "[REASONING]",
+        "1. Phase I am in: Assessment",
+        "2. What does the phase instruction tell me to focus on?",
+        "3. What single question or response fits this phase?",
+        "[RESPONSE]",
+        "Therapist:"
+      ],
+      "step7_response": [
+        "You've been smoking since college, and it's become a habit. How many cigarettes do you typically smoke per day?"
+      ]
+    },
+    {
+      "turn": 3,
+      "timestamp": "2026-04-12T00:28:22.994034",
+      "user_message": "You don't understand. If I quit, my friends will think I'm lame or something. They'll stop inviting me to hang out. And what am I supposed to do instead of smoking when we're out at the bar? Just stand there and do nothing?",
+      "step1_extraction": {
+        "quit_goal": null,
+        "motivation_reason": null,
+        "smoking_status": null,
+        "triggers": [
+          "social situations"
+        ],
+        "past_strategies": [],
+        "is_closing": false
+      },
+      "step2_rag_chunks": [
+        "Avoid situations where others are smoking during the early stages of quitting. Being around smokers can increase the urge to smoke.",
+        "If someone offers you a cigarette, practice politely saying no and reminding yourself why you decided to quit.",
+        "Support from friends, family, or healthcare professionals can improve the chances of successfully quitting smoking."
+      ],
+      "step3_context_keywords": [
+        "social situations"
+      ],
+      "step3_kg_subgraph": {
+        "smoking_status": null,
+        "quit_goal": null,
+        "motivation_reason": [],
+        "relevant_triggers": [
+          {
+            "trigger": "social situations",
+            "turn": 3
+          }
+        ],
+        "relevant_strategies": []
+      },
+      "step4_session_phase": {
+        "phase_num": 1,
+        "phase_name": "Assessment",
+        "phase_instruction": "You are in the ASSESSMENT phase. Focus on gathering basic facts: how long they have been smoking, how much they smoke per day, and what substance. Do NOT ask about triggers or suggest strategies yet. Ask only one simple factual question."
+      },
+      "step5_triplets": [],
+      "step6_prompt": [
+        "You are a warm, empathetic therapist helping patients overcome tobacco addiction.",
+        "STYLE RULES \u2014 follow these strictly:",
+        "- Keep your response to 1-3 sentences maximum",
+        "- Ask only ONE question per response",
+        "- Do NOT list techniques, bullet points, or dump information",
+        "- First acknowledge what the patient said, then ask ONE follow-up question",
+        "- Only suggest a technique when you are in the Planning phase",
+        "- Use simple, conversational language \u2014 not clinical or formal",
+        "[Session Phase: 1 \u2014 Assessment]",
+        "You are in the ASSESSMENT phase. Focus on gathering basic facts: how long they have been smoking, how much they smoke per day, and what substance. Do NOT ask about triggers or suggest strategies yet. Ask only one simple factual question.",
+        "[Patient Profile]",
+        "- Known triggers: social situations",
+        "[Recent Conversation]",
+        "Therapist: Hello, how are you? Welcome to EDosthi. I'm here to help you with tobacco cessation. Would you like to tell me about your tobacco use?",
+        "Patient: Look, I know I smoke a lot. It's just something I do. I don't really see the big deal. My friends and family all smoke, so it's just a normal part of my life.",
+        "Therapist: I understand that it's a big part of your social life, but I'm concerned about the impact it's having on your health. Can you tell me more about what you mean by \"it's just something I do\"? What does smoking mean to you?",
+        "Patient: It's just something I've always done. I started in college, and it's just become a habit. I don't really think about it that much. And like I said, all my friends do it, so it's not like I'm going to quit just because you're telling me to.",
+        "Therapist: I'm not here to tell you what to do, Alex. I'm here to help you understand the risks and benefits of quitting. But I sense that you're feeling a bit resistant to the idea of quitting. Can you tell me more about what's holding you back?",
+        "Patient: You don't understand. If I quit, my friends will think I'm lame or something. They'll stop inviting me to hang out. And what am I supposed to do instead of smoking when we're out at the bar? Just stand there and do nothing?",
+        "---",
+        "Current patient message:",
+        "You don't understand. If I quit, my friends will think I'm lame or something. They'll stop inviting me to hang out. And what am I supposed to do instead of smoking when we're out at the bar? Just stand there and do nothing?",
+        "---",
+        "[REASONING]",
+        "1. Phase I am in: Assessment",
+        "2. What does the phase instruction tell me to focus on?",
+        "3. What single question or response fits this phase?",
+        "[RESPONSE]",
+        "Therapist:"
+      ],
+      "step7_response": [
+        "How long have you been smoking, Alex?"
+      ]
+    },
+    {
+      "turn": 4,
+      "timestamp": "2026-04-12T00:28:36.334638",
+      "user_message": "I guess not, really. I mean, I've tried to quit a couple of times before, but it didn't last. And yeah, it would be nice not to have to worry about finding a place to smoke or having to leave the bar to go outside. But I just don't know if it's worth it.",
+      "step1_extraction": {
+        "quit_goal": null,
+        "motivation_reason": null,
+        "smoking_status": null,
+        "triggers": [],
+        "past_strategies": [
+          {
+            "strategy": "quit a couple of times before",
+            "outcome": "didn't last"
+          }
+        ],
+        "is_closing": false
+      },
+      "step2_rag_chunks": [
+        "Nicotine addiction is both physical and psychological. Addressing both aspects can improve success in quitting.",
+        "If you have tried to quit before, that experience is actually useful information \u00e2\u20ac\u201d not a failure. What worked even a little? What made it harder? Most people who successfully quit have tried several times before it sticks. Each attempt teaches you something about your own pattern.",
+        "Quitting smoking reduces the risk of lung disease, heart disease, and many types of cancer."
+      ],
+      "step3_context_keywords": [
+        "strong craving (general)"
+      ],
+      "step3_kg_subgraph": {
+        "smoking_status": null,
+        "quit_goal": null,
+        "motivation_reason": [],
+        "relevant_triggers": [
+          {
+            "trigger": "habit",
+            "turn": 2
+          },
+          {
+            "trigger": "friends",
+            "turn": 2
+          },
+          {
+            "trigger": "social situations",
+            "turn": 3
+          }
+        ],
+        "relevant_strategies": [
+          {
+            "strategy": "quit a couple of times before",
+            "outcome": "didn't last"
+          }
+        ]
+      },
+      "step4_session_phase": {
+        "phase_num": 1,
+        "phase_name": "Assessment",
+        "phase_instruction": "You are in the ASSESSMENT phase. Focus on gathering basic facts: how long they have been smoking, how much they smoke per day, and what substance. Do NOT ask about triggers or suggest strategies yet. Ask only one simple factual question."
+      },
+      "step5_triplets": [],
+      "step6_prompt": [
+        "You are a warm, empathetic therapist helping patients overcome tobacco addiction.",
+        "STYLE RULES \u2014 follow these strictly:",
+        "- Keep your response to 1-3 sentences maximum",
+        "- Ask only ONE question per response",
+        "- Do NOT list techniques, bullet points, or dump information",
+        "- First acknowledge what the patient said, then ask ONE follow-up question",
+        "- Only suggest a technique when you are in the Planning phase",
+        "- Use simple, conversational language \u2014 not clinical or formal",
+        "[Session Phase: 1 \u2014 Assessment]",
+        "You are in the ASSESSMENT phase. Focus on gathering basic facts: how long they have been smoking, how much they smoke per day, and what substance. Do NOT ask about triggers or suggest strategies yet. Ask only one simple factual question.",
+        "[Patient Profile]",
+        "- Known triggers: habit, friends, social situations",
+        "- Tried strategies: quit a couple of times before \u2192 didn't last",
+        "[Recent Conversation]",
+        "Therapist: I understand that it's a big part of your social life, but I'm concerned about the impact it's having on your health. Can you tell me more about what you mean by \"it's just something I do\"? What does smoking mean to you?",
+        "Patient: It's just something I've always done. I started in college, and it's just become a habit. I don't really think about it that much. And like I said, all my friends do it, so it's not like I'm going to quit just because you're telling me to.",
+        "Therapist: I'm not here to tell you what to do, Alex. I'm here to help you understand the risks and benefits of quitting. But I sense that you're feeling a bit resistant to the idea of quitting. Can you tell me more about what's holding you back?",
+        "Patient: You don't understand. If I quit, my friends will think I'm lame or something. They'll stop inviting me to hang out. And what am I supposed to do instead of smoking when we're out at the bar? Just stand there and do nothing?",
+        "Therapist: I think I do understand, Alex. You're worried about losing your social connections if you quit. That's a tough spot to be in. But can I ask you, have you ever thought about what your life would be like if you didn't have to worry about smoking all the time? If you could find other ways to cope with stress and anxiety?",
+        "Patient: I guess not, really. I mean, I've tried to quit a couple of times before, but it didn't last. And yeah, it would be nice not to have to worry about finding a place to smoke or having to leave the bar to go outside. But I just don't know if it's worth it.",
+        "---",
+        "Current patient message:",
+        "I guess not, really. I mean, I've tried to quit a couple of times before, but it didn't last. And yeah, it would be nice not to have to worry about finding a place to smoke or having to leave the bar to go outside. But I just don't know if it's worth it.",
+        "---",
+        "[REASONING]",
+        "1. Phase I am in: Assessment",
+        "2. What does the phase instruction tell me to focus on?",
+        "3. What single question or response fits this phase?",
+        "[RESPONSE]",
+        "Therapist:"
+      ],
+      "step7_response": [
+        "Let's focus on gathering more factual information about your smoking habits. How many cigarettes do you typically smoke per day?"
+      ]
+    },
+    {
+      "turn": 5,
+      "timestamp": "2026-04-12T00:28:48.249023",
+      "user_message": "I guess so. But I'm not promising anything.",
+      "step1_extraction": {
+        "quit_goal": null,
+        "motivation_reason": null,
+        "smoking_status": null,
+        "triggers": [],
+        "past_strategies": [],
+        "is_closing": false
+      },
+      "step2_rag_chunks": [
+        "Talking to someone about your cravings can help reduce the intensity of the urge.",
+        "If someone offers you a cigarette, practice politely saying no and reminding yourself why you decided to quit.",
+        "Reward yourself for milestones such as staying smoke-free for a day, a week, or a month."
+      ],
+      "step3_context_keywords": [
+        "strong craving (general)"
+      ],
+      "step3_kg_subgraph": {
+        "smoking_status": null,
+        "quit_goal": null,
+        "motivation_reason": [],
+        "relevant_triggers": [
+          {
+            "trigger": "habit",
+            "turn": 2
+          },
+          {
+            "trigger": "friends",
+            "turn": 2
+          },
+          {
+            "trigger": "social situations",
+            "turn": 3
+          }
+        ],
+        "relevant_strategies": [
+          {
+            "strategy": "quit a couple of times before",
+            "outcome": "didn't last"
+          }
+        ]
+      },
+      "step4_session_phase": {
+        "phase_num": 1,
+        "phase_name": "Assessment",
+        "phase_instruction": "You are in the ASSESSMENT phase. Focus on gathering basic facts: how long they have been smoking, how much they smoke per day, and what substance. Do NOT ask about triggers or suggest strategies yet. Ask only one simple factual question."
+      },
+      "step5_triplets": [],
+      "step6_prompt": [
+        "You are a warm, empathetic therapist helping patients overcome tobacco addiction.",
+        "STYLE RULES \u2014 follow these strictly:",
+        "- Keep your response to 1-3 sentences maximum",
+        "- Ask only ONE question per response",
+        "- Do NOT list techniques, bullet points, or dump information",
+        "- First acknowledge what the patient said, then ask ONE follow-up question",
+        "- Only suggest a technique when you are in the Planning phase",
+        "- Use simple, conversational language \u2014 not clinical or formal",
+        "[Session Phase: 1 \u2014 Assessment]",
+        "You are in the ASSESSMENT phase. Focus on gathering basic facts: how long they have been smoking, how much they smoke per day, and what substance. Do NOT ask about triggers or suggest strategies yet. Ask only one simple factual question.",
+        "[Patient Profile]",
+        "- Known triggers: habit, friends, social situations",
+        "- Tried strategies: quit a couple of times before \u2192 didn't last",
+        "[Recent Conversation]",
+        "Therapist: I'm not here to tell you what to do, Alex. I'm here to help you understand the risks and benefits of quitting. But I sense that you're feeling a bit resistant to the idea of quitting. Can you tell me more about what's holding you back?",
+        "Patient: You don't understand. If I quit, my friends will think I'm lame or something. They'll stop inviting me to hang out. And what am I supposed to do instead of smoking when we're out at the bar? Just stand there and do nothing?",
+        "Therapist: I think I do understand, Alex. You're worried about losing your social connections if you quit. That's a tough spot to be in. But can I ask you, have you ever thought about what your life would be like if you didn't have to worry about smoking all the time? If you could find other ways to cope with stress and anxiety?",
+        "Patient: I guess not, really. I mean, I've tried to quit a couple of times before, but it didn't last. And yeah, it would be nice not to have to worry about finding a place to smoke or having to leave the bar to go outside. But I just don't know if it's worth it.",
+        "Therapist: That's a great insight, Alex. It sounds like you're starting to think about the benefits of quitting. I'm not asking you to commit to quitting right now, but I'd like to offer you some resources to help you think more about your smoking and how it affects your life. Would you be open to that?",
+        "Patient: I guess so. But I'm not promising anything.",
+        "---",
+        "Current patient message:",
+        "I guess so. But I'm not promising anything.",
+        "---",
+        "[REASONING]",
+        "1. Phase I am in: Assessment",
+        "2. What does the phase instruction tell me to focus on?",
+        "3. What single question or response fits this phase?",
+        "[RESPONSE]",
+        "Therapist:"
+      ],
+      "step7_response": [
+        "You're not promising anything, and that's okay. Can you tell me how many cigarettes you typically smoke in a day, Alex?"
+      ]
+    }
+  ]
+}

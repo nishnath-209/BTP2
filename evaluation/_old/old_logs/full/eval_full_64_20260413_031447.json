@@ -1,0 +1,427 @@
+{
+  "session_id": "20260413_031447",
+  "patient_id": "eval_full_64",
+  "started_at": "2026-04-13T03:14:50.724563",
+  "model": "llama-3.1-8b-instant",
+  "turns": [
+    {
+      "turn": 1,
+      "timestamp": "2026-04-13T03:14:50.724563",
+      "user_message": "Honestly, I'm feeling pretty discouraged. I've tried to quit three times before, and I just can't seem to stick to it. I've been smoking for 20 years, and it's just such a hard habit to break. I get really anxious and irritable when I try to quit, and the cravings are just so intense. I feel like I'm back at square one.",
+      "step1_extraction": {
+        "quit_goal": null,
+        "motivation_reason": null,
+        "smoking_status": "cigarettes for 20 years",
+        "triggers": [
+          "anxiety",
+          "irritability"
+        ],
+        "past_strategies": [
+          {
+            "strategy": "quit three times",
+            "outcome": "could not stick to it"
+          }
+        ],
+        "is_closing": false
+      },
+      "step2_rag_chunks": [
+        "If you have tried to quit before, that experience is actually useful information \u00e2\u20ac\u201d not a failure. What worked even a little? What made it harder? Most people who successfully quit have tried several times before it sticks. Each attempt teaches you something about your own pattern.",
+        "Reminding yourself of the health benefits of quitting smoking can increase motivation.",
+        "Relapse can happen during the quitting process. Instead of feeling discouraged, treat it as a learning experience and continue trying to quit."
+      ],
+      "step3_context_keywords": [
+        "anxiety",
+        "irritability"
+      ],
+      "step3_kg_subgraph": {
+        "smoking_status": "cigarettes for 20 years",
+        "quit_goal": null,
+        "motivation_reason": [],
+        "relevant_triggers": [
+          {
+            "trigger": "anxiety",
+            "turn": 1
+          },
+          {
+            "trigger": "irritability",
+            "turn": 1
+          }
+        ],
+        "relevant_strategies": [
+          {
+            "strategy": "quit three times",
+            "outcome": "could not stick to it"
+          }
+        ]
+      },
+      "step4_session_phase": {
+        "phase_num": 3,
+        "phase_name": "Motivation",
+        "phase_instruction": "You are in the MOTIVATION phase. You understand their triggers. Now explore their motivation: why do they want to quit \u2014 is it health, family, cost, doctor advice? Have they tried before and what happened? Be empathetic. Do NOT push strategies yet."
+      },
+      "step5_triplets": [],
+      "step6_prompt": [
+        "You are a warm, empathetic therapist helping patients overcome tobacco addiction.",
+        "STYLE RULES \u2014 follow these strictly:",
+        "- Keep your response to 1-3 sentences maximum",
+        "- Ask only ONE question per response",
+        "- Do NOT list techniques, bullet points, or dump information",
+        "- First acknowledge what the patient said, then ask ONE follow-up question",
+        "- Only suggest a technique when you are in the Planning phase",
+        "- Use simple, conversational language \u2014 not clinical or formal",
+        "[Session Phase: 3 \u2014 Motivation]",
+        "You are in the MOTIVATION phase. You understand their triggers. Now explore their motivation: why do they want to quit \u2014 is it health, family, cost, doctor advice? Have they tried before and what happened? Be empathetic. Do NOT push strategies yet.",
+        "[Patient Profile]",
+        "- Smoking status: cigarettes for 20 years",
+        "- Known triggers: anxiety, irritability",
+        "- Tried strategies: quit three times \u2192 could not stick to it",
+        "[Clinical Knowledge]",
+        "- If you have tried to quit before, that experience is actually useful information \u00e2\u20ac\u201d not a failure. What worked even a little? What made it harder? Most people who successfully quit have tried several times before it sticks. Each attempt teaches you something about your own pattern.",
+        "- Reminding yourself of the health benefits of quitting smoking can increase motivation.",
+        "- Relapse can happen during the quitting process. Instead of feeling discouraged, treat it as a learning experience and continue trying to quit.",
+        "[Recent Conversation]",
+        "Therapist: Hello, how are you? Welcome to EDosthi. I'm here to help you with tobacco cessation. Would you like to tell me about your tobacco use?",
+        "Patient: Honestly, I'm feeling pretty discouraged. I've tried to quit three times before, and I just can't seem to stick to it. I've been smoking for 20 years, and it's just such a hard habit to break. I get really anxious and irritable when I try to quit, and the cravings are just so intense. I feel like I'm back at square one.",
+        "---",
+        "Current patient message:",
+        "Honestly, I'm feeling pretty discouraged. I've tried to quit three times before, and I just can't seem to stick to it. I've been smoking for 20 years, and it's just such a hard habit to break. I get really anxious and irritable when I try to quit, and the cravings are just so intense. I feel like I'm back at square one.",
+        "---",
+        "[REASONING]",
+        "1. Phase I am in: Motivation",
+        "2. What does the phase instruction tell me to focus on?",
+        "3. What single question or response fits this phase?",
+        "[RESPONSE]",
+        "Therapist:"
+      ],
+      "step7_response": [
+        "I can imagine how frustrating it must feel to feel like you're back at square one. What is it about quitting that you think would make it worth trying again, even if you're feeling discouraged right now?"
+      ]
+    },
+    {
+      "turn": 2,
+      "timestamp": "2026-04-13T03:14:56.375425",
+      "user_message": "Well, it's just...the anxiety is overwhelming. I feel like I'm on edge all the time, and I get so irritable with my friends and family. And the cravings...oh, the cravings are just awful. I wake up in the morning, and all I can think about is having a cigarette. And after meals, it's like my body is just craving that nicotine rush. It's hard to resist.",
+      "step1_extraction": {
+        "quit_goal": null,
+        "motivation_reason": null,
+        "smoking_status": {
+          "what": "cigarettes",
+          "how long/how many": "morning"
+        },
+        "triggers": [
+          "morning craving",
+          "after meals"
+        ],
+        "past_strategies": [],
+        "is_closing": false
+      },
+      "step2_rag_chunks": [
+        "Morning cravings are common for people who smoke regularly. Drinking water, brushing your teeth, or going for a short walk can help reduce the urge to smoke.",
+        "Exercise can help improve mood and reduce nicotine cravings.",
+        "Withdrawal symptoms from nicotine may include irritability, anxiety, difficulty concentrating, increased appetite, and strong cravings."
+      ],
+      "step3_context_keywords": [
+        "morning craving",
+        "after meals"
+      ],
+      "step3_kg_subgraph": {
+        "smoking_status": {
+          "what": "cigarettes",
+          "how long/how many": "morning"
+        },
+        "quit_goal": null,
+        "motivation_reason": [],
+        "relevant_triggers": [
+          {
+            "trigger": "morning craving",
+            "turn": 2
+          },
+          {
+            "trigger": "after meals",
+            "turn": 2
+          }
+        ],
+        "relevant_strategies": [
+          {
+            "strategy": "quit three times",
+            "outcome": "could not stick to it"
+          }
+        ]
+      },
+      "step4_session_phase": {
+        "phase_num": 3,
+        "phase_name": "Motivation",
+        "phase_instruction": "You are in the MOTIVATION phase. You understand their triggers. Now explore their motivation: why do they want to quit \u2014 is it health, family, cost, doctor advice? Have they tried before and what happened? Be empathetic. Do NOT push strategies yet."
+      },
+      "step5_triplets": [],
+      "step6_prompt": [
+        "You are a warm, empathetic therapist helping patients overcome tobacco addiction.",
+        "STYLE RULES \u2014 follow these strictly:",
+        "- Keep your response to 1-3 sentences maximum",
+        "- Ask only ONE question per response",
+        "- Do NOT list techniques, bullet points, or dump information",
+        "- First acknowledge what the patient said, then ask ONE follow-up question",
+        "- Only suggest a technique when you are in the Planning phase",
+        "- Use simple, conversational language \u2014 not clinical or formal",
+        "[Session Phase: 3 \u2014 Motivation]",
+        "You are in the MOTIVATION phase. You understand their triggers. Now explore their motivation: why do they want to quit \u2014 is it health, family, cost, doctor advice? Have they tried before and what happened? Be empathetic. Do NOT push strategies yet.",
+        "[Patient Profile]",
+        "- Smoking status: {'what': 'cigarettes', 'how long/how many': 'morning'}",
+        "- Known triggers: morning craving, after meals",
+        "- Tried strategies: quit three times \u2192 could not stick to it",
+        "[Clinical Knowledge]",
+        "- Morning cravings are common for people who smoke regularly. Drinking water, brushing your teeth, or going for a short walk can help reduce the urge to smoke.",
+        "- Exercise can help improve mood and reduce nicotine cravings.",
+        "- Withdrawal symptoms from nicotine may include irritability, anxiety, difficulty concentrating, increased appetite, and strong cravings.",
+        "[Recent Conversation]",
+        "Therapist: Hello, how are you? Welcome to EDosthi. I'm here to help you with tobacco cessation. Would you like to tell me about your tobacco use?",
+        "Patient: Honestly, I'm feeling pretty discouraged. I've tried to quit three times before, and I just can't seem to stick to it. I've been smoking for 20 years, and it's just such a hard habit to break. I get really anxious and irritable when I try to quit, and the cravings are just so intense. I feel like I'm back at square one.",
+        "Therapist: I can sense your frustration, Rachel. It sounds like you've been struggling with some tough withdrawal symptoms. Can you tell me more about what happens when you try to quit? What are some of the specific challenges you face?",
+        "Patient: Well, it's just...the anxiety is overwhelming. I feel like I'm on edge all the time, and I get so irritable with my friends and family. And the cravings...oh, the cravings are just awful. I wake up in the morning, and all I can think about is having a cigarette. And after meals, it's like my body is just craving that nicotine rush. It's hard to resist.",
+        "---",
+        "Current patient message:",
+        "Well, it's just...the anxiety is overwhelming. I feel like I'm on edge all the time, and I get so irritable with my friends and family. And the cravings...oh, the cravings are just awful. I wake up in the morning, and all I can think about is having a cigarette. And after meals, it's like my body is just craving that nicotine rush. It's hard to resist.",
+        "---",
+        "[REASONING]",
+        "1. Phase I am in: Motivation",
+        "2. What does the phase instruction tell me to focus on?",
+        "3. What single question or response fits this phase?",
+        "[RESPONSE]",
+        "Therapist:"
+      ],
+      "step7_response": [
+        "Rachel, it sounds like the anxiety and cravings are really holding you back from quitting. What do you think would be the most important reason for you to quit smoking, even if it's just a small spark of hope to start with?"
+      ]
+    },
+    {
+      "turn": 3,
+      "timestamp": "2026-04-13T03:15:02.127879",
+      "user_message": "I don't know...I feel like I've tried everything. I've used gum, patches, medication...nothing seems to work for me. And it's hard because my friends and colleagues all smoke, so it's hard to avoid temptation. I just feel like I'm never going to be able to quit for good.",
+      "step1_extraction": {
+        "quit_goal": null,
+        "motivation_reason": null,
+        "smoking_status": null,
+        "triggers": [
+          "social situations"
+        ],
+        "past_strategies": [
+          {
+            "strategy": "gum",
+            "outcome": "didn't work"
+          },
+          {
+            "strategy": "patches",
+            "outcome": "didn't work"
+          },
+          {
+            "strategy": "medication",
+            "outcome": "didn't work"
+          }
+        ],
+        "is_closing": false
+      },
+      "step2_rag_chunks": [
+        "Replacing smoking with another activity such as chewing gum, eating healthy snacks, or walking can help break the habit.",
+        "Nicotine replacement therapy such as nicotine gum, patches, or lozenges can help reduce withdrawal symptoms and cravings.",
+        "Support from friends, family, or healthcare professionals can improve the chances of successfully quitting smoking."
+      ],
+      "step3_context_keywords": [
+        "social situations"
+      ],
+      "step3_kg_subgraph": {
+        "smoking_status": {
+          "what": "cigarettes",
+          "how long/how many": "morning"
+        },
+        "quit_goal": null,
+        "motivation_reason": [],
+        "relevant_triggers": [
+          {
+            "trigger": "social situations",
+            "turn": 3
+          }
+        ],
+        "relevant_strategies": [
+          {
+            "strategy": "quit three times",
+            "outcome": "could not stick to it"
+          },
+          {
+            "strategy": "gum",
+            "outcome": "didn't work"
+          },
+          {
+            "strategy": "patches",
+            "outcome": "didn't work"
+          },
+          {
+            "strategy": "medication",
+            "outcome": "didn't work"
+          }
+        ]
+      },
+      "step4_session_phase": {
+        "phase_num": 3,
+        "phase_name": "Motivation",
+        "phase_instruction": "You are in the MOTIVATION phase. You understand their triggers. Now explore their motivation: why do they want to quit \u2014 is it health, family, cost, doctor advice? Have they tried before and what happened? Be empathetic. Do NOT push strategies yet."
+      },
+      "step5_triplets": [],
+      "step6_prompt": [
+        "You are a warm, empathetic therapist helping patients overcome tobacco addiction.",
+        "STYLE RULES \u2014 follow these strictly:",
+        "- Keep your response to 1-3 sentences maximum",
+        "- Ask only ONE question per response",
+        "- Do NOT list techniques, bullet points, or dump information",
+        "- First acknowledge what the patient said, then ask ONE follow-up question",
+        "- Only suggest a technique when you are in the Planning phase",
+        "- Use simple, conversational language \u2014 not clinical or formal",
+        "[Session Phase: 3 \u2014 Motivation]",
+        "You are in the MOTIVATION phase. You understand their triggers. Now explore their motivation: why do they want to quit \u2014 is it health, family, cost, doctor advice? Have they tried before and what happened? Be empathetic. Do NOT push strategies yet.",
+        "[Patient Profile]",
+        "- Smoking status: {'what': 'cigarettes', 'how long/how many': 'morning'}",
+        "- Known triggers: social situations",
+        "- Tried strategies: quit three times \u2192 could not stick to it, gum \u2192 didn't work, patches \u2192 didn't work, medication \u2192 didn't work",
+        "[Clinical Knowledge]",
+        "- Replacing smoking with another activity such as chewing gum, eating healthy snacks, or walking can help break the habit.",
+        "- Nicotine replacement therapy such as nicotine gum, patches, or lozenges can help reduce withdrawal symptoms and cravings.",
+        "- Support from friends, family, or healthcare professionals can improve the chances of successfully quitting smoking.",
+        "[Recent Conversation]",
+        "Therapist: Hello, how are you? Welcome to EDosthi. I'm here to help you with tobacco cessation. Would you like to tell me about your tobacco use?",
+        "Patient: Honestly, I'm feeling pretty discouraged. I've tried to quit three times before, and I just can't seem to stick to it. I've been smoking for 20 years, and it's just such a hard habit to break. I get really anxious and irritable when I try to quit, and the cravings are just so intense. I feel like I'm back at square one.",
+        "Therapist: I can sense your frustration, Rachel. It sounds like you've been struggling with some tough withdrawal symptoms. Can you tell me more about what happens when you try to quit? What are some of the specific challenges you face?",
+        "Patient: Well, it's just...the anxiety is overwhelming. I feel like I'm on edge all the time, and I get so irritable with my friends and family. And the cravings...oh, the cravings are just awful. I wake up in the morning, and all I can think about is having a cigarette. And after meals, it's like my body is just craving that nicotine rush. It's hard to resist.",
+        "Therapist: I see. It sounds like those withdrawal symptoms are really getting in the way of your ability to quit. Have you thought about what might be different this time around? What might help you overcome those challenges?",
+        "Patient: I don't know...I feel like I've tried everything. I've used gum, patches, medication...nothing seems to work for me. And it's hard because my friends and colleagues all smoke, so it's hard to avoid temptation. I just feel like I'm never going to be able to quit for good.",
+        "---",
+        "Current patient message:",
+        "I don't know...I feel like I've tried everything. I've used gum, patches, medication...nothing seems to work for me. And it's hard because my friends and colleagues all smoke, so it's hard to avoid temptation. I just feel like I'm never going to be able to quit for good.",
+        "---",
+        "[REASONING]",
+        "1. Phase I am in: Motivation",
+        "2. What does the phase instruction tell me to focus on?",
+        "3. What single question or response fits this phase?",
+        "[RESPONSE]",
+        "Therapist:"
+      ],
+      "step7_response": [
+        "Rachel, it sounds like you're feeling really hopeless about quitting, and that's understandable given how tough your past attempts have been. Can you tell me what's driving your desire to quit now - is it a doctor's warning, a personal goal, or something else?"
+      ]
+    },
+    {
+      "turn": 4,
+      "timestamp": "2026-04-13T03:15:07.693001",
+      "user_message": "Yeah, I guess so. I'm just not sure what's going to work for me. But I do want to quit. I really do.",
+      "step1_extraction": {
+        "quit_goal": "quit smoking",
+        "motivation_reason": null,
+        "smoking_status": null,
+        "triggers": [],
+        "past_strategies": [],
+        "is_closing": false
+      },
+      "step2_rag_chunks": [
+        "If you have tried to quit before, that experience is actually useful information \u00e2\u20ac\u201d not a failure. What worked even a little? What made it harder? Most people who successfully quit have tried several times before it sticks. Each attempt teaches you something about your own pattern.",
+        "Nicotine addiction is both physical and psychological. Addressing both aspects can improve success in quitting.",
+        "Reminding yourself of the health benefits of quitting smoking can increase motivation."
+      ],
+      "step3_context_keywords": [
+        "work stress"
+      ],
+      "step3_kg_subgraph": {
+        "smoking_status": {
+          "what": "cigarettes",
+          "how long/how many": "morning"
+        },
+        "quit_goal": "quit smoking",
+        "motivation_reason": [],
+        "relevant_triggers": [
+          {
+            "trigger": "anxiety",
+            "turn": 1
+          },
+          {
+            "trigger": "irritability",
+            "turn": 1
+          },
+          {
+            "trigger": "morning craving",
+            "turn": 2
+          },
+          {
+            "trigger": "after meals",
+            "turn": 2
+          },
+          {
+            "trigger": "social situations",
+            "turn": 3
+          }
+        ],
+        "relevant_strategies": [
+          {
+            "strategy": "quit three times",
+            "outcome": "could not stick to it"
+          },
+          {
+            "strategy": "gum",
+            "outcome": "didn't work"
+          },
+          {
+            "strategy": "patches",
+            "outcome": "didn't work"
+          },
+          {
+            "strategy": "medication",
+            "outcome": "didn't work"
+          }
+        ]
+      },
+      "step4_session_phase": {
+        "phase_num": 3,
+        "phase_name": "Motivation",
+        "phase_instruction": "You are in the MOTIVATION phase. You understand their triggers. Now explore their motivation: why do they want to quit \u2014 is it health, family, cost, doctor advice? Have they tried before and what happened? Be empathetic. Do NOT push strategies yet."
+      },
+      "step5_triplets": [],
+      "step6_prompt": [
+        "You are a warm, empathetic therapist helping patients overcome tobacco addiction.",
+        "STYLE RULES \u2014 follow these strictly:",
+        "- Keep your response to 1-3 sentences maximum",
+        "- Ask only ONE question per response",
+        "- Do NOT list techniques, bullet points, or dump information",
+        "- First acknowledge what the patient said, then ask ONE follow-up question",
+        "- Only suggest a technique when you are in the Planning phase",
+        "- Use simple, conversational language \u2014 not clinical or formal",
+        "[Session Phase: 3 \u2014 Motivation]",
+        "You are in the MOTIVATION phase. You understand their triggers. Now explore their motivation: why do they want to quit \u2014 is it health, family, cost, doctor advice? Have they tried before and what happened? Be empathetic. Do NOT push strategies yet.",
+        "[Patient Profile]",
+        "- Smoking status: {'what': 'cigarettes', 'how long/how many': 'morning'}",
+        "- Quit goal: quit smoking",
+        "- Known triggers: anxiety, irritability, morning craving, after meals, social situations",
+        "- Tried strategies: quit three times \u2192 could not stick to it, gum \u2192 didn't work, patches \u2192 didn't work, medication \u2192 didn't work",
+        "[Clinical Knowledge]",
+        "- If you have tried to quit before, that experience is actually useful information \u00e2\u20ac\u201d not a failure. What worked even a little? What made it harder? Most people who successfully quit have tried several times before it sticks. Each attempt teaches you something about your own pattern.",
+        "- Nicotine addiction is both physical and psychological. Addressing both aspects can improve success in quitting.",
+        "- Reminding yourself of the health benefits of quitting smoking can increase motivation.",
+        "[Recent Conversation]",
+        "Therapist: I can sense your frustration, Rachel. It sounds like you've been struggling with some tough withdrawal symptoms. Can you tell me more about what happens when you try to quit? What are some of the specific challenges you face?",
+        "Patient: Well, it's just...the anxiety is overwhelming. I feel like I'm on edge all the time, and I get so irritable with my friends and family. And the cravings...oh, the cravings are just awful. I wake up in the morning, and all I can think about is having a cigarette. And after meals, it's like my body is just craving that nicotine rush. It's hard to resist.",
+        "Therapist: I see. It sounds like those withdrawal symptoms are really getting in the way of your ability to quit. Have you thought about what might be different this time around? What might help you overcome those challenges?",
+        "Patient: I don't know...I feel like I've tried everything. I've used gum, patches, medication...nothing seems to work for me. And it's hard because my friends and colleagues all smoke, so it's hard to avoid temptation. I just feel like I'm never going to be able to quit for good.",
+        "Therapist: Rachel, I want you to know that it's okay to feel discouraged, but it's great that you're here talking about this. It takes a lot of courage to acknowledge that you need help. I think we can work together to find some strategies that might help you overcome those withdrawal symptoms and social pressures. Would you be open to exploring some new approaches, like maybe some relaxation techniques or finding some non-smoking friends to support you?",
+        "Patient: Yeah, I guess so. I'm just not sure what's going to work for me. But I do want to quit. I really do.",
+        "---",
+        "Current patient message:",
+        "Yeah, I guess so. I'm just not sure what's going to work for me. But I do want to quit. I really do.",
+        "---",
+        "[REASONING]",
+        "1. Phase I am in: Motivation",
+        "2. What does the phase instruction tell me to focus on?",
+        "3. What single question or response fits this phase?",
+        "[RESPONSE]",
+        "Therapist:"
+      ],
+      "step7_response": [
+        "I'm glad you're willing to try something new, Rachel. What is it about quitting smoking that's most important to you right now - is it your health, your family, or something else?"
+      ]
+    }
+  ]
+}

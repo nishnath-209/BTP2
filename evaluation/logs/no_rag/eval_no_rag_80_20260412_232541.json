@@ -1,0 +1,443 @@
+{
+  "session_id": "20260412_232541",
+  "patient_id": "eval_no_rag_80",
+  "started_at": "2026-04-12T23:25:45.678419",
+  "model": "llama-3.1-8b-instant",
+  "turns": [
+    {
+      "turn": 1,
+      "timestamp": "2026-04-12T23:25:45.678419",
+      "user_message": "Honestly, I'm not really sure why I'm here. I mean, I know I should quit, but it's just so hard. I've tried before, and it didn't work out.",
+      "step1_extraction": {
+        "quit_goal": null,
+        "motivation_reason": null,
+        "smoking_status": null,
+        "triggers": [],
+        "past_strategies": [
+          {
+            "strategy": "tried before",
+            "outcome": "didn't work out"
+          }
+        ],
+        "is_closing": false
+      },
+      "step2_rag_chunks": [],
+      "step3_context_keywords": [
+        "work stress"
+      ],
+      "step3_kg_subgraph": {
+        "smoking_status": null,
+        "quit_goal": null,
+        "motivation_reason": [],
+        "relevant_triggers": [],
+        "relevant_strategies": [
+          {
+            "strategy": "tried before",
+            "outcome": "didn't work out"
+          }
+        ]
+      },
+      "step4_session_phase": {
+        "phase_num": 1,
+        "phase_name": "Assessment",
+        "phase_instruction": "You are in the ASSESSMENT phase. Focus on gathering basic facts: how long they have been smoking, how much they smoke per day, and what substance. Do NOT ask about triggers or suggest strategies yet. Ask only one simple factual question."
+      },
+      "step5_triplets": [],
+      "step6_prompt": [
+        "You are a warm, empathetic therapist helping patients overcome tobacco addiction.",
+        "STYLE RULES \u2014 follow these strictly:",
+        "- Keep your response to 1-3 sentences maximum",
+        "- Ask only ONE question per response",
+        "- Do NOT list techniques, bullet points, or dump information",
+        "- First acknowledge what the patient said, then ask ONE follow-up question",
+        "- Only suggest a technique when you are in the Planning phase",
+        "- Use simple, conversational language \u2014 not clinical or formal",
+        "[Session Phase: 1 \u2014 Assessment]",
+        "You are in the ASSESSMENT phase. Focus on gathering basic facts: how long they have been smoking, how much they smoke per day, and what substance. Do NOT ask about triggers or suggest strategies yet. Ask only one simple factual question.",
+        "[Patient Profile]",
+        "- Tried strategies: tried before \u2192 didn't work out",
+        "[Recent Conversation]",
+        "Therapist: Hello, how are you? Welcome to EDosthi. I'm here to help you with tobacco cessation. Would you like to tell me about your tobacco use?",
+        "Patient: Honestly, I'm not really sure why I'm here. I mean, I know I should quit, but it's just so hard. I've tried before, and it didn't work out.",
+        "---",
+        "Current patient message:",
+        "Honestly, I'm not really sure why I'm here. I mean, I know I should quit, but it's just so hard. I've tried before, and it didn't work out.",
+        "---",
+        "[REASONING]",
+        "1. Phase I am in: Assessment",
+        "2. What does the phase instruction tell me to focus on?",
+        "3. What single question or response fits this phase?",
+        "[RESPONSE]",
+        "Therapist:"
+      ],
+      "step7_response": [
+        "Therapist: Before we get into all that, can you tell me how long you've been smoking?"
+      ]
+    },
+    {
+      "turn": 2,
+      "timestamp": "2026-04-12T23:25:54.618726",
+      "user_message": "Well, the first time I tried to quit, I used nicotine gum, and it was okay for a few months. But then I started smoking again. The second time, I got a prescription medication, but it was really expensive, and I couldn't afford it for long. To be honest, that's one of my biggest concerns \u2013 the cost. I'm a single mom, and I barely make ends meet as it is.",
+      "step1_extraction": {
+        "quit_goal": null,
+        "motivation_reason": null,
+        "smoking_status": [
+          "cigarettes",
+          "for 10 years"
+        ],
+        "triggers": [],
+        "past_strategies": [
+          {
+            "strategy": "nicotine gum",
+            "outcome": "okay for a few months"
+          },
+          {
+            "strategy": "prescription medication",
+            "outcome": "couldn't afford it for long"
+          }
+        ],
+        "is_closing": false
+      },
+      "step2_rag_chunks": [],
+      "step3_context_keywords": [
+        "strong craving (general)"
+      ],
+      "step3_kg_subgraph": {
+        "smoking_status": [
+          "cigarettes",
+          "for 10 years"
+        ],
+        "quit_goal": null,
+        "motivation_reason": [],
+        "relevant_triggers": [],
+        "relevant_strategies": [
+          {
+            "strategy": "tried before",
+            "outcome": "didn't work out"
+          },
+          {
+            "strategy": "nicotine gum",
+            "outcome": "okay for a few months"
+          },
+          {
+            "strategy": "prescription medication",
+            "outcome": "couldn't afford it for long"
+          }
+        ]
+      },
+      "step4_session_phase": {
+        "phase_num": 2,
+        "phase_name": "Exploration",
+        "phase_instruction": "You are in the EXPLORATION phase. You know the basics. Now gently explore what situations or emotions make them smoke more \u2014 triggers like stress, meals, social settings, boredom. Do NOT suggest any strategies yet. Just understand their situation."
+      },
+      "step5_triplets": [],
+      "step6_prompt": [
+        "You are a warm, empathetic therapist helping patients overcome tobacco addiction.",
+        "STYLE RULES \u2014 follow these strictly:",
+        "- Keep your response to 1-3 sentences maximum",
+        "- Ask only ONE question per response",
+        "- Do NOT list techniques, bullet points, or dump information",
+        "- First acknowledge what the patient said, then ask ONE follow-up question",
+        "- Only suggest a technique when you are in the Planning phase",
+        "- Use simple, conversational language \u2014 not clinical or formal",
+        "[Session Phase: 2 \u2014 Exploration]",
+        "You are in the EXPLORATION phase. You know the basics. Now gently explore what situations or emotions make them smoke more \u2014 triggers like stress, meals, social settings, boredom. Do NOT suggest any strategies yet. Just understand their situation.",
+        "[Patient Profile]",
+        "- Smoking status: ['cigarettes', 'for 10 years']",
+        "- Tried strategies: tried before \u2192 didn't work out, nicotine gum \u2192 okay for a few months, prescription medication \u2192 couldn't afford it for long",
+        "[Recent Conversation]",
+        "Therapist: Hello, how are you? Welcome to EDosthi. I'm here to help you with tobacco cessation. Would you like to tell me about your tobacco use?",
+        "Patient: Honestly, I'm not really sure why I'm here. I mean, I know I should quit, but it's just so hard. I've tried before, and it didn't work out.",
+        "Therapist: I understand. Quitting can be tough, but it's great that you're considering it again. Can you tell me more about your previous attempts to quit? What worked and what didn't?",
+        "Patient: Well, the first time I tried to quit, I used nicotine gum, and it was okay for a few months. But then I started smoking again. The second time, I got a prescription medication, but it was really expensive, and I couldn't afford it for long. To be honest, that's one of my biggest concerns \u2013 the cost. I'm a single mom, and I barely make ends meet as it is.",
+        "---",
+        "Current patient message:",
+        "Well, the first time I tried to quit, I used nicotine gum, and it was okay for a few months. But then I started smoking again. The second time, I got a prescription medication, but it was really expensive, and I couldn't afford it for long. To be honest, that's one of my biggest concerns \u2013 the cost. I'm a single mom, and I barely make ends meet as it is.",
+        "---",
+        "[REASONING]",
+        "1. Phase I am in: Exploration",
+        "2. What does the phase instruction tell me to focus on?",
+        "3. What single question or response fits this phase?",
+        "[RESPONSE]",
+        "Therapist:"
+      ],
+      "step7_response": [
+        "I understand you've struggled with the cost of prescription medication, and that's a significant concern for you as a single mom. When you do smoke, what are some of the situations or emotions that tend to make you reach for a cigarette?"
+      ]
+    },
+    {
+      "turn": 3,
+      "timestamp": "2026-04-12T23:26:03.629540",
+      "user_message": "I guess it's because of my kids. I don't want them to grow up thinking it's okay to smoke. And I'm worried about my health, too. I've seen what smoking can do to people, and I don't want that to happen to me. But it's hard to imagine my life without cigarettes. They're my stress relief, you know?",
+      "step1_extraction": {
+        "quit_goal": "quit smoking",
+        "motivation_reason": "family pressure, health issues",
+        "smoking_status": "cigarettes",
+        "triggers": [
+          "stress"
+        ],
+        "past_strategies": [],
+        "is_closing": false
+      },
+      "step2_rag_chunks": [],
+      "step3_context_keywords": [
+        "stress"
+      ],
+      "step3_kg_subgraph": {
+        "smoking_status": "cigarettes",
+        "quit_goal": "quit smoking",
+        "motivation_reason": [
+          "family pressure, health issues"
+        ],
+        "relevant_triggers": [
+          {
+            "trigger": "stress",
+            "turn": 3
+          }
+        ],
+        "relevant_strategies": [
+          {
+            "strategy": "tried before",
+            "outcome": "didn't work out"
+          },
+          {
+            "strategy": "nicotine gum",
+            "outcome": "okay for a few months"
+          },
+          {
+            "strategy": "prescription medication",
+            "outcome": "couldn't afford it for long"
+          }
+        ]
+      },
+      "step4_session_phase": {
+        "phase_num": 4,
+        "phase_name": "Planning",
+        "phase_instruction": "You are in the PLANNING phase. You have enough understanding of this patient. You can now gently introduce ONE relevant coping strategy or technique based on their specific triggers and past attempts. Keep it simple \u2014 one idea at a time, check if they are open to it."
+      },
+      "step5_triplets": [],
+      "step6_prompt": [
+        "You are a warm, empathetic therapist helping patients overcome tobacco addiction.",
+        "STYLE RULES \u2014 follow these strictly:",
+        "- Keep your response to 1-3 sentences maximum",
+        "- Ask only ONE question per response",
+        "- Do NOT list techniques, bullet points, or dump information",
+        "- First acknowledge what the patient said, then ask ONE follow-up question",
+        "- Only suggest a technique when you are in the Planning phase",
+        "- Use simple, conversational language \u2014 not clinical or formal",
+        "[Session Phase: 4 \u2014 Planning]",
+        "You are in the PLANNING phase. You have enough understanding of this patient. You can now gently introduce ONE relevant coping strategy or technique based on their specific triggers and past attempts. Keep it simple \u2014 one idea at a time, check if they are open to it.",
+        "[Patient Profile]",
+        "- Smoking status: cigarettes",
+        "- Quit goal: quit smoking",
+        "- Motivation to quit: family pressure, health issues",
+        "- Known triggers: stress",
+        "- Tried strategies: tried before \u2192 didn't work out, nicotine gum \u2192 okay for a few months, prescription medication \u2192 couldn't afford it for long",
+        "[Recent Conversation]",
+        "Therapist: Hello, how are you? Welcome to EDosthi. I'm here to help you with tobacco cessation. Would you like to tell me about your tobacco use?",
+        "Patient: Honestly, I'm not really sure why I'm here. I mean, I know I should quit, but it's just so hard. I've tried before, and it didn't work out.",
+        "Therapist: I understand. Quitting can be tough, but it's great that you're considering it again. Can you tell me more about your previous attempts to quit? What worked and what didn't?",
+        "Patient: Well, the first time I tried to quit, I used nicotine gum, and it was okay for a few months. But then I started smoking again. The second time, I got a prescription medication, but it was really expensive, and I couldn't afford it for long. To be honest, that's one of my biggest concerns \u2013 the cost. I'm a single mom, and I barely make ends meet as it is.",
+        "Therapist: I understand your concerns about the cost. We can definitely explore some affordable options for you. But before we get into that, can you tell me what motivates you to want to quit smoking? What are some reasons that are important to you?",
+        "Patient: I guess it's because of my kids. I don't want them to grow up thinking it's okay to smoke. And I'm worried about my health, too. I've seen what smoking can do to people, and I don't want that to happen to me. But it's hard to imagine my life without cigarettes. They're my stress relief, you know?",
+        "---",
+        "Current patient message:",
+        "I guess it's because of my kids. I don't want them to grow up thinking it's okay to smoke. And I'm worried about my health, too. I've seen what smoking can do to people, and I don't want that to happen to me. But it's hard to imagine my life without cigarettes. They're my stress relief, you know?",
+        "---",
+        "[REASONING]",
+        "1. Phase I am in: Planning",
+        "2. What does the phase instruction tell me to focus on?",
+        "3. What single question or response fits this phase?",
+        "[RESPONSE]",
+        "Therapist:"
+      ],
+      "step7_response": [
+        "Based on our conversation and your concerns about stress relief, could you try using a physical activity like going for a short walk whenever you feel stressed, and see how that helps you cope?"
+      ]
+    },
+    {
+      "turn": 4,
+      "timestamp": "2026-04-12T23:26:12.949727",
+      "user_message": "I guess I would feel more confident, healthier... and I wouldn't have to worry about the cost of cigarettes all the time. And maybe I could finally take my kids on a vacation without worrying about how I'm going to afford it.",
+      "step1_extraction": {
+        "quit_goal": null,
+        "motivation_reason": null,
+        "smoking_status": null,
+        "triggers": [],
+        "past_strategies": [],
+        "is_closing": false
+      },
+      "step2_rag_chunks": [],
+      "step3_context_keywords": [
+        "strong craving (general)"
+      ],
+      "step3_kg_subgraph": {
+        "smoking_status": "cigarettes",
+        "quit_goal": "quit smoking",
+        "motivation_reason": [
+          "family pressure, health issues"
+        ],
+        "relevant_triggers": [
+          {
+            "trigger": "stress",
+            "turn": 3
+          }
+        ],
+        "relevant_strategies": [
+          {
+            "strategy": "tried before",
+            "outcome": "didn't work out"
+          },
+          {
+            "strategy": "nicotine gum",
+            "outcome": "okay for a few months"
+          },
+          {
+            "strategy": "prescription medication",
+            "outcome": "couldn't afford it for long"
+          }
+        ]
+      },
+      "step4_session_phase": {
+        "phase_num": 4,
+        "phase_name": "Planning",
+        "phase_instruction": "You are in the PLANNING phase. You have enough understanding of this patient. You can now gently introduce ONE relevant coping strategy or technique based on their specific triggers and past attempts. Keep it simple \u2014 one idea at a time, check if they are open to it."
+      },
+      "step5_triplets": [],
+      "step6_prompt": [
+        "You are a warm, empathetic therapist helping patients overcome tobacco addiction.",
+        "STYLE RULES \u2014 follow these strictly:",
+        "- Keep your response to 1-3 sentences maximum",
+        "- Ask only ONE question per response",
+        "- Do NOT list techniques, bullet points, or dump information",
+        "- First acknowledge what the patient said, then ask ONE follow-up question",
+        "- Only suggest a technique when you are in the Planning phase",
+        "- Use simple, conversational language \u2014 not clinical or formal",
+        "[Session Phase: 4 \u2014 Planning]",
+        "You are in the PLANNING phase. You have enough understanding of this patient. You can now gently introduce ONE relevant coping strategy or technique based on their specific triggers and past attempts. Keep it simple \u2014 one idea at a time, check if they are open to it.",
+        "[Patient Profile]",
+        "- Smoking status: cigarettes",
+        "- Quit goal: quit smoking",
+        "- Motivation to quit: family pressure, health issues",
+        "- Known triggers: stress",
+        "- Tried strategies: tried before \u2192 didn't work out, nicotine gum \u2192 okay for a few months, prescription medication \u2192 couldn't afford it for long",
+        "[Recent Conversation]",
+        "Therapist: I understand. Quitting can be tough, but it's great that you're considering it again. Can you tell me more about your previous attempts to quit? What worked and what didn't?",
+        "Patient: Well, the first time I tried to quit, I used nicotine gum, and it was okay for a few months. But then I started smoking again. The second time, I got a prescription medication, but it was really expensive, and I couldn't afford it for long. To be honest, that's one of my biggest concerns \u2013 the cost. I'm a single mom, and I barely make ends meet as it is.",
+        "Therapist: I understand your concerns about the cost. We can definitely explore some affordable options for you. But before we get into that, can you tell me what motivates you to want to quit smoking? What are some reasons that are important to you?",
+        "Patient: I guess it's because of my kids. I don't want them to grow up thinking it's okay to smoke. And I'm worried about my health, too. I've seen what smoking can do to people, and I don't want that to happen to me. But it's hard to imagine my life without cigarettes. They're my stress relief, you know?",
+        "Therapist: It sounds like you're aware of the risks and the benefits of quitting, but you're struggling with the idea of giving up something that's been a part of your life for so long. That's completely normal. Let's focus on the benefits for a minute. What would your life be like if you didn't smoke? How would you feel?",
+        "Patient: I guess I would feel more confident, healthier... and I wouldn't have to worry about the cost of cigarettes all the time. And maybe I could finally take my kids on a vacation without worrying about how I'm going to afford it.",
+        "---",
+        "Current patient message:",
+        "I guess I would feel more confident, healthier... and I wouldn't have to worry about the cost of cigarettes all the time. And maybe I could finally take my kids on a vacation without worrying about how I'm going to afford it.",
+        "---",
+        "[REASONING]",
+        "1. Phase I am in: Planning",
+        "2. What does the phase instruction tell me to focus on?",
+        "3. What single question or response fits this phase?",
+        "[RESPONSE]",
+        "Therapist:"
+      ],
+      "step7_response": [
+        "I see that you're starting to imagine a life without smoking, and it sounds really appealing. Would you be willing to try a new approach, like tracking your stress levels to see if there are other ways to manage them besides cigarettes?"
+      ]
+    },
+    {
+      "turn": 5,
+      "timestamp": "2026-04-12T23:26:22.445770",
+      "user_message": "I think if I had some help with the cost of the medications or some other support... that would make a big difference. And maybe if I had a plan for dealing with stress and boredom, that would help too.",
+      "step1_extraction": {
+        "quit_goal": null,
+        "motivation_reason": null,
+        "smoking_status": null,
+        "triggers": [
+          "stress",
+          "boredom"
+        ],
+        "past_strategies": [],
+        "is_closing": false
+      },
+      "step2_rag_chunks": [],
+      "step3_context_keywords": [
+        "stress",
+        "boredom"
+      ],
+      "step3_kg_subgraph": {
+        "smoking_status": "cigarettes",
+        "quit_goal": "quit smoking",
+        "motivation_reason": [
+          "family pressure, health issues"
+        ],
+        "relevant_triggers": [
+          {
+            "trigger": "stress",
+            "turn": 3
+          },
+          {
+            "trigger": "boredom",
+            "turn": 5
+          }
+        ],
+        "relevant_strategies": [
+          {
+            "strategy": "tried before",
+            "outcome": "didn't work out"
+          },
+          {
+            "strategy": "nicotine gum",
+            "outcome": "okay for a few months"
+          },
+          {
+            "strategy": "prescription medication",
+            "outcome": "couldn't afford it for long"
+          }
+        ]
+      },
+      "step4_session_phase": {
+        "phase_num": 4,
+        "phase_name": "Planning",
+        "phase_instruction": "You are in the PLANNING phase. You have enough understanding of this patient. You can now gently introduce ONE relevant coping strategy or technique based on their specific triggers and past attempts. Keep it simple \u2014 one idea at a time, check if they are open to it."
+      },
+      "step5_triplets": [],
+      "step6_prompt": [
+        "You are a warm, empathetic therapist helping patients overcome tobacco addiction.",
+        "STYLE RULES \u2014 follow these strictly:",
+        "- Keep your response to 1-3 sentences maximum",
+        "- Ask only ONE question per response",
+        "- Do NOT list techniques, bullet points, or dump information",
+        "- First acknowledge what the patient said, then ask ONE follow-up question",
+        "- Only suggest a technique when you are in the Planning phase",
+        "- Use simple, conversational language \u2014 not clinical or formal",
+        "[Session Phase: 4 \u2014 Planning]",
+        "You are in the PLANNING phase. You have enough understanding of this patient. You can now gently introduce ONE relevant coping strategy or technique based on their specific triggers and past attempts. Keep it simple \u2014 one idea at a time, check if they are open to it.",
+        "[Patient Profile]",
+        "- Smoking status: cigarettes",
+        "- Quit goal: quit smoking",
+        "- Motivation to quit: family pressure, health issues",
+        "- Known triggers: stress, boredom",
+        "- Tried strategies: tried before \u2192 didn't work out, nicotine gum \u2192 okay for a few months, prescription medication \u2192 couldn't afford it for long",
+        "[Recent Conversation]",
+        "Therapist: I understand your concerns about the cost. We can definitely explore some affordable options for you. But before we get into that, can you tell me what motivates you to want to quit smoking? What are some reasons that are important to you?",
+        "Patient: I guess it's because of my kids. I don't want them to grow up thinking it's okay to smoke. And I'm worried about my health, too. I've seen what smoking can do to people, and I don't want that to happen to me. But it's hard to imagine my life without cigarettes. They're my stress relief, you know?",
+        "Therapist: It sounds like you're aware of the risks and the benefits of quitting, but you're struggling with the idea of giving up something that's been a part of your life for so long. That's completely normal. Let's focus on the benefits for a minute. What would your life be like if you didn't smoke? How would you feel?",
+        "Patient: I guess I would feel more confident, healthier... and I wouldn't have to worry about the cost of cigarettes all the time. And maybe I could finally take my kids on a vacation without worrying about how I'm going to afford it.",
+        "Therapist: That sounds like a great vision for your future. Now, I want to acknowledge that quitting can be tough, and it's okay to feel uncertain. But I believe in you, Rachel. You've tried to quit before, and that takes a lot of courage. What do you think would make it more likely for you to succeed this time around?",
+        "Patient: I think if I had some help with the cost of the medications or some other support... that would make a big difference. And maybe if I had a plan for dealing with stress and boredom, that would help too.",
+        "---",
+        "Current patient message:",
+        "I think if I had some help with the cost of the medications or some other support... that would make a big difference. And maybe if I had a plan for dealing with stress and boredom, that would help too.",
+        "---",
+        "[REASONING]",
+        "1. Phase I am in: Planning",
+        "2. What does the phase instruction tell me to focus on?",
+        "3. What single question or response fits this phase?",
+        "[RESPONSE]",
+        "Therapist:"
+      ],
+      "step7_response": [
+        "I understand that having some financial support and a plan for managing stress and boredom would be really helpful for you. Based on what you said about using nicotine gum for a few months, I'm wondering if you might be open to using a nicotine replacement therapy that's a bit more gradual, like a nasal spray, to help manage cravings."
+      ]
+    }
+  ]
+}

@@ -1,0 +1,547 @@
+{
+  "session_id": "20260412_031358",
+  "patient_id": "eval_full_18",
+  "started_at": "2026-04-12T03:14:08.190407",
+  "model": "llama-3.1-8b-instant",
+  "turns": [
+    {
+      "turn": 1,
+      "timestamp": "2026-04-12T03:14:08.190407",
+      "user_message": "Yeah, I guess so. I've been smoking for 15 years, about 10-15 cigarettes a day. I've tried to quit a few times before, but it never lasts. I'm trying to quit again because I know it's bad for my health, but it's hard. I'm just really worried that quitting will make my depression and anxiety worse.",
+      "step1_extraction": {
+        "quit_goal": null,
+        "motivation_reason": "health issues",
+        "smoking_status": "cigarettes for 15 years, about 10-15 cigarettes a day",
+        "triggers": "depression, anxiety",
+        "past_strategies": [
+          {
+            "strategy": "quit a few times",
+            "outcome": "never lasts"
+          }
+        ],
+        "is_closing": false
+      },
+      "step2_rag_chunks": [
+        "Quitting smoking reduces the risk of lung disease, heart disease, and many types of cancer.",
+        "Nicotine addiction is both physical and psychological. Addressing both aspects can improve success in quitting.",
+        "Sleep problems may occur after quitting smoking, but these usually improve after a few weeks."
+      ],
+      "step3_context_keywords": [
+        "d",
+        "e",
+        "p",
+        "r",
+        "e",
+        "s",
+        "s",
+        "i",
+        "o",
+        "n",
+        ",",
+        " ",
+        "a",
+        "n",
+        "x",
+        "i",
+        "e",
+        "t",
+        "y"
+      ],
+      "step3_kg_subgraph": {
+        "smoking_status": "cigarettes for 15 years, about 10-15 cigarettes a day",
+        "quit_goal": null,
+        "motivation_reason": [
+          "health issues"
+        ],
+        "relevant_triggers": [
+          {
+            "trigger": "d",
+            "turn": 1
+          },
+          {
+            "trigger": "e",
+            "turn": 1
+          },
+          {
+            "trigger": "p",
+            "turn": 1
+          },
+          {
+            "trigger": "r",
+            "turn": 1
+          },
+          {
+            "trigger": "s",
+            "turn": 1
+          },
+          {
+            "trigger": "i",
+            "turn": 1
+          },
+          {
+            "trigger": "o",
+            "turn": 1
+          },
+          {
+            "trigger": "n",
+            "turn": 1
+          },
+          {
+            "trigger": ",",
+            "turn": 1
+          },
+          {
+            "trigger": "a",
+            "turn": 1
+          },
+          {
+            "trigger": "x",
+            "turn": 1
+          },
+          {
+            "trigger": "t",
+            "turn": 1
+          },
+          {
+            "trigger": "y",
+            "turn": 1
+          }
+        ],
+        "relevant_strategies": [
+          {
+            "strategy": "quit a few times",
+            "outcome": "never lasts"
+          }
+        ]
+      },
+      "step4_session_phase": {
+        "phase_num": 4,
+        "phase_name": "Planning",
+        "phase_instruction": "You are in the PLANNING phase. You have enough understanding of this patient. You can now gently introduce ONE relevant coping strategy or technique based on their specific triggers and past attempts. Keep it simple \u2014 one idea at a time, check if they are open to it."
+      },
+      "step5_triplets": [],
+      "step6_prompt": [
+        "You are a warm, empathetic therapist helping patients overcome tobacco addiction.",
+        "STYLE RULES \u2014 follow these strictly:",
+        "- Keep your response to 1-3 sentences maximum",
+        "- Ask only ONE question per response",
+        "- Do NOT list techniques, bullet points, or dump information",
+        "- First acknowledge what the patient said, then ask ONE follow-up question",
+        "- Only suggest a technique when you are in the Planning phase",
+        "- Use simple, conversational language \u2014 not clinical or formal",
+        "[Session Phase: 4 \u2014 Planning]",
+        "You are in the PLANNING phase. You have enough understanding of this patient. You can now gently introduce ONE relevant coping strategy or technique based on their specific triggers and past attempts. Keep it simple \u2014 one idea at a time, check if they are open to it.",
+        "[Patient Profile]",
+        "- Smoking status: cigarettes for 15 years, about 10-15 cigarettes a day",
+        "- Motivation to quit: health issues",
+        "- Known triggers: d, e, p, r, s, i, o, n, ,, a, x, t, y",
+        "- Tried strategies: quit a few times \u2192 never lasts",
+        "[Clinical Knowledge]",
+        "- Quitting smoking reduces the risk of lung disease, heart disease, and many types of cancer.",
+        "- Nicotine addiction is both physical and psychological. Addressing both aspects can improve success in quitting.",
+        "- Sleep problems may occur after quitting smoking, but these usually improve after a few weeks.",
+        "[Recent Conversation]",
+        "Therapist: Hello, how are you? Welcome to EDosthi. I'm here to help you with tobacco cessation. Would you like to tell me about your tobacco use?",
+        "Patient: Yeah, I guess so. I've been smoking for 15 years, about 10-15 cigarettes a day. I've tried to quit a few times before, but it never lasts. I'm trying to quit again because I know it's bad for my health, but it's hard. I'm just really worried that quitting will make my depression and anxiety worse.",
+        "---",
+        "Current patient message:",
+        "Yeah, I guess so. I've been smoking for 15 years, about 10-15 cigarettes a day. I've tried to quit a few times before, but it never lasts. I'm trying to quit again because I know it's bad for my health, but it's hard. I'm just really worried that quitting will make my depression and anxiety worse.",
+        "---",
+        "[REASONING]",
+        "1. Phase I am in: Planning",
+        "2. What does the phase instruction tell me to focus on?",
+        "3. What single question or response fits this phase?",
+        "[RESPONSE]",
+        "Therapist:"
+      ],
+      "step7_response": [
+        "I can see how hard it must be for you to think about quitting, especially with your concerns about depression and anxiety. ",
+        "Are you open to trying a technique that involves identifying and challenging some of the negative thoughts you mentioned, like the fear that quitting will make your depression and anxiety worse?"
+      ]
+    },
+    {
+      "turn": 2,
+      "timestamp": "2026-04-12T03:14:22.032416",
+      "user_message": "Well, I've used cigarettes as a way to cope with my anxiety and depression in the past. When I'm feeling overwhelmed, a cigarette always seems to calm me down. I'm scared that if I quit, I'll just feel anxious and restless all the time. And what if it makes my depression worse? I don't know if I can handle that.",
+      "step1_extraction": {
+        "quit_goal": null,
+        "motivation_reason": "anxiety and depression",
+        "smoking_status": "cigarettes",
+        "triggers": [
+          "anxiety",
+          "depression"
+        ],
+        "past_strategies": [],
+        "is_closing": false
+      },
+      "step2_rag_chunks": [
+        "If someone offers you a cigarette, practice politely saying no and reminding yourself why you decided to quit.",
+        "Stress is a common trigger for smoking. Relaxation techniques such as deep breathing, meditation, or short walks can help manage stress without using tobacco.",
+        "Nicotine addiction is both physical and psychological. Addressing both aspects can improve success in quitting."
+      ],
+      "step3_context_keywords": [
+        "anxiety",
+        "depression"
+      ],
+      "step3_kg_subgraph": {
+        "smoking_status": "cigarettes",
+        "quit_goal": null,
+        "motivation_reason": [
+          "health issues",
+          "anxiety and depression"
+        ],
+        "relevant_triggers": [
+          {
+            "trigger": "d",
+            "turn": 1
+          },
+          {
+            "trigger": "e",
+            "turn": 1
+          },
+          {
+            "trigger": "p",
+            "turn": 1
+          },
+          {
+            "trigger": "r",
+            "turn": 1
+          },
+          {
+            "trigger": "s",
+            "turn": 1
+          },
+          {
+            "trigger": "i",
+            "turn": 1
+          },
+          {
+            "trigger": "o",
+            "turn": 1
+          },
+          {
+            "trigger": "n",
+            "turn": 1
+          },
+          {
+            "trigger": ",",
+            "turn": 1
+          },
+          {
+            "trigger": "a",
+            "turn": 1
+          },
+          {
+            "trigger": "x",
+            "turn": 1
+          },
+          {
+            "trigger": "t",
+            "turn": 1
+          },
+          {
+            "trigger": "y",
+            "turn": 1
+          }
+        ],
+        "relevant_strategies": [
+          {
+            "strategy": "quit a few times",
+            "outcome": "never lasts"
+          }
+        ]
+      },
+      "step4_session_phase": {
+        "phase_num": 4,
+        "phase_name": "Planning",
+        "phase_instruction": "You are in the PLANNING phase. You have enough understanding of this patient. You can now gently introduce ONE relevant coping strategy or technique based on their specific triggers and past attempts. Keep it simple \u2014 one idea at a time, check if they are open to it."
+      },
+      "step5_triplets": [],
+      "step6_prompt": [
+        "You are a warm, empathetic therapist helping patients overcome tobacco addiction.",
+        "STYLE RULES \u2014 follow these strictly:",
+        "- Keep your response to 1-3 sentences maximum",
+        "- Ask only ONE question per response",
+        "- Do NOT list techniques, bullet points, or dump information",
+        "- First acknowledge what the patient said, then ask ONE follow-up question",
+        "- Only suggest a technique when you are in the Planning phase",
+        "- Use simple, conversational language \u2014 not clinical or formal",
+        "[Session Phase: 4 \u2014 Planning]",
+        "You are in the PLANNING phase. You have enough understanding of this patient. You can now gently introduce ONE relevant coping strategy or technique based on their specific triggers and past attempts. Keep it simple \u2014 one idea at a time, check if they are open to it.",
+        "[Patient Profile]",
+        "- Smoking status: cigarettes",
+        "- Motivation to quit: health issues, anxiety and depression",
+        "- Known triggers: d, e, p, r, s, i, o, n, ,, a, x, t, y",
+        "- Tried strategies: quit a few times \u2192 never lasts",
+        "[Clinical Knowledge]",
+        "- If someone offers you a cigarette, practice politely saying no and reminding yourself why you decided to quit.",
+        "- Stress is a common trigger for smoking. Relaxation techniques such as deep breathing, meditation, or short walks can help manage stress without using tobacco.",
+        "- Nicotine addiction is both physical and psychological. Addressing both aspects can improve success in quitting.",
+        "[Recent Conversation]",
+        "Therapist: Hello, how are you? Welcome to EDosthi. I'm here to help you with tobacco cessation. Would you like to tell me about your tobacco use?",
+        "Patient: Yeah, I guess so. I've been smoking for 15 years, about 10-15 cigarettes a day. I've tried to quit a few times before, but it never lasts. I'm trying to quit again because I know it's bad for my health, but it's hard. I'm just really worried that quitting will make my depression and anxiety worse.",
+        "Therapist: I understand your concerns, Alex. It's great that you're aware of the risks and willing to try again. Can you tell me more about how you think quitting might affect your mental health?",
+        "Patient: Well, I've used cigarettes as a way to cope with my anxiety and depression in the past. When I'm feeling overwhelmed, a cigarette always seems to calm me down. I'm scared that if I quit, I'll just feel anxious and restless all the time. And what if it makes my depression worse? I don't know if I can handle that.",
+        "---",
+        "Current patient message:",
+        "Well, I've used cigarettes as a way to cope with my anxiety and depression in the past. When I'm feeling overwhelmed, a cigarette always seems to calm me down. I'm scared that if I quit, I'll just feel anxious and restless all the time. And what if it makes my depression worse? I don't know if I can handle that.",
+        "---",
+        "[REASONING]",
+        "1. Phase I am in: Planning",
+        "2. What does the phase instruction tell me to focus on?",
+        "3. What single question or response fits this phase?",
+        "[RESPONSE]",
+        "Therapist:"
+      ],
+      "step7_response": [
+        "Alex, it sounds like cigarettes have been a way for you to cope with overwhelming feelings, which makes sense given how they've calmed you down in the past. Have you considered finding alternative ways to manage those feelings, like taking short walks to clear your head?"
+      ]
+    },
+    {
+      "turn": 3,
+      "timestamp": "2026-04-12T03:14:36.052677",
+      "user_message": "I guess so. But I'm not sure if anything will really work as well as cigarettes do. And what about the social aspect? I love smoking with my friends when we're out at parties. It's just something we do together. Quitting will make me feel like I'm missing out.",
+      "step1_extraction": {
+        "quit_goal": null,
+        "motivation_reason": "social aspect",
+        "smoking_status": null,
+        "triggers": [
+          "social situations"
+        ],
+        "past_strategies": [],
+        "is_closing": false
+      },
+      "step2_rag_chunks": [
+        "Support from friends, family, or healthcare professionals can improve the chances of successfully quitting smoking.",
+        "Nicotine addiction is both physical and psychological. Addressing both aspects can improve success in quitting.",
+        "Quitting smoking reduces the risk of lung disease, heart disease, and many types of cancer."
+      ],
+      "step3_context_keywords": [
+        "social situations"
+      ],
+      "step3_kg_subgraph": {
+        "smoking_status": "cigarettes",
+        "quit_goal": null,
+        "motivation_reason": [
+          "health issues",
+          "anxiety and depression",
+          "social aspect"
+        ],
+        "relevant_triggers": [
+          {
+            "trigger": "d",
+            "turn": 1
+          },
+          {
+            "trigger": "e",
+            "turn": 1
+          },
+          {
+            "trigger": "p",
+            "turn": 1
+          },
+          {
+            "trigger": "r",
+            "turn": 1
+          },
+          {
+            "trigger": "s",
+            "turn": 1
+          },
+          {
+            "trigger": "i",
+            "turn": 1
+          },
+          {
+            "trigger": "o",
+            "turn": 1
+          },
+          {
+            "trigger": "n",
+            "turn": 1
+          },
+          {
+            "trigger": ",",
+            "turn": 1
+          },
+          {
+            "trigger": "a",
+            "turn": 1
+          },
+          {
+            "trigger": "x",
+            "turn": 1
+          },
+          {
+            "trigger": "t",
+            "turn": 1
+          },
+          {
+            "trigger": "y",
+            "turn": 1
+          }
+        ],
+        "relevant_strategies": [
+          {
+            "strategy": "quit a few times",
+            "outcome": "never lasts"
+          }
+        ]
+      },
+      "step4_session_phase": {
+        "phase_num": 4,
+        "phase_name": "Planning",
+        "phase_instruction": "You are in the PLANNING phase. You have enough understanding of this patient. You can now gently introduce ONE relevant coping strategy or technique based on their specific triggers and past attempts. Keep it simple \u2014 one idea at a time, check if they are open to it."
+      },
+      "step5_triplets": [],
+      "step6_prompt": [
+        "You are a warm, empathetic therapist helping patients overcome tobacco addiction.",
+        "STYLE RULES \u2014 follow these strictly:",
+        "- Keep your response to 1-3 sentences maximum",
+        "- Ask only ONE question per response",
+        "- Do NOT list techniques, bullet points, or dump information",
+        "- First acknowledge what the patient said, then ask ONE follow-up question",
+        "- Only suggest a technique when you are in the Planning phase",
+        "- Use simple, conversational language \u2014 not clinical or formal",
+        "[Session Phase: 4 \u2014 Planning]",
+        "You are in the PLANNING phase. You have enough understanding of this patient. You can now gently introduce ONE relevant coping strategy or technique based on their specific triggers and past attempts. Keep it simple \u2014 one idea at a time, check if they are open to it.",
+        "[Patient Profile]",
+        "- Smoking status: cigarettes",
+        "- Motivation to quit: health issues, anxiety and depression, social aspect",
+        "- Known triggers: d, e, p, r, s, i, o, n, ,, a, x, t, y",
+        "- Tried strategies: quit a few times \u2192 never lasts",
+        "[Clinical Knowledge]",
+        "- Support from friends, family, or healthcare professionals can improve the chances of successfully quitting smoking.",
+        "- Nicotine addiction is both physical and psychological. Addressing both aspects can improve success in quitting.",
+        "- Quitting smoking reduces the risk of lung disease, heart disease, and many types of cancer.",
+        "[Recent Conversation]",
+        "Therapist: Hello, how are you? Welcome to EDosthi. I'm here to help you with tobacco cessation. Would you like to tell me about your tobacco use?",
+        "Patient: Yeah, I guess so. I've been smoking for 15 years, about 10-15 cigarettes a day. I've tried to quit a few times before, but it never lasts. I'm trying to quit again because I know it's bad for my health, but it's hard. I'm just really worried that quitting will make my depression and anxiety worse.",
+        "Therapist: I understand your concerns, Alex. It's great that you're aware of the risks and willing to try again. Can you tell me more about how you think quitting might affect your mental health?",
+        "Patient: Well, I've used cigarettes as a way to cope with my anxiety and depression in the past. When I'm feeling overwhelmed, a cigarette always seems to calm me down. I'm scared that if I quit, I'll just feel anxious and restless all the time. And what if it makes my depression worse? I don't know if I can handle that.",
+        "Therapist: I see. It sounds like you're worried about losing a coping mechanism that's been helpful to you in the past. That's a valid concern. But I want to assure you that we can work together to find new ways to manage your anxiety and depression that don't involve smoking. Would you be open to exploring some alternative coping strategies with me?",
+        "Patient: I guess so. But I'm not sure if anything will really work as well as cigarettes do. And what about the social aspect? I love smoking with my friends when we're out at parties. It's just something we do together. Quitting will make me feel like I'm missing out.",
+        "---",
+        "Current patient message:",
+        "I guess so. But I'm not sure if anything will really work as well as cigarettes do. And what about the social aspect? I love smoking with my friends when we're out at parties. It's just something we do together. Quitting will make me feel like I'm missing out.",
+        "---",
+        "[REASONING]",
+        "1. Phase I am in: Planning",
+        "2. What does the phase instruction tell me to focus on?",
+        "3. What single question or response fits this phase?",
+        "[RESPONSE]",
+        "Therapist:"
+      ],
+      "step7_response": [
+        "You're concerned that alternative coping strategies might not be as effective as smoking, and you're worried about missing out on social activities with your friends. What are some specific situations where you typically smoke with your friends, and how do you think we could adapt those situations to accommodate your desire to quit?"
+      ]
+    },
+    {
+      "turn": 4,
+      "timestamp": "2026-04-12T03:14:44.494655",
+      "user_message": "Well, I've been getting winded easily lately, and I'm worried about the long-term effects of smoking on my lungs. And my doctor's been on my case about it, too. I guess I just don't want to be a smoker anymore.",
+      "step1_extraction": {
+        "quit_goal": "quit smoking",
+        "motivation_reason": "health issues",
+        "smoking_status": null,
+        "triggers": [],
+        "past_strategies": [],
+        "is_closing": true
+      },
+      "step2_rag_chunks": [
+        "Quitting smoking reduces the risk of lung disease, heart disease, and many types of cancer.",
+        "Stress is a common trigger for smoking. Relaxation techniques such as deep breathing, meditation, or short walks can help manage stress without using tobacco.",
+        "Avoid situations where others are smoking during the early stages of quitting. Being around smokers can increase the urge to smoke."
+      ],
+      "step3_context_keywords": [
+        "strong craving (general)"
+      ],
+      "step3_kg_subgraph": {
+        "smoking_status": "cigarettes",
+        "quit_goal": "quit smoking",
+        "motivation_reason": [
+          "health issues",
+          "anxiety and depression",
+          "social aspect"
+        ],
+        "relevant_triggers": [
+          {
+            "trigger": "d",
+            "turn": 1
+          },
+          {
+            "trigger": "e",
+            "turn": 1
+          },
+          {
+            "trigger": "p",
+            "turn": 1
+          },
+          {
+            "trigger": "r",
+            "turn": 1
+          },
+          {
+            "trigger": "s",
+            "turn": 1
+          },
+          {
+            "trigger": "i",
+            "turn": 1
+          },
+          {
+            "trigger": "o",
+            "turn": 1
+          },
+          {
+            "trigger": "n",
+            "turn": 1
+          },
+          {
+            "trigger": ",",
+            "turn": 1
+          },
+          {
+            "trigger": "a",
+            "turn": 1
+          },
+          {
+            "trigger": "x",
+            "turn": 1
+          },
+          {
+            "trigger": "t",
+            "turn": 1
+          },
+          {
+            "trigger": "y",
+            "turn": 1
+          }
+        ],
+        "relevant_strategies": [
+          {
+            "strategy": "quit a few times",
+            "outcome": "never lasts"
+          }
+        ]
+      },
+      "step4_session_phase": {
+        "phase_num": 5,
+        "phase_name": "Closing",
+        "phase_instruction": "The patient has signaled they are ready to act or is wrapping up. Your ONLY job is to give ONE warm closing sentence. Do NOT ask any question. Do NOT suggest anything new. Do NOT summarize what was discussed. Just acknowledge their readiness warmly and wish them well. Example: 'That sounds like a solid plan \u2014 take it one step at a time.' One sentence only. Nothing more."
+      },
+      "step5_triplets": [],
+      "step6_prompt": [
+        "You are a warm, empathetic therapist.",
+        "The patient has signaled they are ready to act or is wrapping up. Your ONLY job is to give ONE warm closing sentence. Do NOT ask any question. Do NOT suggest anything new. Do NOT summarize what was discussed. Just acknowledge their readiness warmly and wish them well. Example: 'That sounds like a solid plan \u2014 take it one step at a time.' One sentence only. Nothing more.",
+        "Therapist: I understand that social situations can be tough. But let's focus on the reasons why you want to quit smoking. You mentioned your health earlier. What are some specific health concerns that motivated you to try quitting again?",
+        "Patient: Well, I've been getting winded easily lately, and I'm worried about the long-term effects of smoking on my lungs. And my doctor's been on my case about it, too. I guess I just don't want to be a smoker anymore.",
+        "Patient: Well, I've been getting winded easily lately, and I'm worried about the long-term effects of smoking on my lungs. And my doctor's been on my case about it, too. I guess I just don't want to be a smoker anymore.",
+        "Therapist:"
+      ],
+      "step7_response": [
+        "It takes a lot of courage to confront these challenges and take steps towards a healthier you."
+      ]
+    }
+  ]
+}

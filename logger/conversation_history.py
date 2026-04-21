@@ -44,7 +44,7 @@ def _save(data):
 
 def _find_session(data, patient_id, session_id):
     for entry in data:
-        if entry["patient_id"] == patient_id and entry["session_id"] == session_id:
+        if entry["patient_id"] == patient_id and str(entry["session_id"]) == str(session_id):
             return entry
     return None
 

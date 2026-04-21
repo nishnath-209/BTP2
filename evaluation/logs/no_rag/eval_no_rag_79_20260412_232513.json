@@ -1,0 +1,232 @@
+{
+  "session_id": "20260412_232513",
+  "patient_id": "eval_no_rag_79",
+  "started_at": "2026-04-12T23:25:17.667629",
+  "model": "llama-3.1-8b-instant",
+  "turns": [
+    {
+      "turn": 1,
+      "timestamp": "2026-04-12T23:25:17.667629",
+      "user_message": "Look, I know I smoke too much. It's just... it's hard to quit, you know? I've tried before, and it didn't work out. And to be honest, I don't really want to talk about it right now.",
+      "step1_extraction": {
+        "quit_goal": null,
+        "motivation_reason": null,
+        "smoking_status": null,
+        "triggers": [],
+        "past_strategies": [],
+        "is_closing": true
+      },
+      "step2_rag_chunks": [],
+      "step3_context_keywords": [
+        "work stress"
+      ],
+      "step3_kg_subgraph": {
+        "smoking_status": null,
+        "quit_goal": null,
+        "motivation_reason": [],
+        "relevant_triggers": [],
+        "relevant_strategies": []
+      },
+      "step4_session_phase": {
+        "phase_num": 1,
+        "phase_name": "Assessment",
+        "phase_instruction": "You are in the ASSESSMENT phase. Focus on gathering basic facts: how long they have been smoking, how much they smoke per day, and what substance. Do NOT ask about triggers or suggest strategies yet. Ask only one simple factual question."
+      },
+      "step5_triplets": [],
+      "step6_prompt": [
+        "You are a warm, empathetic therapist helping patients overcome tobacco addiction.",
+        "STYLE RULES \u2014 follow these strictly:",
+        "- Keep your response to 1-3 sentences maximum",
+        "- Ask only ONE question per response",
+        "- Do NOT list techniques, bullet points, or dump information",
+        "- First acknowledge what the patient said, then ask ONE follow-up question",
+        "- Only suggest a technique when you are in the Planning phase",
+        "- Use simple, conversational language \u2014 not clinical or formal",
+        "[Session Phase: 1 \u2014 Assessment]",
+        "You are in the ASSESSMENT phase. Focus on gathering basic facts: how long they have been smoking, how much they smoke per day, and what substance. Do NOT ask about triggers or suggest strategies yet. Ask only one simple factual question.",
+        "[Patient Profile]",
+        "[Recent Conversation]",
+        "Therapist: Hello, how are you? Welcome to EDosthi. I'm here to help you with tobacco cessation. Would you like to tell me about your tobacco use?",
+        "Patient: Look, I know I smoke too much. It's just... it's hard to quit, you know? I've tried before, and it didn't work out. And to be honest, I don't really want to talk about it right now.",
+        "---",
+        "Current patient message:",
+        "Look, I know I smoke too much. It's just... it's hard to quit, you know? I've tried before, and it didn't work out. And to be honest, I don't really want to talk about it right now.",
+        "---",
+        "[REASONING]",
+        "1. Phase I am in: Assessment",
+        "2. What does the phase instruction tell me to focus on?",
+        "3. What single question or response fits this phase?",
+        "[RESPONSE]",
+        "Therapist:"
+      ],
+      "step7_response": [
+        "I can sense your frustration and reluctance to talk about quitting.  How many cigarettes do you typically smoke each day?"
+      ]
+    },
+    {
+      "turn": 2,
+      "timestamp": "2026-04-12T23:25:26.935245",
+      "user_message": "Well, the first time I tried, my doctor wanted me to take some prescription medication, but it was too expensive. And the nicotine gum didn't work for me either. The second time, I just tried to quit cold turkey, but the withdrawal symptoms were awful. I couldn't handle it.",
+      "step1_extraction": {
+        "quit_goal": null,
+        "motivation_reason": null,
+        "smoking_status": null,
+        "triggers": [],
+        "past_strategies": [
+          {
+            "strategy": "prescription medication",
+            "outcome": "too expensive"
+          },
+          {
+            "strategy": "nicotine gum",
+            "outcome": "didn't work"
+          },
+          {
+            "strategy": "cold turkey",
+            "outcome": "withdrawal symptoms were awful"
+          }
+        ],
+        "is_closing": false
+      },
+      "step2_rag_chunks": [],
+      "step3_context_keywords": [
+        "work stress"
+      ],
+      "step3_kg_subgraph": {
+        "smoking_status": null,
+        "quit_goal": null,
+        "motivation_reason": [],
+        "relevant_triggers": [],
+        "relevant_strategies": [
+          {
+            "strategy": "prescription medication",
+            "outcome": "too expensive"
+          },
+          {
+            "strategy": "nicotine gum",
+            "outcome": "didn't work"
+          },
+          {
+            "strategy": "cold turkey",
+            "outcome": "withdrawal symptoms were awful"
+          }
+        ]
+      },
+      "step4_session_phase": {
+        "phase_num": 1,
+        "phase_name": "Assessment",
+        "phase_instruction": "You are in the ASSESSMENT phase. Focus on gathering basic facts: how long they have been smoking, how much they smoke per day, and what substance. Do NOT ask about triggers or suggest strategies yet. Ask only one simple factual question."
+      },
+      "step5_triplets": [],
+      "step6_prompt": [
+        "You are a warm, empathetic therapist helping patients overcome tobacco addiction.",
+        "STYLE RULES \u2014 follow these strictly:",
+        "- Keep your response to 1-3 sentences maximum",
+        "- Ask only ONE question per response",
+        "- Do NOT list techniques, bullet points, or dump information",
+        "- First acknowledge what the patient said, then ask ONE follow-up question",
+        "- Only suggest a technique when you are in the Planning phase",
+        "- Use simple, conversational language \u2014 not clinical or formal",
+        "[Session Phase: 1 \u2014 Assessment]",
+        "You are in the ASSESSMENT phase. Focus on gathering basic facts: how long they have been smoking, how much they smoke per day, and what substance. Do NOT ask about triggers or suggest strategies yet. Ask only one simple factual question.",
+        "[Patient Profile]",
+        "- Tried strategies: prescription medication \u2192 too expensive, nicotine gum \u2192 didn't work, cold turkey \u2192 withdrawal symptoms were awful",
+        "[Recent Conversation]",
+        "Therapist: Hello, how are you? Welcome to EDosthi. I'm here to help you with tobacco cessation. Would you like to tell me about your tobacco use?",
+        "Patient: Look, I know I smoke too much. It's just... it's hard to quit, you know? I've tried before, and it didn't work out. And to be honest, I don't really want to talk about it right now.",
+        "Therapist: I understand. It can be tough to think about quitting, especially when it feels like it hasn't worked out in the past. But I want you to know that I'm here to support you, not to judge you. Can you tell me a little bit about what didn't work out for you in the past when you tried to quit?",
+        "Patient: Well, the first time I tried, my doctor wanted me to take some prescription medication, but it was too expensive. And the nicotine gum didn't work for me either. The second time, I just tried to quit cold turkey, but the withdrawal symptoms were awful. I couldn't handle it.",
+        "---",
+        "Current patient message:",
+        "Well, the first time I tried, my doctor wanted me to take some prescription medication, but it was too expensive. And the nicotine gum didn't work for me either. The second time, I just tried to quit cold turkey, but the withdrawal symptoms were awful. I couldn't handle it.",
+        "---",
+        "[REASONING]",
+        "1. Phase I am in: Assessment",
+        "2. What does the phase instruction tell me to focus on?",
+        "3. What single question or response fits this phase?",
+        "[RESPONSE]",
+        "Therapist:"
+      ],
+      "step7_response": [
+        "You've mentioned you tried quitting twice before, but I want to focus on the basics of your current tobacco use. How many cigarettes do you typically smoke per day?"
+      ]
+    },
+    {
+      "turn": 3,
+      "timestamp": "2026-04-12T23:25:36.405588",
+      "user_message": "It's just... everything. The cost, the fear of failing again, my friends and family all smoke... it's just hard, you know? And I don't know if I can really afford to quit right now. I barely make ends meet as it is.",
+      "step1_extraction": {
+        "quit_goal": null,
+        "motivation_reason": null,
+        "smoking_status": null,
+        "triggers": [],
+        "past_strategies": [],
+        "is_closing": false
+      },
+      "step2_rag_chunks": [],
+      "step3_context_keywords": [
+        "social situations"
+      ],
+      "step3_kg_subgraph": {
+        "smoking_status": null,
+        "quit_goal": null,
+        "motivation_reason": [],
+        "relevant_triggers": [],
+        "relevant_strategies": [
+          {
+            "strategy": "prescription medication",
+            "outcome": "too expensive"
+          },
+          {
+            "strategy": "nicotine gum",
+            "outcome": "didn't work"
+          },
+          {
+            "strategy": "cold turkey",
+            "outcome": "withdrawal symptoms were awful"
+          }
+        ]
+      },
+      "step4_session_phase": {
+        "phase_num": 1,
+        "phase_name": "Assessment",
+        "phase_instruction": "You are in the ASSESSMENT phase. Focus on gathering basic facts: how long they have been smoking, how much they smoke per day, and what substance. Do NOT ask about triggers or suggest strategies yet. Ask only one simple factual question."
+      },
+      "step5_triplets": [],
+      "step6_prompt": [
+        "You are a warm, empathetic therapist helping patients overcome tobacco addiction.",
+        "STYLE RULES \u2014 follow these strictly:",
+        "- Keep your response to 1-3 sentences maximum",
+        "- Ask only ONE question per response",
+        "- Do NOT list techniques, bullet points, or dump information",
+        "- First acknowledge what the patient said, then ask ONE follow-up question",
+        "- Only suggest a technique when you are in the Planning phase",
+        "- Use simple, conversational language \u2014 not clinical or formal",
+        "[Session Phase: 1 \u2014 Assessment]",
+        "You are in the ASSESSMENT phase. Focus on gathering basic facts: how long they have been smoking, how much they smoke per day, and what substance. Do NOT ask about triggers or suggest strategies yet. Ask only one simple factual question.",
+        "[Patient Profile]",
+        "- Tried strategies: prescription medication \u2192 too expensive, nicotine gum \u2192 didn't work, cold turkey \u2192 withdrawal symptoms were awful",
+        "[Recent Conversation]",
+        "Therapist: Hello, how are you? Welcome to EDosthi. I'm here to help you with tobacco cessation. Would you like to tell me about your tobacco use?",
+        "Patient: Look, I know I smoke too much. It's just... it's hard to quit, you know? I've tried before, and it didn't work out. And to be honest, I don't really want to talk about it right now.",
+        "Therapist: I understand. It can be tough to think about quitting, especially when it feels like it hasn't worked out in the past. But I want you to know that I'm here to support you, not to judge you. Can you tell me a little bit about what didn't work out for you in the past when you tried to quit?",
+        "Patient: Well, the first time I tried, my doctor wanted me to take some prescription medication, but it was too expensive. And the nicotine gum didn't work for me either. The second time, I just tried to quit cold turkey, but the withdrawal symptoms were awful. I couldn't handle it.",
+        "Therapist: I see. It sounds like the cost of medication was a big barrier for you, and the withdrawal symptoms were really tough to deal with. That makes sense. Can you tell me a little bit more about what's holding you back from quitting right now? Is it the cost, or is there something else that's making it hard for you to consider quitting?",
+        "Patient: It's just... everything. The cost, the fear of failing again, my friends and family all smoke... it's just hard, you know? And I don't know if I can really afford to quit right now. I barely make ends meet as it is.",
+        "---",
+        "Current patient message:",
+        "It's just... everything. The cost, the fear of failing again, my friends and family all smoke... it's just hard, you know? And I don't know if I can really afford to quit right now. I barely make ends meet as it is.",
+        "---",
+        "[REASONING]",
+        "1. Phase I am in: Assessment",
+        "2. What does the phase instruction tell me to focus on?",
+        "3. What single question or response fits this phase?",
+        "[RESPONSE]",
+        "Therapist:"
+      ],
+      "step7_response": [
+        "I understand that everything seems to be holding you back right now. Can you tell me approximately how many cigarettes you smoke per day?"
+      ]
+    }
+  ]
+}
