@@ -444,13 +444,6 @@ STYLE RULES — follow these strictly:
 Current patient message:
 {user_message}
 
----
-
-[REASONING]
-1. Phase I am in: {phase_name}
-2. What does the phase instruction tell me to focus on?
-3. What single question or response fits this phase?
-
 [RESPONSE]
 Therapist:"""
 
@@ -509,18 +502,18 @@ def therapy_chat(user_message, patient_id="default_patient", session_id=None):
         session_id = SESSION_ID
 
     # Resume or switch session when patient_id+session_id changes
-    if patient_id != _current_patient_id or str(session_id) != str(_current_session_id):
-        _current_patient_id = patient_id
-        _current_session_id = session_id
-        SESSION_ID = session_id
-        _load_session_state(patient_id, session_id)
-        if _conversation_history:
-            print(f"[Session] Resumed session {session_id} for {patient_id} "
-                  f"({len(_conversation_history)//2} prior turns)")
-        else:
-            print(f"[Session] New session {session_id} for {patient_id}")
+    # if patient_id != _current_patient_id or str(session_id) != str(_current_session_id):
+    #     _current_patient_id = patient_id
+    #     _current_session_id = session_id
+    #     SESSION_ID = session_id
+    #     _load_session_state(patient_id, session_id)
+    #     if _conversation_history:
+    #         print(f"[Session] Resumed session {session_id} for {patient_id} "
+    #               f"({len(_conversation_history)//2} prior turns)")
+    #     else:
+    #         print(f"[Session] New session {session_id} for {patient_id}")
 
-    print("\n" + "=" * 60)
+    # print("\n" + "=" * 60)
 
     # Add patient message to history
     _conversation_history.append({"role": "patient", "content": user_message})

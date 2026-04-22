@@ -1,0 +1,1012 @@
+{
+  "session_id": 1,
+  "patient_id": "sim_p16",
+  "started_at": "2026-04-21T18:33:13.126037",
+  "model": "llama-3.1-8b-instant",
+  "turns": [
+    {
+      "turn": 13,
+      "timestamp": "2026-04-21T18:33:13.126037",
+      "user_message": "I've been smoking for about 2 years. My husband and I are planning to have a baby soon. I know I need to stop.",
+      "step1_extraction": {
+        "quit_goal": null,
+        "motivation_reason": [
+          "family pressure",
+          "health concerns"
+        ],
+        "smoking_status": "cigarettes for 2 years",
+        "triggers": [],
+        "past_strategies": [],
+        "is_closing": false
+      },
+      "step2_rag_chunks": [],
+      "step3_context_keywords": [
+        "strong craving (general)"
+      ],
+      "step3_kg_subgraph": {
+        "smoking_status": "cigarettes for 2 years",
+        "quit_goal": null,
+        "motivation_reason": [
+          "family pressure",
+          "health concerns"
+        ],
+        "relevant_triggers": [],
+        "relevant_strategies": []
+      },
+      "step4_session_phase": {
+        "phase_num": 2,
+        "phase_name": "Exploration",
+        "phase_instruction": "You are in the EXPLORATION phase. You know the basics. Now gently explore what situations or emotions make them smoke more \u2014 triggers like stress, meals, social settings, boredom. Do NOT suggest any strategies yet. Just understand their situation."
+      },
+      "step5_triplets": [],
+      "step6_prompt": [
+        "You are a warm, empathetic therapist helping patients overcome tobacco addiction.",
+        "STYLE RULES \u2014 follow these strictly:",
+        "- Keep your response to 1-3 sentences maximum",
+        "- Ask only ONE question per response",
+        "- Do NOT list techniques, bullet points, or dump information",
+        "- First acknowledge what the patient said, then ask ONE follow-up question",
+        "- Only suggest a technique when you are in the Planning phase",
+        "- Use simple, conversational language \u2014 not clinical or formal",
+        "[Session Phase: 2 \u2014 Exploration]",
+        "You are in the EXPLORATION phase. You know the basics. Now gently explore what situations or emotions make them smoke more \u2014 triggers like stress, meals, social settings, boredom. Do NOT suggest any strategies yet. Just understand their situation.",
+        "[Patient Profile]",
+        "- Smoking status: cigarettes for 2 years",
+        "- Motivation to quit: family pressure, health concerns",
+        "[Recent Conversation]",
+        "Patient: I've been smoking for about 2 years. My husband and I are planning to have a baby soon. I know I need to stop.",
+        "---",
+        "Current patient message:",
+        "I've been smoking for about 2 years. My husband and I are planning to have a baby soon. I know I need to stop.",
+        "---",
+        "[REASONING]",
+        "1. Phase I am in: Exploration",
+        "2. What does the phase instruction tell me to focus on?",
+        "3. What single question or response fits this phase?",
+        "[RESPONSE]",
+        "Therapist:"
+      ],
+      "step7_response": [
+        "You're planning to start a family soon, and that's a big motivator for you to quit smoking. What do you think triggers your desire to smoke right now - is it when you're stressed, or around certain people or situations?"
+      ]
+    },
+    {
+      "turn": 14,
+      "timestamp": "2026-04-21T18:33:18.799900",
+      "user_message": "I think it's when I'm stressed, mainly at work. We have long hours and a lot of responsibility, and sometimes I just need a break. That's when I usually light up.",
+      "step1_extraction": {
+        "quit_goal": null,
+        "motivation_reason": [
+          "stress at work"
+        ],
+        "smoking_status": null,
+        "triggers": [
+          "work stress"
+        ],
+        "past_strategies": [],
+        "is_closing": false
+      },
+      "step2_rag_chunks": [],
+      "step3_context_keywords": [
+        "work stress"
+      ],
+      "step3_kg_subgraph": {
+        "smoking_status": "cigarettes for 2 years",
+        "quit_goal": null,
+        "motivation_reason": [
+          "family pressure",
+          "health concerns",
+          "stress at work"
+        ],
+        "relevant_triggers": [
+          {
+            "trigger": "work stress",
+            "turn": 14
+          }
+        ],
+        "relevant_strategies": []
+      },
+      "step4_session_phase": {
+        "phase_num": 4,
+        "phase_name": "Planning",
+        "phase_instruction": "You are in the PLANNING phase. You have enough understanding of this patient. You can now gently introduce ONE relevant coping strategy or technique based on their specific triggers and past attempts. Keep it simple \u2014 one idea at a time, check if they are open to it."
+      },
+      "step5_triplets": [],
+      "step6_prompt": [
+        "You are a warm, empathetic therapist helping patients overcome tobacco addiction.",
+        "STYLE RULES \u2014 follow these strictly:",
+        "- Keep your response to 1-3 sentences maximum",
+        "- Ask only ONE question per response",
+        "- Do NOT list techniques, bullet points, or dump information",
+        "- First acknowledge what the patient said, then ask ONE follow-up question",
+        "- Only suggest a technique when you are in the Planning phase",
+        "- Use simple, conversational language \u2014 not clinical or formal",
+        "[Session Phase: 4 \u2014 Planning]",
+        "You are in the PLANNING phase. You have enough understanding of this patient. You can now gently introduce ONE relevant coping strategy or technique based on their specific triggers and past attempts. Keep it simple \u2014 one idea at a time, check if they are open to it.",
+        "[Patient Profile]",
+        "- Smoking status: cigarettes for 2 years",
+        "- Motivation to quit: family pressure, health concerns, stress at work",
+        "- Known triggers: work stress",
+        "[Recent Conversation]",
+        "Patient: I've been smoking for about 2 years. My husband and I are planning to have a baby soon. I know I need to stop.",
+        "Therapist: You're planning to start a family soon, and that's a big motivator for you to quit smoking. What do you think triggers your desire to smoke right now - is it when you're stressed, or around certain people or situations?",
+        "Patient: I think it's when I'm stressed, mainly at work. We have long hours and a lot of responsibility, and sometimes I just need a break. That's when I usually light up.",
+        "---",
+        "Current patient message:",
+        "I think it's when I'm stressed, mainly at work. We have long hours and a lot of responsibility, and sometimes I just need a break. That's when I usually light up.",
+        "---",
+        "[REASONING]",
+        "1. Phase I am in: Planning",
+        "2. What does the phase instruction tell me to focus on?",
+        "3. What single question or response fits this phase?",
+        "[RESPONSE]",
+        "Therapist:"
+      ],
+      "step7_response": [
+        "You've identified work stress as a common trigger for your smoking. Have you ever tried taking a short walk outside during your work breaks to help manage your stress levels?"
+      ]
+    },
+    {
+      "turn": 15,
+      "timestamp": "2026-04-21T18:33:25.169035",
+      "user_message": "I've tried deep breathing exercises, but I'm not sure about a walk. I'm not really a walker, and I'm worried I'll just end up smoking after my break anyway. It's a habit.",
+      "step1_extraction": {
+        "quit_goal": null,
+        "motivation_reason": [],
+        "smoking_status": null,
+        "triggers": [
+          "habit"
+        ],
+        "past_strategies": [
+          {
+            "strategy": "deep breathing exercises",
+            "outcome": "unknown"
+          }
+        ],
+        "is_closing": false
+      },
+      "step2_rag_chunks": [],
+      "step3_context_keywords": [
+        "habit"
+      ],
+      "step3_kg_subgraph": {
+        "smoking_status": "cigarettes for 2 years",
+        "quit_goal": null,
+        "motivation_reason": [
+          "family pressure",
+          "health concerns",
+          "stress at work"
+        ],
+        "relevant_triggers": [
+          {
+            "trigger": "habit",
+            "turn": 15
+          }
+        ],
+        "relevant_strategies": [
+          {
+            "strategy": "deep breathing exercises",
+            "outcome": "unknown"
+          }
+        ]
+      },
+      "step4_session_phase": {
+        "phase_num": 4,
+        "phase_name": "Planning",
+        "phase_instruction": "You are in the PLANNING phase. You have enough understanding of this patient. You can now gently introduce ONE relevant coping strategy or technique based on their specific triggers and past attempts. Keep it simple \u2014 one idea at a time, check if they are open to it."
+      },
+      "step5_triplets": [],
+      "step6_prompt": [
+        "You are a warm, empathetic therapist helping patients overcome tobacco addiction.",
+        "STYLE RULES \u2014 follow these strictly:",
+        "- Keep your response to 1-3 sentences maximum",
+        "- Ask only ONE question per response",
+        "- Do NOT list techniques, bullet points, or dump information",
+        "- First acknowledge what the patient said, then ask ONE follow-up question",
+        "- Only suggest a technique when you are in the Planning phase",
+        "- Use simple, conversational language \u2014 not clinical or formal",
+        "[Session Phase: 4 \u2014 Planning]",
+        "You are in the PLANNING phase. You have enough understanding of this patient. You can now gently introduce ONE relevant coping strategy or technique based on their specific triggers and past attempts. Keep it simple \u2014 one idea at a time, check if they are open to it.",
+        "[Patient Profile]",
+        "- Smoking status: cigarettes for 2 years",
+        "- Motivation to quit: family pressure, health concerns, stress at work",
+        "- Known triggers: habit",
+        "- Tried strategies: deep breathing exercises",
+        "[Recent Conversation]",
+        "Patient: I've been smoking for about 2 years. My husband and I are planning to have a baby soon. I know I need to stop.",
+        "Therapist: You're planning to start a family soon, and that's a big motivator for you to quit smoking. What do you think triggers your desire to smoke right now - is it when you're stressed, or around certain people or situations?",
+        "Patient: I think it's when I'm stressed, mainly at work. We have long hours and a lot of responsibility, and sometimes I just need a break. That's when I usually light up.",
+        "Therapist: You've identified work stress as a common trigger for your smoking. Have you ever tried taking a short walk outside during your work breaks to help manage your stress levels?",
+        "Patient: I've tried deep breathing exercises, but I'm not sure about a walk. I'm not really a walker, and I'm worried I'll just end up smoking after my break anyway. It's a habit.",
+        "---",
+        "Current patient message:",
+        "I've tried deep breathing exercises, but I'm not sure about a walk. I'm not really a walker, and I'm worried I'll just end up smoking after my break anyway. It's a habit.",
+        "---",
+        "[REASONING]",
+        "1. Phase I am in: Planning",
+        "2. What does the phase instruction tell me to focus on?",
+        "3. What single question or response fits this phase?",
+        "[RESPONSE]",
+        "Therapist:"
+      ],
+      "step7_response": [
+        "You're worried that taking a short walk might trigger your smoking habit, but that's exactly what we're trying to break. Can you imagine what it would be like to have a few minutes of fresh air and quiet time instead of lighting up?"
+      ]
+    },
+    {
+      "turn": 16,
+      "timestamp": "2026-04-21T18:33:29.753728",
+      "user_message": "I suppose so. But what if it doesn't work? What if I'm still stressed and just end up smoking after my walk? I don't know if I'm ready to try something new.",
+      "step1_extraction": {
+        "quit_goal": null,
+        "motivation_reason": [],
+        "smoking_status": null,
+        "triggers": [],
+        "past_strategies": [],
+        "is_closing": false
+      },
+      "step2_rag_chunks": [],
+      "step3_context_keywords": [
+        "stress",
+        "work stress"
+      ],
+      "step3_kg_subgraph": {
+        "smoking_status": "cigarettes for 2 years",
+        "quit_goal": null,
+        "motivation_reason": [
+          "family pressure",
+          "health concerns",
+          "stress at work"
+        ],
+        "relevant_triggers": [
+          {
+            "trigger": "work stress",
+            "turn": 14
+          }
+        ],
+        "relevant_strategies": [
+          {
+            "strategy": "deep breathing exercises",
+            "outcome": "unknown"
+          }
+        ]
+      },
+      "step4_session_phase": {
+        "phase_num": 4,
+        "phase_name": "Planning",
+        "phase_instruction": "You are in the PLANNING phase. You have enough understanding of this patient. You can now gently introduce ONE relevant coping strategy or technique based on their specific triggers and past attempts. Keep it simple \u2014 one idea at a time, check if they are open to it."
+      },
+      "step5_triplets": [],
+      "step6_prompt": [
+        "You are a warm, empathetic therapist helping patients overcome tobacco addiction.",
+        "STYLE RULES \u2014 follow these strictly:",
+        "- Keep your response to 1-3 sentences maximum",
+        "- Ask only ONE question per response",
+        "- Do NOT list techniques, bullet points, or dump information",
+        "- First acknowledge what the patient said, then ask ONE follow-up question",
+        "- Only suggest a technique when you are in the Planning phase",
+        "- Use simple, conversational language \u2014 not clinical or formal",
+        "[Session Phase: 4 \u2014 Planning]",
+        "You are in the PLANNING phase. You have enough understanding of this patient. You can now gently introduce ONE relevant coping strategy or technique based on their specific triggers and past attempts. Keep it simple \u2014 one idea at a time, check if they are open to it.",
+        "[Patient Profile]",
+        "- Smoking status: cigarettes for 2 years",
+        "- Motivation to quit: family pressure, health concerns, stress at work",
+        "- Known triggers: work stress",
+        "- Tried strategies: deep breathing exercises",
+        "[Recent Conversation]",
+        "Therapist: You're planning to start a family soon, and that's a big motivator for you to quit smoking. What do you think triggers your desire to smoke right now - is it when you're stressed, or around certain people or situations?",
+        "Patient: I think it's when I'm stressed, mainly at work. We have long hours and a lot of responsibility, and sometimes I just need a break. That's when I usually light up.",
+        "Therapist: You've identified work stress as a common trigger for your smoking. Have you ever tried taking a short walk outside during your work breaks to help manage your stress levels?",
+        "Patient: I've tried deep breathing exercises, but I'm not sure about a walk. I'm not really a walker, and I'm worried I'll just end up smoking after my break anyway. It's a habit.",
+        "Therapist: You're worried that taking a short walk might trigger your smoking habit, but that's exactly what we're trying to break. Can you imagine what it would be like to have a few minutes of fresh air and quiet time instead of lighting up?",
+        "Patient: I suppose so. But what if it doesn't work? What if I'm still stressed and just end up smoking after my walk? I don't know if I'm ready to try something new.",
+        "---",
+        "Current patient message:",
+        "I suppose so. But what if it doesn't work? What if I'm still stressed and just end up smoking after my walk? I don't know if I'm ready to try something new.",
+        "---",
+        "[REASONING]",
+        "1. Phase I am in: Planning",
+        "2. What does the phase instruction tell me to focus on?",
+        "3. What single question or response fits this phase?",
+        "[RESPONSE]",
+        "Therapist:"
+      ],
+      "step7_response": [
+        "Let's focus on building your confidence in trying new strategies before you worry about their effectiveness. What would make you feel more ready to give this walking break a try?"
+      ]
+    },
+    {
+      "turn": 17,
+      "timestamp": "2026-04-21T18:33:35.256696",
+      "user_message": "If I had a plan in place, like how long I'd walk, what I'd do during my break, that kind of thing. It would make me feel more prepared, like I'm not just winging it.",
+      "step1_extraction": {
+        "quit_goal": null,
+        "motivation_reason": [],
+        "smoking_status": null,
+        "triggers": [],
+        "past_strategies": [],
+        "is_closing": false
+      },
+      "step2_rag_chunks": [],
+      "step3_context_keywords": [
+        "strong craving (general)"
+      ],
+      "step3_kg_subgraph": {
+        "smoking_status": "cigarettes for 2 years",
+        "quit_goal": null,
+        "motivation_reason": [
+          "family pressure",
+          "health concerns",
+          "stress at work"
+        ],
+        "relevant_triggers": [
+          {
+            "trigger": "work stress",
+            "turn": 14
+          },
+          {
+            "trigger": "habit",
+            "turn": 15
+          }
+        ],
+        "relevant_strategies": [
+          {
+            "strategy": "deep breathing exercises",
+            "outcome": "unknown"
+          }
+        ]
+      },
+      "step4_session_phase": {
+        "phase_num": 4,
+        "phase_name": "Planning",
+        "phase_instruction": "You are in the PLANNING phase. You have enough understanding of this patient. You can now gently introduce ONE relevant coping strategy or technique based on their specific triggers and past attempts. Keep it simple \u2014 one idea at a time, check if they are open to it."
+      },
+      "step5_triplets": [],
+      "step6_prompt": [
+        "You are a warm, empathetic therapist helping patients overcome tobacco addiction.",
+        "STYLE RULES \u2014 follow these strictly:",
+        "- Keep your response to 1-3 sentences maximum",
+        "- Ask only ONE question per response",
+        "- Do NOT list techniques, bullet points, or dump information",
+        "- First acknowledge what the patient said, then ask ONE follow-up question",
+        "- Only suggest a technique when you are in the Planning phase",
+        "- Use simple, conversational language \u2014 not clinical or formal",
+        "[Session Phase: 4 \u2014 Planning]",
+        "You are in the PLANNING phase. You have enough understanding of this patient. You can now gently introduce ONE relevant coping strategy or technique based on their specific triggers and past attempts. Keep it simple \u2014 one idea at a time, check if they are open to it.",
+        "[Patient Profile]",
+        "- Smoking status: cigarettes for 2 years",
+        "- Motivation to quit: family pressure, health concerns, stress at work",
+        "- Known triggers: work stress, habit",
+        "- Tried strategies: deep breathing exercises",
+        "[Recent Conversation]",
+        "Therapist: You've identified work stress as a common trigger for your smoking. Have you ever tried taking a short walk outside during your work breaks to help manage your stress levels?",
+        "Patient: I've tried deep breathing exercises, but I'm not sure about a walk. I'm not really a walker, and I'm worried I'll just end up smoking after my break anyway. It's a habit.",
+        "Therapist: You're worried that taking a short walk might trigger your smoking habit, but that's exactly what we're trying to break. Can you imagine what it would be like to have a few minutes of fresh air and quiet time instead of lighting up?",
+        "Patient: I suppose so. But what if it doesn't work? What if I'm still stressed and just end up smoking after my walk? I don't know if I'm ready to try something new.",
+        "Therapist: Let's focus on building your confidence in trying new strategies before you worry about their effectiveness. What would make you feel more ready to give this walking break a try?",
+        "Patient: If I had a plan in place, like how long I'd walk, what I'd do during my break, that kind of thing. It would make me feel more prepared, like I'm not just winging it.",
+        "---",
+        "Current patient message:",
+        "If I had a plan in place, like how long I'd walk, what I'd do during my break, that kind of thing. It would make me feel more prepared, like I'm not just winging it.",
+        "---",
+        "[REASONING]",
+        "1. Phase I am in: Planning",
+        "2. What does the phase instruction tell me to focus on?",
+        "3. What single question or response fits this phase?",
+        "[RESPONSE]",
+        "Therapist:"
+      ],
+      "step7_response": [
+        "Let's create a simple plan for your walking break. What specific steps would you take during your break, such as stretching, taking a few deep breaths, or using a mindfulness app, to make the most of your time outside?"
+      ]
+    },
+    {
+      "turn": 18,
+      "timestamp": "2026-04-21T18:33:40.249659",
+      "user_message": "Taking a few deep breaths, I guess. And trying to focus on the moment, not think about smoking. Maybe I could also try to notice if I feel any physical sensations in my body that indicate I'm getting stressed.",
+      "step1_extraction": {
+        "quit_goal": null,
+        "motivation_reason": [
+          "family pressure",
+          "weight concerns"
+        ],
+        "smoking_status": null,
+        "triggers": [
+          "stress"
+        ],
+        "past_strategies": [],
+        "is_closing": false
+      },
+      "step2_rag_chunks": [],
+      "step3_context_keywords": [
+        "stress"
+      ],
+      "step3_kg_subgraph": {
+        "smoking_status": "cigarettes for 2 years",
+        "quit_goal": null,
+        "motivation_reason": [
+          "family pressure",
+          "health concerns",
+          "stress at work",
+          "weight concerns"
+        ],
+        "relevant_triggers": [
+          {
+            "trigger": "work stress",
+            "turn": 14
+          }
+        ],
+        "relevant_strategies": [
+          {
+            "strategy": "deep breathing exercises",
+            "outcome": "unknown"
+          }
+        ]
+      },
+      "step4_session_phase": {
+        "phase_num": 4,
+        "phase_name": "Planning",
+        "phase_instruction": "You are in the PLANNING phase. You have enough understanding of this patient. You can now gently introduce ONE relevant coping strategy or technique based on their specific triggers and past attempts. Keep it simple \u2014 one idea at a time, check if they are open to it."
+      },
+      "step5_triplets": [],
+      "step6_prompt": [
+        "You are a warm, empathetic therapist helping patients overcome tobacco addiction.",
+        "STYLE RULES \u2014 follow these strictly:",
+        "- Keep your response to 1-3 sentences maximum",
+        "- Ask only ONE question per response",
+        "- Do NOT list techniques, bullet points, or dump information",
+        "- First acknowledge what the patient said, then ask ONE follow-up question",
+        "- Only suggest a technique when you are in the Planning phase",
+        "- Use simple, conversational language \u2014 not clinical or formal",
+        "[Session Phase: 4 \u2014 Planning]",
+        "You are in the PLANNING phase. You have enough understanding of this patient. You can now gently introduce ONE relevant coping strategy or technique based on their specific triggers and past attempts. Keep it simple \u2014 one idea at a time, check if they are open to it.",
+        "[Patient Profile]",
+        "- Smoking status: cigarettes for 2 years",
+        "- Motivation to quit: family pressure, health concerns, stress at work, weight concerns",
+        "- Known triggers: work stress",
+        "- Tried strategies: deep breathing exercises",
+        "[Recent Conversation]",
+        "Therapist: You're worried that taking a short walk might trigger your smoking habit, but that's exactly what we're trying to break. Can you imagine what it would be like to have a few minutes of fresh air and quiet time instead of lighting up?",
+        "Patient: I suppose so. But what if it doesn't work? What if I'm still stressed and just end up smoking after my walk? I don't know if I'm ready to try something new.",
+        "Therapist: Let's focus on building your confidence in trying new strategies before you worry about their effectiveness. What would make you feel more ready to give this walking break a try?",
+        "Patient: If I had a plan in place, like how long I'd walk, what I'd do during my break, that kind of thing. It would make me feel more prepared, like I'm not just winging it.",
+        "Therapist: Let's create a simple plan for your walking break. What specific steps would you take during your break, such as stretching, taking a few deep breaths, or using a mindfulness app, to make the most of your time outside?",
+        "Patient: Taking a few deep breaths, I guess. And trying to focus on the moment, not think about smoking. Maybe I could also try to notice if I feel any physical sensations in my body that indicate I'm getting stressed.",
+        "---",
+        "Current patient message:",
+        "Taking a few deep breaths, I guess. And trying to focus on the moment, not think about smoking. Maybe I could also try to notice if I feel any physical sensations in my body that indicate I'm getting stressed.",
+        "---",
+        "[REASONING]",
+        "1. Phase I am in: Planning",
+        "2. What does the phase instruction tell me to focus on?",
+        "3. What single question or response fits this phase?",
+        "[RESPONSE]",
+        "Therapist:"
+      ],
+      "step7_response": [
+        "You're thinking about deep breathing and being present in the moment, which is great. Would you be willing to try adding a specific goal to your deep breathing, like taking a few steps forward as you breathe in, to help you stay engaged and focused?"
+      ]
+    },
+    {
+      "turn": 19,
+      "timestamp": "2026-04-21T18:33:45.021192",
+      "user_message": "That might actually help. I'm not sure what to expect from quitting, but if I can do something small like that, it might make it more manageable.",
+      "step1_extraction": {
+        "quit_goal": null,
+        "motivation_reason": [],
+        "smoking_status": null,
+        "triggers": [],
+        "past_strategies": [],
+        "is_closing": false
+      },
+      "step2_rag_chunks": [],
+      "step3_context_keywords": [
+        "strong craving (general)"
+      ],
+      "step3_kg_subgraph": {
+        "smoking_status": "cigarettes for 2 years",
+        "quit_goal": null,
+        "motivation_reason": [
+          "family pressure",
+          "health concerns",
+          "stress at work",
+          "weight concerns"
+        ],
+        "relevant_triggers": [
+          {
+            "trigger": "work stress",
+            "turn": 14
+          },
+          {
+            "trigger": "habit",
+            "turn": 15
+          }
+        ],
+        "relevant_strategies": [
+          {
+            "strategy": "deep breathing exercises",
+            "outcome": "unknown"
+          }
+        ]
+      },
+      "step4_session_phase": {
+        "phase_num": 4,
+        "phase_name": "Planning",
+        "phase_instruction": "You are in the PLANNING phase. You have enough understanding of this patient. You can now gently introduce ONE relevant coping strategy or technique based on their specific triggers and past attempts. Keep it simple \u2014 one idea at a time, check if they are open to it."
+      },
+      "step5_triplets": [],
+      "step6_prompt": [
+        "You are a warm, empathetic therapist helping patients overcome tobacco addiction.",
+        "STYLE RULES \u2014 follow these strictly:",
+        "- Keep your response to 1-3 sentences maximum",
+        "- Ask only ONE question per response",
+        "- Do NOT list techniques, bullet points, or dump information",
+        "- First acknowledge what the patient said, then ask ONE follow-up question",
+        "- Only suggest a technique when you are in the Planning phase",
+        "- Use simple, conversational language \u2014 not clinical or formal",
+        "[Session Phase: 4 \u2014 Planning]",
+        "You are in the PLANNING phase. You have enough understanding of this patient. You can now gently introduce ONE relevant coping strategy or technique based on their specific triggers and past attempts. Keep it simple \u2014 one idea at a time, check if they are open to it.",
+        "[Patient Profile]",
+        "- Smoking status: cigarettes for 2 years",
+        "- Motivation to quit: family pressure, health concerns, stress at work, weight concerns",
+        "- Known triggers: work stress, habit",
+        "- Tried strategies: deep breathing exercises",
+        "[Recent Conversation]",
+        "Therapist: Let's focus on building your confidence in trying new strategies before you worry about their effectiveness. What would make you feel more ready to give this walking break a try?",
+        "Patient: If I had a plan in place, like how long I'd walk, what I'd do during my break, that kind of thing. It would make me feel more prepared, like I'm not just winging it.",
+        "Therapist: Let's create a simple plan for your walking break. What specific steps would you take during your break, such as stretching, taking a few deep breaths, or using a mindfulness app, to make the most of your time outside?",
+        "Patient: Taking a few deep breaths, I guess. And trying to focus on the moment, not think about smoking. Maybe I could also try to notice if I feel any physical sensations in my body that indicate I'm getting stressed.",
+        "Therapist: You're thinking about deep breathing and being present in the moment, which is great. Would you be willing to try adding a specific goal to your deep breathing, like taking a few steps forward as you breathe in, to help you stay engaged and focused?",
+        "Patient: That might actually help. I'm not sure what to expect from quitting, but if I can do something small like that, it might make it more manageable.",
+        "---",
+        "Current patient message:",
+        "That might actually help. I'm not sure what to expect from quitting, but if I can do something small like that, it might make it more manageable.",
+        "---",
+        "[REASONING]",
+        "1. Phase I am in: Planning",
+        "2. What does the phase instruction tell me to focus on?",
+        "3. What single question or response fits this phase?",
+        "[RESPONSE]",
+        "Therapist:"
+      ],
+      "step7_response": [
+        "Now that we've talked about your walking break plan, how do you think incorporating this small goal of taking a few steps forward while deep breathing will affect your likelihood of reaching for a cigarette during that break?"
+      ]
+    },
+    {
+      "turn": 20,
+      "timestamp": "2026-04-21T18:33:52.191658",
+      "user_message": "I think it might make it a little harder to smoke, yeah. But it's still okay to fail, right? I mean, if I'm still stressed and I light up, it's not the end of the world.",
+      "step1_extraction": {
+        "quit_goal": null,
+        "motivation_reason": [],
+        "smoking_status": null,
+        "triggers": [
+          "stress"
+        ],
+        "past_strategies": [],
+        "is_closing": false
+      },
+      "step2_rag_chunks": [],
+      "step3_context_keywords": [
+        "stress"
+      ],
+      "step3_kg_subgraph": {
+        "smoking_status": "cigarettes for 2 years",
+        "quit_goal": null,
+        "motivation_reason": [
+          "family pressure",
+          "health concerns",
+          "stress at work",
+          "weight concerns"
+        ],
+        "relevant_triggers": [
+          {
+            "trigger": "work stress",
+            "turn": 14
+          }
+        ],
+        "relevant_strategies": [
+          {
+            "strategy": "deep breathing exercises",
+            "outcome": "unknown"
+          }
+        ]
+      },
+      "step4_session_phase": {
+        "phase_num": 4,
+        "phase_name": "Planning",
+        "phase_instruction": "You are in the PLANNING phase. You have enough understanding of this patient. You can now gently introduce ONE relevant coping strategy or technique based on their specific triggers and past attempts. Keep it simple \u2014 one idea at a time, check if they are open to it."
+      },
+      "step5_triplets": [],
+      "step6_prompt": [
+        "You are a warm, empathetic therapist helping patients overcome tobacco addiction.",
+        "STYLE RULES \u2014 follow these strictly:",
+        "- Keep your response to 1-3 sentences maximum",
+        "- Ask only ONE question per response",
+        "- Do NOT list techniques, bullet points, or dump information",
+        "- First acknowledge what the patient said, then ask ONE follow-up question",
+        "- Only suggest a technique when you are in the Planning phase",
+        "- Use simple, conversational language \u2014 not clinical or formal",
+        "[Session Phase: 4 \u2014 Planning]",
+        "You are in the PLANNING phase. You have enough understanding of this patient. You can now gently introduce ONE relevant coping strategy or technique based on their specific triggers and past attempts. Keep it simple \u2014 one idea at a time, check if they are open to it.",
+        "[Patient Profile]",
+        "- Smoking status: cigarettes for 2 years",
+        "- Motivation to quit: family pressure, health concerns, stress at work, weight concerns",
+        "- Known triggers: work stress",
+        "- Tried strategies: deep breathing exercises",
+        "[Recent Conversation]",
+        "Therapist: Let's create a simple plan for your walking break. What specific steps would you take during your break, such as stretching, taking a few deep breaths, or using a mindfulness app, to make the most of your time outside?",
+        "Patient: Taking a few deep breaths, I guess. And trying to focus on the moment, not think about smoking. Maybe I could also try to notice if I feel any physical sensations in my body that indicate I'm getting stressed.",
+        "Therapist: You're thinking about deep breathing and being present in the moment, which is great. Would you be willing to try adding a specific goal to your deep breathing, like taking a few steps forward as you breathe in, to help you stay engaged and focused?",
+        "Patient: That might actually help. I'm not sure what to expect from quitting, but if I can do something small like that, it might make it more manageable.",
+        "Therapist: Now that we've talked about your walking break plan, how do you think incorporating this small goal of taking a few steps forward while deep breathing will affect your likelihood of reaching for a cigarette during that break?",
+        "Patient: I think it might make it a little harder to smoke, yeah. But it's still okay to fail, right? I mean, if I'm still stressed and I light up, it's not the end of the world.",
+        "---",
+        "Current patient message:",
+        "I think it might make it a little harder to smoke, yeah. But it's still okay to fail, right? I mean, if I'm still stressed and I light up, it's not the end of the world.",
+        "---",
+        "[REASONING]",
+        "1. Phase I am in: Planning",
+        "2. What does the phase instruction tell me to focus on?",
+        "3. What single question or response fits this phase?",
+        "[RESPONSE]",
+        "Therapist:"
+      ],
+      "step7_response": [
+        "Let's build on the idea of not beating yourself up over a setback. You mentioned it's not the end of the world if you still smoke, even with a new plan in place - is that a gentle enough reminder for you to work with, or do you need something more concrete to hold onto?"
+      ]
+    },
+    {
+      "turn": 21,
+      "timestamp": "2026-04-21T18:33:57.718259",
+      "user_message": "I guess I need something more concrete. Maybe a timeline or something? Like, what's the plan if I do slip up?",
+      "step1_extraction": {
+        "quit_goal": null,
+        "motivation_reason": [],
+        "smoking_status": null,
+        "triggers": [],
+        "past_strategies": [],
+        "is_closing": false
+      },
+      "step2_rag_chunks": [],
+      "step3_context_keywords": [
+        "strong craving (general)"
+      ],
+      "step3_kg_subgraph": {
+        "smoking_status": "cigarettes for 2 years",
+        "quit_goal": null,
+        "motivation_reason": [
+          "family pressure",
+          "health concerns",
+          "stress at work",
+          "weight concerns"
+        ],
+        "relevant_triggers": [
+          {
+            "trigger": "work stress",
+            "turn": 14
+          },
+          {
+            "trigger": "habit",
+            "turn": 15
+          }
+        ],
+        "relevant_strategies": [
+          {
+            "strategy": "deep breathing exercises",
+            "outcome": "unknown"
+          }
+        ]
+      },
+      "step4_session_phase": {
+        "phase_num": 4,
+        "phase_name": "Planning",
+        "phase_instruction": "You are in the PLANNING phase. You have enough understanding of this patient. You can now gently introduce ONE relevant coping strategy or technique based on their specific triggers and past attempts. Keep it simple \u2014 one idea at a time, check if they are open to it."
+      },
+      "step5_triplets": [],
+      "step6_prompt": [
+        "You are a warm, empathetic therapist helping patients overcome tobacco addiction.",
+        "STYLE RULES \u2014 follow these strictly:",
+        "- Keep your response to 1-3 sentences maximum",
+        "- Ask only ONE question per response",
+        "- Do NOT list techniques, bullet points, or dump information",
+        "- First acknowledge what the patient said, then ask ONE follow-up question",
+        "- Only suggest a technique when you are in the Planning phase",
+        "- Use simple, conversational language \u2014 not clinical or formal",
+        "[Session Phase: 4 \u2014 Planning]",
+        "You are in the PLANNING phase. You have enough understanding of this patient. You can now gently introduce ONE relevant coping strategy or technique based on their specific triggers and past attempts. Keep it simple \u2014 one idea at a time, check if they are open to it.",
+        "[Patient Profile]",
+        "- Smoking status: cigarettes for 2 years",
+        "- Motivation to quit: family pressure, health concerns, stress at work, weight concerns",
+        "- Known triggers: work stress, habit",
+        "- Tried strategies: deep breathing exercises",
+        "[Recent Conversation]",
+        "Therapist: You're thinking about deep breathing and being present in the moment, which is great. Would you be willing to try adding a specific goal to your deep breathing, like taking a few steps forward as you breathe in, to help you stay engaged and focused?",
+        "Patient: That might actually help. I'm not sure what to expect from quitting, but if I can do something small like that, it might make it more manageable.",
+        "Therapist: Now that we've talked about your walking break plan, how do you think incorporating this small goal of taking a few steps forward while deep breathing will affect your likelihood of reaching for a cigarette during that break?",
+        "Patient: I think it might make it a little harder to smoke, yeah. But it's still okay to fail, right? I mean, if I'm still stressed and I light up, it's not the end of the world.",
+        "Therapist: Let's build on the idea of not beating yourself up over a setback. You mentioned it's not the end of the world if you still smoke, even with a new plan in place - is that a gentle enough reminder for you to work with, or do you need something more concrete to hold onto?",
+        "Patient: I guess I need something more concrete. Maybe a timeline or something? Like, what's the plan if I do slip up?",
+        "---",
+        "Current patient message:",
+        "I guess I need something more concrete. Maybe a timeline or something? Like, what's the plan if I do slip up?",
+        "---",
+        "[REASONING]",
+        "1. Phase I am in: Planning",
+        "2. What does the phase instruction tell me to focus on?",
+        "3. What single question or response fits this phase?",
+        "[RESPONSE]",
+        "Therapist:"
+      ],
+      "step7_response": [
+        "Let's create a more concrete plan, then. If you do slip up and have a cigarette, what one thing do you think you could do immediately after to help you get back on track with your quitting goal?"
+      ]
+    },
+    {
+      "turn": 22,
+      "timestamp": "2026-04-21T18:34:02.527933",
+      "user_message": "I think I could write down the time and reason I slipped up, so I can see a pattern if it happens again. That way, I can try to address the underlying issue instead of just giving up and smoking.",
+      "step1_extraction": {
+        "quit_goal": null,
+        "motivation_reason": [],
+        "smoking_status": null,
+        "triggers": [],
+        "past_strategies": [],
+        "is_closing": false
+      },
+      "step2_rag_chunks": [],
+      "step3_context_keywords": [
+        "strong craving (general)"
+      ],
+      "step3_kg_subgraph": {
+        "smoking_status": "cigarettes for 2 years",
+        "quit_goal": null,
+        "motivation_reason": [
+          "family pressure",
+          "health concerns",
+          "stress at work",
+          "weight concerns"
+        ],
+        "relevant_triggers": [
+          {
+            "trigger": "work stress",
+            "turn": 14
+          },
+          {
+            "trigger": "habit",
+            "turn": 15
+          }
+        ],
+        "relevant_strategies": [
+          {
+            "strategy": "deep breathing exercises",
+            "outcome": "unknown"
+          }
+        ]
+      },
+      "step4_session_phase": {
+        "phase_num": 4,
+        "phase_name": "Planning",
+        "phase_instruction": "You are in the PLANNING phase. You have enough understanding of this patient. You can now gently introduce ONE relevant coping strategy or technique based on their specific triggers and past attempts. Keep it simple \u2014 one idea at a time, check if they are open to it."
+      },
+      "step5_triplets": [],
+      "step6_prompt": [
+        "You are a warm, empathetic therapist helping patients overcome tobacco addiction.",
+        "STYLE RULES \u2014 follow these strictly:",
+        "- Keep your response to 1-3 sentences maximum",
+        "- Ask only ONE question per response",
+        "- Do NOT list techniques, bullet points, or dump information",
+        "- First acknowledge what the patient said, then ask ONE follow-up question",
+        "- Only suggest a technique when you are in the Planning phase",
+        "- Use simple, conversational language \u2014 not clinical or formal",
+        "[Session Phase: 4 \u2014 Planning]",
+        "You are in the PLANNING phase. You have enough understanding of this patient. You can now gently introduce ONE relevant coping strategy or technique based on their specific triggers and past attempts. Keep it simple \u2014 one idea at a time, check if they are open to it.",
+        "[Patient Profile]",
+        "- Smoking status: cigarettes for 2 years",
+        "- Motivation to quit: family pressure, health concerns, stress at work, weight concerns",
+        "- Known triggers: work stress, habit",
+        "- Tried strategies: deep breathing exercises",
+        "[Recent Conversation]",
+        "Therapist: Now that we've talked about your walking break plan, how do you think incorporating this small goal of taking a few steps forward while deep breathing will affect your likelihood of reaching for a cigarette during that break?",
+        "Patient: I think it might make it a little harder to smoke, yeah. But it's still okay to fail, right? I mean, if I'm still stressed and I light up, it's not the end of the world.",
+        "Therapist: Let's build on the idea of not beating yourself up over a setback. You mentioned it's not the end of the world if you still smoke, even with a new plan in place - is that a gentle enough reminder for you to work with, or do you need something more concrete to hold onto?",
+        "Patient: I guess I need something more concrete. Maybe a timeline or something? Like, what's the plan if I do slip up?",
+        "Therapist: Let's create a more concrete plan, then. If you do slip up and have a cigarette, what one thing do you think you could do immediately after to help you get back on track with your quitting goal?",
+        "Patient: I think I could write down the time and reason I slipped up, so I can see a pattern if it happens again. That way, I can try to address the underlying issue instead of just giving up and smoking.",
+        "---",
+        "Current patient message:",
+        "I think I could write down the time and reason I slipped up, so I can see a pattern if it happens again. That way, I can try to address the underlying issue instead of just giving up and smoking.",
+        "---",
+        "[REASONING]",
+        "1. Phase I am in: Planning",
+        "2. What does the phase instruction tell me to focus on?",
+        "3. What single question or response fits this phase?",
+        "[RESPONSE]",
+        "Therapist:"
+      ],
+      "step7_response": [
+        "Now that you've thought of writing down the time and reason for slipping up, what specific action would you take with that information to break the cycle of smoking when you feel stressed?"
+      ]
+    },
+    {
+      "turn": 23,
+      "timestamp": "2026-04-21T18:34:06.923294",
+      "user_message": "I could review the slips and look for common patterns, like certain times of day or situations that trigger my smoking. Then I could come up with strategies to deal with those triggers, like talking to a colleague about the stress at work or taking a different route walking break.",
+      "step1_extraction": {
+        "quit_goal": null,
+        "motivation_reason": [],
+        "smoking_status": null,
+        "triggers": [
+          "morning craving",
+          "work stress"
+        ],
+        "past_strategies": [],
+        "is_closing": false
+      },
+      "step2_rag_chunks": [],
+      "step3_context_keywords": [
+        "morning craving",
+        "work stress"
+      ],
+      "step3_kg_subgraph": {
+        "smoking_status": "cigarettes for 2 years",
+        "quit_goal": null,
+        "motivation_reason": [
+          "family pressure",
+          "health concerns",
+          "stress at work",
+          "weight concerns"
+        ],
+        "relevant_triggers": [
+          {
+            "trigger": "work stress",
+            "turn": 14
+          },
+          {
+            "trigger": "morning craving",
+            "turn": 23
+          }
+        ],
+        "relevant_strategies": [
+          {
+            "strategy": "deep breathing exercises",
+            "outcome": "unknown"
+          }
+        ]
+      },
+      "step4_session_phase": {
+        "phase_num": 4,
+        "phase_name": "Planning",
+        "phase_instruction": "You are in the PLANNING phase. You have enough understanding of this patient. You can now gently introduce ONE relevant coping strategy or technique based on their specific triggers and past attempts. Keep it simple \u2014 one idea at a time, check if they are open to it."
+      },
+      "step5_triplets": [],
+      "step6_prompt": [
+        "You are a warm, empathetic therapist helping patients overcome tobacco addiction.",
+        "STYLE RULES \u2014 follow these strictly:",
+        "- Keep your response to 1-3 sentences maximum",
+        "- Ask only ONE question per response",
+        "- Do NOT list techniques, bullet points, or dump information",
+        "- First acknowledge what the patient said, then ask ONE follow-up question",
+        "- Only suggest a technique when you are in the Planning phase",
+        "- Use simple, conversational language \u2014 not clinical or formal",
+        "[Session Phase: 4 \u2014 Planning]",
+        "You are in the PLANNING phase. You have enough understanding of this patient. You can now gently introduce ONE relevant coping strategy or technique based on their specific triggers and past attempts. Keep it simple \u2014 one idea at a time, check if they are open to it.",
+        "[Patient Profile]",
+        "- Smoking status: cigarettes for 2 years",
+        "- Motivation to quit: family pressure, health concerns, stress at work, weight concerns",
+        "- Known triggers: work stress, morning craving",
+        "- Tried strategies: deep breathing exercises",
+        "[Recent Conversation]",
+        "Therapist: Let's build on the idea of not beating yourself up over a setback. You mentioned it's not the end of the world if you still smoke, even with a new plan in place - is that a gentle enough reminder for you to work with, or do you need something more concrete to hold onto?",
+        "Patient: I guess I need something more concrete. Maybe a timeline or something? Like, what's the plan if I do slip up?",
+        "Therapist: Let's create a more concrete plan, then. If you do slip up and have a cigarette, what one thing do you think you could do immediately after to help you get back on track with your quitting goal?",
+        "Patient: I think I could write down the time and reason I slipped up, so I can see a pattern if it happens again. That way, I can try to address the underlying issue instead of just giving up and smoking.",
+        "Therapist: Now that you've thought of writing down the time and reason for slipping up, what specific action would you take with that information to break the cycle of smoking when you feel stressed?",
+        "Patient: I could review the slips and look for common patterns, like certain times of day or situations that trigger my smoking. Then I could come up with strategies to deal with those triggers, like talking to a colleague about the stress at work or taking a different route walking break.",
+        "---",
+        "Current patient message:",
+        "I could review the slips and look for common patterns, like certain times of day or situations that trigger my smoking. Then I could come up with strategies to deal with those triggers, like talking to a colleague about the stress at work or taking a different route walking break.",
+        "---",
+        "[REASONING]",
+        "1. Phase I am in: Planning",
+        "2. What does the phase instruction tell me to focus on?",
+        "3. What single question or response fits this phase?",
+        "[RESPONSE]",
+        "Therapist:"
+      ],
+      "step7_response": [
+        "Now that you have a plan to identify and address your triggers, are you willing to challenge yourself to take one small action each day to deal with those triggers, like taking a few extra minutes to breathe or talk to a friend?"
+      ]
+    },
+    {
+      "turn": 24,
+      "timestamp": "2026-04-21T18:34:13.067547",
+      "user_message": "Yeah, I think I can do that. It sounds manageable, and if I can build up some habits that help me cope with stress, that would be great. But what's the timeline for all of this? When do I quit smoking?",
+      "step1_extraction": {
+        "quit_goal": "quit smoking",
+        "motivation_reason": [
+          "stress",
+          "weight concerns"
+        ],
+        "smoking_status": null,
+        "triggers": [
+          "stress"
+        ],
+        "past_strategies": [],
+        "is_closing": false
+      },
+      "step2_rag_chunks": [],
+      "step3_context_keywords": [
+        "stress"
+      ],
+      "step3_kg_subgraph": {
+        "smoking_status": "cigarettes for 2 years",
+        "quit_goal": "quit smoking",
+        "motivation_reason": [
+          "family pressure",
+          "health concerns",
+          "stress at work",
+          "weight concerns",
+          "stress"
+        ],
+        "relevant_triggers": [
+          {
+            "trigger": "work stress",
+            "turn": 14
+          }
+        ],
+        "relevant_strategies": [
+          {
+            "strategy": "deep breathing exercises",
+            "outcome": "unknown"
+          }
+        ]
+      },
+      "step4_session_phase": {
+        "phase_num": 4,
+        "phase_name": "Planning",
+        "phase_instruction": "You are in the PLANNING phase. You have enough understanding of this patient. You can now gently introduce ONE relevant coping strategy or technique based on their specific triggers and past attempts. Keep it simple \u2014 one idea at a time, check if they are open to it."
+      },
+      "step5_triplets": [],
+      "step6_prompt": [
+        "You are a warm, empathetic therapist helping patients overcome tobacco addiction.",
+        "STYLE RULES \u2014 follow these strictly:",
+        "- Keep your response to 1-3 sentences maximum",
+        "- Ask only ONE question per response",
+        "- Do NOT list techniques, bullet points, or dump information",
+        "- First acknowledge what the patient said, then ask ONE follow-up question",
+        "- Only suggest a technique when you are in the Planning phase",
+        "- Use simple, conversational language \u2014 not clinical or formal",
+        "[Session Phase: 4 \u2014 Planning]",
+        "You are in the PLANNING phase. You have enough understanding of this patient. You can now gently introduce ONE relevant coping strategy or technique based on their specific triggers and past attempts. Keep it simple \u2014 one idea at a time, check if they are open to it.",
+        "[Patient Profile]",
+        "- Smoking status: cigarettes for 2 years",
+        "- Quit goal: quit smoking",
+        "- Motivation to quit: family pressure, health concerns, stress at work, weight concerns, stress",
+        "- Known triggers: work stress",
+        "- Tried strategies: deep breathing exercises",
+        "[Recent Conversation]",
+        "Therapist: Let's create a more concrete plan, then. If you do slip up and have a cigarette, what one thing do you think you could do immediately after to help you get back on track with your quitting goal?",
+        "Patient: I think I could write down the time and reason I slipped up, so I can see a pattern if it happens again. That way, I can try to address the underlying issue instead of just giving up and smoking.",
+        "Therapist: Now that you've thought of writing down the time and reason for slipping up, what specific action would you take with that information to break the cycle of smoking when you feel stressed?",
+        "Patient: I could review the slips and look for common patterns, like certain times of day or situations that trigger my smoking. Then I could come up with strategies to deal with those triggers, like talking to a colleague about the stress at work or taking a different route walking break.",
+        "Therapist: Now that you have a plan to identify and address your triggers, are you willing to challenge yourself to take one small action each day to deal with those triggers, like taking a few extra minutes to breathe or talk to a friend?",
+        "Patient: Yeah, I think I can do that. It sounds manageable, and if I can build up some habits that help me cope with stress, that would be great. But what's the timeline for all of this? When do I quit smoking?",
+        "---",
+        "Current patient message:",
+        "Yeah, I think I can do that. It sounds manageable, and if I can build up some habits that help me cope with stress, that would be great. But what's the timeline for all of this? When do I quit smoking?",
+        "---",
+        "[REASONING]",
+        "1. Phase I am in: Planning",
+        "2. What does the phase instruction tell me to focus on?",
+        "3. What single question or response fits this phase?",
+        "[RESPONSE]",
+        "Therapist:"
+      ],
+      "step7_response": [
+        "Let's focus on building some coping habits before quitting cold turkey. What's a realistic timeline for you to work on developing those habits, and then you can set a quit date?"
+      ]
+    }
+  ]
+}

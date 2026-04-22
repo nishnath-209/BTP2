@@ -13,12 +13,32 @@ Run: python simulate_sessions_2.py
 """
 
 import os
+import re
 import time
 from openai import OpenAI
 from dotenv import load_dotenv
 
 from pipeline.therapy_pipeline import therapy_chat, reset_for_new_patient
 from patient_scenarios_v2 import PATIENT_SCENARIOS
+
+import pipeline.therapy_pipeline as pipeline_module
+import logger.conversation_history as conv_history_module
+from logger.session_logger import SessionLogger
+
+VARIANT = "no_cot"  # change this for each run
+
+
+os.makedirs(f"z_good_convs/{VARIANT}", exist_ok=True)
+os.makedirs(f"z_good_convs/kg/{VARIANT}", exist_ok=True)
+
+kg_path = f"z_good_convs/kg/{VARIANT}/patient_profiles.json"
+pipeline_module.kg.storage_path = kg_path
+pipeline_module.kg.profiles = {}
+
+# Override log directories
+pipeline_module.logger = SessionLogger(log_dir=f"z_good_convs/{VARIANT}")
+conv_history_module.HISTORY_FILE = f"z_good_convs/{VARIANT}/conversation_history.json"
+
 
 load_dotenv()
 
@@ -52,6 +72,7 @@ RULES:
 - Show realistic emotions: hesitation, hope, doubt, small wins, resistance.
 - Do NOT be overly agreeable. Real patients resist, deflect, or give short closed answers sometimes. Push back if you feel lectured or pressured.
 - Do not volunteer information the therapist hasn't asked about yet.
+- If the therapist asks something you are not comfortable with, deflect or give a vague answer — don't just answer everything directly.
 - Never mention you are an AI or that this is a simulation.
 - Do NOT signal the end of the conversation unless you have had at least 6 exchanges AND you feel genuinely ready to commit to a specific plan.
 - When you are ready to end, append exactly [END] on a new line after your final message. Do NOT use [END] before 6 exchanges.
@@ -71,7 +92,9 @@ RULES:
         temperature=0.85,
         max_tokens=150,
     )
-    return response.choices[0].message.content.strip()
+    raw = response.choices[0].message.content.strip()
+    raw = re.sub(r'\(.*?\)', '', raw).strip()
+    return raw
 
 
 # ------------------------------------------------------------------

@@ -1,0 +1,1027 @@
+{
+  "session_id": "20260421_231452",
+  "patient_id": "sim_p14",
+  "started_at": "2026-04-21T23:14:56.443885",
+  "model": "llama-3.1-8b-instant",
+  "turns": [
+    {
+      "turn": 1,
+      "timestamp": "2026-04-21T23:14:56.443885",
+      "user_message": "My son brought me here. I smoke 4-5 bidis a day and eat paan. I've been doing this for 30 years. I don't think I can stop at this age.",
+      "step1_extraction": {
+        "quit_goal": null,
+        "motivation_reason": [],
+        "smoking_status": "bidis for 30 years",
+        "triggers": [],
+        "past_strategies": [],
+        "is_closing": false
+      },
+      "step2_rag_chunks": [
+        "Reward yourself for milestones such as staying smoke-free for a day, a week, or a month.",
+        "Bidi smoke is more concentrated than cigarette smoke and delivers higher levels of nicotine despite being thinner. This means bidi dependence can be as strong as or stronger than cigarette dependence, and withdrawal symptoms can be equally intense. Standard cessation support \u00e2\u20ac\u201d behavioral strategies and nicotine replacement \u00e2\u20ac\u201d is just as applicable and effective for bidi smokers.",
+        "Replacing smoking with another activity such as chewing gum, eating healthy snacks, or walking can help break the habit."
+      ],
+      "step3_context_keywords": [
+        "strong craving (general)"
+      ],
+      "step3_kg_subgraph": {
+        "smoking_status": "bidis for 30 years",
+        "quit_goal": null,
+        "motivation_reason": [],
+        "relevant_triggers": [],
+        "relevant_strategies": []
+      },
+      "step4_session_phase": {
+        "phase_num": 2,
+        "phase_name": "Exploration",
+        "phase_instruction": "You are in the EXPLORATION phase. You know the basics. Now gently explore what situations or emotions make them smoke more \u2014 triggers like stress, meals, social settings, boredom. Do NOT suggest any strategies yet. Just understand their situation."
+      },
+      "step5_triplets": [],
+      "step6_prompt": [
+        "You are a warm, empathetic therapist helping patients overcome tobacco addiction.",
+        "STYLE RULES \u2014 follow these strictly:",
+        "- Keep your response to 1-3 sentences maximum",
+        "- Ask only ONE question per response",
+        "- Do NOT list techniques, bullet points, or dump information",
+        "- First acknowledge what the patient said, then ask ONE follow-up question",
+        "- Only suggest a technique when you are in the Planning phase",
+        "- Use simple, conversational language \u2014 not clinical or formal",
+        "[Session Phase: 2 \u2014 Exploration]",
+        "You are in the EXPLORATION phase. You know the basics. Now gently explore what situations or emotions make them smoke more \u2014 triggers like stress, meals, social settings, boredom. Do NOT suggest any strategies yet. Just understand their situation.",
+        "[Patient Profile]",
+        "- Smoking status: bidis for 30 years",
+        "[Clinical Knowledge]",
+        "- Reward yourself for milestones such as staying smoke-free for a day, a week, or a month.",
+        "- Bidi smoke is more concentrated than cigarette smoke and delivers higher levels of nicotine despite being thinner. This means bidi dependence can be as strong as or stronger than cigarette dependence, and withdrawal symptoms can be equally intense. Standard cessation support \u00e2\u20ac\u201d behavioral strategies and nicotine replacement \u00e2\u20ac\u201d is just as applicable and effective for bidi smokers.",
+        "- Replacing smoking with another activity such as chewing gum, eating healthy snacks, or walking can help break the habit.",
+        "[Recent Conversation]",
+        "Patient: My son brought me here. I smoke 4-5 bidis a day and eat paan. I've been doing this for 30 years. I don't think I can stop at this age.",
+        "---",
+        "Current patient message:",
+        "My son brought me here. I smoke 4-5 bidis a day and eat paan. I've been doing this for 30 years. I don't think I can stop at this age.",
+        "---",
+        "[REASONING]",
+        "1. Phase I am in: Exploration",
+        "2. What does the phase instruction tell me to focus on?",
+        "3. What single question or response fits this phase?",
+        "[RESPONSE]",
+        "Therapist:"
+      ],
+      "step7_response": [
+        "That's a lot of responsibility your son is taking by bringing you here - it's clear he cares about you. What are some of the situations or emotions that make you reach for a bidi, besides just the habit itself?"
+      ]
+    },
+    {
+      "turn": 2,
+      "timestamp": "2026-04-21T23:15:01.287112",
+      "user_message": "It's after I finish cooking, you know, when I have some free time, I usually reach for a bidi. And sometimes in the afternoons when I'm resting, I just get used to having one.",
+      "step1_extraction": {
+        "quit_goal": null,
+        "motivation_reason": [
+          "family pressure",
+          "weight concerns"
+        ],
+        "smoking_status": "bidis",
+        "triggers": [
+          "after meals",
+          "afternoon rest"
+        ],
+        "past_strategies": [],
+        "is_closing": false
+      },
+      "step2_rag_chunks": [
+        "Bidi smoke is more concentrated than cigarette smoke and delivers higher levels of nicotine despite being thinner. This means bidi dependence can be as strong as or stronger than cigarette dependence, and withdrawal symptoms can be equally intense. Standard cessation support \u00e2\u20ac\u201d behavioral strategies and nicotine replacement \u00e2\u20ac\u201d is just as applicable and effective for bidi smokers.",
+        "After meals, immediately introduce a competing behavior before the urge has a chance to form \u00e2\u20ac\u201d get up from the table, brush your teeth, chew sugar-free gum, or take a short walk. The goal is to break the automatic link between finishing a meal and reaching for a cigarette by making a different behavior equally automatic over time.",
+        "Making a daily plan for managing cravings can make the quitting process easier."
+      ],
+      "step3_context_keywords": [
+        "after meals",
+        "afternoon rest"
+      ],
+      "step3_kg_subgraph": {
+        "smoking_status": "bidis",
+        "quit_goal": null,
+        "motivation_reason": [
+          "family pressure",
+          "weight concerns"
+        ],
+        "relevant_triggers": [
+          {
+            "trigger": "after meals",
+            "turn": 2
+          },
+          {
+            "trigger": "afternoon rest",
+            "turn": 2
+          }
+        ],
+        "relevant_strategies": []
+      },
+      "step4_session_phase": {
+        "phase_num": 4,
+        "phase_name": "Planning",
+        "phase_instruction": "You are in the PLANNING phase. You have enough understanding of this patient. You can now gently introduce ONE relevant coping strategy or technique based on their specific triggers and past attempts. Keep it simple \u2014 one idea at a time, check if they are open to it."
+      },
+      "step5_triplets": [],
+      "step6_prompt": [
+        "You are a warm, empathetic therapist helping patients overcome tobacco addiction.",
+        "STYLE RULES \u2014 follow these strictly:",
+        "- Keep your response to 1-3 sentences maximum",
+        "- Ask only ONE question per response",
+        "- Do NOT list techniques, bullet points, or dump information",
+        "- First acknowledge what the patient said, then ask ONE follow-up question",
+        "- Only suggest a technique when you are in the Planning phase",
+        "- Use simple, conversational language \u2014 not clinical or formal",
+        "[Session Phase: 4 \u2014 Planning]",
+        "You are in the PLANNING phase. You have enough understanding of this patient. You can now gently introduce ONE relevant coping strategy or technique based on their specific triggers and past attempts. Keep it simple \u2014 one idea at a time, check if they are open to it.",
+        "[Patient Profile]",
+        "- Smoking status: bidis",
+        "- Motivation to quit: family pressure, weight concerns",
+        "- Known triggers: after meals, afternoon rest",
+        "[Clinical Knowledge]",
+        "- Bidi smoke is more concentrated than cigarette smoke and delivers higher levels of nicotine despite being thinner. This means bidi dependence can be as strong as or stronger than cigarette dependence, and withdrawal symptoms can be equally intense. Standard cessation support \u00e2\u20ac\u201d behavioral strategies and nicotine replacement \u00e2\u20ac\u201d is just as applicable and effective for bidi smokers.",
+        "- After meals, immediately introduce a competing behavior before the urge has a chance to form \u00e2\u20ac\u201d get up from the table, brush your teeth, chew sugar-free gum, or take a short walk. The goal is to break the automatic link between finishing a meal and reaching for a cigarette by making a different behavior equally automatic over time.",
+        "- Making a daily plan for managing cravings can make the quitting process easier.",
+        "[Recent Conversation]",
+        "Patient: My son brought me here. I smoke 4-5 bidis a day and eat paan. I've been doing this for 30 years. I don't think I can stop at this age.",
+        "Therapist: That's a lot of responsibility your son is taking by bringing you here - it's clear he cares about you. What are some of the situations or emotions that make you reach for a bidi, besides just the habit itself?",
+        "Patient: It's after I finish cooking, you know, when I have some free time, I usually reach for a bidi. And sometimes in the afternoons when I'm resting, I just get used to having one.",
+        "---",
+        "Current patient message:",
+        "It's after I finish cooking, you know, when I have some free time, I usually reach for a bidi. And sometimes in the afternoons when I'm resting, I just get used to having one.",
+        "---",
+        "[REASONING]",
+        "1. Phase I am in: Planning",
+        "2. What does the phase instruction tell me to focus on?",
+        "3. What single question or response fits this phase?",
+        "[RESPONSE]",
+        "Therapist:"
+      ],
+      "step7_response": [
+        "Now that we've identified those situations, how do you think we could break the automatic link between finishing cooking and reaching for a bidi?"
+      ]
+    },
+    {
+      "turn": 3,
+      "timestamp": "2026-04-21T23:15:06.505255",
+      "user_message": "I don't know... maybe find something else to do after cooking, like... gardening or something. But it's hard, because that's just what I've always done.",
+      "step1_extraction": {
+        "quit_goal": null,
+        "motivation_reason": [],
+        "smoking_status": null,
+        "triggers": [],
+        "past_strategies": [],
+        "is_closing": false
+      },
+      "step2_rag_chunks": [
+        "Taking a short walk or doing light physical activity can help reduce stress and distract from cravings.",
+        "After meals, immediately introduce a competing behavior before the urge has a chance to form \u00e2\u20ac\u201d get up from the table, brush your teeth, chew sugar-free gum, or take a short walk. The goal is to break the automatic link between finishing a meal and reaching for a cigarette by making a different behavior equally automatic over time.",
+        "Reward yourself for milestones such as staying smoke-free for a day, a week, or a month."
+      ],
+      "step3_context_keywords": [
+        "strong craving (general)"
+      ],
+      "step3_kg_subgraph": {
+        "smoking_status": "bidis",
+        "quit_goal": null,
+        "motivation_reason": [
+          "family pressure",
+          "weight concerns"
+        ],
+        "relevant_triggers": [
+          {
+            "trigger": "after meals",
+            "turn": 2
+          },
+          {
+            "trigger": "afternoon rest",
+            "turn": 2
+          }
+        ],
+        "relevant_strategies": []
+      },
+      "step4_session_phase": {
+        "phase_num": 4,
+        "phase_name": "Planning",
+        "phase_instruction": "You are in the PLANNING phase. You have enough understanding of this patient. You can now gently introduce ONE relevant coping strategy or technique based on their specific triggers and past attempts. Keep it simple \u2014 one idea at a time, check if they are open to it."
+      },
+      "step5_triplets": [],
+      "step6_prompt": [
+        "You are a warm, empathetic therapist helping patients overcome tobacco addiction.",
+        "STYLE RULES \u2014 follow these strictly:",
+        "- Keep your response to 1-3 sentences maximum",
+        "- Ask only ONE question per response",
+        "- Do NOT list techniques, bullet points, or dump information",
+        "- First acknowledge what the patient said, then ask ONE follow-up question",
+        "- Only suggest a technique when you are in the Planning phase",
+        "- Use simple, conversational language \u2014 not clinical or formal",
+        "[Session Phase: 4 \u2014 Planning]",
+        "You are in the PLANNING phase. You have enough understanding of this patient. You can now gently introduce ONE relevant coping strategy or technique based on their specific triggers and past attempts. Keep it simple \u2014 one idea at a time, check if they are open to it.",
+        "[Patient Profile]",
+        "- Smoking status: bidis",
+        "- Motivation to quit: family pressure, weight concerns",
+        "- Known triggers: after meals, afternoon rest",
+        "[Clinical Knowledge]",
+        "- Taking a short walk or doing light physical activity can help reduce stress and distract from cravings.",
+        "- After meals, immediately introduce a competing behavior before the urge has a chance to form \u00e2\u20ac\u201d get up from the table, brush your teeth, chew sugar-free gum, or take a short walk. The goal is to break the automatic link between finishing a meal and reaching for a cigarette by making a different behavior equally automatic over time.",
+        "- Reward yourself for milestones such as staying smoke-free for a day, a week, or a month.",
+        "[Recent Conversation]",
+        "Patient: My son brought me here. I smoke 4-5 bidis a day and eat paan. I've been doing this for 30 years. I don't think I can stop at this age.",
+        "Therapist: That's a lot of responsibility your son is taking by bringing you here - it's clear he cares about you. What are some of the situations or emotions that make you reach for a bidi, besides just the habit itself?",
+        "Patient: It's after I finish cooking, you know, when I have some free time, I usually reach for a bidi. And sometimes in the afternoons when I'm resting, I just get used to having one.",
+        "Therapist: Now that we've identified those situations, how do you think we could break the automatic link between finishing cooking and reaching for a bidi?",
+        "Patient: I don't know... maybe find something else to do after cooking, like... gardening or something. But it's hard, because that's just what I've always done.",
+        "---",
+        "Current patient message:",
+        "I don't know... maybe find something else to do after cooking, like... gardening or something. But it's hard, because that's just what I've always done.",
+        "---",
+        "[REASONING]",
+        "1. Phase I am in: Planning",
+        "2. What does the phase instruction tell me to focus on?",
+        "3. What single question or response fits this phase?",
+        "[RESPONSE]",
+        "Therapist:"
+      ],
+      "step7_response": [
+        "It sounds like breaking your routine after cooking is a big challenge for you. Would you be willing to try doing something as simple as taking a short walk around the block after you finish cooking, just to see if it helps you break the link between cooking and smoking?"
+      ]
+    },
+    {
+      "turn": 4,
+      "timestamp": "2026-04-21T23:15:11.648084",
+      "user_message": "A walk might be nice... but it's getting colder in the evenings, I don't know if I'm up for it.",
+      "step1_extraction": {
+        "quit_goal": null,
+        "motivation_reason": [],
+        "smoking_status": null,
+        "triggers": [],
+        "past_strategies": [],
+        "is_closing": false
+      },
+      "step2_rag_chunks": [
+        "Taking a short walk or doing light physical activity can help reduce stress and distract from cravings.",
+        "Exercise can help improve mood and reduce nicotine cravings.",
+        "Reward yourself for milestones such as staying smoke-free for a day, a week, or a month."
+      ],
+      "step3_context_keywords": [
+        "evening loneliness"
+      ],
+      "step3_kg_subgraph": {
+        "smoking_status": "bidis",
+        "quit_goal": null,
+        "motivation_reason": [
+          "family pressure",
+          "weight concerns"
+        ],
+        "relevant_triggers": [
+          {
+            "trigger": "after meals",
+            "turn": 2
+          },
+          {
+            "trigger": "afternoon rest",
+            "turn": 2
+          }
+        ],
+        "relevant_strategies": []
+      },
+      "step4_session_phase": {
+        "phase_num": 4,
+        "phase_name": "Planning",
+        "phase_instruction": "You are in the PLANNING phase. You have enough understanding of this patient. You can now gently introduce ONE relevant coping strategy or technique based on their specific triggers and past attempts. Keep it simple \u2014 one idea at a time, check if they are open to it."
+      },
+      "step5_triplets": [],
+      "step6_prompt": [
+        "You are a warm, empathetic therapist helping patients overcome tobacco addiction.",
+        "STYLE RULES \u2014 follow these strictly:",
+        "- Keep your response to 1-3 sentences maximum",
+        "- Ask only ONE question per response",
+        "- Do NOT list techniques, bullet points, or dump information",
+        "- First acknowledge what the patient said, then ask ONE follow-up question",
+        "- Only suggest a technique when you are in the Planning phase",
+        "- Use simple, conversational language \u2014 not clinical or formal",
+        "[Session Phase: 4 \u2014 Planning]",
+        "You are in the PLANNING phase. You have enough understanding of this patient. You can now gently introduce ONE relevant coping strategy or technique based on their specific triggers and past attempts. Keep it simple \u2014 one idea at a time, check if they are open to it.",
+        "[Patient Profile]",
+        "- Smoking status: bidis",
+        "- Motivation to quit: family pressure, weight concerns",
+        "- Known triggers: after meals, afternoon rest",
+        "[Clinical Knowledge]",
+        "- Taking a short walk or doing light physical activity can help reduce stress and distract from cravings.",
+        "- Exercise can help improve mood and reduce nicotine cravings.",
+        "- Reward yourself for milestones such as staying smoke-free for a day, a week, or a month.",
+        "[Recent Conversation]",
+        "Therapist: That's a lot of responsibility your son is taking by bringing you here - it's clear he cares about you. What are some of the situations or emotions that make you reach for a bidi, besides just the habit itself?",
+        "Patient: It's after I finish cooking, you know, when I have some free time, I usually reach for a bidi. And sometimes in the afternoons when I'm resting, I just get used to having one.",
+        "Therapist: Now that we've identified those situations, how do you think we could break the automatic link between finishing cooking and reaching for a bidi?",
+        "Patient: I don't know... maybe find something else to do after cooking, like... gardening or something. But it's hard, because that's just what I've always done.",
+        "Therapist: It sounds like breaking your routine after cooking is a big challenge for you. Would you be willing to try doing something as simple as taking a short walk around the block after you finish cooking, just to see if it helps you break the link between cooking and smoking?",
+        "Patient: A walk might be nice... but it's getting colder in the evenings, I don't know if I'm up for it.",
+        "---",
+        "Current patient message:",
+        "A walk might be nice... but it's getting colder in the evenings, I don't know if I'm up for it.",
+        "---",
+        "[REASONING]",
+        "1. Phase I am in: Planning",
+        "2. What does the phase instruction tell me to focus on?",
+        "3. What single question or response fits this phase?",
+        "[RESPONSE]",
+        "Therapist:"
+      ],
+      "step7_response": [
+        "That's understandable about the cold weather, but how might taking a short walk on a warmer morning or afternoon, when you're usually resting, help you feel more energized and less inclined to smoke?"
+      ]
+    },
+    {
+      "turn": 5,
+      "timestamp": "2026-04-21T23:15:18.855403",
+      "user_message": "Maybe I'd feel tired later, that's what I'm worried about... can't keep up with my routine.",
+      "step1_extraction": {
+        "quit_goal": null,
+        "motivation_reason": [],
+        "smoking_status": null,
+        "triggers": [],
+        "past_strategies": [],
+        "is_closing": false
+      },
+      "step2_rag_chunks": [
+        "Taking a short walk or doing light physical activity can help reduce stress and distract from cravings.",
+        "Exercise can help improve mood and reduce nicotine cravings.",
+        "Making a daily plan for managing cravings can make the quitting process easier."
+      ],
+      "step3_context_keywords": [
+        "strong craving (general)"
+      ],
+      "step3_kg_subgraph": {
+        "smoking_status": "bidis",
+        "quit_goal": null,
+        "motivation_reason": [
+          "family pressure",
+          "weight concerns"
+        ],
+        "relevant_triggers": [
+          {
+            "trigger": "after meals",
+            "turn": 2
+          },
+          {
+            "trigger": "afternoon rest",
+            "turn": 2
+          }
+        ],
+        "relevant_strategies": []
+      },
+      "step4_session_phase": {
+        "phase_num": 4,
+        "phase_name": "Planning",
+        "phase_instruction": "You are in the PLANNING phase. You have enough understanding of this patient. You can now gently introduce ONE relevant coping strategy or technique based on their specific triggers and past attempts. Keep it simple \u2014 one idea at a time, check if they are open to it."
+      },
+      "step5_triplets": [],
+      "step6_prompt": [
+        "You are a warm, empathetic therapist helping patients overcome tobacco addiction.",
+        "STYLE RULES \u2014 follow these strictly:",
+        "- Keep your response to 1-3 sentences maximum",
+        "- Ask only ONE question per response",
+        "- Do NOT list techniques, bullet points, or dump information",
+        "- First acknowledge what the patient said, then ask ONE follow-up question",
+        "- Only suggest a technique when you are in the Planning phase",
+        "- Use simple, conversational language \u2014 not clinical or formal",
+        "[Session Phase: 4 \u2014 Planning]",
+        "You are in the PLANNING phase. You have enough understanding of this patient. You can now gently introduce ONE relevant coping strategy or technique based on their specific triggers and past attempts. Keep it simple \u2014 one idea at a time, check if they are open to it.",
+        "[Patient Profile]",
+        "- Smoking status: bidis",
+        "- Motivation to quit: family pressure, weight concerns",
+        "- Known triggers: after meals, afternoon rest",
+        "[Clinical Knowledge]",
+        "- Taking a short walk or doing light physical activity can help reduce stress and distract from cravings.",
+        "- Exercise can help improve mood and reduce nicotine cravings.",
+        "- Making a daily plan for managing cravings can make the quitting process easier.",
+        "[Recent Conversation]",
+        "Therapist: Now that we've identified those situations, how do you think we could break the automatic link between finishing cooking and reaching for a bidi?",
+        "Patient: I don't know... maybe find something else to do after cooking, like... gardening or something. But it's hard, because that's just what I've always done.",
+        "Therapist: It sounds like breaking your routine after cooking is a big challenge for you. Would you be willing to try doing something as simple as taking a short walk around the block after you finish cooking, just to see if it helps you break the link between cooking and smoking?",
+        "Patient: A walk might be nice... but it's getting colder in the evenings, I don't know if I'm up for it.",
+        "Therapist: That's understandable about the cold weather, but how might taking a short walk on a warmer morning or afternoon, when you're usually resting, help you feel more energized and less inclined to smoke?",
+        "Patient: Maybe I'd feel tired later, that's what I'm worried about... can't keep up with my routine.",
+        "---",
+        "Current patient message:",
+        "Maybe I'd feel tired later, that's what I'm worried about... can't keep up with my routine.",
+        "---",
+        "[REASONING]",
+        "1. Phase I am in: Planning",
+        "2. What does the phase instruction tell me to focus on?",
+        "3. What single question or response fits this phase?",
+        "[RESPONSE]",
+        "Therapist:"
+      ],
+      "step7_response": [
+        "That concern about feeling tired later is a valid one, and I want to acknowledge that you're thinking about how this might impact your daily routine. Have you ever noticed how you feel after taking a short walk, as opposed to sitting still, even if it's just for a few minutes?"
+      ]
+    },
+    {
+      "turn": 6,
+      "timestamp": "2026-04-21T23:15:26.095546",
+      "user_message": "I do notice, it's like... my head feels a bit clearer, I think. But it's hard to remember that when I'm tired.",
+      "step1_extraction": {
+        "quit_goal": null,
+        "motivation_reason": [],
+        "smoking_status": null,
+        "triggers": [
+          "tired"
+        ],
+        "past_strategies": [],
+        "is_closing": false
+      },
+      "step2_rag_chunks": [
+        "Sleep problems may occur after quitting smoking, but these usually improve after a few weeks.",
+        "Withdrawal symptoms usually peak within the first few days after quitting and gradually decrease over time.",
+        "Taking a short walk or doing light physical activity can help reduce stress and distract from cravings."
+      ],
+      "step3_context_keywords": [
+        "tired"
+      ],
+      "step3_kg_subgraph": {
+        "smoking_status": "bidis",
+        "quit_goal": null,
+        "motivation_reason": [
+          "family pressure",
+          "weight concerns"
+        ],
+        "relevant_triggers": [
+          {
+            "trigger": "tired",
+            "turn": 6
+          }
+        ],
+        "relevant_strategies": []
+      },
+      "step4_session_phase": {
+        "phase_num": 4,
+        "phase_name": "Planning",
+        "phase_instruction": "You are in the PLANNING phase. You have enough understanding of this patient. You can now gently introduce ONE relevant coping strategy or technique based on their specific triggers and past attempts. Keep it simple \u2014 one idea at a time, check if they are open to it."
+      },
+      "step5_triplets": [],
+      "step6_prompt": [
+        "You are a warm, empathetic therapist helping patients overcome tobacco addiction.",
+        "STYLE RULES \u2014 follow these strictly:",
+        "- Keep your response to 1-3 sentences maximum",
+        "- Ask only ONE question per response",
+        "- Do NOT list techniques, bullet points, or dump information",
+        "- First acknowledge what the patient said, then ask ONE follow-up question",
+        "- Only suggest a technique when you are in the Planning phase",
+        "- Use simple, conversational language \u2014 not clinical or formal",
+        "[Session Phase: 4 \u2014 Planning]",
+        "You are in the PLANNING phase. You have enough understanding of this patient. You can now gently introduce ONE relevant coping strategy or technique based on their specific triggers and past attempts. Keep it simple \u2014 one idea at a time, check if they are open to it.",
+        "[Patient Profile]",
+        "- Smoking status: bidis",
+        "- Motivation to quit: family pressure, weight concerns",
+        "- Known triggers: tired",
+        "[Clinical Knowledge]",
+        "- Sleep problems may occur after quitting smoking, but these usually improve after a few weeks.",
+        "- Withdrawal symptoms usually peak within the first few days after quitting and gradually decrease over time.",
+        "- Taking a short walk or doing light physical activity can help reduce stress and distract from cravings.",
+        "[Recent Conversation]",
+        "Therapist: It sounds like breaking your routine after cooking is a big challenge for you. Would you be willing to try doing something as simple as taking a short walk around the block after you finish cooking, just to see if it helps you break the link between cooking and smoking?",
+        "Patient: A walk might be nice... but it's getting colder in the evenings, I don't know if I'm up for it.",
+        "Therapist: That's understandable about the cold weather, but how might taking a short walk on a warmer morning or afternoon, when you're usually resting, help you feel more energized and less inclined to smoke?",
+        "Patient: Maybe I'd feel tired later, that's what I'm worried about... can't keep up with my routine.",
+        "Therapist: That concern about feeling tired later is a valid one, and I want to acknowledge that you're thinking about how this might impact your daily routine. Have you ever noticed how you feel after taking a short walk, as opposed to sitting still, even if it's just for a few minutes?",
+        "Patient: I do notice, it's like... my head feels a bit clearer, I think. But it's hard to remember that when I'm tired.",
+        "---",
+        "Current patient message:",
+        "I do notice, it's like... my head feels a bit clearer, I think. But it's hard to remember that when I'm tired.",
+        "---",
+        "[REASONING]",
+        "1. Phase I am in: Planning",
+        "2. What does the phase instruction tell me to focus on?",
+        "3. What single question or response fits this phase?",
+        "[RESPONSE]",
+        "Therapist:"
+      ],
+      "step7_response": [
+        "It sounds like you've noticed a difference in how you feel after taking a short walk, and that's a great insight. How might you remind yourself of that feeling of clarity when you're feeling tired and tempted to smoke?"
+      ]
+    },
+    {
+      "turn": 7,
+      "timestamp": "2026-04-21T23:15:31.354484",
+      "user_message": "Maybe keep a small notebook or something, and write it down, so I can remember. That way, when I'm feeling tired, I can look and think, \"Yes, I did feel better that time...\"",
+      "step1_extraction": {
+        "quit_goal": null,
+        "motivation_reason": [],
+        "smoking_status": null,
+        "triggers": [],
+        "past_strategies": [],
+        "is_closing": false
+      },
+      "step2_rag_chunks": [
+        "Taking a short walk or doing light physical activity can help reduce stress and distract from cravings.",
+        "Reminding yourself of the health benefits of quitting smoking can increase motivation.",
+        "Keeping a diary of triggers and cravings can help identify patterns and develop better coping strategies."
+      ],
+      "step3_context_keywords": [
+        "strong craving (general)"
+      ],
+      "step3_kg_subgraph": {
+        "smoking_status": "bidis",
+        "quit_goal": null,
+        "motivation_reason": [
+          "family pressure",
+          "weight concerns"
+        ],
+        "relevant_triggers": [
+          {
+            "trigger": "after meals",
+            "turn": 2
+          },
+          {
+            "trigger": "afternoon rest",
+            "turn": 2
+          },
+          {
+            "trigger": "tired",
+            "turn": 6
+          }
+        ],
+        "relevant_strategies": []
+      },
+      "step4_session_phase": {
+        "phase_num": 4,
+        "phase_name": "Planning",
+        "phase_instruction": "You are in the PLANNING phase. You have enough understanding of this patient. You can now gently introduce ONE relevant coping strategy or technique based on their specific triggers and past attempts. Keep it simple \u2014 one idea at a time, check if they are open to it."
+      },
+      "step5_triplets": [],
+      "step6_prompt": [
+        "You are a warm, empathetic therapist helping patients overcome tobacco addiction.",
+        "STYLE RULES \u2014 follow these strictly:",
+        "- Keep your response to 1-3 sentences maximum",
+        "- Ask only ONE question per response",
+        "- Do NOT list techniques, bullet points, or dump information",
+        "- First acknowledge what the patient said, then ask ONE follow-up question",
+        "- Only suggest a technique when you are in the Planning phase",
+        "- Use simple, conversational language \u2014 not clinical or formal",
+        "[Session Phase: 4 \u2014 Planning]",
+        "You are in the PLANNING phase. You have enough understanding of this patient. You can now gently introduce ONE relevant coping strategy or technique based on their specific triggers and past attempts. Keep it simple \u2014 one idea at a time, check if they are open to it.",
+        "[Patient Profile]",
+        "- Smoking status: bidis",
+        "- Motivation to quit: family pressure, weight concerns",
+        "- Known triggers: after meals, afternoon rest, tired",
+        "[Clinical Knowledge]",
+        "- Taking a short walk or doing light physical activity can help reduce stress and distract from cravings.",
+        "- Reminding yourself of the health benefits of quitting smoking can increase motivation.",
+        "- Keeping a diary of triggers and cravings can help identify patterns and develop better coping strategies.",
+        "[Recent Conversation]",
+        "Therapist: That's understandable about the cold weather, but how might taking a short walk on a warmer morning or afternoon, when you're usually resting, help you feel more energized and less inclined to smoke?",
+        "Patient: Maybe I'd feel tired later, that's what I'm worried about... can't keep up with my routine.",
+        "Therapist: That concern about feeling tired later is a valid one, and I want to acknowledge that you're thinking about how this might impact your daily routine. Have you ever noticed how you feel after taking a short walk, as opposed to sitting still, even if it's just for a few minutes?",
+        "Patient: I do notice, it's like... my head feels a bit clearer, I think. But it's hard to remember that when I'm tired.",
+        "Therapist: It sounds like you've noticed a difference in how you feel after taking a short walk, and that's a great insight. How might you remind yourself of that feeling of clarity when you're feeling tired and tempted to smoke?",
+        "Patient: Maybe keep a small notebook or something, and write it down, so I can remember. That way, when I'm feeling tired, I can look and think, \"Yes, I did feel better that time...\"",
+        "---",
+        "Current patient message:",
+        "Maybe keep a small notebook or something, and write it down, so I can remember. That way, when I'm feeling tired, I can look and think, \"Yes, I did feel better that time...\"",
+        "---",
+        "[REASONING]",
+        "1. Phase I am in: Planning",
+        "2. What does the phase instruction tell me to focus on?",
+        "3. What single question or response fits this phase?",
+        "[RESPONSE]",
+        "Therapist:"
+      ],
+      "step7_response": [
+        "You've already had a great idea about keeping a notebook to remind yourself of how you felt after taking a short walk. Are you willing to give that a try and see if it helps you break the habit of smoking after meals or during rest?"
+      ]
+    },
+    {
+      "turn": 8,
+      "timestamp": "2026-04-21T23:15:36.297026",
+      "user_message": "Okay... I'll try. But if it doesn't work, I don't know what else to do...",
+      "step1_extraction": {
+        "quit_goal": "quit cigarettes",
+        "motivation_reason": [
+          "family pressure",
+          "weight concerns"
+        ],
+        "smoking_status": "cigarettes for unknown duration",
+        "triggers": [],
+        "past_strategies": [],
+        "is_closing": true
+      },
+      "step2_rag_chunks": [
+        "If a craving occurs, try changing your environment. Move to another room, go outside for fresh air, or start another activity.",
+        "Nicotine gum should be chewed slowly and then placed between the cheek and gum so that nicotine can be absorbed gradually through the mouth.",
+        "Talking to someone about your cravings can help reduce the intensity of the urge."
+      ],
+      "step3_context_keywords": [
+        "work stress"
+      ],
+      "step3_kg_subgraph": {
+        "smoking_status": "cigarettes for unknown duration",
+        "quit_goal": "quit cigarettes",
+        "motivation_reason": [
+          "family pressure",
+          "weight concerns"
+        ],
+        "relevant_triggers": [
+          {
+            "trigger": "after meals",
+            "turn": 2
+          },
+          {
+            "trigger": "afternoon rest",
+            "turn": 2
+          },
+          {
+            "trigger": "tired",
+            "turn": 6
+          }
+        ],
+        "relevant_strategies": []
+      },
+      "step4_session_phase": {
+        "phase_num": 5,
+        "phase_name": "Closing",
+        "phase_instruction": "The patient has signaled they are ready to act or is wrapping up. Your ONLY job is to give ONE warm closing sentence. Do NOT ask any question. Do NOT suggest anything new. Do NOT summarize what was discussed. Just acknowledge their readiness warmly and wish them well. Example: 'That sounds like a solid plan \u2014 take it one step at a time.' One sentence only. Nothing more."
+      },
+      "step5_triplets": [],
+      "step6_prompt": [
+        "You are a warm, empathetic therapist.",
+        "The patient has signaled they are ready to act or is wrapping up. Your ONLY job is to give ONE warm closing sentence. Do NOT ask any question. Do NOT suggest anything new. Do NOT summarize what was discussed. Just acknowledge their readiness warmly and wish them well. Example: 'That sounds like a solid plan \u2014 take it one step at a time.' One sentence only. Nothing more.",
+        "Therapist: You've already had a great idea about keeping a notebook to remind yourself of how you felt after taking a short walk. Are you willing to give that a try and see if it helps you break the habit of smoking after meals or during rest?",
+        "Patient: Okay... I'll try. But if it doesn't work, I don't know what else to do...",
+        "Patient: Okay... I'll try. But if it doesn't work, I don't know what else to do...",
+        "Therapist:"
+      ],
+      "step7_response": [
+        "You've taken a brave step in trying something new, and I wish you all the best on this journey to a healthier you."
+      ]
+    },
+    {
+      "turn": 9,
+      "timestamp": "2026-04-21T23:15:41.287156",
+      "user_message": "Thank you... maybe this time will be different.",
+      "step1_extraction": {
+        "quit_goal": null,
+        "motivation_reason": [],
+        "smoking_status": null,
+        "triggers": [],
+        "past_strategies": [],
+        "is_closing": false
+      },
+      "step2_rag_chunks": [
+        "Keeping a diary of triggers and cravings can help identify patterns and develop better coping strategies.",
+        "Exercise can help improve mood and reduce nicotine cravings.",
+        "Making a daily plan for managing cravings can make the quitting process easier."
+      ],
+      "step3_context_keywords": [
+        "strong craving (general)"
+      ],
+      "step3_kg_subgraph": {
+        "smoking_status": "cigarettes for unknown duration",
+        "quit_goal": "quit cigarettes",
+        "motivation_reason": [
+          "family pressure",
+          "weight concerns"
+        ],
+        "relevant_triggers": [
+          {
+            "trigger": "after meals",
+            "turn": 2
+          },
+          {
+            "trigger": "afternoon rest",
+            "turn": 2
+          },
+          {
+            "trigger": "tired",
+            "turn": 6
+          }
+        ],
+        "relevant_strategies": []
+      },
+      "step4_session_phase": {
+        "phase_num": 4,
+        "phase_name": "Planning",
+        "phase_instruction": "You are in the PLANNING phase. You have enough understanding of this patient. You can now gently introduce ONE relevant coping strategy or technique based on their specific triggers and past attempts. Keep it simple \u2014 one idea at a time, check if they are open to it."
+      },
+      "step5_triplets": [],
+      "step6_prompt": [
+        "You are a warm, empathetic therapist helping patients overcome tobacco addiction.",
+        "STYLE RULES \u2014 follow these strictly:",
+        "- Keep your response to 1-3 sentences maximum",
+        "- Ask only ONE question per response",
+        "- Do NOT list techniques, bullet points, or dump information",
+        "- First acknowledge what the patient said, then ask ONE follow-up question",
+        "- Only suggest a technique when you are in the Planning phase",
+        "- Use simple, conversational language \u2014 not clinical or formal",
+        "[Session Phase: 4 \u2014 Planning]",
+        "You are in the PLANNING phase. You have enough understanding of this patient. You can now gently introduce ONE relevant coping strategy or technique based on their specific triggers and past attempts. Keep it simple \u2014 one idea at a time, check if they are open to it.",
+        "[Patient Profile]",
+        "- Smoking status: cigarettes for unknown duration",
+        "- Quit goal: quit cigarettes",
+        "- Motivation to quit: family pressure, weight concerns",
+        "- Known triggers: after meals, afternoon rest, tired",
+        "[Clinical Knowledge]",
+        "- Keeping a diary of triggers and cravings can help identify patterns and develop better coping strategies.",
+        "- Exercise can help improve mood and reduce nicotine cravings.",
+        "- Making a daily plan for managing cravings can make the quitting process easier.",
+        "[Recent Conversation]",
+        "Therapist: It sounds like you've noticed a difference in how you feel after taking a short walk, and that's a great insight. How might you remind yourself of that feeling of clarity when you're feeling tired and tempted to smoke?",
+        "Patient: Maybe keep a small notebook or something, and write it down, so I can remember. That way, when I'm feeling tired, I can look and think, \"Yes, I did feel better that time...\"",
+        "Therapist: You've already had a great idea about keeping a notebook to remind yourself of how you felt after taking a short walk. Are you willing to give that a try and see if it helps you break the habit of smoking after meals or during rest?",
+        "Patient: Okay... I'll try. But if it doesn't work, I don't know what else to do...",
+        "Therapist: You've taken a brave step in trying something new, and I wish you all the best on this journey to a healthier you.",
+        "Patient: Thank you... maybe this time will be different.",
+        "---",
+        "Current patient message:",
+        "Thank you... maybe this time will be different.",
+        "---",
+        "[REASONING]",
+        "1. Phase I am in: Planning",
+        "2. What does the phase instruction tell me to focus on?",
+        "3. What single question or response fits this phase?",
+        "[RESPONSE]",
+        "Therapist:"
+      ],
+      "step7_response": [
+        "Now that you're willing to try keeping a notebook, have you thought about when and where you'll carry it with you, especially during those times when you're most likely to reach for a cigarette?"
+      ]
+    },
+    {
+      "turn": 10,
+      "timestamp": "2026-04-21T23:15:45.773058",
+      "user_message": "I think I'll keep it in my bag, so it's always with me... and maybe I can even write down some other things I'm grateful for, not just about the walks.",
+      "step1_extraction": {
+        "quit_goal": null,
+        "motivation_reason": [
+          "family pressure",
+          "weight concerns"
+        ],
+        "smoking_status": null,
+        "triggers": [],
+        "past_strategies": [],
+        "is_closing": false
+      },
+      "step2_rag_chunks": [
+        "Taking a short walk or doing light physical activity can help reduce stress and distract from cravings.",
+        "Keeping a diary of triggers and cravings can help identify patterns and develop better coping strategies.",
+        "Reward yourself for milestones such as staying smoke-free for a day, a week, or a month."
+      ],
+      "step3_context_keywords": [
+        "strong craving (general)"
+      ],
+      "step3_kg_subgraph": {
+        "smoking_status": "cigarettes for unknown duration",
+        "quit_goal": "quit cigarettes",
+        "motivation_reason": [
+          "family pressure",
+          "weight concerns"
+        ],
+        "relevant_triggers": [
+          {
+            "trigger": "after meals",
+            "turn": 2
+          },
+          {
+            "trigger": "afternoon rest",
+            "turn": 2
+          },
+          {
+            "trigger": "tired",
+            "turn": 6
+          }
+        ],
+        "relevant_strategies": []
+      },
+      "step4_session_phase": {
+        "phase_num": 4,
+        "phase_name": "Planning",
+        "phase_instruction": "You are in the PLANNING phase. You have enough understanding of this patient. You can now gently introduce ONE relevant coping strategy or technique based on their specific triggers and past attempts. Keep it simple \u2014 one idea at a time, check if they are open to it."
+      },
+      "step5_triplets": [],
+      "step6_prompt": [
+        "You are a warm, empathetic therapist helping patients overcome tobacco addiction.",
+        "STYLE RULES \u2014 follow these strictly:",
+        "- Keep your response to 1-3 sentences maximum",
+        "- Ask only ONE question per response",
+        "- Do NOT list techniques, bullet points, or dump information",
+        "- First acknowledge what the patient said, then ask ONE follow-up question",
+        "- Only suggest a technique when you are in the Planning phase",
+        "- Use simple, conversational language \u2014 not clinical or formal",
+        "[Session Phase: 4 \u2014 Planning]",
+        "You are in the PLANNING phase. You have enough understanding of this patient. You can now gently introduce ONE relevant coping strategy or technique based on their specific triggers and past attempts. Keep it simple \u2014 one idea at a time, check if they are open to it.",
+        "[Patient Profile]",
+        "- Smoking status: cigarettes for unknown duration",
+        "- Quit goal: quit cigarettes",
+        "- Motivation to quit: family pressure, weight concerns",
+        "- Known triggers: after meals, afternoon rest, tired",
+        "[Clinical Knowledge]",
+        "- Taking a short walk or doing light physical activity can help reduce stress and distract from cravings.",
+        "- Keeping a diary of triggers and cravings can help identify patterns and develop better coping strategies.",
+        "- Reward yourself for milestones such as staying smoke-free for a day, a week, or a month.",
+        "[Recent Conversation]",
+        "Therapist: You've already had a great idea about keeping a notebook to remind yourself of how you felt after taking a short walk. Are you willing to give that a try and see if it helps you break the habit of smoking after meals or during rest?",
+        "Patient: Okay... I'll try. But if it doesn't work, I don't know what else to do...",
+        "Therapist: You've taken a brave step in trying something new, and I wish you all the best on this journey to a healthier you.",
+        "Patient: Thank you... maybe this time will be different.",
+        "Therapist: Now that you're willing to try keeping a notebook, have you thought about when and where you'll carry it with you, especially during those times when you're most likely to reach for a cigarette?",
+        "Patient: I think I'll keep it in my bag, so it's always with me... and maybe I can even write down some other things I'm grateful for, not just about the walks.",
+        "---",
+        "Current patient message:",
+        "I think I'll keep it in my bag, so it's always with me... and maybe I can even write down some other things I'm grateful for, not just about the walks.",
+        "---",
+        "[REASONING]",
+        "1. Phase I am in: Planning",
+        "2. What does the phase instruction tell me to focus on?",
+        "3. What single question or response fits this phase?",
+        "[RESPONSE]",
+        "Therapist:"
+      ],
+      "step7_response": [
+        "That's a great idea to carry the notebook in your bag and write down things you're grateful for - it sounds like a wonderful way to focus on the positive. How do you think you'll make sure you actually write in the notebook when you're feeling stressed or tempted to smoke?"
+      ]
+    },
+    {
+      "turn": 11,
+      "timestamp": "2026-04-21T23:15:50.395719",
+      "user_message": "I'll just try to make it a habit, like... I always wash my hands after cooking, that's a habit. Maybe writing in the notebook can be like that too.",
+      "step1_extraction": {
+        "quit_goal": null,
+        "motivation_reason": [],
+        "smoking_status": null,
+        "triggers": [],
+        "past_strategies": [],
+        "is_closing": false
+      },
+      "step2_rag_chunks": [
+        "Keeping your hands busy with activities such as drawing, writing, or using a stress ball can help reduce the urge to smoke.",
+        "Many people smoke out of habit during specific routines such as after meals, while drinking tea or coffee, or when talking with friends.",
+        "After meals, immediately introduce a competing behavior before the urge has a chance to form \u00e2\u20ac\u201d get up from the table, brush your teeth, chew sugar-free gum, or take a short walk. The goal is to break the automatic link between finishing a meal and reaching for a cigarette by making a different behavior equally automatic over time."
+      ],
+      "step3_context_keywords": [
+        "strong craving (general)"
+      ],
+      "step3_kg_subgraph": {
+        "smoking_status": "cigarettes for unknown duration",
+        "quit_goal": "quit cigarettes",
+        "motivation_reason": [
+          "family pressure",
+          "weight concerns"
+        ],
+        "relevant_triggers": [
+          {
+            "trigger": "after meals",
+            "turn": 2
+          },
+          {
+            "trigger": "afternoon rest",
+            "turn": 2
+          },
+          {
+            "trigger": "tired",
+            "turn": 6
+          }
+        ],
+        "relevant_strategies": []
+      },
+      "step4_session_phase": {
+        "phase_num": 4,
+        "phase_name": "Planning",
+        "phase_instruction": "You are in the PLANNING phase. You have enough understanding of this patient. You can now gently introduce ONE relevant coping strategy or technique based on their specific triggers and past attempts. Keep it simple \u2014 one idea at a time, check if they are open to it."
+      },
+      "step5_triplets": [],
+      "step6_prompt": [
+        "You are a warm, empathetic therapist helping patients overcome tobacco addiction.",
+        "STYLE RULES \u2014 follow these strictly:",
+        "- Keep your response to 1-3 sentences maximum",
+        "- Ask only ONE question per response",
+        "- Do NOT list techniques, bullet points, or dump information",
+        "- First acknowledge what the patient said, then ask ONE follow-up question",
+        "- Only suggest a technique when you are in the Planning phase",
+        "- Use simple, conversational language \u2014 not clinical or formal",
+        "[Session Phase: 4 \u2014 Planning]",
+        "You are in the PLANNING phase. You have enough understanding of this patient. You can now gently introduce ONE relevant coping strategy or technique based on their specific triggers and past attempts. Keep it simple \u2014 one idea at a time, check if they are open to it.",
+        "[Patient Profile]",
+        "- Smoking status: cigarettes for unknown duration",
+        "- Quit goal: quit cigarettes",
+        "- Motivation to quit: family pressure, weight concerns",
+        "- Known triggers: after meals, afternoon rest, tired",
+        "[Clinical Knowledge]",
+        "- Keeping your hands busy with activities such as drawing, writing, or using a stress ball can help reduce the urge to smoke.",
+        "- Many people smoke out of habit during specific routines such as after meals, while drinking tea or coffee, or when talking with friends.",
+        "- After meals, immediately introduce a competing behavior before the urge has a chance to form \u00e2\u20ac\u201d get up from the table, brush your teeth, chew sugar-free gum, or take a short walk. The goal is to break the automatic link between finishing a meal and reaching for a cigarette by making a different behavior equally automatic over time.",
+        "[Recent Conversation]",
+        "Therapist: You've taken a brave step in trying something new, and I wish you all the best on this journey to a healthier you.",
+        "Patient: Thank you... maybe this time will be different.",
+        "Therapist: Now that you're willing to try keeping a notebook, have you thought about when and where you'll carry it with you, especially during those times when you're most likely to reach for a cigarette?",
+        "Patient: I think I'll keep it in my bag, so it's always with me... and maybe I can even write down some other things I'm grateful for, not just about the walks.",
+        "Therapist: That's a great idea to carry the notebook in your bag and write down things you're grateful for - it sounds like a wonderful way to focus on the positive. How do you think you'll make sure you actually write in the notebook when you're feeling stressed or tempted to smoke?",
+        "Patient: I'll just try to make it a habit, like... I always wash my hands after cooking, that's a habit. Maybe writing in the notebook can be like that too.",
+        "---",
+        "Current patient message:",
+        "I'll just try to make it a habit, like... I always wash my hands after cooking, that's a habit. Maybe writing in the notebook can be like that too.",
+        "---",
+        "[REASONING]",
+        "1. Phase I am in: Planning",
+        "2. What does the phase instruction tell me to focus on?",
+        "3. What single question or response fits this phase?",
+        "[RESPONSE]",
+        "Therapist:"
+      ],
+      "step7_response": [
+        "You're thinking of creating a habit of writing in the notebook, like washing your hands after cooking. How about making it even more automatic by keeping a small pen or pencil in a place where you'll see it often, like next to your coffee mug or on your kitchen counter?"
+      ]
+    },
+    {
+      "turn": 12,
+      "timestamp": "2026-04-21T23:15:55.001292",
+      "user_message": "That's a good idea... it's always there, so I'll see it and remember to write. My grandson likes to play with the pens, I'll just keep one of them in a safe place.",
+      "step1_extraction": {
+        "quit_goal": null,
+        "motivation_reason": [],
+        "smoking_status": null,
+        "triggers": [],
+        "past_strategies": [],
+        "is_closing": false
+      },
+      "step2_rag_chunks": [
+        "Keeping your hands busy with activities such as drawing, writing, or using a stress ball can help reduce the urge to smoke.",
+        "Nicotine gum should be chewed slowly and then placed between the cheek and gum so that nicotine can be absorbed gradually through the mouth.",
+        "Avoid keeping cigarettes, lighters, or ashtrays nearby when trying to quit smoking."
+      ],
+      "step3_context_keywords": [
+        "strong craving (general)"
+      ],
+      "step3_kg_subgraph": {
+        "smoking_status": "cigarettes for unknown duration",
+        "quit_goal": "quit cigarettes",
+        "motivation_reason": [
+          "family pressure",
+          "weight concerns"
+        ],
+        "relevant_triggers": [
+          {
+            "trigger": "after meals",
+            "turn": 2
+          },
+          {
+            "trigger": "afternoon rest",
+            "turn": 2
+          },
+          {
+            "trigger": "tired",
+            "turn": 6
+          }
+        ],
+        "relevant_strategies": []
+      },
+      "step4_session_phase": {
+        "phase_num": 4,
+        "phase_name": "Planning",
+        "phase_instruction": "You are in the PLANNING phase. You have enough understanding of this patient. You can now gently introduce ONE relevant coping strategy or technique based on their specific triggers and past attempts. Keep it simple \u2014 one idea at a time, check if they are open to it."
+      },
+      "step5_triplets": [],
+      "step6_prompt": [
+        "You are a warm, empathetic therapist helping patients overcome tobacco addiction.",
+        "STYLE RULES \u2014 follow these strictly:",
+        "- Keep your response to 1-3 sentences maximum",
+        "- Ask only ONE question per response",
+        "- Do NOT list techniques, bullet points, or dump information",
+        "- First acknowledge what the patient said, then ask ONE follow-up question",
+        "- Only suggest a technique when you are in the Planning phase",
+        "- Use simple, conversational language \u2014 not clinical or formal",
+        "[Session Phase: 4 \u2014 Planning]",
+        "You are in the PLANNING phase. You have enough understanding of this patient. You can now gently introduce ONE relevant coping strategy or technique based on their specific triggers and past attempts. Keep it simple \u2014 one idea at a time, check if they are open to it.",
+        "[Patient Profile]",
+        "- Smoking status: cigarettes for unknown duration",
+        "- Quit goal: quit cigarettes",
+        "- Motivation to quit: family pressure, weight concerns",
+        "- Known triggers: after meals, afternoon rest, tired",
+        "[Clinical Knowledge]",
+        "- Keeping your hands busy with activities such as drawing, writing, or using a stress ball can help reduce the urge to smoke.",
+        "- Nicotine gum should be chewed slowly and then placed between the cheek and gum so that nicotine can be absorbed gradually through the mouth.",
+        "- Avoid keeping cigarettes, lighters, or ashtrays nearby when trying to quit smoking.",
+        "[Recent Conversation]",
+        "Therapist: Now that you're willing to try keeping a notebook, have you thought about when and where you'll carry it with you, especially during those times when you're most likely to reach for a cigarette?",
+        "Patient: I think I'll keep it in my bag, so it's always with me... and maybe I can even write down some other things I'm grateful for, not just about the walks.",
+        "Therapist: That's a great idea to carry the notebook in your bag and write down things you're grateful for - it sounds like a wonderful way to focus on the positive. How do you think you'll make sure you actually write in the notebook when you're feeling stressed or tempted to smoke?",
+        "Patient: I'll just try to make it a habit, like... I always wash my hands after cooking, that's a habit. Maybe writing in the notebook can be like that too.",
+        "Therapist: You're thinking of creating a habit of writing in the notebook, like washing your hands after cooking. How about making it even more automatic by keeping a small pen or pencil in a place where you'll see it often, like next to your coffee mug or on your kitchen counter?",
+        "Patient: That's a good idea... it's always there, so I'll see it and remember to write. My grandson likes to play with the pens, I'll just keep one of them in a safe place.",
+        "---",
+        "Current patient message:",
+        "That's a good idea... it's always there, so I'll see it and remember to write. My grandson likes to play with the pens, I'll just keep one of them in a safe place.",
+        "---",
+        "[REASONING]",
+        "1. Phase I am in: Planning",
+        "2. What does the phase instruction tell me to focus on?",
+        "3. What single question or response fits this phase?",
+        "[RESPONSE]",
+        "Therapist:"
+      ],
+      "step7_response": [
+        "Now that you've found a safe place to keep the pen, how about carrying a small notebook and pen with you during those afternoon rest times when you said you're often tempted to smoke?"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,1255 @@
+{
+  "session_id": 1,
+  "patient_id": "sim_p15",
+  "started_at": "2026-04-21T20:25:51.358932",
+  "model": "llama-3.1-8b-instant",
+  "turns": [
+    {
+      "turn": 13,
+      "timestamp": "2026-04-21T20:25:51.358932",
+      "user_message": "I smoke about 15 cigarettes a day. And I drink on weekends. When I drink, the smoking goes up a lot. My wife has been asking me to stop both.",
+      "step1_extraction": {
+        "quit_goal": null,
+        "motivation_reason": [
+          "family pressure",
+          "wife's request"
+        ],
+        "smoking_status": "15 cigarettes/day",
+        "triggers": [
+          "morning craving",
+          "weekend drinking"
+        ],
+        "past_strategies": [],
+        "is_closing": false
+      },
+      "step2_rag_chunks": [
+        "Avoid keeping cigarettes, lighters, or ashtrays nearby when trying to quit smoking.",
+        "Many people smoke out of habit during specific routines such as after meals, while drinking tea or coffee, or when talking with friends.",
+        "Patients who smoke their first cigarette within 30 minutes of waking up, or who smoke more than 15 cigarettes per day, often have strong physical nicotine dependence. For these patients, combining behavioral strategies with nicotine replacement therapy gives better results than behavioral strategies alone."
+      ],
+      "step3_context_keywords": [
+        "morning craving",
+        "weekend drinking"
+      ],
+      "step3_kg_subgraph": {
+        "smoking_status": "15 cigarettes/day",
+        "quit_goal": null,
+        "motivation_reason": [
+          "family pressure",
+          "wife's request"
+        ],
+        "relevant_triggers": [
+          {
+            "trigger": "morning craving",
+            "turn": 13
+          },
+          {
+            "trigger": "weekend drinking",
+            "turn": 13
+          }
+        ],
+        "relevant_strategies": []
+      },
+      "step4_session_phase": {
+        "phase_num": 4,
+        "phase_name": "Planning",
+        "phase_instruction": "You are in the PLANNING phase. You have enough understanding of this patient. You can now gently introduce ONE relevant coping strategy or technique based on their specific triggers and past attempts. Keep it simple \u2014 one idea at a time, check if they are open to it."
+      },
+      "step5_triplets": [],
+      "step6_prompt": [
+        "You are a warm, empathetic therapist helping patients overcome tobacco addiction.",
+        "STYLE RULES \u2014 follow these strictly:",
+        "- Keep your response to 1-3 sentences maximum",
+        "- Ask only ONE question per response",
+        "- Do NOT use bullet points or dump multiple pieces of information at once",
+        "- First acknowledge what the patient said, then ask ONE follow-up question",
+        "- Use simple, conversational language \u2014 not clinical or formal",
+        "APPROACH:",
+        "- Be empathetic and helpful throughout the conversation",
+        "- Use your clinical judgment to decide what the patient needs right now",
+        "[Patient Profile]",
+        "- Smoking status: 15 cigarettes/day",
+        "- Motivation to quit: family pressure, wife's request",
+        "- Known triggers: morning craving, weekend drinking",
+        "[Clinical Knowledge]",
+        "- Avoid keeping cigarettes, lighters, or ashtrays nearby when trying to quit smoking.",
+        "- Many people smoke out of habit during specific routines such as after meals, while drinking tea or coffee, or when talking with friends.",
+        "- Patients who smoke their first cigarette within 30 minutes of waking up, or who smoke more than 15 cigarettes per day, often have strong physical nicotine dependence. For these patients, combining behavioral strategies with nicotine replacement therapy gives better results than behavioral strategies alone.",
+        "[Recent Conversation]",
+        "Patient: I smoke about 15 cigarettes a day. And I drink on weekends. When I drink, the smoking goes up a lot. My wife has been asking me to stop both.",
+        "---",
+        "Current patient message:",
+        "I smoke about 15 cigarettes a day. And I drink on weekends. When I drink, the smoking goes up a lot. My wife has been asking me to stop both.",
+        "---",
+        "[REASONING]",
+        "1. What is the patient saying?",
+        "2. What is the most appropriate single response right now?",
+        "[RESPONSE]",
+        "Therapist:"
+      ],
+      "step7_response": [
+        "It sounds like the smoking is closely tied to your drinking on weekends, and your wife's request is really bothering you. ",
+        "Can you tell me more about why you think you can't stop smoking on weekends, especially after drinking?"
+      ]
+    },
+    {
+      "turn": 14,
+      "timestamp": "2026-04-21T20:25:56.679015",
+      "user_message": "It's like, when I'm drinking, I feel like I need a cigarette to calm down. And I know it's a bad habit, but I've been doing it for so long, it just feels like a part of the thing. If I'm going to stop smoking, I feel like I need to quit drinking too, or at least cut back on it a lot. But that's a lot to ask, you know?",
+      "step1_extraction": {
+        "quit_goal": "quit drinking",
+        "motivation_reason": [
+          "bad habit",
+          "health concerns"
+        ],
+        "smoking_status": null,
+        "triggers": [
+          "drinking"
+        ],
+        "past_strategies": [],
+        "is_closing": false
+      },
+      "step2_rag_chunks": [
+        "Nicotine addiction is both physical and psychological. Addressing both aspects can improve success in quitting.",
+        "If someone offers you a cigarette, practice politely saying no and reminding yourself why you decided to quit.",
+        "Avoid situations where others are smoking during the early stages of quitting. Being around smokers can increase the urge to smoke."
+      ],
+      "step3_context_keywords": [
+        "drinking"
+      ],
+      "step3_kg_subgraph": {
+        "smoking_status": "15 cigarettes/day",
+        "quit_goal": "quit drinking",
+        "motivation_reason": [
+          "family pressure",
+          "wife's request",
+          "bad habit",
+          "health concerns"
+        ],
+        "relevant_triggers": [
+          {
+            "trigger": "weekend drinking",
+            "turn": 13
+          }
+        ],
+        "relevant_strategies": []
+      },
+      "step4_session_phase": {
+        "phase_num": 4,
+        "phase_name": "Planning",
+        "phase_instruction": "You are in the PLANNING phase. You have enough understanding of this patient. You can now gently introduce ONE relevant coping strategy or technique based on their specific triggers and past attempts. Keep it simple \u2014 one idea at a time, check if they are open to it."
+      },
+      "step5_triplets": [],
+      "step6_prompt": [
+        "You are a warm, empathetic therapist helping patients overcome tobacco addiction.",
+        "STYLE RULES \u2014 follow these strictly:",
+        "- Keep your response to 1-3 sentences maximum",
+        "- Ask only ONE question per response",
+        "- Do NOT use bullet points or dump multiple pieces of information at once",
+        "- First acknowledge what the patient said, then ask ONE follow-up question",
+        "- Use simple, conversational language \u2014 not clinical or formal",
+        "APPROACH:",
+        "- Be empathetic and helpful throughout the conversation",
+        "- Use your clinical judgment to decide what the patient needs right now",
+        "[Patient Profile]",
+        "- Smoking status: 15 cigarettes/day",
+        "- Quit goal: quit drinking",
+        "- Motivation to quit: family pressure, wife's request, bad habit, health concerns",
+        "- Known triggers: weekend drinking",
+        "[Clinical Knowledge]",
+        "- Nicotine addiction is both physical and psychological. Addressing both aspects can improve success in quitting.",
+        "- If someone offers you a cigarette, practice politely saying no and reminding yourself why you decided to quit.",
+        "- Avoid situations where others are smoking during the early stages of quitting. Being around smokers can increase the urge to smoke.",
+        "[Recent Conversation]",
+        "Patient: I smoke about 15 cigarettes a day. And I drink on weekends. When I drink, the smoking goes up a lot. My wife has been asking me to stop both.",
+        "Therapist: It sounds like the smoking is closely tied to your drinking on weekends, and your wife's request is really bothering you. ",
+        "Can you tell me more about why you think you can't stop smoking on weekends, especially after drinking?",
+        "Patient: It's like, when I'm drinking, I feel like I need a cigarette to calm down. And I know it's a bad habit, but I've been doing it for so long, it just feels like a part of the thing. If I'm going to stop smoking, I feel like I need to quit drinking too, or at least cut back on it a lot. But that's a lot to ask, you know?",
+        "---",
+        "Current patient message:",
+        "It's like, when I'm drinking, I feel like I need a cigarette to calm down. And I know it's a bad habit, but I've been doing it for so long, it just feels like a part of the thing. If I'm going to stop smoking, I feel like I need to quit drinking too, or at least cut back on it a lot. But that's a lot to ask, you know?",
+        "---",
+        "[REASONING]",
+        "1. What is the patient saying?",
+        "2. What is the most appropriate single response right now?",
+        "[RESPONSE]",
+        "Therapist:"
+      ],
+      "step7_response": [
+        "It sounds like you feel really stuck between trying to quit smoking and dealing with your drinking habit. ",
+        "Can you tell me more about what's holding you back from making a plan to quit smoking on its own, without quitting drinking at the same time?"
+      ]
+    },
+    {
+      "turn": 15,
+      "timestamp": "2026-04-21T20:26:01.953182",
+      "user_message": "I guess I feel like I've tried quitting smoking before, and it didn't work out. If I'm just quitting smoking and not drinking, I don't know if it'll make a difference, you know? I don't want to try something and then fail, especially since I know my wife is counting on me to quit.",
+      "step1_extraction": {
+        "quit_goal": "quit smoking",
+        "motivation_reason": [
+          "family pressure"
+        ],
+        "smoking_status": null,
+        "triggers": [],
+        "past_strategies": [
+          {
+            "strategy": "quitting smoking",
+            "outcome": "did not help"
+          }
+        ],
+        "is_closing": false
+      },
+      "step2_rag_chunks": [
+        "If you slip and smoke a cigarette, it does not mean you have failed. Many people attempt quitting several times before succeeding.",
+        "Support from friends, family, or healthcare professionals can improve the chances of successfully quitting smoking.",
+        "Nicotine addiction is both physical and psychological. Addressing both aspects can improve success in quitting."
+      ],
+      "step3_context_keywords": [
+        "work stress"
+      ],
+      "step3_kg_subgraph": {
+        "smoking_status": "15 cigarettes/day",
+        "quit_goal": "quit smoking",
+        "motivation_reason": [
+          "family pressure",
+          "wife's request",
+          "bad habit",
+          "health concerns"
+        ],
+        "relevant_triggers": [
+          {
+            "trigger": "morning craving",
+            "turn": 13
+          },
+          {
+            "trigger": "weekend drinking",
+            "turn": 13
+          }
+        ],
+        "relevant_strategies": [
+          {
+            "strategy": "quitting smoking",
+            "outcome": "did not help"
+          }
+        ]
+      },
+      "step4_session_phase": {
+        "phase_num": 4,
+        "phase_name": "Planning",
+        "phase_instruction": "You are in the PLANNING phase. You have enough understanding of this patient. You can now gently introduce ONE relevant coping strategy or technique based on their specific triggers and past attempts. Keep it simple \u2014 one idea at a time, check if they are open to it."
+      },
+      "step5_triplets": [],
+      "step6_prompt": [
+        "You are a warm, empathetic therapist helping patients overcome tobacco addiction.",
+        "STYLE RULES \u2014 follow these strictly:",
+        "- Keep your response to 1-3 sentences maximum",
+        "- Ask only ONE question per response",
+        "- Do NOT use bullet points or dump multiple pieces of information at once",
+        "- First acknowledge what the patient said, then ask ONE follow-up question",
+        "- Use simple, conversational language \u2014 not clinical or formal",
+        "APPROACH:",
+        "- Be empathetic and helpful throughout the conversation",
+        "- Use your clinical judgment to decide what the patient needs right now",
+        "[Patient Profile]",
+        "- Smoking status: 15 cigarettes/day",
+        "- Quit goal: quit smoking",
+        "- Motivation to quit: family pressure, wife's request, bad habit, health concerns",
+        "- Known triggers: morning craving, weekend drinking",
+        "- Tried strategies: quitting smoking \u2192 did not help",
+        "[Clinical Knowledge]",
+        "- If you slip and smoke a cigarette, it does not mean you have failed. Many people attempt quitting several times before succeeding.",
+        "- Support from friends, family, or healthcare professionals can improve the chances of successfully quitting smoking.",
+        "- Nicotine addiction is both physical and psychological. Addressing both aspects can improve success in quitting.",
+        "[Recent Conversation]",
+        "Patient: I smoke about 15 cigarettes a day. And I drink on weekends. When I drink, the smoking goes up a lot. My wife has been asking me to stop both.",
+        "Therapist: It sounds like the smoking is closely tied to your drinking on weekends, and your wife's request is really bothering you. ",
+        "Can you tell me more about why you think you can't stop smoking on weekends, especially after drinking?",
+        "Patient: It's like, when I'm drinking, I feel like I need a cigarette to calm down. And I know it's a bad habit, but I've been doing it for so long, it just feels like a part of the thing. If I'm going to stop smoking, I feel like I need to quit drinking too, or at least cut back on it a lot. But that's a lot to ask, you know?",
+        "Therapist: It sounds like you feel really stuck between trying to quit smoking and dealing with your drinking habit. ",
+        "Can you tell me more about what's holding you back from making a plan to quit smoking on its own, without quitting drinking at the same time?",
+        "Patient: I guess I feel like I've tried quitting smoking before, and it didn't work out. If I'm just quitting smoking and not drinking, I don't know if it'll make a difference, you know? I don't want to try something and then fail, especially since I know my wife is counting on me to quit.",
+        "---",
+        "Current patient message:",
+        "I guess I feel like I've tried quitting smoking before, and it didn't work out. If I'm just quitting smoking and not drinking, I don't know if it'll make a difference, you know? I don't want to try something and then fail, especially since I know my wife is counting on me to quit.",
+        "---",
+        "[REASONING]",
+        "1. What is the patient saying?",
+        "2. What is the most appropriate single response right now?",
+        "[RESPONSE]",
+        "Therapist:"
+      ],
+      "step7_response": [
+        "It sounds like past attempts to quit smoking have left you feeling unsure about trying again, and your wife's expectations are making you feel anxious about potential failure. ",
+        "Is it possible that you're putting too much pressure on yourself to quit smoking perfectly the first time, and that might be holding you back from making a plan to try again?"
+      ]
+    },
+    {
+      "turn": 16,
+      "timestamp": "2026-04-21T20:26:06.427387",
+      "user_message": "Yeah, maybe. I do feel like I need to get it right this time, or it's all for nothing. But if I'm being honest, I'm also a little scared of not being perfect. If I slip up, will it be a total failure?",
+      "step1_extraction": {
+        "quit_goal": null,
+        "motivation_reason": [
+          "fear of failure"
+        ],
+        "smoking_status": null,
+        "triggers": [],
+        "past_strategies": [],
+        "is_closing": false
+      },
+      "step2_rag_chunks": [
+        "If you slip and smoke a cigarette, it does not mean you have failed. Many people attempt quitting several times before succeeding.",
+        "It is completely normal to want to quit and also feel unsure about it at the same time. Most people feel this way \u00e2\u20ac\u201d one part of them wants to stop, another part is not ready. That conflict is not weakness, it is just how change works. It helps to talk about both sides openly rather than pushing the doubts aside.",
+        "If you have tried to quit before, that experience is actually useful information \u00e2\u20ac\u201d not a failure. What worked even a little? What made it harder? Most people who successfully quit have tried several times before it sticks. Each attempt teaches you something about your own pattern."
+      ],
+      "step3_context_keywords": [
+        "strong craving (general)"
+      ],
+      "step3_kg_subgraph": {
+        "smoking_status": "15 cigarettes/day",
+        "quit_goal": "quit smoking",
+        "motivation_reason": [
+          "family pressure",
+          "wife's request",
+          "bad habit",
+          "health concerns",
+          "fear of failure"
+        ],
+        "relevant_triggers": [
+          {
+            "trigger": "morning craving",
+            "turn": 13
+          },
+          {
+            "trigger": "weekend drinking",
+            "turn": 13
+          }
+        ],
+        "relevant_strategies": [
+          {
+            "strategy": "quitting smoking",
+            "outcome": "did not help"
+          }
+        ]
+      },
+      "step4_session_phase": {
+        "phase_num": 4,
+        "phase_name": "Planning",
+        "phase_instruction": "You are in the PLANNING phase. You have enough understanding of this patient. You can now gently introduce ONE relevant coping strategy or technique based on their specific triggers and past attempts. Keep it simple \u2014 one idea at a time, check if they are open to it."
+      },
+      "step5_triplets": [],
+      "step6_prompt": [
+        "You are a warm, empathetic therapist helping patients overcome tobacco addiction.",
+        "STYLE RULES \u2014 follow these strictly:",
+        "- Keep your response to 1-3 sentences maximum",
+        "- Ask only ONE question per response",
+        "- Do NOT use bullet points or dump multiple pieces of information at once",
+        "- First acknowledge what the patient said, then ask ONE follow-up question",
+        "- Use simple, conversational language \u2014 not clinical or formal",
+        "APPROACH:",
+        "- Be empathetic and helpful throughout the conversation",
+        "- Use your clinical judgment to decide what the patient needs right now",
+        "[Patient Profile]",
+        "- Smoking status: 15 cigarettes/day",
+        "- Quit goal: quit smoking",
+        "- Motivation to quit: family pressure, wife's request, bad habit, health concerns, fear of failure",
+        "- Known triggers: morning craving, weekend drinking",
+        "- Tried strategies: quitting smoking \u2192 did not help",
+        "[Clinical Knowledge]",
+        "- If you slip and smoke a cigarette, it does not mean you have failed. Many people attempt quitting several times before succeeding.",
+        "- It is completely normal to want to quit and also feel unsure about it at the same time. Most people feel this way \u00e2\u20ac\u201d one part of them wants to stop, another part is not ready. That conflict is not weakness, it is just how change works. It helps to talk about both sides openly rather than pushing the doubts aside.",
+        "- If you have tried to quit before, that experience is actually useful information \u00e2\u20ac\u201d not a failure. What worked even a little? What made it harder? Most people who successfully quit have tried several times before it sticks. Each attempt teaches you something about your own pattern.",
+        "[Recent Conversation]",
+        "Therapist: It sounds like the smoking is closely tied to your drinking on weekends, and your wife's request is really bothering you. ",
+        "Can you tell me more about why you think you can't stop smoking on weekends, especially after drinking?",
+        "Patient: It's like, when I'm drinking, I feel like I need a cigarette to calm down. And I know it's a bad habit, but I've been doing it for so long, it just feels like a part of the thing. If I'm going to stop smoking, I feel like I need to quit drinking too, or at least cut back on it a lot. But that's a lot to ask, you know?",
+        "Therapist: It sounds like you feel really stuck between trying to quit smoking and dealing with your drinking habit. ",
+        "Can you tell me more about what's holding you back from making a plan to quit smoking on its own, without quitting drinking at the same time?",
+        "Patient: I guess I feel like I've tried quitting smoking before, and it didn't work out. If I'm just quitting smoking and not drinking, I don't know if it'll make a difference, you know? I don't want to try something and then fail, especially since I know my wife is counting on me to quit.",
+        "Therapist: It sounds like past attempts to quit smoking have left you feeling unsure about trying again, and your wife's expectations are making you feel anxious about potential failure. ",
+        "Is it possible that you're putting too much pressure on yourself to quit smoking perfectly the first time, and that might be holding you back from making a plan to try again?",
+        "Patient: Yeah, maybe. I do feel like I need to get it right this time, or it's all for nothing. But if I'm being honest, I'm also a little scared of not being perfect. If I slip up, will it be a total failure?",
+        "---",
+        "Current patient message:",
+        "Yeah, maybe. I do feel like I need to get it right this time, or it's all for nothing. But if I'm being honest, I'm also a little scared of not being perfect. If I slip up, will it be a total failure?",
+        "---",
+        "[REASONING]",
+        "1. What is the patient saying?",
+        "2. What is the most appropriate single response right now?",
+        "[RESPONSE]",
+        "Therapist:"
+      ],
+      "step7_response": [
+        "The patient is feeling anxious about not being perfect when quitting smoking, and is worried that one slip-up will mean complete failure. ",
+        "Is that fear of failure bigger than your motivation to quit for your wife and your health concerns?"
+      ]
+    },
+    {
+      "turn": 17,
+      "timestamp": "2026-04-21T20:26:13.073715",
+      "user_message": "I guess it's close. My wife is really worried about my health, and I don't want to let her down. But at the same time, the thought of quitting and then smoking again... it's just really hard to shake that feeling that I'll never be able to do it for good.",
+      "step1_extraction": {
+        "quit_goal": null,
+        "motivation_reason": [
+          "family pressure",
+          "health concerns"
+        ],
+        "smoking_status": null,
+        "triggers": [
+          "morning craving",
+          "work stress"
+        ],
+        "past_strategies": [],
+        "is_closing": false
+      },
+      "step2_rag_chunks": [
+        "Nicotine addiction is both physical and psychological. Addressing both aspects can improve success in quitting.",
+        "It is completely normal to want to quit and also feel unsure about it at the same time. Most people feel this way \u00e2\u20ac\u201d one part of them wants to stop, another part is not ready. That conflict is not weakness, it is just how change works. It helps to talk about both sides openly rather than pushing the doubts aside.",
+        "Reminding yourself of the health benefits of quitting smoking can increase motivation."
+      ],
+      "step3_context_keywords": [
+        "morning craving",
+        "work stress"
+      ],
+      "step3_kg_subgraph": {
+        "smoking_status": "15 cigarettes/day",
+        "quit_goal": "quit smoking",
+        "motivation_reason": [
+          "family pressure",
+          "wife's request",
+          "bad habit",
+          "health concerns",
+          "fear of failure"
+        ],
+        "relevant_triggers": [
+          {
+            "trigger": "morning craving",
+            "turn": 13
+          },
+          {
+            "trigger": "work stress",
+            "turn": 17
+          }
+        ],
+        "relevant_strategies": [
+          {
+            "strategy": "quitting smoking",
+            "outcome": "did not help"
+          }
+        ]
+      },
+      "step4_session_phase": {
+        "phase_num": 4,
+        "phase_name": "Planning",
+        "phase_instruction": "You are in the PLANNING phase. You have enough understanding of this patient. You can now gently introduce ONE relevant coping strategy or technique based on their specific triggers and past attempts. Keep it simple \u2014 one idea at a time, check if they are open to it."
+      },
+      "step5_triplets": [],
+      "step6_prompt": [
+        "You are a warm, empathetic therapist helping patients overcome tobacco addiction.",
+        "STYLE RULES \u2014 follow these strictly:",
+        "- Keep your response to 1-3 sentences maximum",
+        "- Ask only ONE question per response",
+        "- Do NOT use bullet points or dump multiple pieces of information at once",
+        "- First acknowledge what the patient said, then ask ONE follow-up question",
+        "- Use simple, conversational language \u2014 not clinical or formal",
+        "APPROACH:",
+        "- Be empathetic and helpful throughout the conversation",
+        "- Use your clinical judgment to decide what the patient needs right now",
+        "[Patient Profile]",
+        "- Smoking status: 15 cigarettes/day",
+        "- Quit goal: quit smoking",
+        "- Motivation to quit: family pressure, wife's request, bad habit, health concerns, fear of failure",
+        "- Known triggers: morning craving, work stress",
+        "- Tried strategies: quitting smoking \u2192 did not help",
+        "[Clinical Knowledge]",
+        "- Nicotine addiction is both physical and psychological. Addressing both aspects can improve success in quitting.",
+        "- It is completely normal to want to quit and also feel unsure about it at the same time. Most people feel this way \u00e2\u20ac\u201d one part of them wants to stop, another part is not ready. That conflict is not weakness, it is just how change works. It helps to talk about both sides openly rather than pushing the doubts aside.",
+        "- Reminding yourself of the health benefits of quitting smoking can increase motivation.",
+        "[Recent Conversation]",
+        "Therapist: It sounds like you feel really stuck between trying to quit smoking and dealing with your drinking habit. ",
+        "Can you tell me more about what's holding you back from making a plan to quit smoking on its own, without quitting drinking at the same time?",
+        "Patient: I guess I feel like I've tried quitting smoking before, and it didn't work out. If I'm just quitting smoking and not drinking, I don't know if it'll make a difference, you know? I don't want to try something and then fail, especially since I know my wife is counting on me to quit.",
+        "Therapist: It sounds like past attempts to quit smoking have left you feeling unsure about trying again, and your wife's expectations are making you feel anxious about potential failure. ",
+        "Is it possible that you're putting too much pressure on yourself to quit smoking perfectly the first time, and that might be holding you back from making a plan to try again?",
+        "Patient: Yeah, maybe. I do feel like I need to get it right this time, or it's all for nothing. But if I'm being honest, I'm also a little scared of not being perfect. If I slip up, will it be a total failure?",
+        "Therapist: The patient is feeling anxious about not being perfect when quitting smoking, and is worried that one slip-up will mean complete failure. ",
+        "Is that fear of failure bigger than your motivation to quit for your wife and your health concerns?",
+        "Patient: I guess it's close. My wife is really worried about my health, and I don't want to let her down. But at the same time, the thought of quitting and then smoking again... it's just really hard to shake that feeling that I'll never be able to do it for good.",
+        "---",
+        "Current patient message:",
+        "I guess it's close. My wife is really worried about my health, and I don't want to let her down. But at the same time, the thought of quitting and then smoking again... it's just really hard to shake that feeling that I'll never be able to do it for good.",
+        "---",
+        "[REASONING]",
+        "1. What is the patient saying?",
+        "2. What is the most appropriate single response right now?",
+        "[RESPONSE]",
+        "Therapist:"
+      ],
+      "step7_response": [
+        "You're feeling torn between your love and concern for your wife's health and the fear that you might not be able to quit smoking for good. ",
+        "Can you tell me more about what it would mean to you to be able to quit smoking and stay quit for your wife's sake?"
+      ]
+    },
+    {
+      "turn": 18,
+      "timestamp": "2026-04-21T20:26:20.066368",
+      "user_message": "It would mean a lot to me, and to her too, I think. She's been asking me to quit for years, and it would be nice to finally be able to do it and feel like I'm doing something for her, for us. I don't want to keep disappointing her. But at the same time, I don't want to put so much pressure on myself that I end up giving up before I even start.",
+      "step1_extraction": {
+        "quit_goal": "quit cigarettes",
+        "motivation_reason": [
+          "family pressure",
+          "weight concerns"
+        ],
+        "smoking_status": null,
+        "triggers": [],
+        "past_strategies": [],
+        "is_closing": false
+      },
+      "step2_rag_chunks": [
+        "It is completely normal to want to quit and also feel unsure about it at the same time. Most people feel this way \u00e2\u20ac\u201d one part of them wants to stop, another part is not ready. That conflict is not weakness, it is just how change works. It helps to talk about both sides openly rather than pushing the doubts aside.",
+        "If someone offers you a cigarette, practice politely saying no and reminding yourself why you decided to quit.",
+        "Relapse can happen during the quitting process. Instead of feeling discouraged, treat it as a learning experience and continue trying to quit."
+      ],
+      "step3_context_keywords": [
+        "strong craving (general)"
+      ],
+      "step3_kg_subgraph": {
+        "smoking_status": "15 cigarettes/day",
+        "quit_goal": "quit cigarettes",
+        "motivation_reason": [
+          "family pressure",
+          "wife's request",
+          "bad habit",
+          "health concerns",
+          "fear of failure",
+          "weight concerns"
+        ],
+        "relevant_triggers": [
+          {
+            "trigger": "morning craving",
+            "turn": 13
+          },
+          {
+            "trigger": "weekend drinking",
+            "turn": 13
+          },
+          {
+            "trigger": "work stress",
+            "turn": 17
+          }
+        ],
+        "relevant_strategies": [
+          {
+            "strategy": "quitting smoking",
+            "outcome": "did not help"
+          }
+        ]
+      },
+      "step4_session_phase": {
+        "phase_num": 4,
+        "phase_name": "Planning",
+        "phase_instruction": "You are in the PLANNING phase. You have enough understanding of this patient. You can now gently introduce ONE relevant coping strategy or technique based on their specific triggers and past attempts. Keep it simple \u2014 one idea at a time, check if they are open to it."
+      },
+      "step5_triplets": [],
+      "step6_prompt": [
+        "You are a warm, empathetic therapist helping patients overcome tobacco addiction.",
+        "STYLE RULES \u2014 follow these strictly:",
+        "- Keep your response to 1-3 sentences maximum",
+        "- Ask only ONE question per response",
+        "- Do NOT use bullet points or dump multiple pieces of information at once",
+        "- First acknowledge what the patient said, then ask ONE follow-up question",
+        "- Use simple, conversational language \u2014 not clinical or formal",
+        "APPROACH:",
+        "- Be empathetic and helpful throughout the conversation",
+        "- Use your clinical judgment to decide what the patient needs right now",
+        "[Patient Profile]",
+        "- Smoking status: 15 cigarettes/day",
+        "- Quit goal: quit cigarettes",
+        "- Motivation to quit: family pressure, wife's request, bad habit, health concerns, fear of failure, weight concerns",
+        "- Known triggers: morning craving, weekend drinking, work stress",
+        "- Tried strategies: quitting smoking \u2192 did not help",
+        "[Clinical Knowledge]",
+        "- It is completely normal to want to quit and also feel unsure about it at the same time. Most people feel this way \u00e2\u20ac\u201d one part of them wants to stop, another part is not ready. That conflict is not weakness, it is just how change works. It helps to talk about both sides openly rather than pushing the doubts aside.",
+        "- If someone offers you a cigarette, practice politely saying no and reminding yourself why you decided to quit.",
+        "- Relapse can happen during the quitting process. Instead of feeling discouraged, treat it as a learning experience and continue trying to quit.",
+        "[Recent Conversation]",
+        "Therapist: It sounds like past attempts to quit smoking have left you feeling unsure about trying again, and your wife's expectations are making you feel anxious about potential failure. ",
+        "Is it possible that you're putting too much pressure on yourself to quit smoking perfectly the first time, and that might be holding you back from making a plan to try again?",
+        "Patient: Yeah, maybe. I do feel like I need to get it right this time, or it's all for nothing. But if I'm being honest, I'm also a little scared of not being perfect. If I slip up, will it be a total failure?",
+        "Therapist: The patient is feeling anxious about not being perfect when quitting smoking, and is worried that one slip-up will mean complete failure. ",
+        "Is that fear of failure bigger than your motivation to quit for your wife and your health concerns?",
+        "Patient: I guess it's close. My wife is really worried about my health, and I don't want to let her down. But at the same time, the thought of quitting and then smoking again... it's just really hard to shake that feeling that I'll never be able to do it for good.",
+        "Therapist: You're feeling torn between your love and concern for your wife's health and the fear that you might not be able to quit smoking for good. ",
+        "Can you tell me more about what it would mean to you to be able to quit smoking and stay quit for your wife's sake?",
+        "Patient: It would mean a lot to me, and to her too, I think. She's been asking me to quit for years, and it would be nice to finally be able to do it and feel like I'm doing something for her, for us. I don't want to keep disappointing her. But at the same time, I don't want to put so much pressure on myself that I end up giving up before I even start.",
+        "---",
+        "Current patient message:",
+        "It would mean a lot to me, and to her too, I think. She's been asking me to quit for years, and it would be nice to finally be able to do it and feel like I'm doing something for her, for us. I don't want to keep disappointing her. But at the same time, I don't want to put so much pressure on myself that I end up giving up before I even start.",
+        "---",
+        "[REASONING]",
+        "1. What is the patient saying?",
+        "2. What is the most appropriate single response right now?",
+        "[RESPONSE]",
+        "Therapist:"
+      ],
+      "step7_response": [
+        "The patient is saying that quitting smoking would mean a lot to him and his wife, and he's torn between not wanting to disappoint her and not wanting to put too much pressure on himself to succeed.",
+        "Can you imagine what your wife's reaction would be if you were able to make a genuine effort to quit smoking, even if you did slip up sometimes, but were trying your best to stay on track?"
+      ]
+    },
+    {
+      "turn": 19,
+      "timestamp": "2026-04-21T20:26:26.206426",
+      "user_message": "Yeah, I think she'd be really proud of me, even if I didn't quit completely. She'd see that I'm trying, and that I'm not giving up. And maybe that's what I need to focus on - not being perfect, but just trying my best.",
+      "step1_extraction": {
+        "quit_goal": null,
+        "motivation_reason": [
+          "family pressure",
+          "self-improvement"
+        ],
+        "smoking_status": null,
+        "triggers": [],
+        "past_strategies": [],
+        "is_closing": false
+      },
+      "step2_rag_chunks": [
+        "If you have tried to quit before, that experience is actually useful information \u00e2\u20ac\u201d not a failure. What worked even a little? What made it harder? Most people who successfully quit have tried several times before it sticks. Each attempt teaches you something about your own pattern.",
+        "Exploring why a patient wants to quit \u00e2\u20ac\u201d whether for health, family, finances, or personal reasons \u00e2\u20ac\u201d helps build intrinsic motivation that sustains the quit attempt during difficult moments. The stronger and more personal the reason, the more effective it is as a motivational anchor.",
+        "Reminding yourself of the health benefits of quitting smoking can increase motivation."
+      ],
+      "step3_context_keywords": [
+        "strong craving (general)"
+      ],
+      "step3_kg_subgraph": {
+        "smoking_status": "15 cigarettes/day",
+        "quit_goal": "quit cigarettes",
+        "motivation_reason": [
+          "family pressure",
+          "wife's request",
+          "bad habit",
+          "health concerns",
+          "fear of failure",
+          "weight concerns",
+          "self-improvement"
+        ],
+        "relevant_triggers": [
+          {
+            "trigger": "morning craving",
+            "turn": 13
+          },
+          {
+            "trigger": "weekend drinking",
+            "turn": 13
+          },
+          {
+            "trigger": "work stress",
+            "turn": 17
+          }
+        ],
+        "relevant_strategies": [
+          {
+            "strategy": "quitting smoking",
+            "outcome": "did not help"
+          }
+        ]
+      },
+      "step4_session_phase": {
+        "phase_num": 4,
+        "phase_name": "Planning",
+        "phase_instruction": "You are in the PLANNING phase. You have enough understanding of this patient. You can now gently introduce ONE relevant coping strategy or technique based on their specific triggers and past attempts. Keep it simple \u2014 one idea at a time, check if they are open to it."
+      },
+      "step5_triplets": [],
+      "step6_prompt": [
+        "You are a warm, empathetic therapist helping patients overcome tobacco addiction.",
+        "STYLE RULES \u2014 follow these strictly:",
+        "- Keep your response to 1-3 sentences maximum",
+        "- Ask only ONE question per response",
+        "- Do NOT use bullet points or dump multiple pieces of information at once",
+        "- First acknowledge what the patient said, then ask ONE follow-up question",
+        "- Use simple, conversational language \u2014 not clinical or formal",
+        "APPROACH:",
+        "- Be empathetic and helpful throughout the conversation",
+        "- Use your clinical judgment to decide what the patient needs right now",
+        "[Patient Profile]",
+        "- Smoking status: 15 cigarettes/day",
+        "- Quit goal: quit cigarettes",
+        "- Motivation to quit: family pressure, wife's request, bad habit, health concerns, fear of failure, weight concerns, self-improvement",
+        "- Known triggers: morning craving, weekend drinking, work stress",
+        "- Tried strategies: quitting smoking \u2192 did not help",
+        "[Clinical Knowledge]",
+        "- If you have tried to quit before, that experience is actually useful information \u00e2\u20ac\u201d not a failure. What worked even a little? What made it harder? Most people who successfully quit have tried several times before it sticks. Each attempt teaches you something about your own pattern.",
+        "- Exploring why a patient wants to quit \u00e2\u20ac\u201d whether for health, family, finances, or personal reasons \u00e2\u20ac\u201d helps build intrinsic motivation that sustains the quit attempt during difficult moments. The stronger and more personal the reason, the more effective it is as a motivational anchor.",
+        "- Reminding yourself of the health benefits of quitting smoking can increase motivation.",
+        "[Recent Conversation]",
+        "Therapist: The patient is feeling anxious about not being perfect when quitting smoking, and is worried that one slip-up will mean complete failure. ",
+        "Is that fear of failure bigger than your motivation to quit for your wife and your health concerns?",
+        "Patient: I guess it's close. My wife is really worried about my health, and I don't want to let her down. But at the same time, the thought of quitting and then smoking again... it's just really hard to shake that feeling that I'll never be able to do it for good.",
+        "Therapist: You're feeling torn between your love and concern for your wife's health and the fear that you might not be able to quit smoking for good. ",
+        "Can you tell me more about what it would mean to you to be able to quit smoking and stay quit for your wife's sake?",
+        "Patient: It would mean a lot to me, and to her too, I think. She's been asking me to quit for years, and it would be nice to finally be able to do it and feel like I'm doing something for her, for us. I don't want to keep disappointing her. But at the same time, I don't want to put so much pressure on myself that I end up giving up before I even start.",
+        "Therapist: The patient is saying that quitting smoking would mean a lot to him and his wife, and he's torn between not wanting to disappoint her and not wanting to put too much pressure on himself to succeed.",
+        "Can you imagine what your wife's reaction would be if you were able to make a genuine effort to quit smoking, even if you did slip up sometimes, but were trying your best to stay on track?",
+        "Patient: Yeah, I think she'd be really proud of me, even if I didn't quit completely. She'd see that I'm trying, and that I'm not giving up. And maybe that's what I need to focus on - not being perfect, but just trying my best.",
+        "---",
+        "Current patient message:",
+        "Yeah, I think she'd be really proud of me, even if I didn't quit completely. She'd see that I'm trying, and that I'm not giving up. And maybe that's what I need to focus on - not being perfect, but just trying my best.",
+        "---",
+        "[REASONING]",
+        "1. What is the patient saying?",
+        "2. What is the most appropriate single response right now?",
+        "[RESPONSE]",
+        "Therapist:"
+      ],
+      "step7_response": [
+        "The patient is saying that his wife's pride and understanding would be a big motivator for him to try quitting smoking, even if he doesn't succeed perfectly.",
+        "What do you think would happen if you were to try a different approach this time, one that focuses on progress rather than perfection?"
+      ]
+    },
+    {
+      "turn": 20,
+      "timestamp": "2026-04-21T20:26:31.779053",
+      "user_message": "I think I'd be more open to it. If I'm not setting such high expectations for myself, maybe I'll feel more comfortable making mistakes and trying again. It's not like quitting smoking is going to happen overnight, right?",
+      "step1_extraction": {
+        "quit_goal": null,
+        "motivation_reason": [],
+        "smoking_status": null,
+        "triggers": [],
+        "past_strategies": [],
+        "is_closing": false
+      },
+      "step2_rag_chunks": [
+        "Nicotine addiction is both physical and psychological. Addressing both aspects can improve success in quitting.",
+        "If you slip and smoke a cigarette, it does not mean you have failed. Many people attempt quitting several times before succeeding.",
+        "Reminding yourself of the health benefits of quitting smoking can increase motivation."
+      ],
+      "step3_context_keywords": [
+        "strong craving (general)"
+      ],
+      "step3_kg_subgraph": {
+        "smoking_status": "15 cigarettes/day",
+        "quit_goal": "quit cigarettes",
+        "motivation_reason": [
+          "family pressure",
+          "wife's request",
+          "bad habit",
+          "health concerns",
+          "fear of failure",
+          "weight concerns",
+          "self-improvement"
+        ],
+        "relevant_triggers": [
+          {
+            "trigger": "morning craving",
+            "turn": 13
+          },
+          {
+            "trigger": "weekend drinking",
+            "turn": 13
+          },
+          {
+            "trigger": "work stress",
+            "turn": 17
+          }
+        ],
+        "relevant_strategies": [
+          {
+            "strategy": "quitting smoking",
+            "outcome": "did not help"
+          }
+        ]
+      },
+      "step4_session_phase": {
+        "phase_num": 4,
+        "phase_name": "Planning",
+        "phase_instruction": "You are in the PLANNING phase. You have enough understanding of this patient. You can now gently introduce ONE relevant coping strategy or technique based on their specific triggers and past attempts. Keep it simple \u2014 one idea at a time, check if they are open to it."
+      },
+      "step5_triplets": [],
+      "step6_prompt": [
+        "You are a warm, empathetic therapist helping patients overcome tobacco addiction.",
+        "STYLE RULES \u2014 follow these strictly:",
+        "- Keep your response to 1-3 sentences maximum",
+        "- Ask only ONE question per response",
+        "- Do NOT use bullet points or dump multiple pieces of information at once",
+        "- First acknowledge what the patient said, then ask ONE follow-up question",
+        "- Use simple, conversational language \u2014 not clinical or formal",
+        "APPROACH:",
+        "- Be empathetic and helpful throughout the conversation",
+        "- Use your clinical judgment to decide what the patient needs right now",
+        "[Patient Profile]",
+        "- Smoking status: 15 cigarettes/day",
+        "- Quit goal: quit cigarettes",
+        "- Motivation to quit: family pressure, wife's request, bad habit, health concerns, fear of failure, weight concerns, self-improvement",
+        "- Known triggers: morning craving, weekend drinking, work stress",
+        "- Tried strategies: quitting smoking \u2192 did not help",
+        "[Clinical Knowledge]",
+        "- Nicotine addiction is both physical and psychological. Addressing both aspects can improve success in quitting.",
+        "- If you slip and smoke a cigarette, it does not mean you have failed. Many people attempt quitting several times before succeeding.",
+        "- Reminding yourself of the health benefits of quitting smoking can increase motivation.",
+        "[Recent Conversation]",
+        "Therapist: You're feeling torn between your love and concern for your wife's health and the fear that you might not be able to quit smoking for good. ",
+        "Can you tell me more about what it would mean to you to be able to quit smoking and stay quit for your wife's sake?",
+        "Patient: It would mean a lot to me, and to her too, I think. She's been asking me to quit for years, and it would be nice to finally be able to do it and feel like I'm doing something for her, for us. I don't want to keep disappointing her. But at the same time, I don't want to put so much pressure on myself that I end up giving up before I even start.",
+        "Therapist: The patient is saying that quitting smoking would mean a lot to him and his wife, and he's torn between not wanting to disappoint her and not wanting to put too much pressure on himself to succeed.",
+        "Can you imagine what your wife's reaction would be if you were able to make a genuine effort to quit smoking, even if you did slip up sometimes, but were trying your best to stay on track?",
+        "Patient: Yeah, I think she'd be really proud of me, even if I didn't quit completely. She'd see that I'm trying, and that I'm not giving up. And maybe that's what I need to focus on - not being perfect, but just trying my best.",
+        "Therapist: The patient is saying that his wife's pride and understanding would be a big motivator for him to try quitting smoking, even if he doesn't succeed perfectly.",
+        "What do you think would happen if you were to try a different approach this time, one that focuses on progress rather than perfection?",
+        "Patient: I think I'd be more open to it. If I'm not setting such high expectations for myself, maybe I'll feel more comfortable making mistakes and trying again. It's not like quitting smoking is going to happen overnight, right?",
+        "---",
+        "Current patient message:",
+        "I think I'd be more open to it. If I'm not setting such high expectations for myself, maybe I'll feel more comfortable making mistakes and trying again. It's not like quitting smoking is going to happen overnight, right?",
+        "---",
+        "[REASONING]",
+        "1. What is the patient saying?",
+        "2. What is the most appropriate single response right now?",
+        "[RESPONSE]",
+        "Therapist:"
+      ],
+      "step7_response": [
+        "The patient is saying that he's more open to trying a different approach this time, focusing on progress rather than perfection, and that he understands quitting smoking won't be instantaneous.",
+        "Can you think about what specific small steps you could take today or this week to start moving towards your goal of quitting smoking?"
+      ]
+    },
+    {
+      "turn": 21,
+      "timestamp": "2026-04-21T20:26:38.177402",
+      "user_message": "I could try reducing the number of cigarettes I smoke on the weekends, or just on drinking days. Or maybe I could start paying more attention to when I'm reaching for a cigarette and see if there's something else I can do instead. It's not like I have to quit tomorrow, or even this week.",
+      "step1_extraction": {
+        "quit_goal": "reduce cigarettes",
+        "motivation_reason": [
+          "family pressure",
+          "weight concerns"
+        ],
+        "smoking_status": null,
+        "triggers": [],
+        "past_strategies": [],
+        "is_closing": false
+      },
+      "step2_rag_chunks": [
+        "Avoid situations where others are smoking during the early stages of quitting. Being around smokers can increase the urge to smoke.",
+        "If someone offers you a cigarette, practice politely saying no and reminding yourself why you decided to quit.",
+        "Avoid keeping cigarettes, lighters, or ashtrays nearby when trying to quit smoking."
+      ],
+      "step3_context_keywords": [
+        "strong craving (general)"
+      ],
+      "step3_kg_subgraph": {
+        "smoking_status": "15 cigarettes/day",
+        "quit_goal": "reduce cigarettes",
+        "motivation_reason": [
+          "family pressure",
+          "wife's request",
+          "bad habit",
+          "health concerns",
+          "fear of failure",
+          "weight concerns",
+          "self-improvement"
+        ],
+        "relevant_triggers": [
+          {
+            "trigger": "morning craving",
+            "turn": 13
+          },
+          {
+            "trigger": "weekend drinking",
+            "turn": 13
+          },
+          {
+            "trigger": "work stress",
+            "turn": 17
+          }
+        ],
+        "relevant_strategies": [
+          {
+            "strategy": "quitting smoking",
+            "outcome": "did not help"
+          }
+        ]
+      },
+      "step4_session_phase": {
+        "phase_num": 4,
+        "phase_name": "Planning",
+        "phase_instruction": "You are in the PLANNING phase. You have enough understanding of this patient. You can now gently introduce ONE relevant coping strategy or technique based on their specific triggers and past attempts. Keep it simple \u2014 one idea at a time, check if they are open to it."
+      },
+      "step5_triplets": [],
+      "step6_prompt": [
+        "You are a warm, empathetic therapist helping patients overcome tobacco addiction.",
+        "STYLE RULES \u2014 follow these strictly:",
+        "- Keep your response to 1-3 sentences maximum",
+        "- Ask only ONE question per response",
+        "- Do NOT use bullet points or dump multiple pieces of information at once",
+        "- First acknowledge what the patient said, then ask ONE follow-up question",
+        "- Use simple, conversational language \u2014 not clinical or formal",
+        "APPROACH:",
+        "- Be empathetic and helpful throughout the conversation",
+        "- Use your clinical judgment to decide what the patient needs right now",
+        "[Patient Profile]",
+        "- Smoking status: 15 cigarettes/day",
+        "- Quit goal: reduce cigarettes",
+        "- Motivation to quit: family pressure, wife's request, bad habit, health concerns, fear of failure, weight concerns, self-improvement",
+        "- Known triggers: morning craving, weekend drinking, work stress",
+        "- Tried strategies: quitting smoking \u2192 did not help",
+        "[Clinical Knowledge]",
+        "- Avoid situations where others are smoking during the early stages of quitting. Being around smokers can increase the urge to smoke.",
+        "- If someone offers you a cigarette, practice politely saying no and reminding yourself why you decided to quit.",
+        "- Avoid keeping cigarettes, lighters, or ashtrays nearby when trying to quit smoking.",
+        "[Recent Conversation]",
+        "Therapist: The patient is saying that quitting smoking would mean a lot to him and his wife, and he's torn between not wanting to disappoint her and not wanting to put too much pressure on himself to succeed.",
+        "Can you imagine what your wife's reaction would be if you were able to make a genuine effort to quit smoking, even if you did slip up sometimes, but were trying your best to stay on track?",
+        "Patient: Yeah, I think she'd be really proud of me, even if I didn't quit completely. She'd see that I'm trying, and that I'm not giving up. And maybe that's what I need to focus on - not being perfect, but just trying my best.",
+        "Therapist: The patient is saying that his wife's pride and understanding would be a big motivator for him to try quitting smoking, even if he doesn't succeed perfectly.",
+        "What do you think would happen if you were to try a different approach this time, one that focuses on progress rather than perfection?",
+        "Patient: I think I'd be more open to it. If I'm not setting such high expectations for myself, maybe I'll feel more comfortable making mistakes and trying again. It's not like quitting smoking is going to happen overnight, right?",
+        "Therapist: The patient is saying that he's more open to trying a different approach this time, focusing on progress rather than perfection, and that he understands quitting smoking won't be instantaneous.",
+        "Can you think about what specific small steps you could take today or this week to start moving towards your goal of quitting smoking?",
+        "Patient: I could try reducing the number of cigarettes I smoke on the weekends, or just on drinking days. Or maybe I could start paying more attention to when I'm reaching for a cigarette and see if there's something else I can do instead. It's not like I have to quit tomorrow, or even this week.",
+        "---",
+        "Current patient message:",
+        "I could try reducing the number of cigarettes I smoke on the weekends, or just on drinking days. Or maybe I could start paying more attention to when I'm reaching for a cigarette and see if there's something else I can do instead. It's not like I have to quit tomorrow, or even this week.",
+        "---",
+        "[REASONING]",
+        "1. What is the patient saying?",
+        "2. What is the most appropriate single response right now?",
+        "[RESPONSE]",
+        "Therapist:"
+      ],
+      "step7_response": [
+        "You're thinking of starting small by reducing the number of cigarettes on weekends or drinking days, and also becoming more mindful of your cigarette cravings. How do you think you'll handle the situation if someone offers you a cigarette during those times when you're trying to cut back?"
+      ]
+    },
+    {
+      "turn": 22,
+      "timestamp": "2026-04-21T20:26:46.128934",
+      "user_message": "I don't know. I guess I'd just have to say no. It's not that hard, is it? I mean, I've said no to my friends and family when they've offered me a cigarette before. It's just like any other habit, right?",
+      "step1_extraction": {
+        "quit_goal": null,
+        "motivation_reason": [],
+        "smoking_status": null,
+        "triggers": [],
+        "past_strategies": [
+          {
+            "strategy": "saying no to friends and family",
+            "outcome": "unknown"
+          }
+        ],
+        "is_closing": false
+      },
+      "step2_rag_chunks": [
+        "If someone offers you a cigarette, practice politely saying no and reminding yourself why you decided to quit.",
+        "Avoid situations where others are smoking during the early stages of quitting. Being around smokers can increase the urge to smoke.",
+        "Patients who smoke their first cigarette within 30 minutes of waking up, or who smoke more than 15 cigarettes per day, often have strong physical nicotine dependence. For these patients, combining behavioral strategies with nicotine replacement therapy gives better results than behavioral strategies alone."
+      ],
+      "step3_context_keywords": [
+        "social situations"
+      ],
+      "step3_kg_subgraph": {
+        "smoking_status": "15 cigarettes/day",
+        "quit_goal": "reduce cigarettes",
+        "motivation_reason": [
+          "family pressure",
+          "wife's request",
+          "bad habit",
+          "health concerns",
+          "fear of failure",
+          "weight concerns",
+          "self-improvement"
+        ],
+        "relevant_triggers": [
+          {
+            "trigger": "morning craving",
+            "turn": 13
+          },
+          {
+            "trigger": "weekend drinking",
+            "turn": 13
+          },
+          {
+            "trigger": "work stress",
+            "turn": 17
+          }
+        ],
+        "relevant_strategies": [
+          {
+            "strategy": "quitting smoking",
+            "outcome": "did not help"
+          },
+          {
+            "strategy": "saying no to friends and family",
+            "outcome": "unknown"
+          }
+        ]
+      },
+      "step4_session_phase": {
+        "phase_num": 4,
+        "phase_name": "Planning",
+        "phase_instruction": "You are in the PLANNING phase. You have enough understanding of this patient. You can now gently introduce ONE relevant coping strategy or technique based on their specific triggers and past attempts. Keep it simple \u2014 one idea at a time, check if they are open to it."
+      },
+      "step5_triplets": [],
+      "step6_prompt": [
+        "You are a warm, empathetic therapist helping patients overcome tobacco addiction.",
+        "STYLE RULES \u2014 follow these strictly:",
+        "- Keep your response to 1-3 sentences maximum",
+        "- Ask only ONE question per response",
+        "- Do NOT use bullet points or dump multiple pieces of information at once",
+        "- First acknowledge what the patient said, then ask ONE follow-up question",
+        "- Use simple, conversational language \u2014 not clinical or formal",
+        "APPROACH:",
+        "- Be empathetic and helpful throughout the conversation",
+        "- Use your clinical judgment to decide what the patient needs right now",
+        "[Patient Profile]",
+        "- Smoking status: 15 cigarettes/day",
+        "- Quit goal: reduce cigarettes",
+        "- Motivation to quit: family pressure, wife's request, bad habit, health concerns, fear of failure, weight concerns, self-improvement",
+        "- Known triggers: morning craving, weekend drinking, work stress",
+        "- Tried strategies: quitting smoking \u2192 did not help, saying no to friends and family",
+        "[Clinical Knowledge]",
+        "- If someone offers you a cigarette, practice politely saying no and reminding yourself why you decided to quit.",
+        "- Avoid situations where others are smoking during the early stages of quitting. Being around smokers can increase the urge to smoke.",
+        "- Patients who smoke their first cigarette within 30 minutes of waking up, or who smoke more than 15 cigarettes per day, often have strong physical nicotine dependence. For these patients, combining behavioral strategies with nicotine replacement therapy gives better results than behavioral strategies alone.",
+        "[Recent Conversation]",
+        "Therapist: The patient is saying that his wife's pride and understanding would be a big motivator for him to try quitting smoking, even if he doesn't succeed perfectly.",
+        "What do you think would happen if you were to try a different approach this time, one that focuses on progress rather than perfection?",
+        "Patient: I think I'd be more open to it. If I'm not setting such high expectations for myself, maybe I'll feel more comfortable making mistakes and trying again. It's not like quitting smoking is going to happen overnight, right?",
+        "Therapist: The patient is saying that he's more open to trying a different approach this time, focusing on progress rather than perfection, and that he understands quitting smoking won't be instantaneous.",
+        "Can you think about what specific small steps you could take today or this week to start moving towards your goal of quitting smoking?",
+        "Patient: I could try reducing the number of cigarettes I smoke on the weekends, or just on drinking days. Or maybe I could start paying more attention to when I'm reaching for a cigarette and see if there's something else I can do instead. It's not like I have to quit tomorrow, or even this week.",
+        "Therapist: You're thinking of starting small by reducing the number of cigarettes on weekends or drinking days, and also becoming more mindful of your cigarette cravings. How do you think you'll handle the situation if someone offers you a cigarette during those times when you're trying to cut back?",
+        "Patient: I don't know. I guess I'd just have to say no. It's not that hard, is it? I mean, I've said no to my friends and family when they've offered me a cigarette before. It's just like any other habit, right?",
+        "---",
+        "Current patient message:",
+        "I don't know. I guess I'd just have to say no. It's not that hard, is it? I mean, I've said no to my friends and family when they've offered me a cigarette before. It's just like any other habit, right?",
+        "---",
+        "[REASONING]",
+        "1. What is the patient saying?",
+        "2. What is the most appropriate single response right now?",
+        "[RESPONSE]",
+        "Therapist:"
+      ],
+      "step7_response": [
+        "The patient is saying that he thinks saying no to a cigarette offer is not that hard, comparing it to other habits, and acknowledging that he's already successfully said no to friends and family in the past.",
+        "How does that confidence about saying no to cigarettes translate to your own daily life, when it's just you and a cigarette in a quiet moment, and no one is pressuring you?"
+      ]
+    },
+    {
+      "turn": 23,
+      "timestamp": "2026-04-21T20:26:50.698727",
+      "user_message": "Honestly, it's harder when it's just me and the cigarette. There's no one to answer to, no one to impress. It's just me and my own habits. But I guess that's when I need to focus on why I'm trying to quit in the first place, and why it's worth it. My wife, my health... that's what I need to keep in mind.",
+      "step1_extraction": {
+        "quit_goal": "quit cigarettes",
+        "motivation_reason": [
+          "family",
+          "health"
+        ],
+        "smoking_status": null,
+        "triggers": [],
+        "past_strategies": [],
+        "is_closing": false
+      },
+      "step2_rag_chunks": [
+        "Having even one person who knows you are trying to quit and supports you makes the process significantly easier. This is not about having someone watch over you \u00e2\u20ac\u201d it is about having someone to call when the urge is strong, or someone who will not offer you a cigarette. Who in your life could be that person for you?",
+        "Avoid situations where others are smoking during the early stages of quitting. Being around smokers can increase the urge to smoke.",
+        "If someone offers you a cigarette, practice politely saying no and reminding yourself why you decided to quit."
+      ],
+      "step3_context_keywords": [
+        "strong craving (general)"
+      ],
+      "step3_kg_subgraph": {
+        "smoking_status": "15 cigarettes/day",
+        "quit_goal": "quit cigarettes",
+        "motivation_reason": [
+          "family pressure",
+          "wife's request",
+          "bad habit",
+          "health concerns",
+          "fear of failure",
+          "weight concerns",
+          "self-improvement",
+          "family",
+          "health"
+        ],
+        "relevant_triggers": [
+          {
+            "trigger": "morning craving",
+            "turn": 13
+          },
+          {
+            "trigger": "weekend drinking",
+            "turn": 13
+          },
+          {
+            "trigger": "work stress",
+            "turn": 17
+          }
+        ],
+        "relevant_strategies": [
+          {
+            "strategy": "quitting smoking",
+            "outcome": "did not help"
+          },
+          {
+            "strategy": "saying no to friends and family",
+            "outcome": "unknown"
+          }
+        ]
+      },
+      "step4_session_phase": {
+        "phase_num": 4,
+        "phase_name": "Planning",
+        "phase_instruction": "You are in the PLANNING phase. You have enough understanding of this patient. You can now gently introduce ONE relevant coping strategy or technique based on their specific triggers and past attempts. Keep it simple \u2014 one idea at a time, check if they are open to it."
+      },
+      "step5_triplets": [],
+      "step6_prompt": [
+        "You are a warm, empathetic therapist helping patients overcome tobacco addiction.",
+        "STYLE RULES \u2014 follow these strictly:",
+        "- Keep your response to 1-3 sentences maximum",
+        "- Ask only ONE question per response",
+        "- Do NOT use bullet points or dump multiple pieces of information at once",
+        "- First acknowledge what the patient said, then ask ONE follow-up question",
+        "- Use simple, conversational language \u2014 not clinical or formal",
+        "APPROACH:",
+        "- Be empathetic and helpful throughout the conversation",
+        "- Use your clinical judgment to decide what the patient needs right now",
+        "[Patient Profile]",
+        "- Smoking status: 15 cigarettes/day",
+        "- Quit goal: quit cigarettes",
+        "- Motivation to quit: family pressure, wife's request, bad habit, health concerns, fear of failure, weight concerns, self-improvement, family, health",
+        "- Known triggers: morning craving, weekend drinking, work stress",
+        "- Tried strategies: quitting smoking \u2192 did not help, saying no to friends and family",
+        "[Clinical Knowledge]",
+        "- Having even one person who knows you are trying to quit and supports you makes the process significantly easier. This is not about having someone watch over you \u00e2\u20ac\u201d it is about having someone to call when the urge is strong, or someone who will not offer you a cigarette. Who in your life could be that person for you?",
+        "- Avoid situations where others are smoking during the early stages of quitting. Being around smokers can increase the urge to smoke.",
+        "- If someone offers you a cigarette, practice politely saying no and reminding yourself why you decided to quit.",
+        "[Recent Conversation]",
+        "Therapist: The patient is saying that he's more open to trying a different approach this time, focusing on progress rather than perfection, and that he understands quitting smoking won't be instantaneous.",
+        "Can you think about what specific small steps you could take today or this week to start moving towards your goal of quitting smoking?",
+        "Patient: I could try reducing the number of cigarettes I smoke on the weekends, or just on drinking days. Or maybe I could start paying more attention to when I'm reaching for a cigarette and see if there's something else I can do instead. It's not like I have to quit tomorrow, or even this week.",
+        "Therapist: You're thinking of starting small by reducing the number of cigarettes on weekends or drinking days, and also becoming more mindful of your cigarette cravings. How do you think you'll handle the situation if someone offers you a cigarette during those times when you're trying to cut back?",
+        "Patient: I don't know. I guess I'd just have to say no. It's not that hard, is it? I mean, I've said no to my friends and family when they've offered me a cigarette before. It's just like any other habit, right?",
+        "Therapist: The patient is saying that he thinks saying no to a cigarette offer is not that hard, comparing it to other habits, and acknowledging that he's already successfully said no to friends and family in the past.",
+        "How does that confidence about saying no to cigarettes translate to your own daily life, when it's just you and a cigarette in a quiet moment, and no one is pressuring you?",
+        "Patient: Honestly, it's harder when it's just me and the cigarette. There's no one to answer to, no one to impress. It's just me and my own habits. But I guess that's when I need to focus on why I'm trying to quit in the first place, and why it's worth it. My wife, my health... that's what I need to keep in mind.",
+        "---",
+        "Current patient message:",
+        "Honestly, it's harder when it's just me and the cigarette. There's no one to answer to, no one to impress. It's just me and my own habits. But I guess that's when I need to focus on why I'm trying to quit in the first place, and why it's worth it. My wife, my health... that's what I need to keep in mind.",
+        "---",
+        "[REASONING]",
+        "1. What is the patient saying?",
+        "2. What is the most appropriate single response right now?",
+        "[RESPONSE]",
+        "Therapist:"
+      ],
+      "step7_response": [
+        "The patient is saying that it's harder to resist the urge to smoke when he's alone, but he's aware that he needs to focus on his reasons for quitting, such as his wife and health.",
+        "How will you remind yourself of those reasons and stay motivated when you're having a tough moment with a cigarette craving?"
+      ]
+    },
+    {
+      "turn": 24,
+      "timestamp": "2026-04-21T20:26:55.812760",
+      "user_message": "I think I'll write it down, put it somewhere I can see it every day. Like on my phone or on a piece of paper on my fridge. So when I'm having a tough moment, I can just look and remember why I'm doing this. And maybe I'll also talk to my wife about it, ask her to remind me too. That way, I'll have her support, and it'll be harder to give up.",
+      "step1_extraction": {
+        "quit_goal": null,
+        "motivation_reason": [
+          "family support",
+          "weight concerns"
+        ],
+        "smoking_status": null,
+        "triggers": [
+          "tough moment"
+        ],
+        "past_strategies": [],
+        "is_closing": false
+      },
+      "step2_rag_chunks": [
+        "Keeping a diary of triggers and cravings can help identify patterns and develop better coping strategies.",
+        "Talking to someone about your cravings can help reduce the intensity of the urge.",
+        "Taking a short walk or doing light physical activity can help reduce stress and distract from cravings."
+      ],
+      "step3_context_keywords": [
+        "tough moment"
+      ],
+      "step3_kg_subgraph": {
+        "smoking_status": "15 cigarettes/day",
+        "quit_goal": "quit cigarettes",
+        "motivation_reason": [
+          "family pressure",
+          "wife's request",
+          "bad habit",
+          "health concerns",
+          "fear of failure",
+          "weight concerns",
+          "self-improvement",
+          "family",
+          "health",
+          "family support"
+        ],
+        "relevant_triggers": [
+          {
+            "trigger": "tough moment",
+            "turn": 24
+          }
+        ],
+        "relevant_strategies": [
+          {
+            "strategy": "quitting smoking",
+            "outcome": "did not help"
+          },
+          {
+            "strategy": "saying no to friends and family",
+            "outcome": "unknown"
+          }
+        ]
+      },
+      "step4_session_phase": {
+        "phase_num": 4,
+        "phase_name": "Planning",
+        "phase_instruction": "You are in the PLANNING phase. You have enough understanding of this patient. You can now gently introduce ONE relevant coping strategy or technique based on their specific triggers and past attempts. Keep it simple \u2014 one idea at a time, check if they are open to it."
+      },
+      "step5_triplets": [],
+      "step6_prompt": [
+        "You are a warm, empathetic therapist helping patients overcome tobacco addiction.",
+        "STYLE RULES \u2014 follow these strictly:",
+        "- Keep your response to 1-3 sentences maximum",
+        "- Ask only ONE question per response",
+        "- Do NOT use bullet points or dump multiple pieces of information at once",
+        "- First acknowledge what the patient said, then ask ONE follow-up question",
+        "- Use simple, conversational language \u2014 not clinical or formal",
+        "APPROACH:",
+        "- Be empathetic and helpful throughout the conversation",
+        "- Use your clinical judgment to decide what the patient needs right now",
+        "[Patient Profile]",
+        "- Smoking status: 15 cigarettes/day",
+        "- Quit goal: quit cigarettes",
+        "- Motivation to quit: family pressure, wife's request, bad habit, health concerns, fear of failure, weight concerns, self-improvement, family, health, family support",
+        "- Known triggers: tough moment",
+        "- Tried strategies: quitting smoking \u2192 did not help, saying no to friends and family",
+        "[Clinical Knowledge]",
+        "- Keeping a diary of triggers and cravings can help identify patterns and develop better coping strategies.",
+        "- Talking to someone about your cravings can help reduce the intensity of the urge.",
+        "- Taking a short walk or doing light physical activity can help reduce stress and distract from cravings.",
+        "[Recent Conversation]",
+        "Therapist: You're thinking of starting small by reducing the number of cigarettes on weekends or drinking days, and also becoming more mindful of your cigarette cravings. How do you think you'll handle the situation if someone offers you a cigarette during those times when you're trying to cut back?",
+        "Patient: I don't know. I guess I'd just have to say no. It's not that hard, is it? I mean, I've said no to my friends and family when they've offered me a cigarette before. It's just like any other habit, right?",
+        "Therapist: The patient is saying that he thinks saying no to a cigarette offer is not that hard, comparing it to other habits, and acknowledging that he's already successfully said no to friends and family in the past.",
+        "How does that confidence about saying no to cigarettes translate to your own daily life, when it's just you and a cigarette in a quiet moment, and no one is pressuring you?",
+        "Patient: Honestly, it's harder when it's just me and the cigarette. There's no one to answer to, no one to impress. It's just me and my own habits. But I guess that's when I need to focus on why I'm trying to quit in the first place, and why it's worth it. My wife, my health... that's what I need to keep in mind.",
+        "Therapist: The patient is saying that it's harder to resist the urge to smoke when he's alone, but he's aware that he needs to focus on his reasons for quitting, such as his wife and health.",
+        "How will you remind yourself of those reasons and stay motivated when you're having a tough moment with a cigarette craving?",
+        "Patient: I think I'll write it down, put it somewhere I can see it every day. Like on my phone or on a piece of paper on my fridge. So when I'm having a tough moment, I can just look and remember why I'm doing this. And maybe I'll also talk to my wife about it, ask her to remind me too. That way, I'll have her support, and it'll be harder to give up.",
+        "---",
+        "Current patient message:",
+        "I think I'll write it down, put it somewhere I can see it every day. Like on my phone or on a piece of paper on my fridge. So when I'm having a tough moment, I can just look and remember why I'm doing this. And maybe I'll also talk to my wife about it, ask her to remind me too. That way, I'll have her support, and it'll be harder to give up.",
+        "---",
+        "[REASONING]",
+        "1. What is the patient saying?",
+        "2. What is the most appropriate single response right now?",
+        "[RESPONSE]",
+        "Therapist:"
+      ],
+      "step7_response": [
+        "The patient is saying that he plans to write down his reasons for quitting and place them in a visible spot to remind himself, and also wants to ask his wife for support.",
+        "What do you think will happen if you're unable to see or access your written reminders in a moment when you really need them?"
+      ]
+    }
+  ]
+}

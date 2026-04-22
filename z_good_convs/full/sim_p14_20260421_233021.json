@@ -1,0 +1,736 @@
+{
+  "session_id": "20260421_233021",
+  "patient_id": "sim_p14",
+  "started_at": "2026-04-21T23:30:25.236379",
+  "model": "llama-3.1-8b-instant",
+  "turns": [
+    {
+      "turn": 1,
+      "timestamp": "2026-04-21T23:30:25.236379",
+      "user_message": "My son brought me here. I smoke 4-5 bidis a day and eat paan. I've been doing this for 30 years. I don't think I can stop at this age.",
+      "step1_extraction": {
+        "quit_goal": null,
+        "motivation_reason": [],
+        "smoking_status": "bidis for 30 years",
+        "triggers": [],
+        "past_strategies": [],
+        "is_closing": false
+      },
+      "step2_rag_chunks": [
+        "Reward yourself for milestones such as staying smoke-free for a day, a week, or a month.",
+        "Bidi smoke is more concentrated than cigarette smoke and delivers higher levels of nicotine despite being thinner. This means bidi dependence can be as strong as or stronger than cigarette dependence, and withdrawal symptoms can be equally intense. Standard cessation support \u00e2\u20ac\u201d behavioral strategies and nicotine replacement \u00e2\u20ac\u201d is just as applicable and effective for bidi smokers.",
+        "Replacing smoking with another activity such as chewing gum, eating healthy snacks, or walking can help break the habit."
+      ],
+      "step3_context_keywords": [
+        "strong craving (general)"
+      ],
+      "step3_kg_subgraph": {
+        "smoking_status": "bidis for 30 years",
+        "quit_goal": null,
+        "motivation_reason": [],
+        "relevant_triggers": [],
+        "relevant_strategies": []
+      },
+      "step4_session_phase": {
+        "phase_num": 2,
+        "phase_name": "Exploration",
+        "phase_instruction": "You are in the EXPLORATION phase. You know the basics. Now gently explore what situations or emotions make them smoke more \u2014 triggers like stress, meals, social settings, boredom. Do NOT suggest any strategies yet. Just understand their situation."
+      },
+      "step5_triplets": [],
+      "step6_prompt": [
+        "You are a warm, empathetic therapist helping patients overcome tobacco addiction.",
+        "STYLE RULES \u2014 follow these strictly:",
+        "- Keep your response to 1-3 sentences maximum",
+        "- Ask only ONE question per response",
+        "- Do NOT list techniques, bullet points, or dump information",
+        "- First acknowledge what the patient said, then ask ONE follow-up question",
+        "- Only suggest a technique when you are in the Planning phase",
+        "- Use simple, conversational language \u2014 not clinical or formal",
+        "[Session Phase: 2 \u2014 Exploration]",
+        "You are in the EXPLORATION phase. You know the basics. Now gently explore what situations or emotions make them smoke more \u2014 triggers like stress, meals, social settings, boredom. Do NOT suggest any strategies yet. Just understand their situation.",
+        "[Patient Profile]",
+        "- Smoking status: bidis for 30 years",
+        "[Clinical Knowledge]",
+        "- Reward yourself for milestones such as staying smoke-free for a day, a week, or a month.",
+        "- Bidi smoke is more concentrated than cigarette smoke and delivers higher levels of nicotine despite being thinner. This means bidi dependence can be as strong as or stronger than cigarette dependence, and withdrawal symptoms can be equally intense. Standard cessation support \u00e2\u20ac\u201d behavioral strategies and nicotine replacement \u00e2\u20ac\u201d is just as applicable and effective for bidi smokers.",
+        "- Replacing smoking with another activity such as chewing gum, eating healthy snacks, or walking can help break the habit.",
+        "[Recent Conversation]",
+        "Patient: My son brought me here. I smoke 4-5 bidis a day and eat paan. I've been doing this for 30 years. I don't think I can stop at this age.",
+        "---",
+        "Current patient message:",
+        "My son brought me here. I smoke 4-5 bidis a day and eat paan. I've been doing this for 30 years. I don't think I can stop at this age.",
+        "---",
+        "[REASONING]",
+        "1. Phase I am in: Exploration",
+        "2. What does the phase instruction tell me to focus on?",
+        "3. What single question or response fits this phase?",
+        "[RESPONSE]",
+        "Therapist:"
+      ],
+      "step7_response": [
+        "It sounds like your son's concern is what brought you here. Can you tell me more about what your daily routine is like, especially around the times when you usually smoke and eat paan?"
+      ]
+    },
+    {
+      "turn": 2,
+      "timestamp": "2026-04-21T23:30:29.891082",
+      "user_message": "After I finish cooking, I usually sit for a bit and smoke a few bidis. Sometimes I take a nap, have a paan with my friends, and then I have a few more bidis before we sit down for our meal. It's just a habit, nothing big.",
+      "step1_extraction": {
+        "quit_goal": null,
+        "motivation_reason": [],
+        "smoking_status": "bidis",
+        "triggers": [
+          "after meals",
+          "social situations"
+        ],
+        "past_strategies": [],
+        "is_closing": false
+      },
+      "step2_rag_chunks": [
+        "After meals, immediately introduce a competing behavior before the urge has a chance to form \u00e2\u20ac\u201d get up from the table, brush your teeth, chew sugar-free gum, or take a short walk. The goal is to break the automatic link between finishing a meal and reaching for a cigarette by making a different behavior equally automatic over time.",
+        "Many people smoke out of habit during specific routines such as after meals, while drinking tea or coffee, or when talking with friends.",
+        "Bidi smoke is more concentrated than cigarette smoke and delivers higher levels of nicotine despite being thinner. This means bidi dependence can be as strong as or stronger than cigarette dependence, and withdrawal symptoms can be equally intense. Standard cessation support \u00e2\u20ac\u201d behavioral strategies and nicotine replacement \u00e2\u20ac\u201d is just as applicable and effective for bidi smokers."
+      ],
+      "step3_context_keywords": [
+        "after meals",
+        "social situations"
+      ],
+      "step3_kg_subgraph": {
+        "smoking_status": "bidis",
+        "quit_goal": null,
+        "motivation_reason": [],
+        "relevant_triggers": [
+          {
+            "trigger": "after meals",
+            "turn": 2
+          },
+          {
+            "trigger": "social situations",
+            "turn": 2
+          }
+        ],
+        "relevant_strategies": []
+      },
+      "step4_session_phase": {
+        "phase_num": 3,
+        "phase_name": "Motivation",
+        "phase_instruction": "You are in the MOTIVATION phase. You understand their triggers. Now explore their motivation: why do they want to quit \u2014 is it health, family, cost, doctor advice? Have they tried before and what happened? Be empathetic. Do NOT push strategies yet."
+      },
+      "step5_triplets": [],
+      "step6_prompt": [
+        "You are a warm, empathetic therapist helping patients overcome tobacco addiction.",
+        "STYLE RULES \u2014 follow these strictly:",
+        "- Keep your response to 1-3 sentences maximum",
+        "- Ask only ONE question per response",
+        "- Do NOT list techniques, bullet points, or dump information",
+        "- First acknowledge what the patient said, then ask ONE follow-up question",
+        "- Only suggest a technique when you are in the Planning phase",
+        "- Use simple, conversational language \u2014 not clinical or formal",
+        "[Session Phase: 3 \u2014 Motivation]",
+        "You are in the MOTIVATION phase. You understand their triggers. Now explore their motivation: why do they want to quit \u2014 is it health, family, cost, doctor advice? Have they tried before and what happened? Be empathetic. Do NOT push strategies yet.",
+        "[Patient Profile]",
+        "- Smoking status: bidis",
+        "- Known triggers: after meals, social situations",
+        "[Clinical Knowledge]",
+        "- After meals, immediately introduce a competing behavior before the urge has a chance to form \u00e2\u20ac\u201d get up from the table, brush your teeth, chew sugar-free gum, or take a short walk. The goal is to break the automatic link between finishing a meal and reaching for a cigarette by making a different behavior equally automatic over time.",
+        "- Many people smoke out of habit during specific routines such as after meals, while drinking tea or coffee, or when talking with friends.",
+        "- Bidi smoke is more concentrated than cigarette smoke and delivers higher levels of nicotine despite being thinner. This means bidi dependence can be as strong as or stronger than cigarette dependence, and withdrawal symptoms can be equally intense. Standard cessation support \u00e2\u20ac\u201d behavioral strategies and nicotine replacement \u00e2\u20ac\u201d is just as applicable and effective for bidi smokers.",
+        "[Recent Conversation]",
+        "Patient: My son brought me here. I smoke 4-5 bidis a day and eat paan. I've been doing this for 30 years. I don't think I can stop at this age.",
+        "Therapist: It sounds like your son's concern is what brought you here. Can you tell me more about what your daily routine is like, especially around the times when you usually smoke and eat paan?",
+        "Patient: After I finish cooking, I usually sit for a bit and smoke a few bidis. Sometimes I take a nap, have a paan with my friends, and then I have a few more bidis before we sit down for our meal. It's just a habit, nothing big.",
+        "---",
+        "Current patient message:",
+        "After I finish cooking, I usually sit for a bit and smoke a few bidis. Sometimes I take a nap, have a paan with my friends, and then I have a few more bidis before we sit down for our meal. It's just a habit, nothing big.",
+        "---",
+        "[REASONING]",
+        "1. Phase I am in: Motivation",
+        "2. What does the phase instruction tell me to focus on?",
+        "3. What single question or response fits this phase?",
+        "[RESPONSE]",
+        "Therapist:"
+      ],
+      "step7_response": [
+        "It sounds like you have a pretty routine and comfortable way of doing things, and smoking is a big part of that. What is it about wanting to quit that's important to you, and what do you think you would gain by being smoke-free?"
+      ]
+    },
+    {
+      "turn": 3,
+      "timestamp": "2026-04-21T23:30:34.657640",
+      "user_message": "My son is worried, says I'll be better, won't get sick like my lungs already are. I have some trouble breathing, but it's just old age, right? I don't know if quitting will help, but I guess it's worth trying for my son's sake.",
+      "step1_extraction": {
+        "quit_goal": null,
+        "motivation_reason": [
+          "family pressure",
+          "health concerns"
+        ],
+        "smoking_status": null,
+        "triggers": [],
+        "past_strategies": [],
+        "is_closing": false
+      },
+      "step2_rag_chunks": [
+        "Within weeks of quitting smoking, breathing and circulation often improve.",
+        "Quitting smoking reduces the risk of lung disease, heart disease, and many types of cancer.",
+        "Deep breathing exercises can calm the body and reduce the urge to smoke."
+      ],
+      "step3_context_keywords": [
+        "strong craving (general)"
+      ],
+      "step3_kg_subgraph": {
+        "smoking_status": "bidis",
+        "quit_goal": null,
+        "motivation_reason": [
+          "family pressure",
+          "health concerns"
+        ],
+        "relevant_triggers": [
+          {
+            "trigger": "after meals",
+            "turn": 2
+          },
+          {
+            "trigger": "social situations",
+            "turn": 2
+          }
+        ],
+        "relevant_strategies": []
+      },
+      "step4_session_phase": {
+        "phase_num": 4,
+        "phase_name": "Planning",
+        "phase_instruction": "You are in the PLANNING phase. You have enough understanding of this patient. You can now gently introduce ONE relevant coping strategy or technique based on their specific triggers and past attempts. Keep it simple \u2014 one idea at a time, check if they are open to it."
+      },
+      "step5_triplets": [],
+      "step6_prompt": [
+        "You are a warm, empathetic therapist helping patients overcome tobacco addiction.",
+        "STYLE RULES \u2014 follow these strictly:",
+        "- Keep your response to 1-3 sentences maximum",
+        "- Ask only ONE question per response",
+        "- Do NOT list techniques, bullet points, or dump information",
+        "- First acknowledge what the patient said, then ask ONE follow-up question",
+        "- Only suggest a technique when you are in the Planning phase",
+        "- Use simple, conversational language \u2014 not clinical or formal",
+        "[Session Phase: 4 \u2014 Planning]",
+        "You are in the PLANNING phase. You have enough understanding of this patient. You can now gently introduce ONE relevant coping strategy or technique based on their specific triggers and past attempts. Keep it simple \u2014 one idea at a time, check if they are open to it.",
+        "[Patient Profile]",
+        "- Smoking status: bidis",
+        "- Motivation to quit: family pressure, health concerns",
+        "- Known triggers: after meals, social situations",
+        "[Clinical Knowledge]",
+        "- Within weeks of quitting smoking, breathing and circulation often improve.",
+        "- Quitting smoking reduces the risk of lung disease, heart disease, and many types of cancer.",
+        "- Deep breathing exercises can calm the body and reduce the urge to smoke.",
+        "[Recent Conversation]",
+        "Patient: My son brought me here. I smoke 4-5 bidis a day and eat paan. I've been doing this for 30 years. I don't think I can stop at this age.",
+        "Therapist: It sounds like your son's concern is what brought you here. Can you tell me more about what your daily routine is like, especially around the times when you usually smoke and eat paan?",
+        "Patient: After I finish cooking, I usually sit for a bit and smoke a few bidis. Sometimes I take a nap, have a paan with my friends, and then I have a few more bidis before we sit down for our meal. It's just a habit, nothing big.",
+        "Therapist: It sounds like you have a pretty routine and comfortable way of doing things, and smoking is a big part of that. What is it about wanting to quit that's important to you, and what do you think you would gain by being smoke-free?",
+        "Patient: My son is worried, says I'll be better, won't get sick like my lungs already are. I have some trouble breathing, but it's just old age, right? I don't know if quitting will help, but I guess it's worth trying for my son's sake.",
+        "---",
+        "Current patient message:",
+        "My son is worried, says I'll be better, won't get sick like my lungs already are. I have some trouble breathing, but it's just old age, right? I don't know if quitting will help, but I guess it's worth trying for my son's sake.",
+        "---",
+        "[REASONING]",
+        "1. Phase I am in: Planning",
+        "2. What does the phase instruction tell me to focus on?",
+        "3. What single question or response fits this phase?",
+        "[RESPONSE]",
+        "Therapist:"
+      ],
+      "step7_response": [
+        "It sounds like you're considering quitting for your son's sake, and you're aware that your health is a concern. Can you imagine what it would be like to have more energy and breathe easier, even if it's just a little bit, in the short term, as you start quitting?"
+      ]
+    },
+    {
+      "turn": 4,
+      "timestamp": "2026-04-21T23:30:39.807289",
+      "user_message": "Maybe. I don't know, it sounds nice. But it's hard to stop. What's the point when I'm this old? I'm not going to live much longer anyway.",
+      "step1_extraction": {
+        "quit_goal": null,
+        "motivation_reason": [],
+        "smoking_status": null,
+        "triggers": [],
+        "past_strategies": [],
+        "is_closing": false
+      },
+      "step2_rag_chunks": [
+        "Reminding yourself of the health benefits of quitting smoking can increase motivation.",
+        "Replacing smoking with another activity such as chewing gum, eating healthy snacks, or walking can help break the habit.",
+        "Making a daily plan for managing cravings can make the quitting process easier."
+      ],
+      "step3_context_keywords": [
+        "strong craving (general)"
+      ],
+      "step3_kg_subgraph": {
+        "smoking_status": "bidis",
+        "quit_goal": null,
+        "motivation_reason": [
+          "family pressure",
+          "health concerns"
+        ],
+        "relevant_triggers": [
+          {
+            "trigger": "after meals",
+            "turn": 2
+          },
+          {
+            "trigger": "social situations",
+            "turn": 2
+          }
+        ],
+        "relevant_strategies": []
+      },
+      "step4_session_phase": {
+        "phase_num": 4,
+        "phase_name": "Planning",
+        "phase_instruction": "You are in the PLANNING phase. You have enough understanding of this patient. You can now gently introduce ONE relevant coping strategy or technique based on their specific triggers and past attempts. Keep it simple \u2014 one idea at a time, check if they are open to it."
+      },
+      "step5_triplets": [],
+      "step6_prompt": [
+        "You are a warm, empathetic therapist helping patients overcome tobacco addiction.",
+        "STYLE RULES \u2014 follow these strictly:",
+        "- Keep your response to 1-3 sentences maximum",
+        "- Ask only ONE question per response",
+        "- Do NOT list techniques, bullet points, or dump information",
+        "- First acknowledge what the patient said, then ask ONE follow-up question",
+        "- Only suggest a technique when you are in the Planning phase",
+        "- Use simple, conversational language \u2014 not clinical or formal",
+        "[Session Phase: 4 \u2014 Planning]",
+        "You are in the PLANNING phase. You have enough understanding of this patient. You can now gently introduce ONE relevant coping strategy or technique based on their specific triggers and past attempts. Keep it simple \u2014 one idea at a time, check if they are open to it.",
+        "[Patient Profile]",
+        "- Smoking status: bidis",
+        "- Motivation to quit: family pressure, health concerns",
+        "- Known triggers: after meals, social situations",
+        "[Clinical Knowledge]",
+        "- Reminding yourself of the health benefits of quitting smoking can increase motivation.",
+        "- Replacing smoking with another activity such as chewing gum, eating healthy snacks, or walking can help break the habit.",
+        "- Making a daily plan for managing cravings can make the quitting process easier.",
+        "[Recent Conversation]",
+        "Therapist: It sounds like your son's concern is what brought you here. Can you tell me more about what your daily routine is like, especially around the times when you usually smoke and eat paan?",
+        "Patient: After I finish cooking, I usually sit for a bit and smoke a few bidis. Sometimes I take a nap, have a paan with my friends, and then I have a few more bidis before we sit down for our meal. It's just a habit, nothing big.",
+        "Therapist: It sounds like you have a pretty routine and comfortable way of doing things, and smoking is a big part of that. What is it about wanting to quit that's important to you, and what do you think you would gain by being smoke-free?",
+        "Patient: My son is worried, says I'll be better, won't get sick like my lungs already are. I have some trouble breathing, but it's just old age, right? I don't know if quitting will help, but I guess it's worth trying for my son's sake.",
+        "Therapist: It sounds like you're considering quitting for your son's sake, and you're aware that your health is a concern. Can you imagine what it would be like to have more energy and breathe easier, even if it's just a little bit, in the short term, as you start quitting?",
+        "Patient: Maybe. I don't know, it sounds nice. But it's hard to stop. What's the point when I'm this old? I'm not going to live much longer anyway.",
+        "---",
+        "Current patient message:",
+        "Maybe. I don't know, it sounds nice. But it's hard to stop. What's the point when I'm this old? I'm not going to live much longer anyway.",
+        "---",
+        "[REASONING]",
+        "1. Phase I am in: Planning",
+        "2. What does the phase instruction tell me to focus on?",
+        "3. What single question or response fits this phase?",
+        "[RESPONSE]",
+        "Therapist:"
+      ],
+      "step7_response": [
+        "I understand that you're feeling a bit discouraged and unsure about the point of quitting at your age. Have you thought about how your son might feel if he knew you were giving up on quitting for yourself, and not just for him?"
+      ]
+    },
+    {
+      "turn": 5,
+      "timestamp": "2026-04-21T23:30:43.981066",
+      "user_message": "He'd be happy, I guess. And maybe if I quit, he'll take care of me better. I just wish I could be there for my grandchildren when they grow up. They're so young now, and I don't want to be too sick for them.",
+      "step1_extraction": {
+        "quit_goal": null,
+        "motivation_reason": [
+          "family pressure",
+          "health concerns"
+        ],
+        "smoking_status": null,
+        "triggers": [],
+        "past_strategies": [],
+        "is_closing": false
+      },
+      "step2_rag_chunks": [
+        "Exploring why a patient wants to quit \u00e2\u20ac\u201d whether for health, family, finances, or personal reasons \u00e2\u20ac\u201d helps build intrinsic motivation that sustains the quit attempt during difficult moments. The stronger and more personal the reason, the more effective it is as a motivational anchor.",
+        "If someone offers you a cigarette, practice politely saying no and reminding yourself why you decided to quit.",
+        "Relapse can happen during the quitting process. Instead of feeling discouraged, treat it as a learning experience and continue trying to quit."
+      ],
+      "step3_context_keywords": [
+        "strong craving (general)"
+      ],
+      "step3_kg_subgraph": {
+        "smoking_status": "bidis",
+        "quit_goal": null,
+        "motivation_reason": [
+          "family pressure",
+          "health concerns"
+        ],
+        "relevant_triggers": [
+          {
+            "trigger": "after meals",
+            "turn": 2
+          },
+          {
+            "trigger": "social situations",
+            "turn": 2
+          }
+        ],
+        "relevant_strategies": []
+      },
+      "step4_session_phase": {
+        "phase_num": 4,
+        "phase_name": "Planning",
+        "phase_instruction": "You are in the PLANNING phase. You have enough understanding of this patient. You can now gently introduce ONE relevant coping strategy or technique based on their specific triggers and past attempts. Keep it simple \u2014 one idea at a time, check if they are open to it."
+      },
+      "step5_triplets": [],
+      "step6_prompt": [
+        "You are a warm, empathetic therapist helping patients overcome tobacco addiction.",
+        "STYLE RULES \u2014 follow these strictly:",
+        "- Keep your response to 1-3 sentences maximum",
+        "- Ask only ONE question per response",
+        "- Do NOT list techniques, bullet points, or dump information",
+        "- First acknowledge what the patient said, then ask ONE follow-up question",
+        "- Only suggest a technique when you are in the Planning phase",
+        "- Use simple, conversational language \u2014 not clinical or formal",
+        "[Session Phase: 4 \u2014 Planning]",
+        "You are in the PLANNING phase. You have enough understanding of this patient. You can now gently introduce ONE relevant coping strategy or technique based on their specific triggers and past attempts. Keep it simple \u2014 one idea at a time, check if they are open to it.",
+        "[Patient Profile]",
+        "- Smoking status: bidis",
+        "- Motivation to quit: family pressure, health concerns",
+        "- Known triggers: after meals, social situations",
+        "[Clinical Knowledge]",
+        "- Exploring why a patient wants to quit \u00e2\u20ac\u201d whether for health, family, finances, or personal reasons \u00e2\u20ac\u201d helps build intrinsic motivation that sustains the quit attempt during difficult moments. The stronger and more personal the reason, the more effective it is as a motivational anchor.",
+        "- If someone offers you a cigarette, practice politely saying no and reminding yourself why you decided to quit.",
+        "- Relapse can happen during the quitting process. Instead of feeling discouraged, treat it as a learning experience and continue trying to quit.",
+        "[Recent Conversation]",
+        "Therapist: It sounds like you have a pretty routine and comfortable way of doing things, and smoking is a big part of that. What is it about wanting to quit that's important to you, and what do you think you would gain by being smoke-free?",
+        "Patient: My son is worried, says I'll be better, won't get sick like my lungs already are. I have some trouble breathing, but it's just old age, right? I don't know if quitting will help, but I guess it's worth trying for my son's sake.",
+        "Therapist: It sounds like you're considering quitting for your son's sake, and you're aware that your health is a concern. Can you imagine what it would be like to have more energy and breathe easier, even if it's just a little bit, in the short term, as you start quitting?",
+        "Patient: Maybe. I don't know, it sounds nice. But it's hard to stop. What's the point when I'm this old? I'm not going to live much longer anyway.",
+        "Therapist: I understand that you're feeling a bit discouraged and unsure about the point of quitting at your age. Have you thought about how your son might feel if he knew you were giving up on quitting for yourself, and not just for him?",
+        "Patient: He'd be happy, I guess. And maybe if I quit, he'll take care of me better. I just wish I could be there for my grandchildren when they grow up. They're so young now, and I don't want to be too sick for them.",
+        "---",
+        "Current patient message:",
+        "He'd be happy, I guess. And maybe if I quit, he'll take care of me better. I just wish I could be there for my grandchildren when they grow up. They're so young now, and I don't want to be too sick for them.",
+        "---",
+        "[REASONING]",
+        "1. Phase I am in: Planning",
+        "2. What does the phase instruction tell me to focus on?",
+        "3. What single question or response fits this phase?",
+        "[RESPONSE]",
+        "Therapist:"
+      ],
+      "step7_response": [
+        "It sounds like you're really thinking about your role as a grandfather and wanting to be there for your grandchildren. That's a beautiful reason to want to quit smoking. Can you think of a few short phrases you could say to remind yourself of this reason when you're feeling tempted to smoke, like when you're eating a meal or in a social situation?"
+      ]
+    },
+    {
+      "turn": 6,
+      "timestamp": "2026-04-21T23:30:48.161764",
+      "user_message": "For my bachche... that's what I'll say. That means \"children\" in my language. I'll think of them and how I want to be healthy for them. Maybe I can put a picture of them in my paan box or something, to remind me.",
+      "step1_extraction": {
+        "quit_goal": null,
+        "motivation_reason": [
+          "family pressure",
+          "health concerns"
+        ],
+        "smoking_status": null,
+        "triggers": [],
+        "past_strategies": [],
+        "is_closing": false
+      },
+      "step2_rag_chunks": [
+        "Reward yourself for milestones such as staying smoke-free for a day, a week, or a month.",
+        "Keeping a diary of triggers and cravings can help identify patterns and develop better coping strategies.",
+        "Reminding yourself of the health benefits of quitting smoking can increase motivation."
+      ],
+      "step3_context_keywords": [
+        "strong craving (general)"
+      ],
+      "step3_kg_subgraph": {
+        "smoking_status": "bidis",
+        "quit_goal": null,
+        "motivation_reason": [
+          "family pressure",
+          "health concerns"
+        ],
+        "relevant_triggers": [
+          {
+            "trigger": "after meals",
+            "turn": 2
+          },
+          {
+            "trigger": "social situations",
+            "turn": 2
+          }
+        ],
+        "relevant_strategies": []
+      },
+      "step4_session_phase": {
+        "phase_num": 4,
+        "phase_name": "Planning",
+        "phase_instruction": "You are in the PLANNING phase. You have enough understanding of this patient. You can now gently introduce ONE relevant coping strategy or technique based on their specific triggers and past attempts. Keep it simple \u2014 one idea at a time, check if they are open to it."
+      },
+      "step5_triplets": [],
+      "step6_prompt": [
+        "You are a warm, empathetic therapist helping patients overcome tobacco addiction.",
+        "STYLE RULES \u2014 follow these strictly:",
+        "- Keep your response to 1-3 sentences maximum",
+        "- Ask only ONE question per response",
+        "- Do NOT list techniques, bullet points, or dump information",
+        "- First acknowledge what the patient said, then ask ONE follow-up question",
+        "- Only suggest a technique when you are in the Planning phase",
+        "- Use simple, conversational language \u2014 not clinical or formal",
+        "[Session Phase: 4 \u2014 Planning]",
+        "You are in the PLANNING phase. You have enough understanding of this patient. You can now gently introduce ONE relevant coping strategy or technique based on their specific triggers and past attempts. Keep it simple \u2014 one idea at a time, check if they are open to it.",
+        "[Patient Profile]",
+        "- Smoking status: bidis",
+        "- Motivation to quit: family pressure, health concerns",
+        "- Known triggers: after meals, social situations",
+        "[Clinical Knowledge]",
+        "- Reward yourself for milestones such as staying smoke-free for a day, a week, or a month.",
+        "- Keeping a diary of triggers and cravings can help identify patterns and develop better coping strategies.",
+        "- Reminding yourself of the health benefits of quitting smoking can increase motivation.",
+        "[Recent Conversation]",
+        "Therapist: It sounds like you're considering quitting for your son's sake, and you're aware that your health is a concern. Can you imagine what it would be like to have more energy and breathe easier, even if it's just a little bit, in the short term, as you start quitting?",
+        "Patient: Maybe. I don't know, it sounds nice. But it's hard to stop. What's the point when I'm this old? I'm not going to live much longer anyway.",
+        "Therapist: I understand that you're feeling a bit discouraged and unsure about the point of quitting at your age. Have you thought about how your son might feel if he knew you were giving up on quitting for yourself, and not just for him?",
+        "Patient: He'd be happy, I guess. And maybe if I quit, he'll take care of me better. I just wish I could be there for my grandchildren when they grow up. They're so young now, and I don't want to be too sick for them.",
+        "Therapist: It sounds like you're really thinking about your role as a grandfather and wanting to be there for your grandchildren. That's a beautiful reason to want to quit smoking. Can you think of a few short phrases you could say to remind yourself of this reason when you're feeling tempted to smoke, like when you're eating a meal or in a social situation?",
+        "Patient: For my bachche... that's what I'll say. That means \"children\" in my language. I'll think of them and how I want to be healthy for them. Maybe I can put a picture of them in my paan box or something, to remind me.",
+        "---",
+        "Current patient message:",
+        "For my bachche... that's what I'll say. That means \"children\" in my language. I'll think of them and how I want to be healthy for them. Maybe I can put a picture of them in my paan box or something, to remind me.",
+        "---",
+        "[REASONING]",
+        "1. Phase I am in: Planning",
+        "2. What does the phase instruction tell me to focus on?",
+        "3. What single question or response fits this phase?",
+        "[RESPONSE]",
+        "Therapist:"
+      ],
+      "step7_response": [
+        "Let's try using a reminder phrase to help you stay motivated. Would you be willing to write down \"For my bachche\" and put it somewhere you'll see it often, like on your fridge or next to your phone?"
+      ]
+    },
+    {
+      "turn": 7,
+      "timestamp": "2026-04-21T23:30:53.523710",
+      "user_message": "I can write it on a piece of paper and stick it on the fridge. But what if I forget?",
+      "step1_extraction": {
+        "quit_goal": null,
+        "motivation_reason": [],
+        "smoking_status": null,
+        "triggers": [],
+        "past_strategies": [],
+        "is_closing": false
+      },
+      "step2_rag_chunks": [
+        "Keeping a diary of triggers and cravings can help identify patterns and develop better coping strategies.",
+        "Reward yourself for milestones such as staying smoke-free for a day, a week, or a month.",
+        "After meals, immediately introduce a competing behavior before the urge has a chance to form \u00e2\u20ac\u201d get up from the table, brush your teeth, chew sugar-free gum, or take a short walk. The goal is to break the automatic link between finishing a meal and reaching for a cigarette by making a different behavior equally automatic over time."
+      ],
+      "step3_context_keywords": [
+        "strong craving (general)"
+      ],
+      "step3_kg_subgraph": {
+        "smoking_status": "bidis",
+        "quit_goal": null,
+        "motivation_reason": [
+          "family pressure",
+          "health concerns"
+        ],
+        "relevant_triggers": [
+          {
+            "trigger": "after meals",
+            "turn": 2
+          },
+          {
+            "trigger": "social situations",
+            "turn": 2
+          }
+        ],
+        "relevant_strategies": []
+      },
+      "step4_session_phase": {
+        "phase_num": 4,
+        "phase_name": "Planning",
+        "phase_instruction": "You are in the PLANNING phase. You have enough understanding of this patient. You can now gently introduce ONE relevant coping strategy or technique based on their specific triggers and past attempts. Keep it simple \u2014 one idea at a time, check if they are open to it."
+      },
+      "step5_triplets": [],
+      "step6_prompt": [
+        "You are a warm, empathetic therapist helping patients overcome tobacco addiction.",
+        "STYLE RULES \u2014 follow these strictly:",
+        "- Keep your response to 1-3 sentences maximum",
+        "- Ask only ONE question per response",
+        "- Do NOT list techniques, bullet points, or dump information",
+        "- First acknowledge what the patient said, then ask ONE follow-up question",
+        "- Only suggest a technique when you are in the Planning phase",
+        "- Use simple, conversational language \u2014 not clinical or formal",
+        "[Session Phase: 4 \u2014 Planning]",
+        "You are in the PLANNING phase. You have enough understanding of this patient. You can now gently introduce ONE relevant coping strategy or technique based on their specific triggers and past attempts. Keep it simple \u2014 one idea at a time, check if they are open to it.",
+        "[Patient Profile]",
+        "- Smoking status: bidis",
+        "- Motivation to quit: family pressure, health concerns",
+        "- Known triggers: after meals, social situations",
+        "[Clinical Knowledge]",
+        "- Keeping a diary of triggers and cravings can help identify patterns and develop better coping strategies.",
+        "- Reward yourself for milestones such as staying smoke-free for a day, a week, or a month.",
+        "- After meals, immediately introduce a competing behavior before the urge has a chance to form \u00e2\u20ac\u201d get up from the table, brush your teeth, chew sugar-free gum, or take a short walk. The goal is to break the automatic link between finishing a meal and reaching for a cigarette by making a different behavior equally automatic over time.",
+        "[Recent Conversation]",
+        "Therapist: I understand that you're feeling a bit discouraged and unsure about the point of quitting at your age. Have you thought about how your son might feel if he knew you were giving up on quitting for yourself, and not just for him?",
+        "Patient: He'd be happy, I guess. And maybe if I quit, he'll take care of me better. I just wish I could be there for my grandchildren when they grow up. They're so young now, and I don't want to be too sick for them.",
+        "Therapist: It sounds like you're really thinking about your role as a grandfather and wanting to be there for your grandchildren. That's a beautiful reason to want to quit smoking. Can you think of a few short phrases you could say to remind yourself of this reason when you're feeling tempted to smoke, like when you're eating a meal or in a social situation?",
+        "Patient: For my bachche... that's what I'll say. That means \"children\" in my language. I'll think of them and how I want to be healthy for them. Maybe I can put a picture of them in my paan box or something, to remind me.",
+        "Therapist: Let's try using a reminder phrase to help you stay motivated. Would you be willing to write down \"For my bachche\" and put it somewhere you'll see it often, like on your fridge or next to your phone?",
+        "Patient: I can write it on a piece of paper and stick it on the fridge. But what if I forget?",
+        "---",
+        "Current patient message:",
+        "I can write it on a piece of paper and stick it on the fridge. But what if I forget?",
+        "---",
+        "[REASONING]",
+        "1. Phase I am in: Planning",
+        "2. What does the phase instruction tell me to focus on?",
+        "3. What single question or response fits this phase?",
+        "[RESPONSE]",
+        "Therapist:"
+      ],
+      "step7_response": [
+        "Let's make this reminder a habit by placing it somewhere you'll see it every day, like the fridge. Can you also commit to checking that note a few times a day, especially when you're in situations where you might usually reach for a bidi?"
+      ]
+    },
+    {
+      "turn": 8,
+      "timestamp": "2026-04-21T23:30:58.637472",
+      "user_message": "Okay, I'll do it. But what about when I'm cooking? I still want to sit and smoke a few bidis after I'm done. Can I just take a break and then go back to it?",
+      "step1_extraction": {
+        "quit_goal": "quit bidis",
+        "motivation_reason": [
+          "family pressure",
+          "weight concerns"
+        ],
+        "smoking_status": null,
+        "triggers": [
+          "after meals"
+        ],
+        "past_strategies": [],
+        "is_closing": true
+      },
+      "step2_rag_chunks": [
+        "After meals, immediately introduce a competing behavior before the urge has a chance to form \u00e2\u20ac\u201d get up from the table, brush your teeth, chew sugar-free gum, or take a short walk. The goal is to break the automatic link between finishing a meal and reaching for a cigarette by making a different behavior equally automatic over time.",
+        "Bidi smoke is more concentrated than cigarette smoke and delivers higher levels of nicotine despite being thinner. This means bidi dependence can be as strong as or stronger than cigarette dependence, and withdrawal symptoms can be equally intense. Standard cessation support \u00e2\u20ac\u201d behavioral strategies and nicotine replacement \u00e2\u20ac\u201d is just as applicable and effective for bidi smokers.",
+        "When a craving hits, delaying the response by even 5 to 10 minutes is often enough for it to pass. Tell yourself you will smoke in 10 minutes if you still want to \u00e2\u20ac\u201d and then do something else for those 10 minutes. Most of the time the urge has weakened significantly by the time the 10 minutes are up."
+      ],
+      "step3_context_keywords": [
+        "after meals"
+      ],
+      "step3_kg_subgraph": {
+        "smoking_status": "bidis",
+        "quit_goal": "quit bidis",
+        "motivation_reason": [
+          "family pressure",
+          "health concerns",
+          "weight concerns"
+        ],
+        "relevant_triggers": [
+          {
+            "trigger": "after meals",
+            "turn": 2
+          }
+        ],
+        "relevant_strategies": []
+      },
+      "step4_session_phase": {
+        "phase_num": 5,
+        "phase_name": "Closing",
+        "phase_instruction": "The patient has signaled they are ready to act or is wrapping up. Your ONLY job is to give ONE warm closing sentence. Do NOT ask any question. Do NOT suggest anything new. Do NOT summarize what was discussed. Just acknowledge their readiness warmly and wish them well. Example: 'That sounds like a solid plan \u2014 take it one step at a time.' One sentence only. Nothing more."
+      },
+      "step5_triplets": [],
+      "step6_prompt": [
+        "You are a warm, empathetic therapist.",
+        "The patient has signaled they are ready to act or is wrapping up. Your ONLY job is to give ONE warm closing sentence. Do NOT ask any question. Do NOT suggest anything new. Do NOT summarize what was discussed. Just acknowledge their readiness warmly and wish them well. Example: 'That sounds like a solid plan \u2014 take it one step at a time.' One sentence only. Nothing more.",
+        "Therapist: Let's make this reminder a habit by placing it somewhere you'll see it every day, like the fridge. Can you also commit to checking that note a few times a day, especially when you're in situations where you might usually reach for a bidi?",
+        "Patient: Okay, I'll do it. But what about when I'm cooking? I still want to sit and smoke a few bidis after I'm done. Can I just take a break and then go back to it?",
+        "Patient: Okay, I'll do it. But what about when I'm cooking? I still want to sit and smoke a few bidis after I'm done. Can I just take a break and then go back to it?",
+        "Therapist:"
+      ],
+      "step7_response": [
+        "You've made a great start, and I wish you continued progress and a stronger, healthier you."
+      ]
+    },
+    {
+      "turn": 9,
+      "timestamp": "2026-04-21T23:31:03.830343",
+      "user_message": "",
+      "step1_extraction": {},
+      "step2_rag_chunks": [
+        "Exploring why a patient wants to quit \u00e2\u20ac\u201d whether for health, family, finances, or personal reasons \u00e2\u20ac\u201d helps build intrinsic motivation that sustains the quit attempt during difficult moments. The stronger and more personal the reason, the more effective it is as a motivational anchor.",
+        "Reward yourself for milestones such as staying smoke-free for a day, a week, or a month.",
+        "After meals, immediately introduce a competing behavior before the urge has a chance to form \u00e2\u20ac\u201d get up from the table, brush your teeth, chew sugar-free gum, or take a short walk. The goal is to break the automatic link between finishing a meal and reaching for a cigarette by making a different behavior equally automatic over time."
+      ],
+      "step3_context_keywords": [
+        "strong craving (general)"
+      ],
+      "step3_kg_subgraph": {
+        "smoking_status": "bidis",
+        "quit_goal": "quit bidis",
+        "motivation_reason": [
+          "family pressure",
+          "health concerns",
+          "weight concerns"
+        ],
+        "relevant_triggers": [
+          {
+            "trigger": "after meals",
+            "turn": 2
+          },
+          {
+            "trigger": "social situations",
+            "turn": 2
+          }
+        ],
+        "relevant_strategies": []
+      },
+      "step4_session_phase": {
+        "phase_num": 4,
+        "phase_name": "Planning",
+        "phase_instruction": "You are in the PLANNING phase. You have enough understanding of this patient. You can now gently introduce ONE relevant coping strategy or technique based on their specific triggers and past attempts. Keep it simple \u2014 one idea at a time, check if they are open to it."
+      },
+      "step5_triplets": [],
+      "step6_prompt": [
+        "You are a warm, empathetic therapist helping patients overcome tobacco addiction.",
+        "STYLE RULES \u2014 follow these strictly:",
+        "- Keep your response to 1-3 sentences maximum",
+        "- Ask only ONE question per response",
+        "- Do NOT list techniques, bullet points, or dump information",
+        "- First acknowledge what the patient said, then ask ONE follow-up question",
+        "- Only suggest a technique when you are in the Planning phase",
+        "- Use simple, conversational language \u2014 not clinical or formal",
+        "[Session Phase: 4 \u2014 Planning]",
+        "You are in the PLANNING phase. You have enough understanding of this patient. You can now gently introduce ONE relevant coping strategy or technique based on their specific triggers and past attempts. Keep it simple \u2014 one idea at a time, check if they are open to it.",
+        "[Patient Profile]",
+        "- Smoking status: bidis",
+        "- Quit goal: quit bidis",
+        "- Motivation to quit: family pressure, health concerns, weight concerns",
+        "- Known triggers: after meals, social situations",
+        "[Clinical Knowledge]",
+        "- Exploring why a patient wants to quit \u00e2\u20ac\u201d whether for health, family, finances, or personal reasons \u00e2\u20ac\u201d helps build intrinsic motivation that sustains the quit attempt during difficult moments. The stronger and more personal the reason, the more effective it is as a motivational anchor.",
+        "- Reward yourself for milestones such as staying smoke-free for a day, a week, or a month.",
+        "- After meals, immediately introduce a competing behavior before the urge has a chance to form \u00e2\u20ac\u201d get up from the table, brush your teeth, chew sugar-free gum, or take a short walk. The goal is to break the automatic link between finishing a meal and reaching for a cigarette by making a different behavior equally automatic over time.",
+        "[Recent Conversation]",
+        "Therapist: Let's try using a reminder phrase to help you stay motivated. Would you be willing to write down \"For my bachche\" and put it somewhere you'll see it often, like on your fridge or next to your phone?",
+        "Patient: I can write it on a piece of paper and stick it on the fridge. But what if I forget?",
+        "Therapist: Let's make this reminder a habit by placing it somewhere you'll see it every day, like the fridge. Can you also commit to checking that note a few times a day, especially when you're in situations where you might usually reach for a bidi?",
+        "Patient: Okay, I'll do it. But what about when I'm cooking? I still want to sit and smoke a few bidis after I'm done. Can I just take a break and then go back to it?",
+        "Therapist: You've made a great start, and I wish you continued progress and a stronger, healthier you.",
+        "Patient: ",
+        "---",
+        "Current patient message:",
+        "---",
+        "[REASONING]",
+        "1. Phase I am in: Planning",
+        "2. What does the phase instruction tell me to focus on?",
+        "3. What single question or response fits this phase?",
+        "[RESPONSE]",
+        "Therapist:"
+      ],
+      "step7_response": [
+        "It sounds like you're still struggling with the idea of giving up bidis after cooking, even after just taking a break. ",
+        "Can you imagine how your bachche would feel if you were to take just one more step towards quitting, like getting up and doing something else while you wait for the craving to pass?"
+      ]
+    }
+  ]
+}
