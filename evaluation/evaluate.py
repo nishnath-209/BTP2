@@ -269,7 +269,7 @@ def call_judge(prompt: str) -> dict | None:
             model=JUDGE_MODEL,
             messages=[{"role": "user", "content": prompt}],
             temperature=0.0,   # deterministic — same input always gives same score
-            max_tokens=600,
+            max_tokens=800,
         )
         time.sleep(0.5)  # small buffer between OpenRouter calls
         raw = response.choices[0].message.content.strip()
@@ -395,7 +395,7 @@ def compute_and_print_averages(all_results: list, variant: str) -> dict:
 
     averages = {}
 
-    # Always compute 5 common dimensions
+    # Always compute 7 common dimensions
     for dim in COMMON_DIMS:
         vals = [r[dim] for r in all_results if isinstance(r.get(dim), (int, float))]
         if vals:
@@ -411,18 +411,18 @@ def compute_and_print_averages(all_results: list, variant: str) -> dict:
             averages[PHASE_DIM] = avg
             print(f"  {PHASE_DIM:<38}: {avg}")
 
-    # Average over 5 common dims — fair cross-variant comparison
+    # Average over 7 common dims — fair cross-variant comparison
     common_vals = [averages[d] for d in COMMON_DIMS if d in averages]
     if common_vals:
-        avg_5 = round(mean(common_vals), 2)
-        averages["avg_5_common_dims"] = avg_5
-        print(f"\n  {'Avg (5 common dimensions)':<38}: {avg_5}")
+        avg_7 = round(mean(common_vals), 2)
+        averages["avg_7_common_dims"] = avg_7
+        print(f"\n  {'Avg (7 common dimensions)':<38}: {avg_7}")
 
-    # Average over all 6 dims — only for variants with phase
+    # Average over all 8 dims — only for variants with phase
     if variant != "no_phase" and PHASE_DIM in averages:
-        avg_6 = round(mean(common_vals + [averages[PHASE_DIM]]), 2)
-        averages["avg_6_all_dims"] = avg_6
-        print(f"  {'Avg (all 6 dimensions)':<38}: {avg_6}")
+        avg_8 = round(mean(common_vals + [averages[PHASE_DIM]]), 2)
+        averages["avg_8_all_dims"] = avg_8
+        print(f"  {'Avg (all 8 dimensions)':<38}: {avg_8}")
 
     return averages
 
