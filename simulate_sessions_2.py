@@ -25,9 +25,9 @@ import pipeline.therapy_pipeline as pipeline_module
 import logger.conversation_history as conv_history_module
 from logger.session_logger import SessionLogger
 
-VARIANT = "no_cot"  # change this for each run
+VARIANT = "full"  # change this for each run
 
-
+ 
 os.makedirs(f"z_good_convs/{VARIANT}", exist_ok=True)
 os.makedirs(f"z_good_convs/kg/{VARIANT}", exist_ok=True)
 

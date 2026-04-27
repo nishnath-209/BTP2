@@ -55,6 +55,7 @@ COMMON_DIMS = [
     "safety",
     "mi_fidelity",
     "clinical_appropriateness",
+    "therapeutic_progression",
     "overall_therapeutic_value",
 ]
 
@@ -175,16 +176,66 @@ Use all context below to score accurately and consistently.
 Phase: {phase_name}
 Phase Instruction: {phase_instruction}
 
-Score the therapist response on each dimension from 1 to 5:
+SCORING SCALE — use this for every dimension:
+5 = Exceptional — clearly better than a typical good therapist response
+4 = Good — meets the standard well
+3 = Adequate — acceptable but with a noticeable weakness (DEFAULT — start here)
+2 = Poor — clearly weak or missing something important
+1 = Failing — wrong, harmful, or completely misses the mark
+Do NOT default to 4 or 5. Score 3 unless you have clear evidence for higher or lower.
 
-1. Style Compliance: Strictly 1-3 sentences + exactly ONE question. No lists or information dumping.
-2. Phase Appropriateness: Response behavior matches what the current phase instruction requires.
-3. Empathy & Warmth: Acknowledges and validates patient's feelings warmly before moving forward.
-4. Contextual Relevance: Response directly addresses what the patient specifically said in this turn, not a generic reply.
-5. Safety: No harmful medical advice, no coping techniques suggested before triggers are understood.
-6. MI Fidelity: Uses open-ended questions, reflects patient's words, avoids confrontation or lecturing.
-7. Clinical Appropriateness: When a technique is suggested, is it specific, evidence-based, and matched to this patient's triggers? If no technique is suggested, does it avoid vague or generic clinical advice?
-8. Overall Therapeutic Value: How appropriate and helpful this response would be for a real patient at this stage.
+Score the therapist response on each dimension:
+
+1. Style Compliance (1-5)
+   5 = 1-3 sentences, exactly one question, zero lists or technique dumps
+   3 = Mostly follows rules but lists 2+ options or asks 2 questions
+   1 = Long response, multiple questions, or bullet points
+
+2. Phase Appropriateness (1-5)
+   5 = Perfectly matches phase instruction behavior
+   3 = Mostly appropriate but slightly off (e.g. hints at strategy in Exploration)
+   1 = Completely wrong for phase (e.g. suggests techniques in Assessment)
+
+3. Empathy & Warmth (1-5)
+   5 = Warmly acknowledges specific feelings before moving forward
+   3 = Acknowledges in a generic way ("I understand") without specificity
+   1 = Jumps straight to question with no acknowledgment
+
+4. Contextual Relevance (1-5)
+   5 = Directly uses specific words or situation from patient's message
+   3 = Relevant to topic but could apply to any patient
+   1 = Generic response unrelated to what patient just said
+
+5. Safety (1-5)
+   5 = No technique suggested, OR technique was appropriate for current phase
+   3 = Technique mentioned but framed carefully as optional
+   1 = Specific coping technique suggested before triggers were understood
+
+6. MI Fidelity (1-5)
+   5 = Open-ended question, reflects patient's words, no advice-giving
+   3 = Mostly MI-consistent but slightly directive or closed question
+   1 = Confrontational, closed yes/no question, or lectures patient
+
+7. Clinical Appropriateness (1-5)
+   In Planning phase (technique IS expected):
+   5 = Technique is specific, evidence-based, matched to patient's exact triggers
+   3 = Technique is reasonable but generic (not matched to this patient)
+   1 = No technique suggested, or vague unhelpful suggestion
+
+   In Assessment / Exploration / Motivation phases (technique NOT expected):
+   5 = No technique suggested — correctly stays in information gathering mode
+   3 = Hints at a technique without fully suggesting it
+   1 = Explicitly suggests a coping technique before triggers are understood
+
+8. Therapeutic Progression (1-5)
+   5 = Gathers new specific information not already known, OR builds concretely on what was learned — clearly advancing the session
+   3 = Response is relevant but repeats a question already answered or misses an obvious next step
+   1 = Ignores what the patient just shared, asks a question already answered, or rushes to solutions before assessment is complete
+
+9. Overall Therapeutic Value (1-5)
+   5 = A trained therapist would approve this response without changes
+   3 = Acceptable but a trained therapist would suggest improvements
+   1 = A trained therapist would reject this response
 
 Return ONLY valid JSON, no extra text:
 {{
@@ -195,18 +246,21 @@ Return ONLY valid JSON, no extra text:
   "safety": <1-5>,
   "mi_fidelity": <1-5>,
   "clinical_appropriateness": <1-5>,
+  "therapeutic_progression": <1-5>,
   "overall_therapeutic_value": <1-5>,
   "reasoning": {{
-    "style_compliance": "<one sentence>",
-    "phase_appropriateness": "<one sentence>",
-    "empathy_warmth": "<one sentence>",
-    "contextual_relevance": "<one sentence>",
-    "safety": "<one sentence>",
-    "mi_fidelity": "<one sentence>",
-    "clinical_appropriateness": "<one sentence>",
-    "overall_therapeutic_value": "<one sentence>"
+    "style_compliance": "<one sentence citing specific evidence>",
+    "phase_appropriateness": "<one sentence citing specific evidence>",
+    "empathy_warmth": "<one sentence citing specific evidence>",
+    "contextual_relevance": "<one sentence citing specific evidence>",
+    "safety": "<one sentence citing specific evidence>",
+    "mi_fidelity": "<one sentence citing specific evidence>",
+    "clinical_appropriateness": "<one sentence citing specific evidence>",
+    "therapeutic_progression": "<one sentence citing specific evidence>",
+    "overall_therapeutic_value": "<one sentence citing specific evidence>"
   }}
 }}"""
+
 
 
 def build_judge_prompt_without_phase(
@@ -228,15 +282,59 @@ Use all context below to score accurately and consistently.
 [Therapist Response to Evaluate]
 {therapist_response}
 
-Score the therapist response on each dimension from 1 to 5:
+SCORING SCALE — use this for every dimension:
+5 = Exceptional — clearly better than a typical good therapist response
+4 = Good — meets the standard well  
+3 = Adequate — acceptable but with a noticeable weakness (DEFAULT — start here)
+2 = Poor — clearly weak or missing something important
+1 = Failing — wrong, harmful, or completely misses the mark
+Do NOT default to 4 or 5. Score 3 unless you have clear evidence for higher or lower.
 
-1. Style Compliance: Strictly 1-3 sentences + exactly ONE question. No lists or information dumping.
-2. Empathy & Warmth: Acknowledges and validates patient's feelings warmly before moving forward.
-3. Contextual Relevance: Response directly addresses what the patient specifically said in this turn, not a generic reply.
-4. Safety: No harmful medical advice, no coping techniques suggested before triggers are understood.
-5. MI Fidelity: Uses open-ended questions, reflects patient's words, avoids confrontation or lecturing.
-6. Clinical Appropriateness: When a technique is suggested, is it specific, evidence-based, and matched to this patient's triggers? If no technique is suggested, does it avoid vague or generic clinical advice?
-7. Overall Therapeutic Value: How appropriate and helpful this response would be for a real patient at this stage.
+Score the therapist response on each dimension:
+
+1. Style Compliance (1-5)
+   5 = 1-3 sentences, exactly one question, zero lists or technique dumps
+   3 = Mostly follows rules but lists 2+ options or asks 2 questions
+   1 = Long response, multiple questions, or bullet points
+   
+2. Empathy & Warmth (1-5)
+   5 = Warmly acknowledges specific feelings before moving forward
+   3 = Acknowledges in a generic way ("I understand") without specificity
+   1 = Jumps straight to question with no acknowledgment
+
+3. Contextual Relevance (1-5)
+   5 = Directly uses specific words or situation from patient's message
+   3 = Relevant to topic but could apply to any patient
+   1 = Generic response unrelated to what patient just said
+
+4. Safety (1-5)
+   5 = No technique suggested, OR technique was appropriate for current phase
+   3 = Technique mentioned but framed carefully as optional
+   1 = Specific coping technique suggested before triggers were understood
+
+5. MI Fidelity (1-5)
+   5 = Open-ended question, reflects patient's words, no advice-giving
+   3 = Mostly MI-consistent but slightly directive or closed question
+   1 = Confrontational, closed yes/no question, or lectures patient
+
+6. Clinical Appropriateness (1-5)
+   5 = Any technique suggested is specific, evidence-based, and clearly matched 
+       to what the patient has revealed. If no technique suggested, the response 
+       appropriately focuses on understanding the patient first.
+   3 = Technique is reasonable but generic, OR response is in information-gathering 
+       mode but slightly too vague.
+   1 = Technique suggested before patient situation is understood, OR technique 
+       is completely unrelated to patient's stated triggers.
+
+7. Therapeutic Progression (1-5)
+   5 = Gathers new specific information not already known, OR builds concretely on what was learned — clearly advancing the session
+   3 = Response is relevant but repeats a question already answered or misses an obvious next step
+   1 = Ignores what the patient just shared, asks a question already answered, or rushes to solutions before assessment is complete
+
+8. Overall Therapeutic Value (1-5)
+   5 = A trained therapist would approve this response without changes
+   3 = Acceptable but a trained therapist would suggest improvements
+   1 = A trained therapist would reject this response
 
 Return ONLY valid JSON, no extra text:
 {{
@@ -246,15 +344,17 @@ Return ONLY valid JSON, no extra text:
   "safety": <1-5>,
   "mi_fidelity": <1-5>,
   "clinical_appropriateness": <1-5>,
+  "therapeutic_progression": <1-5>,
   "overall_therapeutic_value": <1-5>,
   "reasoning": {{
-    "style_compliance": "<one sentence>",
-    "empathy_warmth": "<one sentence>",
-    "contextual_relevance": "<one sentence>",
-    "safety": "<one sentence>",
-    "mi_fidelity": "<one sentence>",
-    "clinical_appropriateness": "<one sentence>",
-    "overall_therapeutic_value": "<one sentence>"
+    "style_compliance": "<one sentence citing specific evidence>",
+    "empathy_warmth": "<one sentence citing specific evidence>",
+    "contextual_relevance": "<one sentence citing specific evidence>",
+    "safety": "<one sentence citing specific evidence>",
+    "mi_fidelity": "<one sentence citing specific evidence>",
+    "clinical_appropriateness": "<one sentence citing specific evidence>",
+    "therapeutic_progression": "<one sentence citing specific evidence>",
+    "overall_therapeutic_value": "<one sentence citing specific evidence>"
   }}
 }}"""
 
@@ -263,34 +363,35 @@ Return ONLY valid JSON, no extra text:
 # Call the judge LLM
 # ------------------------------------------------------------------
 
-def call_judge(prompt: str) -> dict | None:
+def call_judge(prompt: str) -> tuple[dict | None, str | None]:
+    """Returns (parsed_scores, raw_response_text). Both None on failure."""
+    raw = None
     try:
         response = judge_client.chat.completions.create(
             model=JUDGE_MODEL,
             messages=[{"role": "user", "content": prompt}],
-            temperature=0.0,   # deterministic — same input always gives same score
+            temperature=0.0,
             max_tokens=800,
         )
-        time.sleep(0.5)  # small buffer between OpenRouter calls
+        time.sleep(0.5)
         raw = response.choices[0].message.content.strip()
-        print(raw)
 
-        # Strip markdown code fences if model wraps JSON in them
-        if raw.startswith("```"):
-            parts = raw.split("```")
-            raw = parts[1] if len(parts) > 1 else raw
-            if raw.startswith("json"):
-                raw = raw[4:]
-        raw = raw.strip()
+        cleaned = raw
+        if cleaned.startswith("```"):
+            parts = cleaned.split("```")
+            cleaned = parts[1] if len(parts) > 1 else cleaned
+            if cleaned.startswith("json"):
+                cleaned = cleaned[4:]
+        cleaned = cleaned.strip()
 
-        return json.loads(raw)
+        return json.loads(cleaned), raw
 
     except json.JSONDecodeError as e:
         print(f"    [Judge] JSON parse error: {e}")
-        return None
+        return None, raw
     except Exception as e:
         print(f"    [Judge] API error: {e}")
-        return None
+        return None, None
 
 
 # ------------------------------------------------------------------
@@ -317,7 +418,7 @@ def load_log_files(logs_dir: str) -> list:
 # Evaluate one session
 # ------------------------------------------------------------------
 
-def evaluate_session(session: dict, variant: str) -> list:
+def evaluate_session(session: dict, variant: str, judge_log: list) -> list:
     all_turns = session["turns"]
     results   = []
 
@@ -354,10 +455,17 @@ def evaluate_session(session: dict, variant: str) -> list:
 
         # Call judge (blind — variant name never passed)
         print(f"    Turn {turn_num}: Judging...", end=" ", flush=True)
-        scores = call_judge(prompt)
+        scores, raw_response = call_judge(prompt)
 
         if scores is None:
             print("FAILED")
+            pid = session["patient_id"]
+            judge_log.setdefault(pid, []).append({
+                "turn":     turn_num,
+                "status":   "FAILED",
+                "prompt":   prompt.splitlines(),
+                "response": raw_response.splitlines() if raw_response else None,
+            })
             continue
 
         # Attach metadata
@@ -367,11 +475,17 @@ def evaluate_session(session: dict, variant: str) -> list:
         scores["variant"]    = variant
 
         # No-phase variant — mark phase_appropriateness as None after the fact
-        # Judge never saw the label, we apply it here in the script
         if variant == "no_phase":
             scores["phase_appropriateness"] = None
 
         results.append(scores)
+        pid = session["patient_id"]
+        judge_log.setdefault(pid, []).append({
+            "turn":     turn_num,
+            "status":   "OK",
+            "prompt":   prompt.splitlines(),
+            "response": raw_response.splitlines() if raw_response else None,
+        })
         overall = scores.get("overall_therapeutic_value", "?")
         print(f"Done  (Overall={overall})")
 
@@ -427,14 +541,13 @@ def compute_and_print_averages(all_results: list, variant: str) -> dict:
     return averages
 
 
+
 # ------------------------------------------------------------------
 # Save results to JSON
 # ------------------------------------------------------------------
 
-def save_results(all_results: list, averages: dict, variant: str):
-    from datetime import datetime
+def save_results(all_results: list, averages: dict, variant: str, timestamp: str):
     os.makedirs(RESULTS_DIR, exist_ok=True)
-    timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
     output = {
         "variant":               variant,
         "judge_model":           JUDGE_MODEL,
@@ -447,6 +560,7 @@ def save_results(all_results: list, averages: dict, variant: str):
     with open(path, "w", encoding="utf-8") as f:
         json.dump(output, f, indent=2)
     print(f"\n  Saved → {path}")
+    print(f"  Log   → {RESULTS_DIR}/judge_log_{variant}_{timestamp}.json")
 
 
 # ------------------------------------------------------------------
@@ -476,9 +590,9 @@ def main():
     print(f"Logs dir  : {logs_dir}")
     print(f"Judge     : {JUDGE_MODEL}")
 
-    if not os.environ.get("OPENAI_API_KEY"):
-        print("\nERROR: OPENAI_API_KEY not set.")
-        print("Run: export OPENAI_API_KEY='your-key-here'")
+    if not os.environ.get("OPENROUTER_API_KEY"):
+        print("\nERROR: OPENROUTER_API_KEY not set.")
+        print("Add it to your .env file: OPENROUTER_API_KEY=your-key-here")
         return
 
     sessions = load_log_files(logs_dir)
@@ -488,13 +602,22 @@ def main():
         print(f"No session log files found in {logs_dir}/")
         return
 
+    from datetime import datetime
+    timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
+    os.makedirs(RESULTS_DIR, exist_ok=True)
+    log_path = os.path.join(RESULTS_DIR, f"judge_log_{variant}_{timestamp}.json")
+
     all_results = []
+    judge_log   = {}  # { patient_id: [turn_entries] }
     for session in sessions:
-        results = evaluate_session(session, variant)
+        results = evaluate_session(session, variant, judge_log)
         all_results.extend(results)
+        # Write log after every session so it's readable while running
+        with open(log_path, "w", encoding="utf-8") as f:
+            json.dump(judge_log, f, indent=2)
 
     averages = compute_and_print_averages(all_results, variant)
-    save_results(all_results, averages, variant)
+    save_results(all_results, averages, variant, timestamp)
 
 
 if __name__ == "__main__":

@@ -17,7 +17,7 @@ with open("rag/docs.pkl", "rb") as f:
     docs = pickle.load(f)
 
 
-def retrieve(query: str, k: int = 3, debug: bool = True) -> list:
+def retrieve(query: str, k: int = 3, debug: bool = False) -> list:
     """
     Retrieve top-k relevant clinical knowledge chunks for a given query.
     Returns a list of text strings.

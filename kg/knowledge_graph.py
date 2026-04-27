@@ -43,12 +43,12 @@ class KnowledgeGraph:
         if patient_id not in self.profiles:
             self.profiles[patient_id] = {
                 "patient_id": patient_id,
-                "smoking_status": None,
-                "smoking_status_history": [],   # previous values before overwrite
-                "quit_goal": None,
                 "motivation_reason": [],         # why they want to quit
                 "triggers": [],                  # [{trigger, turn}]
                 "past_strategies": [],           # [{strategy, outcome}]
+                "smoking_status": None,
+                "smoking_status_history": [],   # previous values before overwrite
+                "quit_goal": None,
                 "session_notes": [],             # [{turn, note}] — only meaningful turns
             }
         return self.profiles[patient_id]
@@ -174,11 +174,11 @@ class KnowledgeGraph:
         profile = self._get_or_create(patient_id)
 
         subgraph = {
-            "smoking_status": profile.get("smoking_status"),
-            "quit_goal": profile.get("quit_goal"),
             "motivation_reason": profile.get("motivation_reason"),
             "relevant_triggers": [],
-            "relevant_strategies": profile["past_strategies"],  # always all strategies
+            "relevant_strategies": profile["past_strategies"],
+            "smoking_status": profile.get("smoking_status"),
+            "quit_goal": profile.get("quit_goal"),
         }
 
         if not context_keywords:
@@ -195,7 +195,7 @@ class KnowledgeGraph:
         # Fallback: return all triggers if none matched
         if not subgraph["relevant_triggers"]:
             subgraph["relevant_triggers"] = profile["triggers"]
-            print("[KG] Trigger keyword match failed — returning all triggers as fallback")
+            # print("[KG] Trigger keyword match failed — returning all triggers as fallback")
 
         return subgraph
 

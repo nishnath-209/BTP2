@@ -154,7 +154,6 @@ FIELD DEFINITIONS:
 - motivation_reason:
   WHY they want to quit — ONLY if explicitly stated.
   Always return a LIST (even if one item).
-  Extract ANY reason stated, not limited to examples.
   Return [] if none mentioned.
   
 - smoking_status:
@@ -199,7 +198,7 @@ JSON:
 
     raw = generate(extraction_prompt,max_new_tokens=300,temperature=0.1)
 
-    print("Extracted fields for kg updation: " + raw)
+    # print("Extracted fields for kg updation: " + raw)
 
     json_text = raw.strip()
     if "{" in json_text and "}" in json_text:
@@ -343,7 +342,6 @@ def detect_session_phase(subgraph: dict, extracted: dict) -> tuple:
     # Phase 1 — Assessment
     if not has_status:
         return (1, "Assessment", (
-            "You are in the ASSESSMENT phase. "
             "Focus on gathering basic facts: how long they have been smoking, "
             "how much they smoke per day, and what substance. "
             "Do NOT ask about triggers or suggest strategies yet. "
@@ -353,7 +351,6 @@ def detect_session_phase(subgraph: dict, extracted: dict) -> tuple:
     # Phase 2 — Exploration
     if not has_triggers:
         return (2, "Exploration", (
-            "You are in the EXPLORATION phase. "
             "You know the basics. Now gently explore what situations or emotions "
             "make them smoke more — triggers like stress, meals, social settings, boredom. "
             "Do NOT suggest any strategies yet. Just understand their situation."
@@ -362,22 +359,30 @@ def detect_session_phase(subgraph: dict, extracted: dict) -> tuple:
     # Phase 3 — Motivation
     if not has_motivation:
         return (3, "Motivation", (
-            "You are in the MOTIVATION phase. "
             "You understand their triggers. Now explore their motivation: "
             "why do they want to quit — is it health, family, cost, doctor advice? "
             "Have they tried before and what happened? "
             "Be empathetic. Do NOT push strategies yet."
         ))
 
+    # Phase 4 — Planning — only after enough turns to properly assess the patient
+    if _turn < 3:
+        return (3, "Motivation", (
+            "You understand their triggers. Deepen your understanding of their motivation "
+            "and readiness to quit before moving to strategies. "
+            "Explore ambivalence, past attempts, or what a smoke-free life would mean to them. "
+            "Do NOT suggest strategies yet."
+        ))
+
     # Phase 4 — Planning
     # Set the flag so Closing becomes reachable from the next turn onward
     _reached_planning = True
     return (4, "Planning", (
-        "You are in the PLANNING phase. "
         "You have enough understanding of this patient. "
-        "You can now gently introduce ONE relevant coping strategy or technique "
-        "based on their specific triggers and past attempts. "
-        "Keep it simple — one idea at a time, check if they are open to it."
+        "Introduce ONE relevant coping strategy matched to their specific triggers and past attempts. "
+        "Do NOT just name the strategy — briefly explain how to apply it in practice using the clinical knowledge (when to use it, what to do like a plan). "
+        "Then check if the patient is open to trying it. "
+        "Keep it simple, specific, and actionable."
     ))
 
 
@@ -443,6 +448,12 @@ STYLE RULES — follow these strictly:
 
 Current patient message:
 {user_message}
+
+---
+[REASONING]
+1. Phase I am in: {phase_name}
+2. What does the phase instruction tell me to focus on?
+3. What single question or response fits this phase?
 
 [RESPONSE]
 Therapist:"""
@@ -518,28 +529,28 @@ def therapy_chat(user_message, patient_id="default_patient", session_id=None):
     # Add patient message to history
     _conversation_history.append({"role": "patient", "content": user_message})
 
-    print("STEP 1: EXTRACTING INFO → UPDATING KG")
+    # print("STEP 1: EXTRACTING INFO → UPDATING KG")
     extracted = extract_and_update_kg(patient_id, user_message)
-    print("Extracted:", json.dumps(extracted, indent=2))
+    # print("Extracted:", json.dumps(extracted, indent=2))
 
-    time.sleep(3)
-
-    print("\nSTEP 2: RETRIEVING CLINICAL KNOWLEDGE (RAG)")
+    time.sleep(3) 
+    
+    # print("\nSTEP 2: RETRIEVING CLINICAL KNOWLEDGE (RAG)")
     rag_context = retrieve(user_message)
-    for i, c in enumerate(rag_context):
-        print(f"  [{i+1}] {c[:100]}...")
+    # for i, c in enumerate(rag_context):
+        # print(f"  [{i+1}] {c[:100]}...")
     # rag_context = []
 
-    print("\nSTEP 3: QUERYING KG SUBGRAPH")
+    # print("\nSTEP 3: QUERYING KG SUBGRAPH")
     context_keywords = extract_context_keywords(user_message, extracted)
-    print("Context keywords:", context_keywords)
+    # print("Context keywords:", context_keywords)
     subgraph = kg.get_subgraph(patient_id, context_keywords)
     kg_text = kg.subgraph_to_text(subgraph)
-    print(kg_text)
+    # print(kg_text)
 
-    print("\nSTEP 4: DETECTING SESSION PHASE")
+    # print("\nSTEP 4: DETECTING SESSION PHASE")
     phase_num, phase_name, phase_instruction = detect_session_phase(subgraph, extracted)
-    print(f"  → Phase {phase_num}: {phase_name}")
+    # print(f"  → Phase {phase_num}: {phase_name}")
 
     # print("\nSTEP 5: MATCHING CLINICAL TRIPLETS")
     # triplets = get_relevant_triplets(context_keywords)
@@ -548,23 +559,23 @@ def therapy_chat(user_message, patient_id="default_patient", session_id=None):
     triplets = []
     triplets_text = ""
 
-    print("\nSTEP 6: BUILDING PROMPT")
+    # print("\nSTEP 6: BUILDING PROMPT")
     history_block = build_history_block()
 
-    if phase_num == 5:
-        prompt = build_closing_prompt(user_message, history_block, phase_instruction)
-    else:
-        prompt = build_prompt(
-            user_message, rag_context, kg_text, triplets_text, history_block,
-            phase_num, phase_name, phase_instruction
-        )
+    # if phase_num == 5:
+    #     prompt = build_closing_prompt(user_message, history_block, phase_instruction)
+    # else:
+    #     prompt = build_prompt(
+    #         user_message, rag_context, kg_text, triplets_text, history_block,
+    #         phase_num, phase_name, phase_instruction
+    #     )
 
-    # prompt = build_prompt_no_phase(
-    #     user_message, rag_context, kg_text, history_block
-    # )
+    prompt = build_prompt_no_phase(
+        user_message, rag_context, kg_text, history_block
+    )
 
 
-    print(prompt)
+    # print(prompt)
 
     print("\nSTEP 7: GENERATING RESPONSE")
     full_output = generate(prompt, max_new_tokens=200)
